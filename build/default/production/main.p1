@@ -1,11 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F3306 `(v ~T0 @X0 0 tf ]
-"16 ./define.h
-[; ;./define.h: 16:     {
+"17 ./define.h
+[; ;./define.h: 17:     {
 [s S459 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S459 . CS0 CS1 CS2 CS3 CS4 CS5 CS6 CS7 ]
-"13
-[; ;./define.h: 13: {
+"14
+[; ;./define.h: 14: {
 [u S458 `ui 1 `S459 1 ]
 [n S458 . full_status . ]
 [p mainexit ]
@@ -27,23 +27,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "374
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"23 main.c
-[; ;main.c: 23:     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
+"22 main.c
+[; ;main.c: 22:     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
 [c E2914 0 1 2 3 .. ]
 [n E2914 mtouch_button_names Button0 Button1 Button2 Button3  ]
 [v F2928 `(v ~T0 @X0 0 tf1`E2914 ]
 "102 ./mcc_generated_files/mtouch/mtouch_button.h
 [; ;./mcc_generated_files/mtouch/mtouch_button.h: 102:     void MTOUCH_Button_SetPressedCallback (void (*callback)(enum mtouch_button_names button));
 [v _MTOUCH_Button_SetPressedCallback `(v ~T0 @X0 0 ef1`*F2928 ]
-"16 main.c
-[; ;main.c: 16: void myButtonPressedCallback(enum mtouch_button_names button);
+"15 main.c
+[; ;main.c: 15: void myButtonPressedCallback(enum mtouch_button_names button);
 [v _myButtonPressedCallback `(v ~T0 @X0 0 ef1`E2914 ]
 [v F2934 `(v ~T0 @X0 0 tf1`E2914 ]
 "103 ./mcc_generated_files/mtouch/mtouch_button.h
 [; ;./mcc_generated_files/mtouch/mtouch_button.h: 103:     void MTOUCH_Button_SetNotPressedCallback(void (*callback)(enum mtouch_button_names button));
 [v _MTOUCH_Button_SetNotPressedCallback `(v ~T0 @X0 0 ef1`*F2934 ]
-"17 main.c
-[; ;main.c: 17: void myButtonReleasedCallback(enum mtouch_button_names button);
+"16 main.c
+[; ;main.c: 16: void myButtonReleasedCallback(enum mtouch_button_names button);
 [v _myButtonReleasedCallback `(v ~T0 @X0 0 ef1`E2914 ]
 "1791 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 1791:     struct {
@@ -89,6 +89,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3 ./relay.h
 [; ;./relay.h: 3: void RELAY_PROCESS(uint8_t x);
 [v _RELAY_PROCESS `(v ~T0 @X0 0 ef1`uc ]
+"14 main.c
+[; ;main.c: 14: void update_state(void);
+[v _update_state `(v ~T0 @X0 0 ef ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -666,1170 +669,1385 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./define.h: 5: uint8_t prcData;
 [v _prcData `uc ~T0 @X0 1 e ]
 "6
-[; ;./define.h: 6: _Bool rest;
-[v _rest `a ~T0 @X0 1 e ]
-"7
-[; ;./define.h: 7: _Bool config_status;
+[; ;./define.h: 6: _Bool config_status;
 [v _config_status `a ~T0 @X0 1 e ]
-"8
-[; ;./define.h: 8: _Bool check_request;
+"7
+[; ;./define.h: 7: _Bool check_request;
 [v _check_request `a ~T0 @X0 1 e ]
-"9
-[; ;./define.h: 9: uint16_t count_conf;
+"8
+[; ;./define.h: 8: uint16_t count_conf;
 [v _count_conf `us ~T0 @X0 1 e ]
-"10
-[; ;./define.h: 10: _Bool blink;
+"9
+[; ;./define.h: 9: _Bool blink;
 [v _blink `a ~T0 @X0 1 e ]
-"26
-[; ;./define.h: 26: }last_touch_status;
+"10
+[; ;./define.h: 10: uint8_t blink_count;
+[v _blink_count `uc ~T0 @X0 1 e ]
+"11
+[; ;./define.h: 11: uint16_t timeout_count;
+[v _timeout_count `us ~T0 @X0 1 e ]
+"27
+[; ;./define.h: 27: }last_touch_status;
 [v _last_touch_status `S458 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"18 main.c
-[; ;main.c: 18: void main(void)
+"17 main.c
+[; ;main.c: 17: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"19
-[; ;main.c: 19: {
+"18
+[; ;main.c: 18: {
 {
 [e :U _main ]
 [f ]
-"20
-[; ;main.c: 20:     SYSTEM_Initialize();
+"19
+[; ;main.c: 19:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"21
-[; ;main.c: 21:     (INTCONbits.GIE = 1);
+"20
+[; ;main.c: 20:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"22
-[; ;main.c: 22:     (INTCONbits.PEIE = 1);
+"21
+[; ;main.c: 21:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"23
-[; ;main.c: 23:     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
+"22
+[; ;main.c: 22:     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
 [e ( _MTOUCH_Button_SetPressedCallback (1 &U _myButtonPressedCallback ]
-"24
-[; ;main.c: 24:     MTOUCH_Button_SetNotPressedCallback(myButtonReleasedCallback);
+"23
+[; ;main.c: 23:     MTOUCH_Button_SetNotPressedCallback(myButtonReleasedCallback);
 [e ( _MTOUCH_Button_SetNotPressedCallback (1 &U _myButtonReleasedCallback ]
-"25
-[; ;main.c: 25:     do { LATAbits.LATA2 = 0; } while(0);
+"24
+[; ;main.c: 24:     do { LATAbits.LATA2 = 0; } while(0);
 [e :U 463 ]
 {
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 }
 [e :U 462 ]
-"26
-[; ;main.c: 26:     last_touch_status.full_status = 0x00;
+"25
+[; ;main.c: 25:     last_touch_status.full_status = 0x00;
 [e = . _last_touch_status 0 -> -> 0 `i `ui ]
-"27
-[; ;main.c: 27:     while (1)
+"26
+[; ;main.c: 26:     while (1)
 [e :U 465 ]
+"27
+[; ;main.c: 27:     {
+{
 "28
-[; ;main.c: 28:     {
-{
-"29
-[; ;main.c: 29:         if(EUSART_is_rx_ready())
+[; ;main.c: 28:         if(EUSART_is_rx_ready())
 [e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 467  ]
+"29
+[; ;main.c: 29:         {
+{
 "30
-[; ;main.c: 30:         {
-{
-"31
-[; ;main.c: 31:             rxData = EUSART_Read();
+[; ;main.c: 30:             rxData = EUSART_Read();
 [e = _rxData ( _EUSART_Read ..  ]
-"32
-[; ;main.c: 32:             if(check_data(rxData))
+"31
+[; ;main.c: 31:             if(check_data(rxData))
 [e $ ! != -> ( _check_data (1 _rxData `i -> 0 `i 468  ]
+"32
+[; ;main.c: 32:             {
+{
 "33
-[; ;main.c: 33:             {
-{
-"34
-[; ;main.c: 34:                 if(check_request == 0)
+[; ;main.c: 33:                 if(check_request == 0)
 [e $ ! == -> _check_request `i -> 0 `i 469  ]
-"35
-[; ;main.c: 35:                 {
+"34
+[; ;main.c: 34:                 {
 {
-"36
-[; ;main.c: 36:                     prcData = rxData;
+"35
+[; ;main.c: 35:                     prcData = rxData;
 [e = _prcData _rxData ]
-"37
-[; ;main.c: 37:                     check_message(rxData);
+"36
+[; ;main.c: 36:                     check_message(rxData);
 [e ( _check_message (1 _rxData ]
-"38
-[; ;main.c: 38:                 }
+"37
+[; ;main.c: 37:                 }
 }
 [e $U 470  ]
-"39
-[; ;main.c: 39:                 else
+"38
+[; ;main.c: 38:                 else
 [e :U 469 ]
+"39
+[; ;main.c: 39:                 {
+{
 "40
-[; ;main.c: 40:                 {
-{
-"41
-[; ;main.c: 41:                     if(config_status == 1)
+[; ;main.c: 40:                     if(config_status == 1)
 [e $ ! == -> _config_status `i -> 1 `i 471  ]
+"41
+[; ;main.c: 41:                     {
+{
 "42
-[; ;main.c: 42:                     {
-{
-"43
-[; ;main.c: 43:                         if(rxData == 'T')
+[; ;main.c: 42:                         if(rxData == 'T')
 [e $ ! == -> _rxData `ui -> 84 `ui 472  ]
-"44
-[; ;main.c: 44:                         {
+"43
+[; ;main.c: 43:                         {
 {
-"45
-[; ;main.c: 45:                             LED_PROCESS(15);
+"44
+[; ;main.c: 44:                             LED_PROCESS(15);
 [e ( _LED_PROCESS (1 -> -> 15 `i `uc ]
+"45
+[; ;main.c: 45:                             _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "46
-[; ;main.c: 46:                             _delay((unsigned long)((2000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 46:                             _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"47
+[; ;main.c: 47:                             _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "48
-[; ;main.c: 48:                             rest = 1;
-[e = _rest -> -> 1 `i `a ]
+[; ;main.c: 48:                             _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "49
-[; ;main.c: 49:                         }
+[; ;main.c: 49:                             _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"50
+[; ;main.c: 50:                             _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"51
+[; ;main.c: 51:                             config_status = 0;
+[e = _config_status -> -> 0 `i `a ]
+"52
+[; ;main.c: 52:                             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
+"53
+[; ;main.c: 53:                             LED_PROCESS(last_touch_status.full_status);
+[e ( _LED_PROCESS (1 -> . _last_touch_status 0 `uc ]
+"54
+[; ;main.c: 54:                         }
 }
 [e :U 472 ]
-"50
-[; ;main.c: 50:                         if(rxData == 'F')
-[e $ ! == -> _rxData `ui -> 70 `ui 473  ]
-"51
-[; ;main.c: 51:                         {
-{
-"52
-[; ;main.c: 52:                             LED_PROCESS(0);
-[e ( _LED_PROCESS (1 -> -> 0 `i `uc ]
-"53
-[; ;main.c: 53:                             _delay((unsigned long)((2000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "55
-[; ;main.c: 55:                             rest = 1;
-[e = _rest -> -> 1 `i `a ]
+[; ;main.c: 55:                         if(rxData == 'F')
+[e $ ! == -> _rxData `ui -> 70 `ui 473  ]
 "56
-[; ;main.c: 56:                         }
-}
-[e :U 473 ]
+[; ;main.c: 56:                         {
+{
 "57
-[; ;main.c: 57:                     }
-}
-[e $U 474  ]
+[; ;main.c: 57:                             LED_PROCESS(0);
+[e ( _LED_PROCESS (1 -> -> 0 `i `uc ]
 "58
-[; ;main.c: 58:                     else
-[e :U 471 ]
+[; ;main.c: 58:                             _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "59
-[; ;main.c: 59:                     {
-{
+[; ;main.c: 59:                             _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "60
-[; ;main.c: 60:                         if(rxData == 'T')
-[e $ ! == -> _rxData `ui -> 84 `ui 475  ]
+[; ;main.c: 60:                             _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "61
-[; ;main.c: 61:                         {
-{
+[; ;main.c: 61:                             _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "62
-[; ;main.c: 62:                             DATA_PROCESS(prcData);
-[e ( _DATA_PROCESS (1 -> _prcData `uc ]
+[; ;main.c: 62:                             _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "63
-[; ;main.c: 63:                         }
-}
-[e :U 475 ]
+[; ;main.c: 63:                             _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "64
-[; ;main.c: 64:                         if(rxData == 'F')
-[e $ ! == -> _rxData `ui -> 70 `ui 476  ]
+[; ;main.c: 64:                             config_status = 0;
+[e = _config_status -> -> 0 `i `a ]
 "65
-[; ;main.c: 65:                         {
-{
-"66
-[; ;main.c: 66:                             check_request = 0;
+[; ;main.c: 65:                             check_request = 0;
 [e = _check_request -> -> 0 `i `a ]
+"66
+[; ;main.c: 66:                             LED_PROCESS(last_touch_status.full_status);
+[e ( _LED_PROCESS (1 -> . _last_touch_status 0 `uc ]
 "67
 [; ;main.c: 67:                         }
 }
-[e :U 476 ]
+[e :U 473 ]
 "68
 [; ;main.c: 68:                     }
 }
-[e :U 474 ]
+[e $U 474  ]
 "69
-[; ;main.c: 69:                 }
+[; ;main.c: 69:                     else
+[e :U 471 ]
+"70
+[; ;main.c: 70:                     {
+{
+"71
+[; ;main.c: 71:                         if(rxData == 'T')
+[e $ ! == -> _rxData `ui -> 84 `ui 475  ]
+"72
+[; ;main.c: 72:                         {
+{
+"73
+[; ;main.c: 73:                             DATA_PROCESS(prcData);
+[e ( _DATA_PROCESS (1 -> _prcData `uc ]
+"74
+[; ;main.c: 74:                         }
+}
+[e :U 475 ]
+"75
+[; ;main.c: 75:                         if(rxData == 'F')
+[e $ ! == -> _rxData `ui -> 70 `ui 476  ]
+"76
+[; ;main.c: 76:                         {
+{
+"77
+[; ;main.c: 77:                             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
+"78
+[; ;main.c: 78:                         }
+}
+[e :U 476 ]
+"79
+[; ;main.c: 79:                     }
+}
+[e :U 474 ]
+"80
+[; ;main.c: 80:                 }
 }
 [e :U 470 ]
-"70
-[; ;main.c: 70:             }
+"81
+[; ;main.c: 81:             }
 }
 [e :U 468 ]
-"71
-[; ;main.c: 71:         }
+"82
+[; ;main.c: 82:         }
 }
 [e :U 467 ]
-"72
-[; ;main.c: 72:         if(MTOUCH_Service_Mainloop())
-[e $ ! != -> ( _MTOUCH_Service_Mainloop ..  `i -> 0 `i 477  ]
-"73
-[; ;main.c: 73:         {
-{
-"74
-[; ;main.c: 74:             if(config_status == 0)
-[e $ ! == -> _config_status `i -> 0 `i 478  ]
-"75
-[; ;main.c: 75:             {
-{
-"76
-[; ;main.c: 76:                 if(MTOUCH_Button_isPressed(0) == 1 && MTOUCH_Button_isPressed(1) == 0 && MTOUCH_Button_isPressed(2) == 0&& MTOUCH_Button_isPressed(3) == 1)
-[e $ ! && && && == -> ( _MTOUCH_Button_isPressed (1 -> -> 0 `i `E2914 `i -> 1 `i == -> ( _MTOUCH_Button_isPressed (1 -> -> 1 `i `E2914 `i -> 0 `i == -> ( _MTOUCH_Button_isPressed (1 -> -> 2 `i `E2914 `i -> 0 `i == -> ( _MTOUCH_Button_isPressed (1 -> -> 3 `i `E2914 `i -> 1 `i 479  ]
-"77
-[; ;main.c: 77:                 {
-{
-"78
-[; ;main.c: 78:                     count_conf++;
-[e ++ _count_conf -> -> 1 `i `us ]
-"79
-[; ;main.c: 79:                     if(count_conf == 800)
-[e $ ! == -> _count_conf `ui -> -> 800 `i `ui 480  ]
-"80
-[; ;main.c: 80:                     {
-{
-"81
-[; ;main.c: 81:                         count_conf = 0;
-[e = _count_conf -> -> 0 `i `us ]
-"82
-[; ;main.c: 82:                         printf("PICSMART");
-[e ( _printf :s 1C ]
 "83
-[; ;main.c: 83:                         config_status = 1;
-[e = _config_status -> -> 1 `i `a ]
+[; ;main.c: 83:         if(MTOUCH_Service_Mainloop())
+[e $ ! != -> ( _MTOUCH_Service_Mainloop ..  `i -> 0 `i 477  ]
 "84
-[; ;main.c: 84:                         check_request = 1;
-[e = _check_request -> -> 1 `i `a ]
+[; ;main.c: 84:         {
+{
 "85
-[; ;main.c: 85:                         LED_PROCESS(0);
-[e ( _LED_PROCESS (1 -> -> 0 `i `uc ]
+[; ;main.c: 85:             if(config_status == 0)
+[e $ ! == -> _config_status `i -> 0 `i 478  ]
 "86
-[; ;main.c: 86:                         blink = 0;
-[e = _blink -> -> 0 `i `a ]
+[; ;main.c: 86:             {
+{
 "87
-[; ;main.c: 87:                     }
+[; ;main.c: 87:                 if(check_request == 1)
+[e $ ! == -> _check_request `i -> 1 `i 479  ]
+"88
+[; ;main.c: 88:                 {
+{
+"89
+[; ;main.c: 89:                     timeout_count++;
+[e ++ _timeout_count -> -> 1 `i `us ]
+"90
+[; ;main.c: 90:                     if(timeout_count == 20)
+[e $ ! == -> _timeout_count `ui -> -> 20 `i `ui 480  ]
+"91
+[; ;main.c: 91:                     {
+{
+"92
+[; ;main.c: 92:                         timeout_count = 0;
+[e = _timeout_count -> -> 0 `i `us ]
+"93
+[; ;main.c: 93:                         check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
+"94
+[; ;main.c: 94:                     }
 }
 [e :U 480 ]
-"88
-[; ;main.c: 88:                 }
-}
-[e $U 481  ]
-"89
-[; ;main.c: 89:                 else
-[e :U 479 ]
-"90
-[; ;main.c: 90:                 {
-{
-"91
-[; ;main.c: 91:                     count_conf = 0;
-[e = _count_conf -> -> 0 `i `us ]
-"92
-[; ;main.c: 92:                 }
-}
-[e :U 481 ]
-"93
-[; ;main.c: 93:             }
-}
-[e $U 482  ]
-"94
-[; ;main.c: 94:             else
-[e :U 478 ]
 "95
-[; ;main.c: 95:             {
-{
+[; ;main.c: 95:                 }
+}
+[e :U 479 ]
 "96
-[; ;main.c: 96:                 if(blink == 0)
-[e $ ! == -> _blink `i -> 0 `i 483  ]
+[; ;main.c: 96:                 if(MTOUCH_Button_isPressed(0) == 1 && MTOUCH_Button_isPressed(1) == 0 && MTOUCH_Button_isPressed(2) == 0&& MTOUCH_Button_isPressed(3) == 1)
+[e $ ! && && && == -> ( _MTOUCH_Button_isPressed (1 -> -> 0 `i `E2914 `i -> 1 `i == -> ( _MTOUCH_Button_isPressed (1 -> -> 1 `i `E2914 `i -> 0 `i == -> ( _MTOUCH_Button_isPressed (1 -> -> 2 `i `E2914 `i -> 0 `i == -> ( _MTOUCH_Button_isPressed (1 -> -> 3 `i `E2914 `i -> 1 `i 481  ]
 "97
 [; ;main.c: 97:                 {
 {
 "98
-[; ;main.c: 98:                     LED_PROCESS(15);
-[e ( _LED_PROCESS (1 -> -> 15 `i `uc ]
+[; ;main.c: 98:                     count_conf++;
+[e ++ _count_conf -> -> 1 `i `us ]
 "99
-[; ;main.c: 99:                     blink = 1;
-[e = _blink -> -> 1 `i `a ]
+[; ;main.c: 99:                     if(count_conf == 1500)
+[e $ ! == -> _count_conf `ui -> -> 1500 `i `ui 482  ]
 "100
-[; ;main.c: 100:                     _delay((unsigned long)((300)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"101
-[; ;main.c: 101:                 }
-}
-[e $U 484  ]
-"102
-[; ;main.c: 102:                 else
-[e :U 483 ]
-"103
-[; ;main.c: 103:                 {
+[; ;main.c: 100:                     {
 {
+"101
+[; ;main.c: 101:                         count_conf = 0;
+[e = _count_conf -> -> 0 `i `us ]
+"102
+[; ;main.c: 102:                         printf("PICSMART");
+[e ( _printf :s 1C ]
+"103
+[; ;main.c: 103:                         config_status = 1;
+[e = _config_status -> -> 1 `i `a ]
 "104
-[; ;main.c: 104:                     LED_PROCESS(0);
-[e ( _LED_PROCESS (1 -> -> 0 `i `uc ]
+[; ;main.c: 104:                         check_request = 1;
+[e = _check_request -> -> 1 `i `a ]
 "105
-[; ;main.c: 105:                     blink = 0;
-[e = _blink -> -> 0 `i `a ]
+[; ;main.c: 105:                         timeout_count = 0;
+[e = _timeout_count -> -> 0 `i `us ]
 "106
-[; ;main.c: 106:                     _delay((unsigned long)((500)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 106:                         LED_PROCESS(0);
+[e ( _LED_PROCESS (1 -> -> 0 `i `uc ]
 "107
-[; ;main.c: 107:                 }
-}
-[e :U 484 ]
+[; ;main.c: 107:                         blink = 0;
+[e = _blink -> -> 0 `i `a ]
 "108
-[; ;main.c: 108:             }
+[; ;main.c: 108:                     }
 }
 [e :U 482 ]
 "109
-[; ;main.c: 109:         }
+[; ;main.c: 109:                 }
+}
+[e $U 483  ]
+"110
+[; ;main.c: 110:                 else
+[e :U 481 ]
+"111
+[; ;main.c: 111:                 {
+{
+"112
+[; ;main.c: 112:                     count_conf = 0;
+[e = _count_conf -> -> 0 `i `us ]
+"113
+[; ;main.c: 113:                 }
+}
+[e :U 483 ]
+"114
+[; ;main.c: 114:             }
+}
+[e $U 484  ]
+"115
+[; ;main.c: 115:             else
+[e :U 478 ]
+"116
+[; ;main.c: 116:             {
+{
+"117
+[; ;main.c: 117:                 if(check_request == 1)
+[e $ ! == -> _check_request `i -> 1 `i 485  ]
+"118
+[; ;main.c: 118:                 {
+{
+"119
+[; ;main.c: 119:                     timeout_count++;
+[e ++ _timeout_count -> -> 1 `i `us ]
+"120
+[; ;main.c: 120:                     if(timeout_count > 30000)
+[e $ ! > -> _timeout_count `ui -> -> 30000 `i `ui 486  ]
+"121
+[; ;main.c: 121:                     {
+{
+"123
+[; ;main.c: 123:                         LED_PROCESS(0);
+[e ( _LED_PROCESS (1 -> -> 0 `i `uc ]
+"124
+[; ;main.c: 124:                         timeout_count++;
+[e ++ _timeout_count -> -> 1 `i `us ]
+"125
+[; ;main.c: 125:                         if(timeout_count == 32000)
+[e $ ! == -> _timeout_count `ui -> -> 32000 `i `ui 487  ]
+"126
+[; ;main.c: 126:                         {
+{
+"127
+[; ;main.c: 127:                             timeout_count = 0;
+[e = _timeout_count -> -> 0 `i `us ]
+"128
+[; ;main.c: 128:                             LED_PROCESS(last_touch_status.full_status);
+[e ( _LED_PROCESS (1 -> . _last_touch_status 0 `uc ]
+"129
+[; ;main.c: 129:                             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
+"130
+[; ;main.c: 130:                         }
+}
+[e :U 487 ]
+"132
+[; ;main.c: 132:                     }
+}
+[e :U 486 ]
+"133
+[; ;main.c: 133:                 }
+}
+[e :U 485 ]
+"134
+[; ;main.c: 134:                 blink_count++;
+[e ++ _blink_count -> -> 1 `i `uc ]
+"135
+[; ;main.c: 135:                 if(blink == 0)
+[e $ ! == -> _blink `i -> 0 `i 488  ]
+"136
+[; ;main.c: 136:                 {
+{
+"137
+[; ;main.c: 137:                     LED_PROCESS(0);
+[e ( _LED_PROCESS (1 -> -> 0 `i `uc ]
+"138
+[; ;main.c: 138:                     if(blink_count == 200)
+[e $ ! == -> _blink_count `i -> 200 `i 489  ]
+"139
+[; ;main.c: 139:                     {
+{
+"140
+[; ;main.c: 140:                         blink_count = 0;
+[e = _blink_count -> -> 0 `i `uc ]
+"141
+[; ;main.c: 141:                         blink = 1;
+[e = _blink -> -> 1 `i `a ]
+"142
+[; ;main.c: 142:                     }
+}
+[e :U 489 ]
+"143
+[; ;main.c: 143:                 }
+}
+[e $U 490  ]
+"144
+[; ;main.c: 144:                 else
+[e :U 488 ]
+"145
+[; ;main.c: 145:                 {
+{
+"146
+[; ;main.c: 146:                     LED_PROCESS(15);
+[e ( _LED_PROCESS (1 -> -> 15 `i `uc ]
+"147
+[; ;main.c: 147:                     if(blink_count == 200)
+[e $ ! == -> _blink_count `i -> 200 `i 491  ]
+"148
+[; ;main.c: 148:                     {
+{
+"149
+[; ;main.c: 149:                         blink_count = 0;
+[e = _blink_count -> -> 0 `i `uc ]
+"150
+[; ;main.c: 150:                         blink = 0;
+[e = _blink -> -> 0 `i `a ]
+"151
+[; ;main.c: 151:                     }
+}
+[e :U 491 ]
+"152
+[; ;main.c: 152:                 }
+}
+[e :U 490 ]
+"153
+[; ;main.c: 153:             }
+}
+[e :U 484 ]
+"154
+[; ;main.c: 154:         }
 }
 [e :U 477 ]
-"110
-[; ;main.c: 110:     }
+"155
+[; ;main.c: 155:     }
 }
 [e :U 464 ]
 [e $U 465  ]
 [e :U 466 ]
-"111
-[; ;main.c: 111: }
+"156
+[; ;main.c: 156: }
 [e :UE 460 ]
 }
-"113
-[; ;main.c: 113: void myButtonPressedCallback(enum mtouch_button_names button)
+"158
+[; ;main.c: 158: void myButtonPressedCallback(enum mtouch_button_names button)
 [v _myButtonPressedCallback `(v ~T0 @X0 1 ef1`E2914 ]
-"114
-[; ;main.c: 114: {
+"159
+[; ;main.c: 159: {
 {
 [e :U _myButtonPressedCallback ]
-"113
-[; ;main.c: 113: void myButtonPressedCallback(enum mtouch_button_names button)
+"158
+[; ;main.c: 158: void myButtonPressedCallback(enum mtouch_button_names button)
 [v _button `E2914 ~T0 @X0 1 r1 ]
-"114
-[; ;main.c: 114: {
+"159
+[; ;main.c: 159: {
 [f ]
-"115
-[; ;main.c: 115:     if(config_status == 0)
-[e $ ! == -> _config_status `i -> 0 `i 486  ]
-"116
-[; ;main.c: 116:     {
+"160
+[; ;main.c: 160:     count_conf = 0;
+[e = _count_conf -> -> 0 `i `us ]
+"161
+[; ;main.c: 161:     if(config_status == 0)
+[e $ ! == -> _config_status `i -> 0 `i 493  ]
+"162
+[; ;main.c: 162:     {
 {
-"117
-[; ;main.c: 117:         if(button == 0) last_touch_status.full_status ^= 0b00000001;
-[e $ ! == -> _button `ui -> -> 0 `i `ui 487  ]
+"163
+[; ;main.c: 163:         if(button == 0) last_touch_status.full_status ^= 0b00000001;
+[e $ ! == -> _button `ui -> -> 0 `i `ui 494  ]
 [e =^ . _last_touch_status 0 -> -> 1 `i `ui ]
-[e :U 487 ]
-"118
-[; ;main.c: 118:         if(button == 1) last_touch_status.full_status ^= 0b00000010;
-[e $ ! == -> _button `ui -> -> 1 `i `ui 488  ]
+[e :U 494 ]
+"164
+[; ;main.c: 164:         if(button == 1) last_touch_status.full_status ^= 0b00000010;
+[e $ ! == -> _button `ui -> -> 1 `i `ui 495  ]
 [e =^ . _last_touch_status 0 -> -> 2 `i `ui ]
-[e :U 488 ]
-"119
-[; ;main.c: 119:         if(button == 2) last_touch_status.full_status ^= 0b00000100;
-[e $ ! == -> _button `ui -> -> 2 `i `ui 489  ]
+[e :U 495 ]
+"165
+[; ;main.c: 165:         if(button == 2) last_touch_status.full_status ^= 0b00000100;
+[e $ ! == -> _button `ui -> -> 2 `i `ui 496  ]
 [e =^ . _last_touch_status 0 -> -> 4 `i `ui ]
-[e :U 489 ]
-"120
-[; ;main.c: 120:         if(button == 3) last_touch_status.full_status ^= 0b00001000;
-[e $ ! == -> _button `ui -> -> 3 `i `ui 490  ]
+[e :U 496 ]
+"166
+[; ;main.c: 166:         if(button == 3) last_touch_status.full_status ^= 0b00001000;
+[e $ ! == -> _button `ui -> -> 3 `i `ui 497  ]
 [e =^ . _last_touch_status 0 -> -> 8 `i `ui ]
-[e :U 490 ]
-"122
-[; ;main.c: 122:         LED_PROCESS(last_touch_status.full_status);
+[e :U 497 ]
+"168
+[; ;main.c: 168:         LED_PROCESS(last_touch_status.full_status);
 [e ( _LED_PROCESS (1 -> . _last_touch_status 0 `uc ]
-"123
-[; ;main.c: 123:         RELAY_PROCESS(last_touch_status.full_status);
+"169
+[; ;main.c: 169:         RELAY_PROCESS(last_touch_status.full_status);
 [e ( _RELAY_PROCESS (1 -> . _last_touch_status 0 `uc ]
-"124
-[; ;main.c: 124:     }
+"170
+[; ;main.c: 170:     }
 }
-[e :U 486 ]
-"125
-[; ;main.c: 125: }
-[e :UE 485 ]
+[e :U 493 ]
+"171
+[; ;main.c: 171: }
+[e :UE 492 ]
 }
-"126
-[; ;main.c: 126: void myButtonReleasedCallback(enum mtouch_button_names button)
+"172
+[; ;main.c: 172: void myButtonReleasedCallback(enum mtouch_button_names button)
 [v _myButtonReleasedCallback `(v ~T0 @X0 1 ef1`E2914 ]
-"127
-[; ;main.c: 127: {
+"173
+[; ;main.c: 173: {
 {
 [e :U _myButtonReleasedCallback ]
-"126
-[; ;main.c: 126: void myButtonReleasedCallback(enum mtouch_button_names button)
+"172
+[; ;main.c: 172: void myButtonReleasedCallback(enum mtouch_button_names button)
 [v _button `E2914 ~T0 @X0 1 r1 ]
-"127
-[; ;main.c: 127: {
+"173
+[; ;main.c: 173: {
 [f ]
-"128
-[; ;main.c: 128:     if(config_status == 0)
-[e $ ! == -> _config_status `i -> 0 `i 492  ]
-"129
-[; ;main.c: 129:     {
+"174
+[; ;main.c: 174:     count_conf = 0;
+[e = _count_conf -> -> 0 `i `us ]
+"175
+[; ;main.c: 175:     if(config_status == 0)
+[e $ ! == -> _config_status `i -> 0 `i 499  ]
+"176
+[; ;main.c: 176:     {
 {
-"131
-[; ;main.c: 131:     }
+"178
+[; ;main.c: 178:         if(MTOUCH_Button_isPressed(0)==0&&MTOUCH_Button_isPressed(1)==0&&MTOUCH_Button_isPressed(2)==0)
+[e $ ! && && == -> ( _MTOUCH_Button_isPressed (1 -> -> 0 `i `E2914 `i -> 0 `i == -> ( _MTOUCH_Button_isPressed (1 -> -> 1 `i `E2914 `i -> 0 `i == -> ( _MTOUCH_Button_isPressed (1 -> -> 2 `i `E2914 `i -> 0 `i 500  ]
+"179
+[; ;main.c: 179:         {
+{
+"180
+[; ;main.c: 180:             update_state();
+[e ( _update_state ..  ]
+"181
+[; ;main.c: 181:         }
 }
-[e :U 492 ]
-"132
-[; ;main.c: 132: }
-[e :UE 491 ]
+[e :U 500 ]
+"182
+[; ;main.c: 182:     }
 }
-"133
-[; ;main.c: 133: void update_state(void)
+[e :U 499 ]
+"183
+[; ;main.c: 183: }
+[e :UE 498 ]
+}
+"184
+[; ;main.c: 184: void update_state(void)
 [v _update_state `(v ~T0 @X0 1 ef ]
-"134
-[; ;main.c: 134: {
+"185
+[; ;main.c: 185: {
 {
 [e :U _update_state ]
 [f ]
-"135
-[; ;main.c: 135:     switch(last_touch_status.full_status)
-[e $U 495  ]
-"136
-[; ;main.c: 136:     {
+"186
+[; ;main.c: 186:     switch(last_touch_status.full_status)
+[e $U 503  ]
+"187
+[; ;main.c: 187:     {
 {
-"137
-[; ;main.c: 137:         case 0: printf("PIC0"); break;
-[e :U 496 ]
-[e ( _printf :s 2C ]
-[e $U 494  ]
-"138
-[; ;main.c: 138:         case 1: printf("PIC1"); break;
-[e :U 497 ]
-[e ( _printf :s 3C ]
-[e $U 494  ]
-"139
-[; ;main.c: 139:         case 2: printf("PIC2"); break;
-[e :U 498 ]
-[e ( _printf :s 4C ]
-[e $U 494  ]
-"140
-[; ;main.c: 140:         case 3: printf("PIC3"); break;
-[e :U 499 ]
-[e ( _printf :s 5C ]
-[e $U 494  ]
-"141
-[; ;main.c: 141:         case 4: printf("PIC4"); break;
-[e :U 500 ]
-[e ( _printf :s 6C ]
-[e $U 494  ]
-"142
-[; ;main.c: 142:         case 5: printf("PIC5"); break;
-[e :U 501 ]
-[e ( _printf :s 7C ]
-[e $U 494  ]
-"143
-[; ;main.c: 143:         case 6: printf("PIC6"); break;
-[e :U 502 ]
-[e ( _printf :s 8C ]
-[e $U 494  ]
-"144
-[; ;main.c: 144:         case 7: printf("PIC7"); break;
-[e :U 503 ]
-[e ( _printf :s 9C ]
-[e $U 494  ]
-"145
-[; ;main.c: 145:         case 8: printf("PIC8"); break;
+"188
+[; ;main.c: 188:         case 0: printf("PIC0"); break;
 [e :U 504 ]
-[e ( _printf :s 10C ]
-[e $U 494  ]
-"146
-[; ;main.c: 146:         case 9: printf("PIC9"); break;
+[e ( _printf :s 2C ]
+[e $U 502  ]
+"189
+[; ;main.c: 189:         case 1: printf("PIC1"); break;
 [e :U 505 ]
-[e ( _printf :s 11C ]
-[e $U 494  ]
-"147
-[; ;main.c: 147:         case 10: printf("PICA"); break;
+[e ( _printf :s 3C ]
+[e $U 502  ]
+"190
+[; ;main.c: 190:         case 2: printf("PIC2"); break;
 [e :U 506 ]
-[e ( _printf :s 12C ]
-[e $U 494  ]
-"148
-[; ;main.c: 148:         case 11: printf("PICB"); break;
+[e ( _printf :s 4C ]
+[e $U 502  ]
+"191
+[; ;main.c: 191:         case 3: printf("PIC3"); break;
 [e :U 507 ]
-[e ( _printf :s 13C ]
-[e $U 494  ]
-"149
-[; ;main.c: 149:         case 12: printf("PICC"); break;
+[e ( _printf :s 5C ]
+[e $U 502  ]
+"192
+[; ;main.c: 192:         case 4: printf("PIC4"); break;
 [e :U 508 ]
-[e ( _printf :s 14C ]
-[e $U 494  ]
-"150
-[; ;main.c: 150:         case 13: printf("PICD"); break;
+[e ( _printf :s 6C ]
+[e $U 502  ]
+"193
+[; ;main.c: 193:         case 5: printf("PIC5"); break;
 [e :U 509 ]
-[e ( _printf :s 15C ]
-[e $U 494  ]
-"151
-[; ;main.c: 151:         case 14: printf("PICE"); break;
+[e ( _printf :s 7C ]
+[e $U 502  ]
+"194
+[; ;main.c: 194:         case 6: printf("PIC6"); break;
 [e :U 510 ]
-[e ( _printf :s 16C ]
-[e $U 494  ]
-"152
-[; ;main.c: 152:         case 15: printf("PICG"); break;
+[e ( _printf :s 8C ]
+[e $U 502  ]
+"195
+[; ;main.c: 195:         case 7: printf("PIC7"); break;
 [e :U 511 ]
+[e ( _printf :s 9C ]
+[e $U 502  ]
+"196
+[; ;main.c: 196:         case 8: printf("PIC8"); break;
+[e :U 512 ]
+[e ( _printf :s 10C ]
+[e $U 502  ]
+"197
+[; ;main.c: 197:         case 9: printf("PIC9"); break;
+[e :U 513 ]
+[e ( _printf :s 11C ]
+[e $U 502  ]
+"198
+[; ;main.c: 198:         case 10: printf("PICA"); break;
+[e :U 514 ]
+[e ( _printf :s 12C ]
+[e $U 502  ]
+"199
+[; ;main.c: 199:         case 11: printf("PICB"); break;
+[e :U 515 ]
+[e ( _printf :s 13C ]
+[e $U 502  ]
+"200
+[; ;main.c: 200:         case 12: printf("PICC"); break;
+[e :U 516 ]
+[e ( _printf :s 14C ]
+[e $U 502  ]
+"201
+[; ;main.c: 201:         case 13: printf("PICD"); break;
+[e :U 517 ]
+[e ( _printf :s 15C ]
+[e $U 502  ]
+"202
+[; ;main.c: 202:         case 14: printf("PICE"); break;
+[e :U 518 ]
+[e ( _printf :s 16C ]
+[e $U 502  ]
+"203
+[; ;main.c: 203:         case 15: printf("PICG"); break;
+[e :U 519 ]
 [e ( _printf :s 17C ]
-[e $U 494  ]
-"153
-[; ;main.c: 153:     }
+[e $U 502  ]
+"204
+[; ;main.c: 204:     }
 }
-[e $U 494  ]
-[e :U 495 ]
-[e [\ . _last_touch_status 0 , $ -> -> 0 `i `ui 496
- , $ -> -> 1 `i `ui 497
- , $ -> -> 2 `i `ui 498
- , $ -> -> 3 `i `ui 499
- , $ -> -> 4 `i `ui 500
- , $ -> -> 5 `i `ui 501
- , $ -> -> 6 `i `ui 502
- , $ -> -> 7 `i `ui 503
- , $ -> -> 8 `i `ui 504
- , $ -> -> 9 `i `ui 505
- , $ -> -> 10 `i `ui 506
- , $ -> -> 11 `i `ui 507
- , $ -> -> 12 `i `ui 508
- , $ -> -> 13 `i `ui 509
- , $ -> -> 14 `i `ui 510
- , $ -> -> 15 `i `ui 511
- 494 ]
-[e :U 494 ]
-"154
-[; ;main.c: 154: }
-[e :UE 493 ]
+[e $U 502  ]
+[e :U 503 ]
+[e [\ . _last_touch_status 0 , $ -> -> 0 `i `ui 504
+ , $ -> -> 1 `i `ui 505
+ , $ -> -> 2 `i `ui 506
+ , $ -> -> 3 `i `ui 507
+ , $ -> -> 4 `i `ui 508
+ , $ -> -> 5 `i `ui 509
+ , $ -> -> 6 `i `ui 510
+ , $ -> -> 7 `i `ui 511
+ , $ -> -> 8 `i `ui 512
+ , $ -> -> 9 `i `ui 513
+ , $ -> -> 10 `i `ui 514
+ , $ -> -> 11 `i `ui 515
+ , $ -> -> 12 `i `ui 516
+ , $ -> -> 13 `i `ui 517
+ , $ -> -> 14 `i `ui 518
+ , $ -> -> 15 `i `ui 519
+ 502 ]
+[e :U 502 ]
+"205
+[; ;main.c: 205: }
+[e :UE 501 ]
 }
-"155
-[; ;main.c: 155: void DATA_PROCESS(char x)
+"206
+[; ;main.c: 206: void DATA_PROCESS(char x)
 [v _DATA_PROCESS `(v ~T0 @X0 1 ef1`uc ]
-"156
-[; ;main.c: 156: {
+"207
+[; ;main.c: 207: {
 {
 [e :U _DATA_PROCESS ]
-"155
-[; ;main.c: 155: void DATA_PROCESS(char x)
-[v _x `uc ~T0 @X0 1 r1 ]
-"156
-[; ;main.c: 156: {
-[f ]
-"157
-[; ;main.c: 157:     switch(x)
-[e $U 514  ]
-"158
-[; ;main.c: 158:     {
-{
-"159
-[; ;main.c: 159:         case '0':
-[e :U 515 ]
-"160
-[; ;main.c: 160:         {
-{
-"161
-[; ;main.c: 161:             LED_PROCESS(0);
-[e ( _LED_PROCESS (1 -> -> 0 `i `uc ]
-"163
-[; ;main.c: 163:             RELAY_PROCESS(0);
-[e ( _RELAY_PROCESS (1 -> -> 0 `i `uc ]
-"164
-[; ;main.c: 164:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
-"165
-[; ;main.c: 165:             break;
-[e $U 513  ]
-"166
-[; ;main.c: 166:         }
-}
-"167
-[; ;main.c: 167:         case '1':
-[e :U 516 ]
-"168
-[; ;main.c: 168:         {
-{
-"169
-[; ;main.c: 169:             LED_PROCESS(1);
-[e ( _LED_PROCESS (1 -> -> 1 `i `uc ]
-"170
-[; ;main.c: 170:             RELAY_PROCESS(1);
-[e ( _RELAY_PROCESS (1 -> -> 1 `i `uc ]
-"171
-[; ;main.c: 171:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
-"172
-[; ;main.c: 172:             break;
-[e $U 513  ]
-"173
-[; ;main.c: 173:         }
-}
-"174
-[; ;main.c: 174:         case '2':
-[e :U 517 ]
-"175
-[; ;main.c: 175:         {
-{
-"176
-[; ;main.c: 176:             LED_PROCESS(2);
-[e ( _LED_PROCESS (1 -> -> 2 `i `uc ]
-"177
-[; ;main.c: 177:             RELAY_PROCESS(2);
-[e ( _RELAY_PROCESS (1 -> -> 2 `i `uc ]
-"178
-[; ;main.c: 178:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
-"179
-[; ;main.c: 179:             break;
-[e $U 513  ]
-"180
-[; ;main.c: 180:         }
-}
-"181
-[; ;main.c: 181:         case '3':
-[e :U 518 ]
-"182
-[; ;main.c: 182:         {
-{
-"183
-[; ;main.c: 183:             LED_PROCESS(3);
-[e ( _LED_PROCESS (1 -> -> 3 `i `uc ]
-"184
-[; ;main.c: 184:             RELAY_PROCESS(3);
-[e ( _RELAY_PROCESS (1 -> -> 3 `i `uc ]
-"185
-[; ;main.c: 185:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
-"186
-[; ;main.c: 186:             break;
-[e $U 513  ]
-"187
-[; ;main.c: 187:         }
-}
-"188
-[; ;main.c: 188:         case '4':
-[e :U 519 ]
-"189
-[; ;main.c: 189:         {
-{
-"190
-[; ;main.c: 190:             LED_PROCESS(4);
-[e ( _LED_PROCESS (1 -> -> 4 `i `uc ]
-"191
-[; ;main.c: 191:             RELAY_PROCESS(4);
-[e ( _RELAY_PROCESS (1 -> -> 4 `i `uc ]
-"192
-[; ;main.c: 192:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
-"193
-[; ;main.c: 193:             break;
-[e $U 513  ]
-"194
-[; ;main.c: 194:         }
-}
-"195
-[; ;main.c: 195:         case '5':
-[e :U 520 ]
-"196
-[; ;main.c: 196:         {
-{
-"197
-[; ;main.c: 197:             LED_PROCESS(5);
-[e ( _LED_PROCESS (1 -> -> 5 `i `uc ]
-"198
-[; ;main.c: 198:             RELAY_PROCESS(5);
-[e ( _RELAY_PROCESS (1 -> -> 5 `i `uc ]
-"199
-[; ;main.c: 199:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
-"200
-[; ;main.c: 200:             break;
-[e $U 513  ]
-"201
-[; ;main.c: 201:         }
-}
-"202
-[; ;main.c: 202:         case '6':
-[e :U 521 ]
-"203
-[; ;main.c: 203:         {
-{
-"204
-[; ;main.c: 204:             LED_PROCESS(6);
-[e ( _LED_PROCESS (1 -> -> 6 `i `uc ]
-"205
-[; ;main.c: 205:             RELAY_PROCESS(6);
-[e ( _RELAY_PROCESS (1 -> -> 6 `i `uc ]
 "206
-[; ;main.c: 206:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
+[; ;main.c: 206: void DATA_PROCESS(char x)
+[v _x `uc ~T0 @X0 1 r1 ]
 "207
-[; ;main.c: 207:             break;
-[e $U 513  ]
+[; ;main.c: 207: {
+[f ]
 "208
-[; ;main.c: 208:         }
-}
+[; ;main.c: 208:     switch(x)
+[e $U 522  ]
 "209
-[; ;main.c: 209:         case '7':
-[e :U 522 ]
+[; ;main.c: 209:     {
+{
 "210
-[; ;main.c: 210:         {
-{
-"211
-[; ;main.c: 211:             LED_PROCESS(7);
-[e ( _LED_PROCESS (1 -> -> 7 `i `uc ]
-"212
-[; ;main.c: 212:             RELAY_PROCESS(7);
-[e ( _RELAY_PROCESS (1 -> -> 7 `i `uc ]
-"213
-[; ;main.c: 213:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
-"214
-[; ;main.c: 214:             break;
-[e $U 513  ]
-"215
-[; ;main.c: 215:         }
-}
-"216
-[; ;main.c: 216:         case '8':
+[; ;main.c: 210:         case '0':
 [e :U 523 ]
+"211
+[; ;main.c: 211:         {
+{
+"212
+[; ;main.c: 212:             LED_PROCESS(0);
+[e ( _LED_PROCESS (1 -> -> 0 `i `uc ]
+"213
+[; ;main.c: 213:             RELAY_PROCESS(0);
+[e ( _RELAY_PROCESS (1 -> -> 0 `i `uc ]
+"214
+[; ;main.c: 214:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
+"215
+[; ;main.c: 215:             last_touch_status.full_status = 0;
+[e = . _last_touch_status 0 -> -> 0 `i `ui ]
+"216
+[; ;main.c: 216:             break;
+[e $U 521  ]
 "217
-[; ;main.c: 217:         {
-{
+[; ;main.c: 217:         }
+}
 "218
-[; ;main.c: 218:             LED_PROCESS(8);
-[e ( _LED_PROCESS (1 -> -> 8 `i `uc ]
-"219
-[; ;main.c: 219:             RELAY_PROCESS(8);
-[e ( _RELAY_PROCESS (1 -> -> 8 `i `uc ]
-"220
-[; ;main.c: 220:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
-"221
-[; ;main.c: 221:             break;
-[e $U 513  ]
-"222
-[; ;main.c: 222:         }
-}
-"223
-[; ;main.c: 223:         case '9':
+[; ;main.c: 218:         case '1':
 [e :U 524 ]
+"219
+[; ;main.c: 219:         {
+{
+"220
+[; ;main.c: 220:             LED_PROCESS(1);
+[e ( _LED_PROCESS (1 -> -> 1 `i `uc ]
+"221
+[; ;main.c: 221:             RELAY_PROCESS(1);
+[e ( _RELAY_PROCESS (1 -> -> 1 `i `uc ]
+"222
+[; ;main.c: 222:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
+"223
+[; ;main.c: 223:             last_touch_status.full_status = 1;
+[e = . _last_touch_status 0 -> -> 1 `i `ui ]
 "224
-[; ;main.c: 224:         {
-{
+[; ;main.c: 224:             break;
+[e $U 521  ]
 "225
-[; ;main.c: 225:             LED_PROCESS(9);
-[e ( _LED_PROCESS (1 -> -> 9 `i `uc ]
+[; ;main.c: 225:         }
+}
 "226
-[; ;main.c: 226:             RELAY_PROCESS(9);
-[e ( _RELAY_PROCESS (1 -> -> 9 `i `uc ]
-"227
-[; ;main.c: 227:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
-"228
-[; ;main.c: 228:             break;
-[e $U 513  ]
-"229
-[; ;main.c: 229:         }
-}
-"230
-[; ;main.c: 230:         case 'A':
+[; ;main.c: 226:         case '2':
 [e :U 525 ]
+"227
+[; ;main.c: 227:         {
+{
+"228
+[; ;main.c: 228:             LED_PROCESS(2);
+[e ( _LED_PROCESS (1 -> -> 2 `i `uc ]
+"229
+[; ;main.c: 229:             RELAY_PROCESS(2);
+[e ( _RELAY_PROCESS (1 -> -> 2 `i `uc ]
+"230
+[; ;main.c: 230:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
 "231
-[; ;main.c: 231:         {
-{
+[; ;main.c: 231:             last_touch_status.full_status = 2;
+[e = . _last_touch_status 0 -> -> 2 `i `ui ]
 "232
-[; ;main.c: 232:             LED_PROCESS(10);
-[e ( _LED_PROCESS (1 -> -> 10 `i `uc ]
+[; ;main.c: 232:             break;
+[e $U 521  ]
 "233
-[; ;main.c: 233:             RELAY_PROCESS(10);
-[e ( _RELAY_PROCESS (1 -> -> 10 `i `uc ]
+[; ;main.c: 233:         }
+}
 "234
-[; ;main.c: 234:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
-"235
-[; ;main.c: 235:             break;
-[e $U 513  ]
-"236
-[; ;main.c: 236:         }
-}
-"237
-[; ;main.c: 237:         case 'B':
+[; ;main.c: 234:         case '3':
 [e :U 526 ]
+"235
+[; ;main.c: 235:         {
+{
+"236
+[; ;main.c: 236:             LED_PROCESS(3);
+[e ( _LED_PROCESS (1 -> -> 3 `i `uc ]
+"237
+[; ;main.c: 237:             RELAY_PROCESS(3);
+[e ( _RELAY_PROCESS (1 -> -> 3 `i `uc ]
 "238
-[; ;main.c: 238:         {
-{
+[; ;main.c: 238:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
 "239
-[; ;main.c: 239:             LED_PROCESS(11);
-[e ( _LED_PROCESS (1 -> -> 11 `i `uc ]
+[; ;main.c: 239:             last_touch_status.full_status = 3;
+[e = . _last_touch_status 0 -> -> 3 `i `ui ]
 "240
-[; ;main.c: 240:             RELAY_PROCESS(11);
-[e ( _RELAY_PROCESS (1 -> -> 11 `i `uc ]
+[; ;main.c: 240:             break;
+[e $U 521  ]
 "241
-[; ;main.c: 241:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
+[; ;main.c: 241:         }
+}
 "242
-[; ;main.c: 242:             break;
-[e $U 513  ]
-"243
-[; ;main.c: 243:         }
-}
-"244
-[; ;main.c: 244:         case 'C':
+[; ;main.c: 242:         case '4':
 [e :U 527 ]
+"243
+[; ;main.c: 243:         {
+{
+"244
+[; ;main.c: 244:             LED_PROCESS(4);
+[e ( _LED_PROCESS (1 -> -> 4 `i `uc ]
 "245
-[; ;main.c: 245:         {
-{
+[; ;main.c: 245:             RELAY_PROCESS(4);
+[e ( _RELAY_PROCESS (1 -> -> 4 `i `uc ]
 "246
-[; ;main.c: 246:             LED_PROCESS(12);
-[e ( _LED_PROCESS (1 -> -> 12 `i `uc ]
+[; ;main.c: 246:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
 "247
-[; ;main.c: 247:             RELAY_PROCESS(12);
-[e ( _RELAY_PROCESS (1 -> -> 12 `i `uc ]
+[; ;main.c: 247:             last_touch_status.full_status = 4;
+[e = . _last_touch_status 0 -> -> 4 `i `ui ]
 "248
-[; ;main.c: 248:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
+[; ;main.c: 248:             break;
+[e $U 521  ]
 "249
-[; ;main.c: 249:             break;
-[e $U 513  ]
-"250
-[; ;main.c: 250:         }
+[; ;main.c: 249:         }
 }
-"251
-[; ;main.c: 251:         case 'D':
+"250
+[; ;main.c: 250:         case '5':
 [e :U 528 ]
-"252
-[; ;main.c: 252:         {
+"251
+[; ;main.c: 251:         {
 {
+"252
+[; ;main.c: 252:             LED_PROCESS(5);
+[e ( _LED_PROCESS (1 -> -> 5 `i `uc ]
 "253
-[; ;main.c: 253:             LED_PROCESS(13);
-[e ( _LED_PROCESS (1 -> -> 13 `i `uc ]
+[; ;main.c: 253:             RELAY_PROCESS(5);
+[e ( _RELAY_PROCESS (1 -> -> 5 `i `uc ]
 "254
-[; ;main.c: 254:             RELAY_PROCESS(13);
-[e ( _RELAY_PROCESS (1 -> -> 13 `i `uc ]
-"255
-[; ;main.c: 255:             check_request = 0;
+[; ;main.c: 254:             check_request = 0;
 [e = _check_request -> -> 0 `i `a ]
+"255
+[; ;main.c: 255:             last_touch_status.full_status = 5;
+[e = . _last_touch_status 0 -> -> 5 `i `ui ]
 "256
 [; ;main.c: 256:             break;
-[e $U 513  ]
+[e $U 521  ]
 "257
 [; ;main.c: 257:         }
 }
 "258
-[; ;main.c: 258:         case 'E':
+[; ;main.c: 258:         case '6':
 [e :U 529 ]
 "259
 [; ;main.c: 259:         {
 {
 "260
-[; ;main.c: 260:             LED_PROCESS(14);
-[e ( _LED_PROCESS (1 -> -> 14 `i `uc ]
+[; ;main.c: 260:             LED_PROCESS(6);
+[e ( _LED_PROCESS (1 -> -> 6 `i `uc ]
 "261
-[; ;main.c: 261:             RELAY_PROCESS(14);
-[e ( _RELAY_PROCESS (1 -> -> 14 `i `uc ]
+[; ;main.c: 261:             RELAY_PROCESS(6);
+[e ( _RELAY_PROCESS (1 -> -> 6 `i `uc ]
 "262
 [; ;main.c: 262:             check_request = 0;
 [e = _check_request -> -> 0 `i `a ]
 "263
-[; ;main.c: 263:             break;
-[e $U 513  ]
+[; ;main.c: 263:             last_touch_status.full_status = 6;
+[e = . _last_touch_status 0 -> -> 6 `i `ui ]
 "264
-[; ;main.c: 264:         }
-}
+[; ;main.c: 264:             break;
+[e $U 521  ]
 "265
-[; ;main.c: 265:         case 'G':
-[e :U 530 ]
+[; ;main.c: 265:         }
+}
 "266
-[; ;main.c: 266:         {
-{
+[; ;main.c: 266:         case '7':
+[e :U 530 ]
 "267
-[; ;main.c: 267:             LED_PROCESS(15);
-[e ( _LED_PROCESS (1 -> -> 15 `i `uc ]
+[; ;main.c: 267:         {
+{
 "268
-[; ;main.c: 268:             RELAY_PROCESS(15);
-[e ( _RELAY_PROCESS (1 -> -> 15 `i `uc ]
+[; ;main.c: 268:             LED_PROCESS(7);
+[e ( _LED_PROCESS (1 -> -> 7 `i `uc ]
 "269
-[; ;main.c: 269:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
+[; ;main.c: 269:             RELAY_PROCESS(7);
+[e ( _RELAY_PROCESS (1 -> -> 7 `i `uc ]
 "270
-[; ;main.c: 270:             break;
-[e $U 513  ]
-"271
-[; ;main.c: 271:         }
-}
-"272
-[; ;main.c: 272:         case 'U':
-[e :U 531 ]
-"273
-[; ;main.c: 273:         {
-{
-"274
-[; ;main.c: 274:             update_state();
-[e ( _update_state ..  ]
-"275
-[; ;main.c: 275:             break;
-[e $U 513  ]
-"276
-[; ;main.c: 276:         }
-}
-"277
-[; ;main.c: 277:         default:
-[e :U 532 ]
-"278
-[; ;main.c: 278:         {
-{
-"279
-[; ;main.c: 279:             check_request = 0;
+[; ;main.c: 270:             check_request = 0;
 [e = _check_request -> -> 0 `i `a ]
+"271
+[; ;main.c: 271:             last_touch_status.full_status = 7;
+[e = . _last_touch_status 0 -> -> 7 `i `ui ]
+"272
+[; ;main.c: 272:             break;
+[e $U 521  ]
+"273
+[; ;main.c: 273:         }
+}
+"274
+[; ;main.c: 274:         case '8':
+[e :U 531 ]
+"275
+[; ;main.c: 275:         {
+{
+"276
+[; ;main.c: 276:             LED_PROCESS(8);
+[e ( _LED_PROCESS (1 -> -> 8 `i `uc ]
+"277
+[; ;main.c: 277:             RELAY_PROCESS(8);
+[e ( _RELAY_PROCESS (1 -> -> 8 `i `uc ]
+"278
+[; ;main.c: 278:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
+"279
+[; ;main.c: 279:             last_touch_status.full_status = 8;
+[e = . _last_touch_status 0 -> -> 8 `i `ui ]
 "280
 [; ;main.c: 280:             break;
-[e $U 513  ]
+[e $U 521  ]
 "281
 [; ;main.c: 281:         }
 }
 "282
-[; ;main.c: 282:     }
-}
-[e $U 513  ]
-[e :U 514 ]
-[e [\ -> _x `i , $ -> -> 48 `ui `i 515
- , $ -> -> 49 `ui `i 516
- , $ -> -> 50 `ui `i 517
- , $ -> -> 51 `ui `i 518
- , $ -> -> 52 `ui `i 519
- , $ -> -> 53 `ui `i 520
- , $ -> -> 54 `ui `i 521
- , $ -> -> 55 `ui `i 522
- , $ -> -> 56 `ui `i 523
- , $ -> -> 57 `ui `i 524
- , $ -> -> 65 `ui `i 525
- , $ -> -> 66 `ui `i 526
- , $ -> -> 67 `ui `i 527
- , $ -> -> 68 `ui `i 528
- , $ -> -> 69 `ui `i 529
- , $ -> -> 71 `ui `i 530
- , $ -> -> 85 `ui `i 531
- 532 ]
-[e :U 513 ]
+[; ;main.c: 282:         case '9':
+[e :U 532 ]
 "283
-[; ;main.c: 283: }
-[e :UE 512 ]
-}
-"284
-[; ;main.c: 284: void check_message(uint8_t x)
-[v _check_message `(v ~T0 @X0 1 ef1`uc ]
-"285
-[; ;main.c: 285: {
+[; ;main.c: 283:         {
 {
-[e :U _check_message ]
 "284
-[; ;main.c: 284: void check_message(uint8_t x)
-[v _x `uc ~T0 @X0 1 r1 ]
+[; ;main.c: 284:             LED_PROCESS(9);
+[e ( _LED_PROCESS (1 -> -> 9 `i `uc ]
 "285
-[; ;main.c: 285: {
-[f ]
+[; ;main.c: 285:             RELAY_PROCESS(9);
+[e ( _RELAY_PROCESS (1 -> -> 9 `i `uc ]
 "286
-[; ;main.c: 286:     switch (x)
-[e $U 535  ]
+[; ;main.c: 286:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
 "287
-[; ;main.c: 287:     {
-{
+[; ;main.c: 287:             last_touch_status.full_status = 9;
+[e = . _last_touch_status 0 -> -> 9 `i `ui ]
 "288
-[; ;main.c: 288:         case 'T':
-[e :U 536 ]
+[; ;main.c: 288:             break;
+[e $U 521  ]
 "289
-[; ;main.c: 289:         {
-{
-"290
-[; ;main.c: 290:             check_request = 0;
-[e = _check_request -> -> 0 `i `a ]
-"291
-[; ;main.c: 291:             break;
-[e $U 534  ]
-"292
-[; ;main.c: 292:         }
+[; ;main.c: 289:         }
 }
-"293
-[; ;main.c: 293:         case 'F':
-[e :U 537 ]
-"294
-[; ;main.c: 294:         {
+"290
+[; ;main.c: 290:         case 'A':
+[e :U 533 ]
+"291
+[; ;main.c: 291:         {
 {
-"295
-[; ;main.c: 295:             check_request = 0;
+"292
+[; ;main.c: 292:             LED_PROCESS(10);
+[e ( _LED_PROCESS (1 -> -> 10 `i `uc ]
+"293
+[; ;main.c: 293:             RELAY_PROCESS(10);
+[e ( _RELAY_PROCESS (1 -> -> 10 `i `uc ]
+"294
+[; ;main.c: 294:             check_request = 0;
 [e = _check_request -> -> 0 `i `a ]
+"295
+[; ;main.c: 295:             last_touch_status.full_status = 10;
+[e = . _last_touch_status 0 -> -> 10 `i `ui ]
 "296
 [; ;main.c: 296:             break;
-[e $U 534  ]
+[e $U 521  ]
 "297
 [; ;main.c: 297:         }
 }
 "298
-[; ;main.c: 298:         default:
-[e :U 538 ]
+[; ;main.c: 298:         case 'B':
+[e :U 534 ]
 "299
 [; ;main.c: 299:         {
 {
 "300
-[; ;main.c: 300:             printf("%c",x);
-[e ( _printf , (. :s 18C -> _x `i ]
+[; ;main.c: 300:             LED_PROCESS(11);
+[e ( _LED_PROCESS (1 -> -> 11 `i `uc ]
 "301
-[; ;main.c: 301:             check_request = 1;
-[e = _check_request -> -> 1 `i `a ]
+[; ;main.c: 301:             RELAY_PROCESS(11);
+[e ( _RELAY_PROCESS (1 -> -> 11 `i `uc ]
 "302
-[; ;main.c: 302:             break;
-[e $U 534  ]
+[; ;main.c: 302:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
 "303
-[; ;main.c: 303:         }
-}
+[; ;main.c: 303:             last_touch_status.full_status = 11;
+[e = . _last_touch_status 0 -> -> 11 `i `ui ]
 "304
-[; ;main.c: 304:     }
-}
-[e $U 534  ]
-[e :U 535 ]
-[e [\ -> _x `i , $ -> -> 84 `ui `i 536
- , $ -> -> 70 `ui `i 537
- 538 ]
-[e :U 534 ]
+[; ;main.c: 304:             break;
+[e $U 521  ]
 "305
-[; ;main.c: 305: }
-[e :UE 533 ]
+[; ;main.c: 305:         }
 }
 "306
-[; ;main.c: 306: _Bool check_data(uint8_t x)
-[v _check_data `(a ~T0 @X0 1 ef1`uc ]
+[; ;main.c: 306:         case 'C':
+[e :U 535 ]
 "307
-[; ;main.c: 307: {
+[; ;main.c: 307:         {
+{
+"308
+[; ;main.c: 308:             LED_PROCESS(12);
+[e ( _LED_PROCESS (1 -> -> 12 `i `uc ]
+"309
+[; ;main.c: 309:             RELAY_PROCESS(12);
+[e ( _RELAY_PROCESS (1 -> -> 12 `i `uc ]
+"310
+[; ;main.c: 310:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
+"311
+[; ;main.c: 311:             last_touch_status.full_status = 12;
+[e = . _last_touch_status 0 -> -> 12 `i `ui ]
+"312
+[; ;main.c: 312:             break;
+[e $U 521  ]
+"313
+[; ;main.c: 313:         }
+}
+"314
+[; ;main.c: 314:         case 'D':
+[e :U 536 ]
+"315
+[; ;main.c: 315:         {
+{
+"316
+[; ;main.c: 316:             LED_PROCESS(13);
+[e ( _LED_PROCESS (1 -> -> 13 `i `uc ]
+"317
+[; ;main.c: 317:             RELAY_PROCESS(13);
+[e ( _RELAY_PROCESS (1 -> -> 13 `i `uc ]
+"318
+[; ;main.c: 318:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
+"319
+[; ;main.c: 319:             last_touch_status.full_status = 13;
+[e = . _last_touch_status 0 -> -> 13 `i `ui ]
+"320
+[; ;main.c: 320:             break;
+[e $U 521  ]
+"321
+[; ;main.c: 321:         }
+}
+"322
+[; ;main.c: 322:         case 'E':
+[e :U 537 ]
+"323
+[; ;main.c: 323:         {
+{
+"324
+[; ;main.c: 324:             LED_PROCESS(14);
+[e ( _LED_PROCESS (1 -> -> 14 `i `uc ]
+"325
+[; ;main.c: 325:             RELAY_PROCESS(14);
+[e ( _RELAY_PROCESS (1 -> -> 14 `i `uc ]
+"326
+[; ;main.c: 326:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
+"327
+[; ;main.c: 327:             last_touch_status.full_status = 14;
+[e = . _last_touch_status 0 -> -> 14 `i `ui ]
+"328
+[; ;main.c: 328:             break;
+[e $U 521  ]
+"329
+[; ;main.c: 329:         }
+}
+"330
+[; ;main.c: 330:         case 'G':
+[e :U 538 ]
+"331
+[; ;main.c: 331:         {
+{
+"332
+[; ;main.c: 332:             LED_PROCESS(15);
+[e ( _LED_PROCESS (1 -> -> 15 `i `uc ]
+"333
+[; ;main.c: 333:             RELAY_PROCESS(15);
+[e ( _RELAY_PROCESS (1 -> -> 15 `i `uc ]
+"334
+[; ;main.c: 334:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
+"335
+[; ;main.c: 335:             last_touch_status.full_status = 15;
+[e = . _last_touch_status 0 -> -> 15 `i `ui ]
+"336
+[; ;main.c: 336:             break;
+[e $U 521  ]
+"337
+[; ;main.c: 337:         }
+}
+"338
+[; ;main.c: 338:         case 'U':
+[e :U 539 ]
+"339
+[; ;main.c: 339:         {
+{
+"340
+[; ;main.c: 340:             update_state();
+[e ( _update_state ..  ]
+"341
+[; ;main.c: 341:             break;
+[e $U 521  ]
+"342
+[; ;main.c: 342:         }
+}
+"343
+[; ;main.c: 343:         default:
+[e :U 540 ]
+"344
+[; ;main.c: 344:         {
+{
+"345
+[; ;main.c: 345:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
+"346
+[; ;main.c: 346:             break;
+[e $U 521  ]
+"347
+[; ;main.c: 347:         }
+}
+"348
+[; ;main.c: 348:     }
+}
+[e $U 521  ]
+[e :U 522 ]
+[e [\ -> _x `i , $ -> -> 48 `ui `i 523
+ , $ -> -> 49 `ui `i 524
+ , $ -> -> 50 `ui `i 525
+ , $ -> -> 51 `ui `i 526
+ , $ -> -> 52 `ui `i 527
+ , $ -> -> 53 `ui `i 528
+ , $ -> -> 54 `ui `i 529
+ , $ -> -> 55 `ui `i 530
+ , $ -> -> 56 `ui `i 531
+ , $ -> -> 57 `ui `i 532
+ , $ -> -> 65 `ui `i 533
+ , $ -> -> 66 `ui `i 534
+ , $ -> -> 67 `ui `i 535
+ , $ -> -> 68 `ui `i 536
+ , $ -> -> 69 `ui `i 537
+ , $ -> -> 71 `ui `i 538
+ , $ -> -> 85 `ui `i 539
+ 540 ]
+[e :U 521 ]
+"349
+[; ;main.c: 349: }
+[e :UE 520 ]
+}
+"350
+[; ;main.c: 350: void check_message(uint8_t x)
+[v _check_message `(v ~T0 @X0 1 ef1`uc ]
+"351
+[; ;main.c: 351: {
+{
+[e :U _check_message ]
+"350
+[; ;main.c: 350: void check_message(uint8_t x)
+[v _x `uc ~T0 @X0 1 r1 ]
+"351
+[; ;main.c: 351: {
+[f ]
+"352
+[; ;main.c: 352:     switch (x)
+[e $U 543  ]
+"353
+[; ;main.c: 353:     {
+{
+"354
+[; ;main.c: 354:         case 'T':
+[e :U 544 ]
+"355
+[; ;main.c: 355:         {
+{
+"356
+[; ;main.c: 356:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
+"357
+[; ;main.c: 357:             break;
+[e $U 542  ]
+"358
+[; ;main.c: 358:         }
+}
+"359
+[; ;main.c: 359:         case 'F':
+[e :U 545 ]
+"360
+[; ;main.c: 360:         {
+{
+"361
+[; ;main.c: 361:             check_request = 0;
+[e = _check_request -> -> 0 `i `a ]
+"362
+[; ;main.c: 362:             break;
+[e $U 542  ]
+"363
+[; ;main.c: 363:         }
+}
+"364
+[; ;main.c: 364:         default:
+[e :U 546 ]
+"365
+[; ;main.c: 365:         {
+{
+"366
+[; ;main.c: 366:             printf("%c",x);
+[e ( _printf , (. :s 18C -> _x `i ]
+"367
+[; ;main.c: 367:             check_request = 1;
+[e = _check_request -> -> 1 `i `a ]
+"368
+[; ;main.c: 368:             break;
+[e $U 542  ]
+"369
+[; ;main.c: 369:         }
+}
+"370
+[; ;main.c: 370:     }
+}
+[e $U 542  ]
+[e :U 543 ]
+[e [\ -> _x `i , $ -> -> 84 `ui `i 544
+ , $ -> -> 70 `ui `i 545
+ 546 ]
+[e :U 542 ]
+"371
+[; ;main.c: 371: }
+[e :UE 541 ]
+}
+"372
+[; ;main.c: 372: _Bool check_data(uint8_t x)
+[v _check_data `(a ~T0 @X0 1 ef1`uc ]
+"373
+[; ;main.c: 373: {
 {
 [e :U _check_data ]
-"306
-[; ;main.c: 306: _Bool check_data(uint8_t x)
+"372
+[; ;main.c: 372: _Bool check_data(uint8_t x)
 [v _x `uc ~T0 @X0 1 r1 ]
-"307
-[; ;main.c: 307: {
+"373
+[; ;main.c: 373: {
 [f ]
-"308
-[; ;main.c: 308:     switch(x)
-[e $U 541  ]
-"309
-[; ;main.c: 309:     {
+"374
+[; ;main.c: 374:     switch(x)
+[e $U 549  ]
+"375
+[; ;main.c: 375:     {
 {
-"310
-[; ;main.c: 310:         case '0': return 1;
-[e :U 542 ]
-[e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"311
-[; ;main.c: 311:         case '1': return 1;
-[e :U 543 ]
-[e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"312
-[; ;main.c: 312:         case '2': return 1;
-[e :U 544 ]
-[e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"313
-[; ;main.c: 313:         case '3': return 1;
-[e :U 545 ]
-[e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"314
-[; ;main.c: 314:         case '4': return 1;
-[e :U 546 ]
-[e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"315
-[; ;main.c: 315:         case '5': return 1;
-[e :U 547 ]
-[e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"316
-[; ;main.c: 316:         case '6': return 1;
-[e :U 548 ]
-[e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"317
-[; ;main.c: 317:         case '7': return 1;
-[e :U 549 ]
-[e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"318
-[; ;main.c: 318:         case '8': return 1;
+"376
+[; ;main.c: 376:         case '0': return 1;
 [e :U 550 ]
 [e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"319
-[; ;main.c: 319:         case '9': return 1;
+[e $UE 547  ]
+"377
+[; ;main.c: 377:         case '1': return 1;
 [e :U 551 ]
 [e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"320
-[; ;main.c: 320:         case 'A': return 1;
+[e $UE 547  ]
+"378
+[; ;main.c: 378:         case '2': return 1;
 [e :U 552 ]
 [e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"321
-[; ;main.c: 321:         case 'B': return 1;
+[e $UE 547  ]
+"379
+[; ;main.c: 379:         case '3': return 1;
 [e :U 553 ]
 [e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"322
-[; ;main.c: 322:         case 'C': return 1;
+[e $UE 547  ]
+"380
+[; ;main.c: 380:         case '4': return 1;
 [e :U 554 ]
 [e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"323
-[; ;main.c: 323:         case 'D': return 1;
+[e $UE 547  ]
+"381
+[; ;main.c: 381:         case '5': return 1;
 [e :U 555 ]
 [e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"324
-[; ;main.c: 324:         case 'E': return 1;
+[e $UE 547  ]
+"382
+[; ;main.c: 382:         case '6': return 1;
 [e :U 556 ]
 [e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"325
-[; ;main.c: 325:         case 'G': return 1;
+[e $UE 547  ]
+"383
+[; ;main.c: 383:         case '7': return 1;
 [e :U 557 ]
 [e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"326
-[; ;main.c: 326:         case 'T': return 1;
+[e $UE 547  ]
+"384
+[; ;main.c: 384:         case '8': return 1;
 [e :U 558 ]
 [e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"327
-[; ;main.c: 327:         case 'F': return 1;
+[e $UE 547  ]
+"385
+[; ;main.c: 385:         case '9': return 1;
 [e :U 559 ]
 [e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"328
-[; ;main.c: 328:         case 'U': return 1;
+[e $UE 547  ]
+"386
+[; ;main.c: 386:         case 'A': return 1;
 [e :U 560 ]
 [e ) -> -> 1 `i `a ]
-[e $UE 539  ]
-"329
-[; ;main.c: 329:         default : return 0;
+[e $UE 547  ]
+"387
+[; ;main.c: 387:         case 'B': return 1;
 [e :U 561 ]
+[e ) -> -> 1 `i `a ]
+[e $UE 547  ]
+"388
+[; ;main.c: 388:         case 'C': return 1;
+[e :U 562 ]
+[e ) -> -> 1 `i `a ]
+[e $UE 547  ]
+"389
+[; ;main.c: 389:         case 'D': return 1;
+[e :U 563 ]
+[e ) -> -> 1 `i `a ]
+[e $UE 547  ]
+"390
+[; ;main.c: 390:         case 'E': return 1;
+[e :U 564 ]
+[e ) -> -> 1 `i `a ]
+[e $UE 547  ]
+"391
+[; ;main.c: 391:         case 'G': return 1;
+[e :U 565 ]
+[e ) -> -> 1 `i `a ]
+[e $UE 547  ]
+"392
+[; ;main.c: 392:         case 'T': return 1;
+[e :U 566 ]
+[e ) -> -> 1 `i `a ]
+[e $UE 547  ]
+"393
+[; ;main.c: 393:         case 'F': return 1;
+[e :U 567 ]
+[e ) -> -> 1 `i `a ]
+[e $UE 547  ]
+"394
+[; ;main.c: 394:         case 'U': return 1;
+[e :U 568 ]
+[e ) -> -> 1 `i `a ]
+[e $UE 547  ]
+"395
+[; ;main.c: 395:         default : return 0;
+[e :U 569 ]
 [e ) -> -> 0 `i `a ]
-[e $UE 539  ]
-"330
-[; ;main.c: 330:     }
+[e $UE 547  ]
+"396
+[; ;main.c: 396:     }
 }
-[e $U 540  ]
-[e :U 541 ]
-[e [\ -> _x `i , $ -> -> 48 `ui `i 542
- , $ -> -> 49 `ui `i 543
- , $ -> -> 50 `ui `i 544
- , $ -> -> 51 `ui `i 545
- , $ -> -> 52 `ui `i 546
- , $ -> -> 53 `ui `i 547
- , $ -> -> 54 `ui `i 548
- , $ -> -> 55 `ui `i 549
- , $ -> -> 56 `ui `i 550
- , $ -> -> 57 `ui `i 551
- , $ -> -> 65 `ui `i 552
- , $ -> -> 66 `ui `i 553
- , $ -> -> 67 `ui `i 554
- , $ -> -> 68 `ui `i 555
- , $ -> -> 69 `ui `i 556
- , $ -> -> 71 `ui `i 557
- , $ -> -> 84 `ui `i 558
- , $ -> -> 70 `ui `i 559
- , $ -> -> 85 `ui `i 560
- 561 ]
-[e :U 540 ]
-"331
-[; ;main.c: 331: }
-[e :UE 539 ]
+[e $U 548  ]
+[e :U 549 ]
+[e [\ -> _x `i , $ -> -> 48 `ui `i 550
+ , $ -> -> 49 `ui `i 551
+ , $ -> -> 50 `ui `i 552
+ , $ -> -> 51 `ui `i 553
+ , $ -> -> 52 `ui `i 554
+ , $ -> -> 53 `ui `i 555
+ , $ -> -> 54 `ui `i 556
+ , $ -> -> 55 `ui `i 557
+ , $ -> -> 56 `ui `i 558
+ , $ -> -> 57 `ui `i 559
+ , $ -> -> 65 `ui `i 560
+ , $ -> -> 66 `ui `i 561
+ , $ -> -> 67 `ui `i 562
+ , $ -> -> 68 `ui `i 563
+ , $ -> -> 69 `ui `i 564
+ , $ -> -> 71 `ui `i 565
+ , $ -> -> 84 `ui `i 566
+ , $ -> -> 70 `ui `i 567
+ , $ -> -> 85 `ui `i 568
+ 569 ]
+[e :U 548 ]
+"397
+[; ;main.c: 397: }
+[e :UE 547 ]
 }
 [p f _printf 8912896 ]
 [a 18C 37 99 0 ]

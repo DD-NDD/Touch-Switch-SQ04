@@ -120,11 +120,12 @@ typedef uint32_t uint_fast32_t;
 
 uint8_t rxData;
 uint8_t prcData;
-_Bool rest;
 _Bool config_status;
 _Bool check_request;
 uint16_t count_conf;
 _Bool blink;
+uint8_t blink_count;
+uint16_t timeout_count;
 
 union
 {

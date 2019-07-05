@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16LF1559 ]
 [d frameptr 6 ]
-"23 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
+"22 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [e E2914 mtouch_button_names `uc
 Button0 0
 Button1 1
@@ -88,19 +88,19 @@ HYST_MAX 5
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "10 E:\Work\Touch_Switch-SQ04\SQ_04.X\led.c
 [v _LED_PROCESS LED_PROCESS `(v  1 e 1 0 ]
-"18 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
+"17 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"113
+"158
 [v _myButtonPressedCallback myButtonPressedCallback `(v  1 e 1 0 ]
-"126
+"172
 [v _myButtonReleasedCallback myButtonReleasedCallback `(v  1 e 1 0 ]
-"133
+"184
 [v _update_state update_state `(v  1 e 1 0 ]
-"155
+"206
 [v _DATA_PROCESS DATA_PROCESS `(v  1 e 1 0 ]
-"284
+"350
 [v _check_message check_message `(v  1 e 1 0 ]
-"306
+"372
 [v _check_data check_data `(a  1 e 1 0 ]
 "81 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -265,15 +265,17 @@ HYST_MAX 5
 "5
 [v _prcData prcData `uc  1 e 1 0 ]
 "6
-[v _rest rest `a  1 e 1 0 ]
-"7
 [v _config_status config_status `a  1 e 1 0 ]
-"8
+"7
 [v _check_request check_request `a  1 e 1 0 ]
-"9
+"8
 [v _count_conf count_conf `us  1 e 2 0 ]
-"10
+"9
 [v _blink blink `a  1 e 1 0 ]
+"10
+[v _blink_count blink_count `uc  1 e 1 0 ]
+"11
+[v _timeout_count timeout_count `us  1 e 2 0 ]
 [s S437 . 1 `uc 1 CS0 1 0 :1:0 
 `uc 1 CS1 1 0 :1:1 
 `uc 1 CS2 1 0 :1:2 
@@ -283,7 +285,7 @@ HYST_MAX 5
 `uc 1 CS6 1 0 :1:6 
 `uc 1 CS7 1 0 :1:7 
 ]
-"26
+"27
 [u S446 . 2 `ui 1 full_status 2 0 `S437 1 . 1 0 ]
 [v _last_touch_status last_touch_status `S446  1 e 2 0 ]
 [s S275 . 1 `uc 1 IOCIF 1 0 :1:0 
@@ -318,26 +320,26 @@ HYST_MAX 5
 ]
 [u S119 . 1 `S107 1 . 1 0 `S116 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES119  1 e 1 @17 ]
-[s S994 . 1 `uc 1 . 1 0 :3:0 
+[s S999 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 BCL1IF 1 0 :1:3 
 `uc 1 . 1 0 :2:4 
 `uc 1 AD2IF 1 0 :1:6 
 ]
 "659
-[u S999 . 1 `S994 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES999  1 e 1 @18 ]
+[u S1004 . 1 `S999 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES1004  1 e 1 @18 ]
 "885
 [v _TMR2 TMR2 `VEuc  1 e 1 @26 ]
 "905
 [v _PR2 PR2 `VEuc  1 e 1 @27 ]
 "925
 [v _T2CON T2CON `VEuc  1 e 1 @28 ]
-[s S709 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S714 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 T2OUTPS 1 0 :4:3 
 ]
 "946
-[s S713 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S718 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -345,8 +347,8 @@ HYST_MAX 5
 `uc 1 T2OUTPS2 1 0 :1:5 
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
-[u S721 . 1 `S709 1 . 1 0 `S713 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES721  1 e 1 @28 ]
+[u S726 . 1 `S714 1 . 1 0 `S718 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES726  1 e 1 @28 ]
 "996
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1046
@@ -403,18 +405,18 @@ HYST_MAX 5
 [v _LATAbits LATAbits `VES502  1 e 1 @268 ]
 "1830
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S1855 . 1 `uc 1 . 1 0 :4:0 
+[s S1860 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LATB4 1 0 :1:4 
 `uc 1 LATB5 1 0 :1:5 
 `uc 1 LATB6 1 0 :1:6 
 `uc 1 LATB7 1 0 :1:7 
 ]
 "1844
-[u S1861 . 1 `S1855 1 . 1 0 ]
-[v _LATBbits LATBbits `VES1861  1 e 1 @269 ]
+[u S1866 . 1 `S1860 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1866  1 e 1 @269 ]
 "1869
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S631 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S635 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -424,21 +426,21 @@ HYST_MAX 5
 `uc 1 LATC7 1 0 :1:7 
 ]
 "1886
-[u S640 . 1 `S631 1 . 1 0 ]
-[v _LATCbits LATCbits `VES640  1 e 1 @270 ]
+[u S644 . 1 `S635 1 . 1 0 ]
+[v _LATCbits LATCbits `VES644  1 e 1 @270 ]
 "1931
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "2035
 [v _APFCON APFCON `VEuc  1 e 1 @285 ]
-[s S961 . 1 `uc 1 GRDASEL 1 0 :1:0 
+[s S966 . 1 `uc 1 GRDASEL 1 0 :1:0 
 `uc 1 GRDBSEL 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 SDSEL 1 0 :1:4 
 `uc 1 SSSEL 1 0 :1:5 
 ]
 "2049
-[u S967 . 1 `S961 1 . 1 0 ]
-[v _APFCONbits APFCONbits `VES967  1 e 1 @285 ]
+[u S972 . 1 `S966 1 . 1 0 ]
+[v _APFCONbits APFCONbits `VES972  1 e 1 @285 ]
 "2074
 [v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
 "2127
@@ -489,12 +491,12 @@ HYST_MAX 5
 [v _WPUB WPUB `VEuc  1 e 1 @525 ]
 "4145
 [v _AD1CON0 AD1CON0 `VEuc  1 e 1 @1809 ]
-[s S1019 . 1 `uc 1 ADON 1 0 :1:0 
+[s S1024 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
 "4179
-[s S1023 . 1 `uc 1 . 1 0 :1:0 
+[s S1028 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -502,11 +504,11 @@ HYST_MAX 5
 `uc 1 CHS3 1 0 :1:5 
 `uc 1 CHS4 1 0 :1:6 
 ]
-[s S1031 . 1 `uc 1 . 1 0 :1:0 
+[s S1036 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_nDONE1 1 0 :1:1 
 ]
-[u S1034 . 1 `S1019 1 . 1 0 `S1023 1 . 1 0 `S1031 1 . 1 0 ]
-[v _AD1CON0bits AD1CON0bits `VES1034  1 e 1 @1809 ]
+[u S1039 . 1 `S1024 1 . 1 0 `S1028 1 . 1 0 `S1036 1 . 1 0 ]
+[v _AD1CON0bits AD1CON0bits `VES1039  1 e 1 @1809 ]
 "4379
 [v _ADCOMCON ADCOMCON `VEuc  1 e 1 @1810 ]
 "4533
@@ -530,11 +532,11 @@ HYST_MAX 5
 "6183
 [v _AD2CON0 AD2CON0 `VEuc  1 e 1 @1937 ]
 "6213
-[s S1066 . 1 `uc 1 . 1 0 :1:0 
+[s S1071 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_nDONE2 1 0 :1:1 
 ]
-[u S1069 . 1 `S1019 1 . 1 0 `S1023 1 . 1 0 `S1066 1 . 1 0 ]
-[v _AD2CON0bits AD2CON0bits `VES1069  1 e 1 @1937 ]
+[u S1074 . 1 `S1024 1 . 1 0 `S1028 1 . 1 0 `S1071 1 . 1 0 ]
+[v _AD2CON0bits AD2CON0bits `VES1074  1 e 1 @1937 ]
 "6341
 [v _AD2CON2 AD2CON2 `VEuc  1 e 1 @1939 ]
 "6423
@@ -587,11 +589,11 @@ HYST_MAX 5
 [v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
 "52 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch.c
 [v _mtouch_time_toScan mtouch_time_toScan `a  1 s 1 mtouch_time_toScan ]
-[s S1533 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
 "82 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
-[v _mtouch_button_init mtouch_button_init `DC[4]S1533  1 e 64 0 ]
+[v _mtouch_button_init mtouch_button_init `DC[4]S1538  1 e 64 0 ]
 "118
-[v _mtouch_button mtouch_button `[4]S1533  1 s 64 mtouch_button ]
+[v _mtouch_button mtouch_button `[4]S1538  1 s 64 mtouch_button ]
 "145
 [v _callback_pressed callback_pressed `*.37(v  1 s 2 callback_pressed ]
 "146
@@ -606,46 +608,46 @@ HYST_MAX 5
 [v _packet_noise packet_noise `us  1 s 2 packet_noise ]
 "152
 [v _lowpowerActivated lowpowerActivated `a  1 s 1 lowpowerActivated ]
-[s S808 . 1 `uc 1 done 1 0 :1:0 
+[s S813 . 1 `uc 1 done 1 0 :1:0 
 `uc 1 check 1 0 :1:1 
 `uc 1 error 1 0 :1:2 
 `uc 1 interrupted 1 0 :1:3 
 ]
 "153
-[v _sensor_globalFlags sensor_globalFlags `VES808  1 s 1 sensor_globalFlags ]
+[v _sensor_globalFlags sensor_globalFlags `VES813  1 s 1 sensor_globalFlags ]
 "159
 [v _sample_period sample_period `uc  1 s 1 sample_period ]
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
 "166
-[v _mtouch_sensor mtouch_sensor `[4]S813  1 s 36 mtouch_sensor ]
+[v _mtouch_sensor mtouch_sensor `[4]S818  1 s 36 mtouch_sensor ]
 "206
-[s S826 . 2 `*.4S813 1 sensor_adc1 1 0 `*.4S813 1 sensor_adc2 1 1 ]
-[v _sensor_scan_group sensor_scan_group `DC[2]S826  1 s 4 sensor_scan_group ]
-"18 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
+[s S831 . 2 `*.5S818 1 sensor_adc1 1 0 `*.5S818 1 sensor_adc2 1 1 ]
+[v _sensor_scan_group sensor_scan_group `DC[2]S831  1 s 4 sensor_scan_group ]
+"17 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"111
+"156
 } 0
-"284
+"350
 [v _check_message check_message `(v  1 e 1 0 ]
 {
 [v check_message@x x `uc  1 a 1 wreg ]
 [v check_message@x x `uc  1 a 1 wreg ]
 [v check_message@x x `uc  1 a 1 49 ]
-"305
+"371
 } 0
-"306
+"372
 [v _check_data check_data `(a  1 e 1 0 ]
 {
 [v check_data@x x `uc  1 a 1 wreg ]
 [v check_data@x x `uc  1 a 1 wreg ]
 [v check_data@x x `uc  1 a 1 3 ]
-"331
+"397
 } 0
 "50 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -781,41 +783,41 @@ HYST_MAX 5
 "313
 [v _Button_Tick_helper Button_Tick_helper `(v  1 s 1 Button_Tick_helper ]
 {
-[s S1533 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_Tick_helper@button button `*.5S1533  1 a 1 wreg ]
-[v Button_Tick_helper@button button `*.5S1533  1 a 1 wreg ]
+[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_Tick_helper@button button `*.5S1538  1 a 1 wreg ]
+[v Button_Tick_helper@button button `*.5S1538  1 a 1 wreg ]
 "316
 "313
-[v Button_Tick_helper@button button `*.5S1533  1 a 1 3 ]
+[v Button_Tick_helper@button button `*.5S1538  1 a 1 3 ]
 "324
 } 0
 "958 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _MTOUCH_Sensor_Sampled_ResetAll MTOUCH_Sensor_Sampled_ResetAll `(v  1 e 1 0 ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
 "960
-[v MTOUCH_Sensor_Sampled_ResetAll@sensor sensor `*.4S813  1 a 1 3 ]
+[v MTOUCH_Sensor_Sampled_ResetAll@sensor sensor `*.5S818  1 a 1 3 ]
 "965
 } 0
 "972
 [v _Sensor_Sampled_Reset Sensor_Sampled_Reset `T(v  1 s 1 Sensor_Sampled_Reset ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_Sampled_Reset@sensor sensor `*.4S813  1 a 1 wreg ]
-[v Sensor_Sampled_Reset@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_Sampled_Reset@sensor sensor `*.5S818  1 a 1 wreg ]
+[v Sensor_Sampled_Reset@sensor sensor `*.5S818  1 a 1 wreg ]
 "974
 "972
-[v Sensor_Sampled_Reset@sensor sensor `*.4S813  1 a 1 1 ]
+[v Sensor_Sampled_Reset@sensor sensor `*.5S818  1 a 1 1 ]
 "975
 } 0
 "266
@@ -829,16 +831,16 @@ HYST_MAX 5
 [v _Sensor_Service Sensor_Service `(E2859  1 s 1 Sensor_Service ]
 {
 [v Sensor_Service@scanGroup scanGroup `uc  1 a 1 wreg ]
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
 "314
-[v Sensor_Service@sensor_adc2 sensor_adc2 `*.4S813  1 a 1 37 ]
+[v Sensor_Service@sensor_adc2 sensor_adc2 `*.5S818  1 a 1 37 ]
 "313
-[v Sensor_Service@sensor_adc1 sensor_adc1 `*.4S813  1 a 1 36 ]
+[v Sensor_Service@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 36 ]
 "319
 [v Sensor_Service@error error `E2859  1 a 1 35 ]
 "311
@@ -850,36 +852,36 @@ HYST_MAX 5
 "977
 [v _Sensor_setSampled Sensor_setSampled `T(v  1 s 1 Sensor_setSampled ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_setSampled@sensor sensor `*.4S813  1 a 1 wreg ]
-[v Sensor_setSampled@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_setSampled@sensor sensor `*.5S818  1 a 1 wreg ]
+[v Sensor_setSampled@sensor sensor `*.5S818  1 a 1 wreg ]
 "979
 "977
-[v Sensor_setSampled@sensor sensor `*.4S813  1 a 1 1 ]
+[v Sensor_setSampled@sensor sensor `*.5S818  1 a 1 1 ]
 "980
 } 0
 "810
 [v _Sensor_RawSample_Update Sensor_RawSample_Update `(v  1 s 1 Sensor_RawSample_Update ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_RawSample_Update@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_RawSample_Update@sensor sensor `*.5S818  1 a 1 wreg ]
 "812
 [v Sensor_RawSample_Update@adcIndex adcIndex `uc  1 a 1 6 ]
 "810
-[v Sensor_RawSample_Update@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_RawSample_Update@sensor sensor `*.5S818  1 a 1 wreg ]
 "812
 "810
-[v Sensor_RawSample_Update@sensor sensor `*.4S813  1 a 1 7 ]
+[v Sensor_RawSample_Update@sensor sensor `*.5S818  1 a 1 7 ]
 "824
 } 0
 "831
@@ -890,86 +892,86 @@ HYST_MAX 5
 "380
 [v _Sensor_Acquisition Sensor_Acquisition `(E2859  1 s 1 Sensor_Acquisition ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.4S813  1 a 1 wreg ]
+[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 wreg ]
 "382
 [v Sensor_Acquisition@retry retry `uc  1 a 1 29 ]
 "380
-[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.4S813  1 a 1 wreg ]
-[v Sensor_Acquisition@sensor_adc2 sensor_adc2 `*.4S813  1 p 1 27 ]
+[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 wreg ]
+[v Sensor_Acquisition@sensor_adc2 sensor_adc2 `*.5S818  1 p 1 27 ]
 "382
 "380
-[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.4S813  1 a 1 30 ]
+[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 30 ]
 "421
 } 0
 "423
 [v _Sensor_postAcquisitionProcess Sensor_postAcquisitionProcess `(v  1 s 1 Sensor_postAcquisitionProcess ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_postAcquisitionProcess@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_postAcquisitionProcess@sensor sensor `*.5S818  1 a 1 wreg ]
 "425
 [v Sensor_postAcquisitionProcess@deviation deviation `us  1 a 2 6 ]
 "426
 [v Sensor_postAcquisitionProcess@adcIndex adcIndex `uc  1 a 1 8 ]
 "423
-[v Sensor_postAcquisitionProcess@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_postAcquisitionProcess@sensor sensor `*.5S818  1 a 1 wreg ]
 "426
 "423
-[v Sensor_postAcquisitionProcess@sensor sensor `*.4S813  1 a 1 9 ]
+[v Sensor_postAcquisitionProcess@sensor sensor `*.5S818  1 a 1 9 ]
 "437
 } 0
 "885
 [v _Sensor_setInactive Sensor_setInactive `T(v  1 s 1 Sensor_setInactive ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_setInactive@sensor sensor `*.4S813  1 a 1 wreg ]
-[v Sensor_setInactive@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_setInactive@sensor sensor `*.5S818  1 a 1 wreg ]
+[v Sensor_setInactive@sensor sensor `*.5S818  1 a 1 wreg ]
 "887
 "885
-[v Sensor_setInactive@sensor sensor `*.4S813  1 a 1 1 ]
+[v Sensor_setInactive@sensor sensor `*.5S818  1 a 1 1 ]
 "888
 } 0
 "880
 [v _Sensor_setActive Sensor_setActive `T(v  1 s 1 Sensor_setActive ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_setActive@sensor sensor `*.4S813  1 a 1 wreg ]
-[v Sensor_setActive@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_setActive@sensor sensor `*.5S818  1 a 1 wreg ]
+[v Sensor_setActive@sensor sensor `*.5S818  1 a 1 wreg ]
 "882
 "880
-[v Sensor_setActive@sensor sensor `*.4S813  1 a 1 1 ]
+[v Sensor_setActive@sensor sensor `*.5S818  1 a 1 1 ]
 "883
 } 0
 "741
 [v _Sensor_Scanfrequency_Evaluation Sensor_Scanfrequency_Evaluation `(E2859  1 s 1 Sensor_Scanfrequency_Evaluation ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.4S813  1 a 1 wreg ]
+[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 wreg ]
 "747
 [v Sensor_Scanfrequency_Evaluation@best_packet_sample best_packet_sample `[2]us  1 a 4 22 ]
 "745
@@ -981,25 +983,25 @@ HYST_MAX 5
 "746
 [v Sensor_Scanfrequency_Evaluation@best_sample_period best_sample_period `uc  1 a 1 20 ]
 "741
-[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.4S813  1 a 1 wreg ]
-[v Sensor_Scanfrequency_Evaluation@sensor_adc2 sensor_adc2 `*.4S813  1 p 1 14 ]
+[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 wreg ]
+[v Sensor_Scanfrequency_Evaluation@sensor_adc2 sensor_adc2 `*.5S818  1 p 1 14 ]
 "744
 [v Sensor_Scanfrequency_Evaluation@frequency_hop frequency_hop `DC[5]uc  1 s 5 frequency_hop ]
 "750
 "741
-[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.4S813  1 a 1 17 ]
+[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 17 ]
 "793
 } 0
 "479
 [v _Sensor_Acq_ExecutePacket Sensor_Acq_ExecutePacket `(E2859  1 s 1 Sensor_Acq_ExecutePacket ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.4S813  1 a 1 wreg ]
+[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 wreg ]
 "485
 [v Sensor_Acq_ExecutePacket@last_b last_b `us  1 a 2 10 ]
 "484
@@ -1019,11 +1021,11 @@ HYST_MAX 5
 "488
 [v Sensor_Acq_ExecutePacket@ADCOMCON_temp ADCOMCON_temp `uc  1 a 1 1 ]
 "479
-[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.4S813  1 a 1 wreg ]
-[v Sensor_Acq_ExecutePacket@sensor_adc2 sensor_adc2 `*.4S813  1 p 1 11 ]
+[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 wreg ]
+[v Sensor_Acq_ExecutePacket@sensor_adc2 sensor_adc2 `*.5S818  1 p 1 11 ]
 "484
 "479
-[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.4S813  1 a 1 13 ]
+[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 13 ]
 "686
 } 0
 "85 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr2.c
@@ -1048,88 +1050,88 @@ HYST_MAX 5
 "445 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _Sensor_loadADCSettings Sensor_loadADCSettings `(v  1 s 1 Sensor_loadADCSettings ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_loadADCSettings@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_loadADCSettings@sensor sensor `*.5S818  1 a 1 wreg ]
 "450
 [v Sensor_loadADCSettings@addressOffset addressOffset `uc  1 a 1 8 ]
 "445
-[v Sensor_loadADCSettings@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_loadADCSettings@sensor sensor `*.5S818  1 a 1 wreg ]
 [v Sensor_loadADCSettings@adc_index adc_index `uc  1 p 1 2 ]
 "447
 "445
-[v Sensor_loadADCSettings@sensor sensor `*.4S813  1 a 1 9 ]
+[v Sensor_loadADCSettings@sensor sensor `*.5S818  1 a 1 9 ]
 "472
 } 0
 "928
 [v _Sensor_isCalibrated Sensor_isCalibrated `T(a  1 s 1 Sensor_isCalibrated ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_isCalibrated@sensor sensor `*.4S813  1 a 1 wreg ]
-[v Sensor_isCalibrated@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_isCalibrated@sensor sensor `*.5S818  1 a 1 wreg ]
+[v Sensor_isCalibrated@sensor sensor `*.5S818  1 a 1 wreg ]
 "930
 "928
-[v Sensor_isCalibrated@sensor sensor `*.4S813  1 a 1 1 ]
+[v Sensor_isCalibrated@sensor sensor `*.5S818  1 a 1 1 ]
 "931
 } 0
 "863
 [v _Sensor_isEnabled Sensor_isEnabled `(a  1 s 1 Sensor_isEnabled ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_isEnabled@sensor sensor `*.4S813  1 a 1 wreg ]
-[v Sensor_isEnabled@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_isEnabled@sensor sensor `*.5S818  1 a 1 wreg ]
+[v Sensor_isEnabled@sensor sensor `*.5S818  1 a 1 wreg ]
 "865
 "863
-[v Sensor_isEnabled@sensor sensor `*.4S813  1 a 1 2 ]
+[v Sensor_isEnabled@sensor sensor `*.5S818  1 a 1 2 ]
 "869
 } 0
 "890
 [v _Sensor_isActive Sensor_isActive `T(a  1 s 1 Sensor_isActive ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_isActive@sensor sensor `*.4S813  1 a 1 wreg ]
-[v Sensor_isActive@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_isActive@sensor sensor `*.5S818  1 a 1 wreg ]
+[v Sensor_isActive@sensor sensor `*.5S818  1 a 1 wreg ]
 "892
 "890
-[v Sensor_isActive@sensor sensor `*.4S813  1 a 1 1 ]
+[v Sensor_isActive@sensor sensor `*.5S818  1 a 1 1 ]
 "896
 } 0
 "696
 [v _Sensor_autoCalibration Sensor_autoCalibration `(v  1 s 1 Sensor_autoCalibration ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_autoCalibration@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_autoCalibration@sensor sensor `*.5S818  1 a 1 wreg ]
 "698
 [v Sensor_autoCalibration@adcIndex adcIndex `uc  1 a 1 9 ]
 "696
-[v Sensor_autoCalibration@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_autoCalibration@sensor sensor `*.5S818  1 a 1 wreg ]
 "698
 "696
-[v Sensor_autoCalibration@sensor sensor `*.4S813  1 a 1 10 ]
+[v Sensor_autoCalibration@sensor sensor `*.5S818  1 a 1 10 ]
 "732
 } 0
 "1 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\abs.c
@@ -1141,68 +1143,68 @@ HYST_MAX 5
 "933 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _Sensor_setCalibrated Sensor_setCalibrated `T(v  1 s 1 Sensor_setCalibrated ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_setCalibrated@sensor sensor `*.4S813  1 a 1 wreg ]
-[v Sensor_setCalibrated@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_setCalibrated@sensor sensor `*.5S818  1 a 1 wreg ]
+[v Sensor_setCalibrated@sensor sensor `*.5S818  1 a 1 wreg ]
 "935
 "933
-[v Sensor_setCalibrated@sensor sensor `*.4S813  1 a 1 1 ]
+[v Sensor_setCalibrated@sensor sensor `*.5S818  1 a 1 1 ]
 "937
 } 0
 "939
 [v _Sensor_setCalibratAcqTime Sensor_setCalibratAcqTime `T(v  1 s 1 Sensor_setCalibratAcqTime ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_setCalibratAcqTime@sensor sensor `*.4S813  1 a 1 wreg ]
-[v Sensor_setCalibratAcqTime@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_setCalibratAcqTime@sensor sensor `*.5S818  1 a 1 wreg ]
+[v Sensor_setCalibratAcqTime@sensor sensor `*.5S818  1 a 1 wreg ]
 "941
 "939
-[v Sensor_setCalibratAcqTime@sensor sensor `*.4S813  1 a 1 1 ]
+[v Sensor_setCalibratAcqTime@sensor sensor `*.5S818  1 a 1 1 ]
 "943
 } 0
 "945
 [v _Sensor_isCalibratingAcqTime Sensor_isCalibratingAcqTime `T(a  1 s 1 Sensor_isCalibratingAcqTime ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_isCalibratingAcqTime@sensor sensor `*.4S813  1 a 1 wreg ]
-[v Sensor_isCalibratingAcqTime@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_isCalibratingAcqTime@sensor sensor `*.5S818  1 a 1 wreg ]
+[v Sensor_isCalibratingAcqTime@sensor sensor `*.5S818  1 a 1 wreg ]
 "947
 "945
-[v Sensor_isCalibratingAcqTime@sensor sensor `*.4S813  1 a 1 1 ]
+[v Sensor_isCalibratingAcqTime@sensor sensor `*.5S818  1 a 1 1 ]
 "949
 } 0
 "362
 [v _Sensor_getScanGroupIndex Sensor_getScanGroupIndex `(uc  1 s 1 Sensor_getScanGroupIndex ]
 {
-[s S813 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_getScanGroupIndex@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_getScanGroupIndex@sensor sensor `*.5S818  1 a 1 wreg ]
 "364
 [v Sensor_getScanGroupIndex@sensorGroup sensorGroup `uc  1 a 1 4 ]
 "362
-[v Sensor_getScanGroupIndex@sensor sensor `*.4S813  1 a 1 wreg ]
+[v Sensor_getScanGroupIndex@sensor sensor `*.5S818  1 a 1 wreg ]
 "365
 "362
-[v Sensor_getScanGroupIndex@sensor sensor `*.4S813  1 a 1 3 ]
+[v Sensor_getScanGroupIndex@sensor sensor `*.5S818  1 a 1 3 ]
 "373
 } 0
 "247
@@ -1214,20 +1216,20 @@ HYST_MAX 5
 [v _MTOUCH_Button_ServiceAll MTOUCH_Button_ServiceAll `(v  1 e 1 0 ]
 {
 "199
-[v MTOUCH_Button_ServiceAll@button button `E3070  1 a 1 14 ]
+[v MTOUCH_Button_ServiceAll@button button `E3070  1 a 1 58 ]
 "206
 } 0
 "208
 [v _Button_Service Button_Service `(v  1 s 1 Button_Service ]
 {
 [v Button_Service@name name `E3070  1 a 1 wreg ]
-[s S1533 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
 "210
-[v Button_Service@button button `*.5S1533  1 a 1 12 ]
+[v Button_Service@button button `*.5S1538  1 a 1 56 ]
 "208
 [v Button_Service@name name `E3070  1 a 1 wreg ]
 "210
-[v Button_Service@name name `E3070  1 a 1 11 ]
+[v Button_Service@name name `E3070  1 a 1 55 ]
 "223
 } 0
 "967 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
@@ -1251,47 +1253,56 @@ HYST_MAX 5
 "245 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _Button_State_NotPressed Button_State_NotPressed `(v  1 s 1 Button_State_NotPressed ]
 {
-[s S1533 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_State_NotPressed@button button `*.5S1533  1 p 1 4 ]
+[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_State_NotPressed@button button `*.5S1538  1 p 1 48 ]
 "279
 } 0
 "225
 [v _Button_State_Initializing Button_State_Initializing `(v  1 s 1 Button_State_Initializing ]
 {
-[s S1533 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_State_Initializing@button button `*.5S1533  1 p 1 4 ]
+[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_State_Initializing@button button `*.5S1538  1 p 1 48 ]
 "244
 } 0
 "281
 [v _Button_State_Pressed Button_State_Pressed `(v  1 s 1 Button_State_Pressed ]
 {
-[s S1533 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_State_Pressed@button button `*.5S1533  1 p 1 4 ]
+[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_State_Pressed@button button `*.5S1538  1 p 1 48 ]
 "298
 } 0
-"113 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
+"158 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _myButtonPressedCallback myButtonPressedCallback `(v  1 e 1 0 ]
 {
-[v myButtonPressedCallback@button button `E2914  1 p 1 4 ]
-"125
+[v myButtonPressedCallback@button button `E2914  1 p 1 47 ]
+"171
 } 0
 "535 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _Button_DefaultCallback Button_DefaultCallback `(v  1 s 1 Button_DefaultCallback ]
 {
-[v Button_DefaultCallback@button button `E3070  1 p 1 4 ]
+[v Button_DefaultCallback@button button `E3070  1 p 1 47 ]
 } 0
-"126 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
+"172 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _myButtonReleasedCallback myButtonReleasedCallback `(v  1 e 1 0 ]
 {
-"132
+"183
 } 0
-"167 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
+"382 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
+[v _MTOUCH_Button_isPressed MTOUCH_Button_isPressed `(a  1 e 1 0 ]
+{
+[v MTOUCH_Button_isPressed@name name `E3070  1 a 1 wreg ]
+[v MTOUCH_Button_isPressed@name name `E3070  1 a 1 wreg ]
+"384
+[v MTOUCH_Button_isPressed@name name `E3070  1 a 1 2 ]
+"388
+} 0
+"167
 [v _MTOUCH_Button_Initialize MTOUCH_Button_Initialize `(v  1 e 1 0 ]
 {
 [v MTOUCH_Button_Initialize@name name `E3070  1 a 1 wreg ]
-[s S1533 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
 "169
-[v MTOUCH_Button_Initialize@button button `*.5S1533  1 a 1 10 ]
+[v MTOUCH_Button_Initialize@button button `*.5S1538  1 a 1 10 ]
 "167
 [v MTOUCH_Button_Initialize@name name `E3070  1 a 1 wreg ]
 "169
@@ -1310,45 +1321,45 @@ HYST_MAX 5
 "489 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _Button_Baseline_Update Button_Baseline_Update `(v  1 s 1 Button_Baseline_Update ]
 {
-[s S1533 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_Baseline_Update@button button `*.5S1533  1 a 1 wreg ]
-[v Button_Baseline_Update@button button `*.5S1533  1 a 1 wreg ]
+[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_Baseline_Update@button button `*.5S1538  1 a 1 wreg ]
+[v Button_Baseline_Update@button button `*.5S1538  1 a 1 wreg ]
 "491
 "489
-[v Button_Baseline_Update@button button `*.5S1533  1 a 1 7 ]
+[v Button_Baseline_Update@button button `*.5S1538  1 a 1 7 ]
 "503
 } 0
 "483
 [v _Button_Baseline_Initialize Button_Baseline_Initialize `(v  1 s 1 Button_Baseline_Initialize ]
 {
-[s S1533 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_Baseline_Initialize@button button `*.5S1533  1 a 1 wreg ]
-[v Button_Baseline_Initialize@button button `*.5S1533  1 a 1 wreg ]
+[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_Baseline_Initialize@button button `*.5S1538  1 a 1 wreg ]
+[v Button_Baseline_Initialize@button button `*.5S1538  1 a 1 wreg ]
 "485
 "483
-[v Button_Baseline_Initialize@button button `*.5S1533  1 a 1 9 ]
+[v Button_Baseline_Initialize@button button `*.5S1538  1 a 1 9 ]
 "487
 } 0
 "456
 [v _Button_Reading_Update Button_Reading_Update `(v  1 s 1 Button_Reading_Update ]
 {
-[s S1533 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_Reading_Update@button button `*.5S1533  1 a 1 wreg ]
-[v Button_Reading_Update@button button `*.5S1533  1 a 1 wreg ]
+[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_Reading_Update@button button `*.5S1538  1 a 1 wreg ]
+[v Button_Reading_Update@button button `*.5S1538  1 a 1 wreg ]
 "458
 "456
-[v Button_Reading_Update@button button `*.5S1533  1 a 1 0 ]
+[v Button_Reading_Update@button button `*.5S1538  1 a 1 0 ]
 "468
 } 0
 "470
 [v _Button_Reading_Update_Helper Button_Reading_Update_Helper `(v  1 s 1 Button_Reading_Update_Helper ]
 {
-[s S1533 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_Reading_Update_Helper@button button `*.5S1533  1 a 1 wreg ]
-[v Button_Reading_Update_Helper@button button `*.5S1533  1 a 1 wreg ]
+[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_Reading_Update_Helper@button button `*.5S1538  1 a 1 wreg ]
+[v Button_Reading_Update_Helper@button button `*.5S1538  1 a 1 wreg ]
 "472
 "470
-[v Button_Reading_Update_Helper@button button `*.5S1533  1 a 1 11 ]
+[v Button_Reading_Update_Helper@button button `*.5S1538  1 a 1 11 ]
 "481
 } 0
 "800 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
@@ -1376,25 +1387,16 @@ HYST_MAX 5
 "407 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _Button_Deviation_Update Button_Deviation_Update `(v  1 s 1 Button_Deviation_Update ]
 {
-[s S1533 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_Deviation_Update@button button `*.5S1533  1 a 1 wreg ]
+[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_Deviation_Update@button button `*.5S1538  1 a 1 wreg ]
 "409
 [v Button_Deviation_Update@deviation deviation `l  1 a 4 1 ]
 "407
-[v Button_Deviation_Update@button button `*.5S1533  1 a 1 wreg ]
+[v Button_Deviation_Update@button button `*.5S1538  1 a 1 wreg ]
 "411
 "407
-[v Button_Deviation_Update@button button `*.5S1533  1 a 1 0 ]
+[v Button_Deviation_Update@button button `*.5S1538  1 a 1 0 ]
 "427
-} 0
-"382
-[v _MTOUCH_Button_isPressed MTOUCH_Button_isPressed `(a  1 e 1 0 ]
-{
-[v MTOUCH_Button_isPressed@name name `E3070  1 a 1 wreg ]
-[v MTOUCH_Button_isPressed@name name `E3070  1 a 1 wreg ]
-"384
-[v MTOUCH_Button_isPressed@name name `E3070  1 a 1 2 ]
-"388
 } 0
 "536
 [v _MTOUCH_Button_SetPressedCallback MTOUCH_Button_SetPressedCallback `(v  1 e 1 0 ]
@@ -1420,18 +1422,18 @@ HYST_MAX 5
 [v EUSART_Read@readValue readValue `uc  1 a 1 2 ]
 "158
 } 0
-"155 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
+"206 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _DATA_PROCESS DATA_PROCESS `(v  1 e 1 0 ]
 {
 [v DATA_PROCESS@x x `uc  1 a 1 wreg ]
 [v DATA_PROCESS@x x `uc  1 a 1 wreg ]
 [v DATA_PROCESS@x x `uc  1 a 1 49 ]
-"283
+"349
 } 0
-"133
+"184
 [v _update_state update_state `(v  1 e 1 0 ]
 {
-"154
+"205
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -1445,65 +1447,65 @@ HYST_MAX 5
 "1368 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S1931 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.1S1931  1 a 1 wreg ]
+[s S1936 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.1S1936  1 a 1 wreg ]
 "1371
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 37 ]
 "1368
-[v vfprintf@fp fp `*.1S1931  1 a 1 wreg ]
+[v vfprintf@fp fp `*.1S1936  1 a 1 wreg ]
 [v vfprintf@fmt fmt `*.25DCuc  1 p 2 31 ]
 [v vfprintf@ap ap `*.4*.4v  1 p 1 33 ]
 "1373
 "1368
-[v vfprintf@fp fp `*.1S1931  1 a 1 36 ]
+[v vfprintf@fp fp `*.1S1936  1 a 1 36 ]
 "1382
 } 0
 "670
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S1931 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.1S1931  1 a 1 wreg ]
+[s S1936 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.1S1936  1 a 1 wreg ]
 "672
 [v vfpfcnvrt@c c `uc  1 a 1 29 ]
 "670
-[v vfpfcnvrt@fp fp `*.1S1931  1 a 1 wreg ]
+[v vfpfcnvrt@fp fp `*.1S1936  1 a 1 wreg ]
 [v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 22 ]
 [v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 23 ]
 "680
 "670
-[v vfpfcnvrt@fp fp `*.1S1931  1 a 1 30 ]
+[v vfpfcnvrt@fp fp `*.1S1936  1 a 1 30 ]
 "1365
 } 0
 "259
 [v _ctoa ctoa `(i  1 s 2 ctoa ]
 {
-[s S1931 _IO_FILE 0 ]
-[v ctoa@fp fp `*.1S1931  1 a 1 wreg ]
+[s S1936 _IO_FILE 0 ]
+[v ctoa@fp fp `*.1S1936  1 a 1 wreg ]
 "261
 [v ctoa@w w `i  1 a 2 19 ]
 "259
-[v ctoa@fp fp `*.1S1931  1 a 1 wreg ]
+[v ctoa@fp fp `*.1S1936  1 a 1 wreg ]
 [v ctoa@c c `uc  1 p 1 16 ]
 "264
 "259
-[v ctoa@fp fp `*.1S1931  1 a 1 21 ]
+[v ctoa@fp fp `*.1S1936  1 a 1 21 ]
 "270
 } 0
 "72
 [v _pad pad `(i  1 s 2 pad ]
 {
-[s S1931 _IO_FILE 0 ]
-[v pad@fp fp `*.1S1931  1 a 1 wreg ]
+[s S1936 _IO_FILE 0 ]
+[v pad@fp fp `*.1S1936  1 a 1 wreg ]
 "74
 [v pad@w w `i  1 a 2 13 ]
 [v pad@i i `i  1 a 2 11 ]
 "72
-[v pad@fp fp `*.1S1931  1 a 1 wreg ]
+[v pad@fp fp `*.1S1936  1 a 1 wreg ]
 [v pad@buf buf `*.5uc  1 p 1 7 ]
 [v pad@p p `i  1 p 2 8 ]
 "77
 "72
-[v pad@fp fp `*.1S1931  1 a 1 15 ]
+[v pad@fp fp `*.1S1936  1 a 1 15 ]
 "95
 } 0
 "12 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
@@ -1528,8 +1530,8 @@ HYST_MAX 5
 [v fputs@c c `uc  1 a 1 3 ]
 "8
 [v fputs@s s `*.5DCuc  1 a 1 wreg ]
-[s S2275 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputs@fp fp `*.1S2275  1 p 1 11 ]
+[s S2280 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputs@fp fp `*.1S2280  1 p 1 11 ]
 "13
 [v fputs@s s `*.5DCuc  1 a 1 6 ]
 "19
@@ -1538,8 +1540,8 @@ HYST_MAX 5
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 3 ]
-[s S2275 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.1S2275  1 p 1 5 ]
+[s S2280 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.1S2280  1 p 1 5 ]
 "21
 } 0
 "174 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c

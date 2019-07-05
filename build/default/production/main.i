@@ -5089,11 +5089,12 @@ void RELAY_PROCESS(uint8_t x);
 
 uint8_t rxData;
 uint8_t prcData;
-_Bool rest;
 _Bool config_status;
 _Bool check_request;
 uint16_t count_conf;
 _Bool blink;
+uint8_t blink_count;
+uint16_t timeout_count;
 
 union
 {
@@ -5118,8 +5119,7 @@ union
 void DATA_PROCESS(char x);
 void check_message(uint8_t x);
 _Bool check_data(uint8_t x);
-
-
+void update_state(void);
 void myButtonPressedCallback(enum mtouch_button_names button);
 void myButtonReleasedCallback(enum mtouch_button_names button);
 void main(void)
@@ -5150,16 +5150,28 @@ void main(void)
                         if(rxData == 'T')
                         {
                             LED_PROCESS(15);
-                            _delay((unsigned long)((2000)*(32000000/4000.0)));
-
-                            rest = 1;
+                            _delay((unsigned long)((500)*(32000000/4000.0)));
+                            _delay((unsigned long)((500)*(32000000/4000.0)));
+                            _delay((unsigned long)((500)*(32000000/4000.0)));
+                            _delay((unsigned long)((500)*(32000000/4000.0)));
+                            _delay((unsigned long)((500)*(32000000/4000.0)));
+                            _delay((unsigned long)((500)*(32000000/4000.0)));
+                            config_status = 0;
+                            check_request = 0;
+                            LED_PROCESS(last_touch_status.full_status);
                         }
                         if(rxData == 'F')
                         {
                             LED_PROCESS(0);
-                            _delay((unsigned long)((2000)*(32000000/4000.0)));
-
-                            rest = 1;
+                            _delay((unsigned long)((500)*(32000000/4000.0)));
+                            _delay((unsigned long)((500)*(32000000/4000.0)));
+                            _delay((unsigned long)((500)*(32000000/4000.0)));
+                            _delay((unsigned long)((500)*(32000000/4000.0)));
+                            _delay((unsigned long)((500)*(32000000/4000.0)));
+                            _delay((unsigned long)((500)*(32000000/4000.0)));
+                            config_status = 0;
+                            check_request = 0;
+                            LED_PROCESS(last_touch_status.full_status);
                         }
                     }
                     else
@@ -5180,15 +5192,25 @@ void main(void)
         {
             if(config_status == 0)
             {
+                if(check_request == 1)
+                {
+                    timeout_count++;
+                    if(timeout_count == 20)
+                    {
+                        timeout_count = 0;
+                        check_request = 0;
+                    }
+                }
                 if(MTOUCH_Button_isPressed(0) == 1 && MTOUCH_Button_isPressed(1) == 0 && MTOUCH_Button_isPressed(2) == 0&& MTOUCH_Button_isPressed(3) == 1)
                 {
                     count_conf++;
-                    if(count_conf == 800)
+                    if(count_conf == 1500)
                     {
                         count_conf = 0;
                         printf("PICSMART");
                         config_status = 1;
                         check_request = 1;
+                        timeout_count = 0;
                         LED_PROCESS(0);
                         blink = 0;
                     }
@@ -5200,17 +5222,41 @@ void main(void)
             }
             else
             {
+                if(check_request == 1)
+                {
+                    timeout_count++;
+                    if(timeout_count > 30000)
+                    {
+
+                        LED_PROCESS(0);
+                        timeout_count++;
+                        if(timeout_count == 32000)
+                        {
+                            timeout_count = 0;
+                            LED_PROCESS(last_touch_status.full_status);
+                            check_request = 0;
+                        }
+
+                    }
+                }
+                blink_count++;
                 if(blink == 0)
                 {
-                    LED_PROCESS(15);
-                    blink = 1;
-                    _delay((unsigned long)((300)*(32000000/4000.0)));
+                    LED_PROCESS(0);
+                    if(blink_count == 200)
+                    {
+                        blink_count = 0;
+                        blink = 1;
+                    }
                 }
                 else
                 {
-                    LED_PROCESS(0);
-                    blink = 0;
-                    _delay((unsigned long)((500)*(32000000/4000.0)));
+                    LED_PROCESS(15);
+                    if(blink_count == 200)
+                    {
+                        blink_count = 0;
+                        blink = 0;
+                    }
                 }
             }
         }
@@ -5219,6 +5265,7 @@ void main(void)
 
 void myButtonPressedCallback(enum mtouch_button_names button)
 {
+    count_conf = 0;
     if(config_status == 0)
     {
         if(button == 0) last_touch_status.full_status ^= 0b00000001;
@@ -5232,9 +5279,14 @@ void myButtonPressedCallback(enum mtouch_button_names button)
 }
 void myButtonReleasedCallback(enum mtouch_button_names button)
 {
+    count_conf = 0;
     if(config_status == 0)
     {
 
+        if(MTOUCH_Button_isPressed(0)==0&&MTOUCH_Button_isPressed(1)==0&&MTOUCH_Button_isPressed(2)==0)
+        {
+            update_state();
+        }
     }
 }
 void update_state(void)
@@ -5266,9 +5318,9 @@ void DATA_PROCESS(char x)
         case '0':
         {
             LED_PROCESS(0);
-
             RELAY_PROCESS(0);
             check_request = 0;
+            last_touch_status.full_status = 0;
             break;
         }
         case '1':
@@ -5276,6 +5328,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(1);
             RELAY_PROCESS(1);
             check_request = 0;
+            last_touch_status.full_status = 1;
             break;
         }
         case '2':
@@ -5283,6 +5336,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(2);
             RELAY_PROCESS(2);
             check_request = 0;
+            last_touch_status.full_status = 2;
             break;
         }
         case '3':
@@ -5290,6 +5344,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(3);
             RELAY_PROCESS(3);
             check_request = 0;
+            last_touch_status.full_status = 3;
             break;
         }
         case '4':
@@ -5297,6 +5352,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(4);
             RELAY_PROCESS(4);
             check_request = 0;
+            last_touch_status.full_status = 4;
             break;
         }
         case '5':
@@ -5304,6 +5360,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(5);
             RELAY_PROCESS(5);
             check_request = 0;
+            last_touch_status.full_status = 5;
             break;
         }
         case '6':
@@ -5311,6 +5368,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(6);
             RELAY_PROCESS(6);
             check_request = 0;
+            last_touch_status.full_status = 6;
             break;
         }
         case '7':
@@ -5318,6 +5376,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(7);
             RELAY_PROCESS(7);
             check_request = 0;
+            last_touch_status.full_status = 7;
             break;
         }
         case '8':
@@ -5325,6 +5384,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(8);
             RELAY_PROCESS(8);
             check_request = 0;
+            last_touch_status.full_status = 8;
             break;
         }
         case '9':
@@ -5332,6 +5392,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(9);
             RELAY_PROCESS(9);
             check_request = 0;
+            last_touch_status.full_status = 9;
             break;
         }
         case 'A':
@@ -5339,6 +5400,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(10);
             RELAY_PROCESS(10);
             check_request = 0;
+            last_touch_status.full_status = 10;
             break;
         }
         case 'B':
@@ -5346,6 +5408,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(11);
             RELAY_PROCESS(11);
             check_request = 0;
+            last_touch_status.full_status = 11;
             break;
         }
         case 'C':
@@ -5353,6 +5416,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(12);
             RELAY_PROCESS(12);
             check_request = 0;
+            last_touch_status.full_status = 12;
             break;
         }
         case 'D':
@@ -5360,6 +5424,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(13);
             RELAY_PROCESS(13);
             check_request = 0;
+            last_touch_status.full_status = 13;
             break;
         }
         case 'E':
@@ -5367,6 +5432,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(14);
             RELAY_PROCESS(14);
             check_request = 0;
+            last_touch_status.full_status = 14;
             break;
         }
         case 'G':
@@ -5374,6 +5440,7 @@ void DATA_PROCESS(char x)
             LED_PROCESS(15);
             RELAY_PROCESS(15);
             check_request = 0;
+            last_touch_status.full_status = 15;
             break;
         }
         case 'U':
