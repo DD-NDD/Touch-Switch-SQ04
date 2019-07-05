@@ -5087,6 +5087,14 @@ void RELAY_PROCESS(uint8_t x);
 
 
 
+uint8_t rxData;
+uint8_t prcData;
+_Bool rest;
+_Bool config_status;
+_Bool check_request;
+uint16_t count_conf;
+_Bool blink;
+
 union
 {
     unsigned int full_status;
@@ -5107,6 +5115,11 @@ union
 
 
 
+void DATA_PROCESS(char x);
+void check_message(uint8_t x);
+_Bool check_data(uint8_t x);
+
+
 void myButtonPressedCallback(enum mtouch_button_names button);
 void myButtonReleasedCallback(enum mtouch_button_names button);
 void main(void)
@@ -5116,23 +5129,310 @@ void main(void)
     (INTCONbits.PEIE = 1);
     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
     MTOUCH_Button_SetNotPressedCallback(myButtonReleasedCallback);
-
     do { LATAbits.LATA2 = 0; } while(0);
+    last_touch_status.full_status = 0x00;
     while (1)
     {
+        if(EUSART_is_rx_ready())
+        {
+            rxData = EUSART_Read();
+            if(check_data(rxData))
+            {
+                if(check_request == 0)
+                {
+                    prcData = rxData;
+                    check_message(rxData);
+                }
+                else
+                {
+                    if(config_status == 1)
+                    {
+                        if(rxData == 'T')
+                        {
+                            LED_PROCESS(15);
+                            _delay((unsigned long)((2000)*(32000000/4000.0)));
+
+                            rest = 1;
+                        }
+                        if(rxData == 'F')
+                        {
+                            LED_PROCESS(0);
+                            _delay((unsigned long)((2000)*(32000000/4000.0)));
+
+                            rest = 1;
+                        }
+                    }
+                    else
+                    {
+                        if(rxData == 'T')
+                        {
+                            DATA_PROCESS(prcData);
+                        }
+                        if(rxData == 'F')
+                        {
+                            check_request = 0;
+                        }
+                    }
+                }
+            }
+        }
         if(MTOUCH_Service_Mainloop())
         {
+            if(config_status == 0)
+            {
+                if(MTOUCH_Button_isPressed(0) == 1 && MTOUCH_Button_isPressed(1) == 0 && MTOUCH_Button_isPressed(2) == 0&& MTOUCH_Button_isPressed(3) == 1)
+                {
+                    count_conf++;
+                    if(count_conf == 800)
+                    {
+                        count_conf = 0;
+                        printf("PICSMART");
+                        config_status = 1;
+                        check_request = 1;
+                        LED_PROCESS(0);
+                        blink = 0;
+                    }
+                }
+                else
+                {
+                    count_conf = 0;
+                }
+            }
+            else
+            {
+                if(blink == 0)
+                {
+                    LED_PROCESS(15);
+                    blink = 1;
+                    _delay((unsigned long)((300)*(32000000/4000.0)));
+                }
+                else
+                {
+                    LED_PROCESS(0);
+                    blink = 0;
+                    _delay((unsigned long)((500)*(32000000/4000.0)));
+                }
+            }
         }
     }
 }
 
 void myButtonPressedCallback(enum mtouch_button_names button)
 {
-    last_touch_status.full_status = last_touch_status.full_status ^ MTOUCH_Button_Buttonmask_Get();
+    if(config_status == 0)
+    {
+        if(button == 0) last_touch_status.full_status ^= 0b00000001;
+        if(button == 1) last_touch_status.full_status ^= 0b00000010;
+        if(button == 2) last_touch_status.full_status ^= 0b00000100;
+        if(button == 3) last_touch_status.full_status ^= 0b00001000;
 
-    LED_PROCESS(last_touch_status.full_status);
-    RELAY_PROCESS(last_touch_status.full_status);
+        LED_PROCESS(last_touch_status.full_status);
+        RELAY_PROCESS(last_touch_status.full_status);
+    }
 }
 void myButtonReleasedCallback(enum mtouch_button_names button)
 {
+    if(config_status == 0)
+    {
+
+    }
+}
+void update_state(void)
+{
+    switch(last_touch_status.full_status)
+    {
+        case 0: printf("PIC0"); break;
+        case 1: printf("PIC1"); break;
+        case 2: printf("PIC2"); break;
+        case 3: printf("PIC3"); break;
+        case 4: printf("PIC4"); break;
+        case 5: printf("PIC5"); break;
+        case 6: printf("PIC6"); break;
+        case 7: printf("PIC7"); break;
+        case 8: printf("PIC8"); break;
+        case 9: printf("PIC9"); break;
+        case 10: printf("PICA"); break;
+        case 11: printf("PICB"); break;
+        case 12: printf("PICC"); break;
+        case 13: printf("PICD"); break;
+        case 14: printf("PICE"); break;
+        case 15: printf("PICG"); break;
+    }
+}
+void DATA_PROCESS(char x)
+{
+    switch(x)
+    {
+        case '0':
+        {
+            LED_PROCESS(0);
+
+            RELAY_PROCESS(0);
+            check_request = 0;
+            break;
+        }
+        case '1':
+        {
+            LED_PROCESS(1);
+            RELAY_PROCESS(1);
+            check_request = 0;
+            break;
+        }
+        case '2':
+        {
+            LED_PROCESS(2);
+            RELAY_PROCESS(2);
+            check_request = 0;
+            break;
+        }
+        case '3':
+        {
+            LED_PROCESS(3);
+            RELAY_PROCESS(3);
+            check_request = 0;
+            break;
+        }
+        case '4':
+        {
+            LED_PROCESS(4);
+            RELAY_PROCESS(4);
+            check_request = 0;
+            break;
+        }
+        case '5':
+        {
+            LED_PROCESS(5);
+            RELAY_PROCESS(5);
+            check_request = 0;
+            break;
+        }
+        case '6':
+        {
+            LED_PROCESS(6);
+            RELAY_PROCESS(6);
+            check_request = 0;
+            break;
+        }
+        case '7':
+        {
+            LED_PROCESS(7);
+            RELAY_PROCESS(7);
+            check_request = 0;
+            break;
+        }
+        case '8':
+        {
+            LED_PROCESS(8);
+            RELAY_PROCESS(8);
+            check_request = 0;
+            break;
+        }
+        case '9':
+        {
+            LED_PROCESS(9);
+            RELAY_PROCESS(9);
+            check_request = 0;
+            break;
+        }
+        case 'A':
+        {
+            LED_PROCESS(10);
+            RELAY_PROCESS(10);
+            check_request = 0;
+            break;
+        }
+        case 'B':
+        {
+            LED_PROCESS(11);
+            RELAY_PROCESS(11);
+            check_request = 0;
+            break;
+        }
+        case 'C':
+        {
+            LED_PROCESS(12);
+            RELAY_PROCESS(12);
+            check_request = 0;
+            break;
+        }
+        case 'D':
+        {
+            LED_PROCESS(13);
+            RELAY_PROCESS(13);
+            check_request = 0;
+            break;
+        }
+        case 'E':
+        {
+            LED_PROCESS(14);
+            RELAY_PROCESS(14);
+            check_request = 0;
+            break;
+        }
+        case 'G':
+        {
+            LED_PROCESS(15);
+            RELAY_PROCESS(15);
+            check_request = 0;
+            break;
+        }
+        case 'U':
+        {
+            update_state();
+            break;
+        }
+        default:
+        {
+            check_request = 0;
+            break;
+        }
+    }
+}
+void check_message(uint8_t x)
+{
+    switch (x)
+    {
+        case 'T':
+        {
+            check_request = 0;
+            break;
+        }
+        case 'F':
+        {
+            check_request = 0;
+            break;
+        }
+        default:
+        {
+            printf("%c",x);
+            check_request = 1;
+            break;
+        }
+    }
+}
+_Bool check_data(uint8_t x)
+{
+    switch(x)
+    {
+        case '0': return 1;
+        case '1': return 1;
+        case '2': return 1;
+        case '3': return 1;
+        case '4': return 1;
+        case '5': return 1;
+        case '6': return 1;
+        case '7': return 1;
+        case '8': return 1;
+        case '9': return 1;
+        case 'A': return 1;
+        case 'B': return 1;
+        case 'C': return 1;
+        case 'D': return 1;
+        case 'E': return 1;
+        case 'G': return 1;
+        case 'T': return 1;
+        case 'F': return 1;
+        case 'U': return 1;
+        default : return 0;
+    }
 }

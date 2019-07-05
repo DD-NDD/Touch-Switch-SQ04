@@ -1,12 +1,33 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"8 ./define.h
-[; ;./define.h: 8:     {
+"16 ./define.h
+[; ;./define.h: 16:     {
 [s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S2 . CS0 CS1 CS2 CS3 CS4 CS5 CS6 CS7 ]
-"5
-[; ;./define.h: 5: {
+"13
+[; ;./define.h: 13: {
 [u S1 `ui 1 `S2 1 ]
 [n S1 . full_status . ]
-"18 ./define.h
-[; ;./define.h: 18: }last_touch_status;
+"4 ./define.h
+[; ;./define.h: 4: uint8_t rxData;
+[v _rxData `uc ~T0 @X0 1 e ]
+"5
+[; ;./define.h: 5: uint8_t prcData;
+[v _prcData `uc ~T0 @X0 1 e ]
+"6
+[; ;./define.h: 6: _Bool rest;
+[v _rest `a ~T0 @X0 1 e ]
+"7
+[; ;./define.h: 7: _Bool config_status;
+[v _config_status `a ~T0 @X0 1 e ]
+"8
+[; ;./define.h: 8: _Bool check_request;
+[v _check_request `a ~T0 @X0 1 e ]
+"9
+[; ;./define.h: 9: uint16_t count_conf;
+[v _count_conf `us ~T0 @X0 1 e ]
+"10
+[; ;./define.h: 10: _Bool blink;
+[v _blink `a ~T0 @X0 1 e ]
+"26
+[; ;./define.h: 26: }last_touch_status;
 [v _last_touch_status `S1 ~T0 @X0 1 e ]

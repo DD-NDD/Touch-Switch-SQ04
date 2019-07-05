@@ -1,5 +1,13 @@
 #include <stdbool.h>
 #include <stdint.h>
+#include <stdbool.h>
+uint8_t rxData;
+uint8_t prcData;
+bool rest; // reset state after 
+bool config_status;
+bool check_request;
+uint16_t count_conf;
+bool blink;
 /*Glass status*/
 union
 {
