@@ -4607,9 +4607,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 154 "./mcc_generated_files/pin_manager.h"
+# 233 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 166 "./mcc_generated_files/pin_manager.h"
+# 245 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -5108,7 +5108,6 @@ union
 
 
 
-uint16_t count_conf = 0;
 void myButtonPressedCallback(enum mtouch_button_names button);
 void myButtonReleasedCallback(enum mtouch_button_names button);
 void main(void)
@@ -5118,6 +5117,8 @@ void main(void)
     (INTCONbits.PEIE = 1);
     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
     MTOUCH_Button_SetNotPressedCallback(myButtonReleasedCallback);
+
+    do { LATAbits.LATA2 = 0; } while(0);
     while (1)
     {
         if(MTOUCH_Service_Mainloop())
@@ -5128,6 +5129,22 @@ void main(void)
 
 void myButtonPressedCallback(enum mtouch_button_names button)
 {
+    if(button == 0)
+    {
+        do { LATCbits.LATC3 = ~LATCbits.LATC3; } while(0);
+    }
+    if(button == 1)
+    {
+        do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
+    }
+    if(button == 2)
+    {
+        do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0);
+    }
+    if(button == 3)
+    {
+        do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+    }
 }
 void myButtonReleasedCallback(enum mtouch_button_names button)
 {

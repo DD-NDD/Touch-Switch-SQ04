@@ -4950,7 +4950,7 @@ enum mtouch_button_state
         },
 
         { Button1,
-            Sensor_AN13,
+            Sensor_AN26,
             MTOUCH_BUTTON_STATE_initializing,
             0,0,0,0,0,
             (mtouch_button_deviation_t)100u,
@@ -4958,7 +4958,7 @@ enum mtouch_button_state
         },
 
         { Button2,
-            Sensor_AN23,
+            Sensor_AN13,
             MTOUCH_BUTTON_STATE_initializing,
             0,0,0,0,0,
             (mtouch_button_deviation_t)100u,
@@ -4966,7 +4966,7 @@ enum mtouch_button_state
         },
 
         { Button3,
-            Sensor_AN26,
+            Sensor_AN23,
             MTOUCH_BUTTON_STATE_initializing,
             0,0,0,0,0,
             (mtouch_button_deviation_t)100u,

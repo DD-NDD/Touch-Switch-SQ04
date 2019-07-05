@@ -7,7 +7,6 @@
 /*
                          Main application
  */
-uint16_t count_conf = 0;
 void myButtonPressedCallback(enum mtouch_button_names button);
 void myButtonReleasedCallback(enum mtouch_button_names button);
 void main(void)
@@ -17,6 +16,8 @@ void main(void)
     INTERRUPT_PeripheralInterruptEnable();
     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
     MTOUCH_Button_SetNotPressedCallback(myButtonReleasedCallback);
+    
+    LED_EN_SetLow();
     while (1)
     {
         if(MTOUCH_Service_Mainloop())
@@ -27,6 +28,22 @@ void main(void)
 /* Call Back -----------------------------------------------------------------*/
 void myButtonPressedCallback(enum mtouch_button_names button)
 {
+    if(button == 0)
+    {
+        LED_0_Toggle();
+    }
+    if(button == 1)
+    {
+        LED_1_Toggle();
+    }
+    if(button == 2)
+    {
+        LED_2_Toggle();
+    }
+    if(button == 3)
+    {
+        LED_3_Toggle();
+    }
 }
 void myButtonReleasedCallback(enum mtouch_button_names button)
 {

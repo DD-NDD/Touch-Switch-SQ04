@@ -96,9 +96,9 @@
     #define MTOUCH_BUTTON_PRESSTIMEOUT              ((mtouch_button_statecounter_t)2000u)
 
     #define MTOUCH_BUTTON_SENSOR_Button0             Sensor_AN12
-    #define MTOUCH_BUTTON_SENSOR_Button1             Sensor_AN13
-    #define MTOUCH_BUTTON_SENSOR_Button2             Sensor_AN23
-    #define MTOUCH_BUTTON_SENSOR_Button3             Sensor_AN26
+    #define MTOUCH_BUTTON_SENSOR_Button1             Sensor_AN26
+    #define MTOUCH_BUTTON_SENSOR_Button2             Sensor_AN13
+    #define MTOUCH_BUTTON_SENSOR_Button3             Sensor_AN23
 
     #define MTOUCH_BUTTON_THRESHOLD_Button0          100u
     #define MTOUCH_BUTTON_THRESHOLD_Button1          100u
