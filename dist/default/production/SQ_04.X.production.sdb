@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16LF1559 ]
 [d frameptr 6 ]
-"143 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"143 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [e E2886 mtouch_sensor_names `uc
 Sensor_AN13 0
 Sensor_AN23 1
@@ -19,7 +19,7 @@ MTOUCH_SENSOR_ERROR_tooManyRetries -4
 MTOUCH_SENSOR_ERROR_scanOverrun -5
 MTOUCH_SENSOR_ERROR_interruptedScan -6
 ]
-"82 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_button.c
+"82 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [e E3069 mtouch_button_names `uc
 Button3 0
 Button2 1
@@ -43,7 +43,7 @@ HYST_12_5_PERCENT 3
 HYST_6_25_PERCENT 4
 HYST_MAX 5
 ]
-"104 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\main.c
+"104 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [e E2945 mtouch_button_names `uc
 Button3 0
 Button2 1
@@ -93,11 +93,11 @@ Button1 2
 [v ___bmul __bmul `(uc  1 e 1 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"10 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\led.c
+"10 E:\Work\Touch_Switch-SQ04\SQ_04.X\led.c
 [v _LED_EN LED_EN `(v  1 e 1 0 ]
 "14
 [v _LED_PROCESS LED_PROCESS `(v  1 e 1 0 ]
-"15 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\main.c
+"15 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _PROCESS_RELAY PROCESS_RELAY `(v  1 e 1 0 ]
 "47
 [v _check_message check_message `(v  1 e 1 0 ]
@@ -113,7 +113,7 @@ Button1 2
 [v _myButtonReleasedCallback myButtonReleasedCallback `(v  1 e 1 0 ]
 "344
 [v _DATA_PROCESS DATA_PROCESS `(v  1 e 1 0 ]
-"81 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/eusart.c
+"81 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 "124
 [v _EUSART_is_rx_ready EUSART_is_rx_ready `(uc  1 e 1 0 ]
@@ -143,15 +143,15 @@ Button1 2
 [v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
 "241
 [v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
-"52 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/interrupt_manager.c
+"52 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"50 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mcc.c
+"50 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "63
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "71
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
-"80 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch.c
+"80 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch.c
 [v _MTOUCH_Initialize MTOUCH_Initialize `(v  1 e 1 0 ]
 "95
 [v _MTOUCH_Service_Mainloop MTOUCH_Service_Mainloop `(a  1 e 1 0 ]
@@ -159,7 +159,7 @@ Button1 2
 [v _MTOUCH_Tick MTOUCH_Tick `(v  1 e 1 0 ]
 "134
 [v _MTOUCH_needReburst MTOUCH_needReburst `(a  1 s 1 MTOUCH_needReburst ]
-"159 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_button.c
+"159 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _MTOUCH_Button_Initialize MTOUCH_Button_Initialize `(v  1 e 1 0 ]
 "171
 [v _MTOUCH_Button_InitializeAll MTOUCH_Button_InitializeAll `(v  1 e 1 0 ]
@@ -197,7 +197,7 @@ Button1 2
 [v _MTOUCH_Button_SetPressedCallback MTOUCH_Button_SetPressedCallback `(v  1 e 1 0 ]
 "532
 [v _MTOUCH_Button_SetNotPressedCallback MTOUCH_Button_SetNotPressedCallback `(v  1 e 1 0 ]
-"208 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"208 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _MTOUCH_Sensor_Initialize MTOUCH_Sensor_Initialize `(E2890  1 e 1 0 ]
 "223
 [v _MTOUCH_Sensor_InitializeAll MTOUCH_Sensor_InitializeAll `(v  1 e 1 0 ]
@@ -261,9 +261,9 @@ Button1 2
 [v _MTOUCH_Sensor_Oversampling_Get MTOUCH_Sensor_Oversampling_Get `(uc  1 e 1 0 ]
 "1013
 [v _MTOUCH_Sensor_Oversampling_Set MTOUCH_Sensor_Oversampling_Set `(v  1 e 1 0 ]
-"55 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/pin_manager.c
+"55 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"65 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/tmr0.c
+"65 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "109
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
@@ -273,7 +273,7 @@ Button1 2
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 "148
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
-"68 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/tmr1.c
+"68 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 "124
 [v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
@@ -285,7 +285,7 @@ Button1 2
 [v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
 "212
 [v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
-"62 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/tmr2.c
+"62 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 "79
 [v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 1 0 ]
@@ -293,7 +293,7 @@ Button1 2
 [v _TMR2_StopTimer TMR2_StopTimer `(v  1 e 1 0 ]
 "106
 [v _TMR2_LoadPeriodRegister TMR2_LoadPeriodRegister `(v  1 e 1 0 ]
-"7 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X/define.h
+"7 E:\Work\Touch_Switch-SQ04\SQ_04.X/define.h
 [v _busy_flag busy_flag `a  1 e 1 0 ]
 [s S1853 . 1 `uc 1 DEBONCE 1 0 :1:0 
 `uc 1 BT_1 1 0 :1:1 
@@ -307,7 +307,7 @@ Button1 2
 "25
 [u S1862 . 2 `ui 1 full_status 2 0 `S1853 1 . 1 0 ]
 [v _bt_status bt_status `S1862  1 e 2 0 ]
-"96 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X/mcc_generated_files/eusart.h
+"96 E:\Work\Touch_Switch-SQ04\SQ_04.X/mcc_generated_files/eusart.h
 [v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
 [s S405 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
@@ -626,9 +626,9 @@ Button1 2
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"10 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\main.c
+"10 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _count_conf count_conf `us  1 e 2 0 ]
-"63 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/eusart.c
+"63 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
 [v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
 "64
 [v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
@@ -652,10 +652,10 @@ Button1 2
 [v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "75
 [v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
-"52 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch.c
+"52 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch.c
 [v _mtouch_time_toScan mtouch_time_toScan `a  1 s 1 mtouch_time_toScan ]
 [s S857 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-"82 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_button.c
+"82 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _mtouch_button_init mtouch_button_init `DC[3]S857  1 e 48 0 ]
 "110
 [v _mtouch_button mtouch_button `[3]S857  1 s 48 mtouch_button ]
@@ -665,7 +665,7 @@ Button1 2
 [v _callback_notPressed callback_notPressed `*.37(v  1 s 2 callback_notPressed ]
 "146
 [v _Button_StateMachine Button_StateMachine `[3]*.37(v  1 e 6 0 ]
-"143 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"143 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _callback_sampled callback_sampled `*.37(v  1 s 2 callback_sampled ]
 "150
 [v _packet_sample packet_sample `[2]us  1 s 4 packet_sample ]
@@ -693,11 +693,11 @@ Button1 2
 "198
 [s S96 . 2 `*.5S83 1 sensor_adc1 1 0 `*.5S83 1 sensor_adc2 1 1 ]
 [v _sensor_scan_group sensor_scan_group `DC[2]S96  1 s 4 sensor_scan_group ]
-"59 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/tmr0.c
+"59 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr0.c
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
 "60
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"58 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/tmr1.c
+"58 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr1.c
 [v _check_request check_request `VEa  1 e 1 0 ]
 "59
 [v _config_status config_status `VEa  1 e 1 0 ]
@@ -707,7 +707,7 @@ Button1 2
 [v _rest rest `VEa  1 e 1 0 ]
 "62
 [v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
-"87 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\main.c
+"87 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "106
@@ -736,7 +736,7 @@ Button1 2
 [v check_data@x x `uc  1 a 1 3 ]
 "86
 } 0
-"50 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mcc.c
+"50 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "61
@@ -746,12 +746,12 @@ Button1 2
 {
 "75
 } 0
-"62 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/tmr2.c
+"62 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 {
 "77
 } 0
-"68 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/tmr1.c
+"68 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 {
 "95
@@ -762,7 +762,7 @@ Button1 2
 [v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 1 ]
 "210
 } 0
-"65 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/tmr0.c
+"65 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
 "86
@@ -773,22 +773,22 @@ Button1 2
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 1 ]
 "146
 } 0
-"55 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/pin_manager.c
+"55 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "97
 } 0
-"63 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mcc.c
+"63 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "69
 } 0
-"80 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch.c
+"80 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch.c
 [v _MTOUCH_Initialize MTOUCH_Initialize `(v  1 e 1 0 ]
 {
 "87
 } 0
-"223 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"223 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _MTOUCH_Sensor_InitializeAll MTOUCH_Sensor_InitializeAll `(v  1 e 1 0 ]
 {
 "225
@@ -813,7 +813,7 @@ Button1 2
 [v MTOUCH_Sensor_Enable@sensor sensor `E2886  1 a 1 6 ]
 "845
 } 0
-"171 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_button.c
+"171 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _MTOUCH_Button_InitializeAll MTOUCH_Button_InitializeAll `(v  1 e 1 0 ]
 {
 "173
@@ -838,7 +838,7 @@ Button1 2
 [v memcpy@d1 d1 `*.6v  1 a 1 9 ]
 "18
 } 0
-"81 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/eusart.c
+"81 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 {
 "117
@@ -867,7 +867,7 @@ Button1 2
 [v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 1 ]
 "238
 } 0
-"95 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch.c
+"95 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch.c
 [v _MTOUCH_Service_Mainloop MTOUCH_Service_Mainloop `(a  1 e 1 0 ]
 {
 "117
@@ -882,7 +882,7 @@ Button1 2
 {
 "127
 } 0
-"297 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_button.c
+"297 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _MTOUCH_Button_Tick MTOUCH_Button_Tick `(v  1 e 1 0 ]
 {
 "299
@@ -900,7 +900,7 @@ Button1 2
 [v Button_Tick_helper@button button `*.6S857  1 a 1 3 ]
 "316
 } 0
-"950 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"950 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _MTOUCH_Sensor_Sampled_ResetAll MTOUCH_Sensor_Sampled_ResetAll `(v  1 e 1 0 ]
 {
 [s S83 . 9 `DCE2886 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
@@ -1137,7 +1137,7 @@ Button1 2
 [v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.5S83  1 a 1 44 ]
 "678
 } 0
-"85 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/tmr2.c
+"85 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr2.c
 [v _TMR2_StopTimer TMR2_StopTimer `(v  1 e 1 0 ]
 {
 "89
@@ -1156,7 +1156,7 @@ Button1 2
 [v TMR2_LoadPeriodRegister@periodVal periodVal `uc  1 a 1 1 ]
 "109
 } 0
-"437 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"437 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _Sensor_loadADCSettings Sensor_loadADCSettings `(v  1 s 1 Sensor_loadADCSettings ]
 {
 [s S83 . 9 `DCE2886 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
@@ -1315,7 +1315,7 @@ Button1 2
 {
 "249
 } 0
-"189 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_button.c
+"189 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _MTOUCH_Button_ServiceAll MTOUCH_Button_ServiceAll `(v  1 e 1 0 ]
 {
 "191
@@ -1335,7 +1335,7 @@ Button1 2
 [v Button_Service@name name `E3069  1 a 1 22 ]
 "215
 } 0
-"959 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"959 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _MTOUCH_Sensor_wasSampled MTOUCH_Sensor_wasSampled `(a  1 e 1 0 ]
 {
 [v MTOUCH_Sensor_wasSampled@sensor sensor `E2886  1 a 1 wreg ]
@@ -1353,7 +1353,7 @@ Button1 2
 [v MTOUCH_Sensor_isCalibrated@sensor sensor `E2886  1 a 1 6 ]
 "918
 } 0
-"237 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_button.c
+"237 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _Button_State_NotPressed Button_State_NotPressed `(v  1 s 1 Button_State_NotPressed ]
 {
 [s S857 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
@@ -1374,23 +1374,23 @@ Button1 2
 [v Button_State_Pressed@button button `*.6S857  1 p 1 15 ]
 "290
 } 0
-"263 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\main.c
+"263 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _myButtonPressedCallback myButtonPressedCallback `(v  1 e 1 0 ]
 {
 [v myButtonPressedCallback@button button `E2945  1 p 1 12 ]
 "312
 } 0
-"527 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_button.c
+"527 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _Button_DefaultCallback Button_DefaultCallback `(v  1 s 1 Button_DefaultCallback ]
 {
 } 0
-"331 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\main.c
+"331 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _myButtonReleasedCallback myButtonReleasedCallback `(v  1 e 1 0 ]
 {
 [v myButtonReleasedCallback@button button `E2945  1 p 1 12 ]
 "341
 } 0
-"374 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_button.c
+"374 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _MTOUCH_Button_isPressed MTOUCH_Button_isPressed `(a  1 e 1 0 ]
 {
 [v MTOUCH_Button_isPressed@name name `E3069  1 a 1 wreg ]
@@ -1412,7 +1412,7 @@ Button1 2
 [v MTOUCH_Button_Initialize@name name `E3069  1 a 1 9 ]
 "169
 } 0
-"904 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"904 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _MTOUCH_Sensor_Calibrate MTOUCH_Sensor_Calibrate `(v  1 e 1 0 ]
 {
 [v MTOUCH_Sensor_Calibrate@sensor sensor `E2886  1 a 1 wreg ]
@@ -1421,7 +1421,7 @@ Button1 2
 [v MTOUCH_Sensor_Calibrate@sensor sensor `E2886  1 a 1 6 ]
 "910
 } 0
-"481 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_button.c
+"481 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _Button_Baseline_Update Button_Baseline_Update `(v  1 s 1 Button_Baseline_Update ]
 {
 [s S857 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
@@ -1465,7 +1465,7 @@ Button1 2
 [v Button_Reading_Update_Helper@button button `*.6S857  1 a 1 11 ]
 "473
 } 0
-"792 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"792 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _MTOUCH_Sensor_RawSample_Get MTOUCH_Sensor_RawSample_Get `(us  1 e 2 0 ]
 {
 [v MTOUCH_Sensor_RawSample_Get@name name `E2886  1 a 1 wreg ]
@@ -1487,7 +1487,7 @@ Button1 2
 [v ___bmul@multiplier multiplier `uc  1 a 1 4 ]
 "51
 } 0
-"399 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/mtouch/mtouch_button.c
+"399 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _Button_Deviation_Update Button_Deviation_Update `(v  1 s 1 Button_Deviation_Update ]
 {
 [s S857 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
@@ -1513,12 +1513,12 @@ Button1 2
 [v MTOUCH_Button_SetNotPressedCallback@callback callback `*.37(v  1 p 2 1 ]
 "535
 } 0
-"10 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\led.c
+"10 E:\Work\Touch_Switch-SQ04\SQ_04.X\led.c
 [v _LED_EN LED_EN `(v  1 e 1 0 ]
 {
 "13
 } 0
-"124 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/eusart.c
+"124 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
 [v _EUSART_is_rx_ready EUSART_is_rx_ready `(uc  1 e 1 0 ]
 {
 "127
@@ -1530,7 +1530,7 @@ Button1 2
 [v EUSART_Read@readValue readValue `uc  1 a 1 2 ]
 "158
 } 0
-"344 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\main.c
+"344 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _DATA_PROCESS DATA_PROCESS `(v  1 e 1 0 ]
 {
 [v DATA_PROCESS@x x `uc  1 a 1 wreg ]
@@ -1706,7 +1706,7 @@ Button1 2
 [v fputc@fp fp `*.1S2483  1 p 1 5 ]
 "21
 } 0
-"174 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/eusart.c
+"174 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@txData txData `uc  1 a 1 wreg ]
@@ -1723,7 +1723,7 @@ Button1 2
 [v EUSART_Write@txData txData `uc  1 a 1 1 ]
 "167
 } 0
-"15 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\main.c
+"15 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _PROCESS_RELAY PROCESS_RELAY `(v  1 e 1 0 ]
 {
 [v PROCESS_RELAY@relay_1 relay_1 `a  1 a 1 wreg ]
@@ -1734,7 +1734,7 @@ Button1 2
 [v PROCESS_RELAY@relay_1 relay_1 `a  1 a 1 3 ]
 "43
 } 0
-"14 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\led.c
+"14 E:\Work\Touch_Switch-SQ04\SQ_04.X\led.c
 [v _LED_PROCESS LED_PROCESS `(v  1 e 1 0 ]
 {
 [v LED_PROCESS@led_name led_name `uc  1 a 1 wreg ]
@@ -1744,12 +1744,12 @@ Button1 2
 [v LED_PROCESS@led_name led_name `uc  1 a 1 5 ]
 "47
 } 0
-"52 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/interrupt_manager.c
+"52 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
 "78
 } 0
-"161 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/tmr1.c
+"161 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr1.c
 [v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
 {
 "163
@@ -1772,7 +1772,7 @@ Button1 2
 {
 "215
 } 0
-"109 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/tmr0.c
+"109 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 {
 "111
@@ -1921,7 +1921,7 @@ Button1 2
 [v i1fputc@fp fp `*.1S2483  1 p 1 4 ]
 "21
 } 0
-"174 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/eusart.c
+"174 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
 [v i1_putch putch `(v  1 e 1 0 ]
 {
 [v i1putch@txData txData `uc  1 a 1 wreg ]
@@ -1938,12 +1938,12 @@ Button1 2
 [v i1EUSART_Write@txData txData `uc  1 a 1 0 ]
 "167
 } 0
-"148 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/tmr0.c
+"148 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr0.c
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
 "151
 } 0
-"180 C:\Users\ngodi\OneDrive\My Project\touch firm\sw_touch.X\mcc_generated_files/eusart.c
+"180 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
 [v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
 {
 "202

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=sw_touch.X
+PROJECTNAME=SQ_04.X
 
 # Active Configuration
 DEFAULTCONF=default
