@@ -1,26 +1,19 @@
 #include <stdbool.h>
 #include <stdint.h>
 /*Glass status*/
-extern volatile bool config_status;
-/*----------------------------------------------------------------------------*/
-/* define status touch*/
-bool busy_flag;
-extern volatile bool check_request;
-extern volatile bool rest;
-bool dir_mes;
 union
 {
     unsigned int full_status;
     struct
     {
-        unsigned DEBONCE :1;
-        unsigned BT_1    :1;
-        unsigned BT_2    :1;
-        unsigned BT_3    :1;
-        unsigned BT_1_ON_OFF :1;
-        unsigned BT_2_ON_OFF :1;
-        unsigned BT_3_ON_OFF :1;
-        unsigned BT_PRESSED :1;
+        unsigned CS0    :1;
+        unsigned CS1    :1;
+        unsigned CS2    :1;
+        unsigned CS3    :1;
+        unsigned CS4    :1;
+        unsigned CS5    :1;
+        unsigned CS6    :1;
+        unsigned CS7    :1;
     };
-}bt_status;
+}last_touch_status;
 /*End define status touch*/

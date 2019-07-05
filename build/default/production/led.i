@@ -4700,13 +4700,96 @@ void LED_PROCESS(uint8_t x);
 # 7 "led.c" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 233 "./mcc_generated_files/pin_manager.h"
+# 298 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 245 "./mcc_generated_files/pin_manager.h"
+# 310 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 8 "led.c" 2
 
 
 void LED_PROCESS(uint8_t x)
 {
+    switch(x)
+    {
+        case 0:
+        {
+            do { LATAbits.LATA0 = 1; } while(0);do { LATCbits.LATC7 = 1; } while(0);do { LATAbits.LATA1 = 1; } while(0);do { LATCbits.LATC3 = 1; } while(0);
+            break;
+        }
+        case 1:
+        {
+            do { LATAbits.LATA0 = 1; } while(0);do { LATCbits.LATC7 = 1; } while(0);do { LATAbits.LATA1 = 1; } while(0);do { LATCbits.LATC3 = 0; } while(0);
+            break;
+        }
+        case 2:
+        {
+            do { LATAbits.LATA0 = 1; } while(0);do { LATCbits.LATC7 = 1; } while(0);do { LATAbits.LATA1 = 0; } while(0);do { LATCbits.LATC3 = 1; } while(0);
+            break;
+        }
+        case 3:
+        {
+            do { LATAbits.LATA0 = 1; } while(0);do { LATCbits.LATC7 = 1; } while(0);do { LATAbits.LATA1 = 0; } while(0);do { LATCbits.LATC3 = 0; } while(0);
+            break;
+        }
+        case 4:
+        {
+            do { LATAbits.LATA0 = 1; } while(0);do { LATCbits.LATC7 = 0; } while(0);do { LATAbits.LATA1 = 1; } while(0);do { LATCbits.LATC3 = 1; } while(0);
+            break;
+        }
+        case 5:
+        {
+            do { LATAbits.LATA0 = 1; } while(0);do { LATCbits.LATC7 = 0; } while(0);do { LATAbits.LATA1 = 1; } while(0);do { LATCbits.LATC3 = 0; } while(0);
+            break;
+        }
+        case 6:
+        {
+            do { LATAbits.LATA0 = 1; } while(0);do { LATCbits.LATC7 = 0; } while(0);do { LATAbits.LATA1 = 0; } while(0);do { LATCbits.LATC3 = 1; } while(0);
+            break;
+        }
+        case 7:
+        {
+            do { LATAbits.LATA0 = 1; } while(0);do { LATCbits.LATC7 = 0; } while(0);do { LATAbits.LATA1 = 0; } while(0);do { LATCbits.LATC3 = 0; } while(0);
+            break;
+        }
+        case 8:
+        {
+            do { LATAbits.LATA0 = 0; } while(0);do { LATCbits.LATC7 = 1; } while(0);do { LATAbits.LATA1 = 1; } while(0);do { LATCbits.LATC3 = 1; } while(0);
+            break;
+        }
+        case 9:
+        {
+            do { LATAbits.LATA0 = 0; } while(0);do { LATCbits.LATC7 = 1; } while(0);do { LATAbits.LATA1 = 1; } while(0);do { LATCbits.LATC3 = 0; } while(0);
+            break;
+        }
+        case 10:
+        {
+            do { LATAbits.LATA0 = 0; } while(0);do { LATCbits.LATC7 = 1; } while(0);do { LATAbits.LATA1 = 0; } while(0);do { LATCbits.LATC3 = 1; } while(0);
+            break;
+        }
+        case 11:
+        {
+            do { LATAbits.LATA0 = 0; } while(0);do { LATCbits.LATC7 = 1; } while(0);do { LATAbits.LATA1 = 0; } while(0);do { LATCbits.LATC3 = 0; } while(0);
+            break;
+        }
+        case 12:
+        {
+            do { LATAbits.LATA0 = 0; } while(0);do { LATCbits.LATC7 = 0; } while(0);do { LATAbits.LATA1 = 1; } while(0);do { LATCbits.LATC3 = 1; } while(0);
+            break;
+        }
+        case 13:
+        {
+            do { LATAbits.LATA0 = 0; } while(0);do { LATCbits.LATC7 = 0; } while(0);do { LATAbits.LATA1 = 1; } while(0);do { LATCbits.LATC3 = 0; } while(0);
+            break;
+        }
+        case 14:
+        {
+            do { LATAbits.LATA0 = 0; } while(0);do { LATCbits.LATC7 = 0; } while(0);do { LATAbits.LATA1 = 0; } while(0);do { LATCbits.LATC3 = 1; } while(0);
+            break;
+        }
+        case 15:
+        {
+            do { LATAbits.LATA0 = 0; } while(0);do { LATCbits.LATC7 = 0; } while(0);do { LATAbits.LATA1 = 0; } while(0);do { LATCbits.LATC3 = 0; } while(0);
+            break;
+        }
+    }
 }

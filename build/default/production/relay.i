@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/interrupt_manager.c"
+# 1 "relay.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,13 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/interrupt_manager.c" 2
-# 49 "mcc_generated_files/interrupt_manager.c"
-# 1 "mcc_generated_files/interrupt_manager.h" 1
-# 49 "mcc_generated_files/interrupt_manager.c" 2
-
-# 1 "mcc_generated_files/mcc.h" 1
-# 49 "mcc_generated_files/mcc.h"
+# 1 "relay.c" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4605,17 +4599,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 49 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/device_config.h" 1
-# 50 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 298 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 310 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "mcc_generated_files/mcc.h" 2
+# 1 "relay.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
@@ -4700,392 +4684,104 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "mcc_generated_files/mcc.h" 2
+# 2 "relay.c" 2
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "mcc_generated_files/mcc.h" 2
+# 1 "./relay.h" 1
 
 
-# 1 "mcc_generated_files/tmr2.h" 1
-# 103 "mcc_generated_files/tmr2.h"
-void TMR2_Initialize(void);
-# 132 "mcc_generated_files/tmr2.h"
-void TMR2_StartTimer(void);
-# 164 "mcc_generated_files/tmr2.h"
-void TMR2_StopTimer(void);
-# 199 "mcc_generated_files/tmr2.h"
-uint8_t TMR2_ReadTimer(void);
-# 238 "mcc_generated_files/tmr2.h"
-void TMR2_WriteTimer(uint8_t timerVal);
-# 290 "mcc_generated_files/tmr2.h"
-void TMR2_LoadPeriodRegister(uint8_t periodVal);
-# 325 "mcc_generated_files/tmr2.h"
-_Bool TMR2_HasOverflowOccured(void);
-# 55 "mcc_generated_files/mcc.h" 2
+void RELAY_PROCESS(uint8_t x);
+# 3 "relay.c" 2
 
-# 1 "mcc_generated_files/mtouch/mtouch.h" 1
-# 41 "mcc_generated_files/mtouch/mtouch.h"
-# 1 "mcc_generated_files/mtouch/mtouch_config.h" 1
-# 41 "mcc_generated_files/mtouch/mtouch_config.h"
-# 1 "mcc_generated_files/mtouch/mtouch_sensor.h" 1
-# 45 "mcc_generated_files/mtouch/mtouch_sensor.h"
-    enum mtouch_sensor_names
-    {
-        Sensor_AN26 = 0,
-        Sensor_AN12 = 1,
-        Sensor_AN23 = 2,
-        Sensor_AN13 = 3
-    };
+# 1 "./mcc_generated_files/pin_manager.h" 1
+# 298 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 310 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 4 "relay.c" 2
 
-    enum mtouch_sensor_error
-    {
-        MTOUCH_SENSOR_ERROR_none = 0,
-        MTOUCH_SENSOR_ERROR_invalid_index = -1,
-        MTOUCH_SENSOR_ERROR_interrupt_notEnabled = -2,
-        MTOUCH_SENSOR_ERROR_invalid_calibrate= -3,
-        MTOUCH_SENSOR_ERROR_tooManyRetries = -4,
-        MTOUCH_SENSOR_ERROR_scanOverrun = -5,
-        MTOUCH_SENSOR_ERROR_interruptedScan = -6
-    };
-
-
-
-
-
-
-    typedef uint16_t mtouch_sensor_sample_t;
-
-
-
-    typedef uint8_t mtouch_sensor_mask_t;
-# 83 "mcc_generated_files/mtouch/mtouch_sensor.h"
-    enum mtouch_sensor_error MTOUCH_Sensor_Initialize (enum mtouch_sensor_names sensor);
-    void MTOUCH_Sensor_Scan_Initialize (void);
-    void MTOUCH_Sensor_InitializeAll (void);
-    void MTOUCH_Sensor_SetSampledCallback(void (*callback)(enum mtouch_sensor_names sensor));
-    _Bool MTOUCH_Sensor_SampleAll (void);
-    _Bool MTOUCH_Sensor_isSamplingComplete(void);
-    void MTOUCH_Sensor_postAcquisitionProcess(void);
-    void MTOUCH_Sensor_startLowpower (void);
-    void MTOUCH_Sensor_exitLowpower (void);
-
-    _Bool MTOUCH_Sensor_isAnySensorActive (void);
-    _Bool MTOUCH_Sensor_isActive (enum mtouch_sensor_names sensor);
-    _Bool MTOUCH_Sensor_wasSampled (enum mtouch_sensor_names sensor);
-    _Bool MTOUCH_Sensor_isCalibrated (enum mtouch_sensor_names sensor);
-    _Bool MTOUCH_Sensor_isEnabled (enum mtouch_sensor_names sensor);
-    void MTOUCH_Sensor_Sampled_ResetAll (void);
-    void MTOUCH_Sensor_Disable (enum mtouch_sensor_names sensor);
-    void MTOUCH_Sensor_Enable (enum mtouch_sensor_names sensor);
-    void MTOUCH_Sensor_Calibrate (enum mtouch_sensor_names sensor);
-    mtouch_sensor_sample_t MTOUCH_Sensor_RawSample_Get (enum mtouch_sensor_names sensor);
-    uint8_t MTOUCH_Sensor_AdditionalCap_Get (enum mtouch_sensor_names sensor);
-    uint8_t MTOUCH_Sensor_AcquisitionTime_Get(enum mtouch_sensor_names sensor);
-    uint8_t MTOUCH_Sensor_PreChargeTime_Get (enum mtouch_sensor_names sensor);
-    uint8_t MTOUCH_Sensor_Oversampling_Get (enum mtouch_sensor_names name);
-    void MTOUCH_Sensor_Oversampling_Set (enum mtouch_sensor_names name, uint8_t value);
-
-    void MTOUCH_Sensor_NotifyInterruptOccurred(void);
-# 41 "mcc_generated_files/mtouch/mtouch_config.h" 2
-
-# 1 "mcc_generated_files/mtouch/mtouch_button.h" 1
-# 41 "mcc_generated_files/mtouch/mtouch_button.h"
-# 1 "mcc_generated_files/mtouch/mtouch.h" 1
-# 41 "mcc_generated_files/mtouch/mtouch_button.h" 2
-
-
-
-
-
-
-
-
-    enum mtouch_button_names
-    {
-        Button0 = 0,
-        Button1 = 1,
-        Button2 = 2,
-        Button3 = 3
-    };
-
-
-
-
-
-
-    typedef uint8_t mtouch_buttonmask_t;
-
-    typedef uint16_t mtouch_button_statecounter_t;
-
-
-
-    typedef uint16_t mtouch_button_baselinecounter_t;
-
-
-
-    typedef uint16_t mtouch_button_reading_t;
-
-
-
-
-    typedef uint32_t mtouch_button_baseline_t;
-
-
-
-
-    typedef int8_t mtouch_button_deviation_t;
-
-
-
-    typedef uint8_t mtouch_button_threshold_t;
-
-
-
-    typedef uint8_t mtouch_button_scaling_t;
-# 102 "mcc_generated_files/mtouch/mtouch_button.h"
-    void MTOUCH_Button_SetPressedCallback (void (*callback)(enum mtouch_button_names button));
-    void MTOUCH_Button_SetNotPressedCallback(void (*callback)(enum mtouch_button_names button));
-
-    void MTOUCH_Button_Initialize (enum mtouch_button_names button);
-    void MTOUCH_Button_InitializeAll (void);
-    void MTOUCH_Button_ServiceAll (void);
-    void MTOUCH_Button_Tick (void);
-    mtouch_button_deviation_t MTOUCH_Button_Deviation_Get (enum mtouch_button_names button);
-    mtouch_button_reading_t MTOUCH_Button_Reading_Get (enum mtouch_button_names button);
-    mtouch_button_reading_t MTOUCH_Button_Baseline_Get (enum mtouch_button_names button);
-    mtouch_button_scaling_t MTOUCH_Button_Scaling_Get (enum mtouch_button_names button);
-    void MTOUCH_Button_Scaling_Set (enum mtouch_button_names button,mtouch_button_scaling_t scaling);
-    mtouch_button_threshold_t MTOUCH_Button_Threshold_Get (enum mtouch_button_names button);
-    void MTOUCH_Button_Threshold_Set (enum mtouch_button_names button,mtouch_button_threshold_t threshold);
-    uint8_t MTOUCH_Button_Oversampling_Get(enum mtouch_button_names button);
-    void MTOUCH_Button_Oversampling_Set(enum mtouch_button_names button,uint8_t oversampling);
-
-    _Bool MTOUCH_Button_isPressed (enum mtouch_button_names button);
-    _Bool MTOUCH_Button_isInitialized (enum mtouch_button_names button);
-    mtouch_buttonmask_t MTOUCH_Button_Buttonmask_Get(void);
-    uint8_t MTOUCH_Button_State_Get (enum mtouch_button_names button);
-# 42 "mcc_generated_files/mtouch/mtouch_config.h" 2
-# 41 "mcc_generated_files/mtouch/mtouch.h" 2
-# 53 "mcc_generated_files/mtouch/mtouch.h"
-    void MTOUCH_Initialize (void);
-    _Bool MTOUCH_Service_Mainloop (void);
-    void MTOUCH_Tick (void);
-    _Bool MTOUCH_Service_isInProgress (void);
-# 56 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/eusart.h" 1
-# 57 "mcc_generated_files/eusart.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 145 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 254 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 407 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 57 "mcc_generated_files/eusart.h" 2
-# 76 "mcc_generated_files/eusart.h"
-typedef union {
-    struct {
-        unsigned perr : 1;
-        unsigned ferr : 1;
-        unsigned oerr : 1;
-        unsigned reserved : 5;
-    };
-    uint8_t status;
-}eusart_status_t;
-
-
-
-
-extern volatile uint8_t eusartTxBufferRemaining;
-extern volatile uint8_t eusartRxCount;
-
-
-
-
-
-void (*EUSART_RxDefaultInterruptHandler)(void);
-# 118 "mcc_generated_files/eusart.h"
-void EUSART_Initialize(void);
-# 166 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_ready(void);
-# 218 "mcc_generated_files/eusart.h"
-uint8_t EUSART_is_rx_ready(void);
-# 265 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_done(void);
-# 313 "mcc_generated_files/eusart.h"
-eusart_status_t EUSART_get_last_status(void);
-# 333 "mcc_generated_files/eusart.h"
-uint8_t EUSART_Read(void);
-# 353 "mcc_generated_files/eusart.h"
-void EUSART_Write(uint8_t txData);
-# 375 "mcc_generated_files/eusart.h"
-void EUSART_Receive_ISR(void);
-# 396 "mcc_generated_files/eusart.h"
-void EUSART_RxDataHandler(void);
-# 414 "mcc_generated_files/eusart.h"
-void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 432 "mcc_generated_files/eusart.h"
-void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 450 "mcc_generated_files/eusart.h"
-void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 471 "mcc_generated_files/eusart.h"
-void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 57 "mcc_generated_files/mcc.h" 2
-# 72 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 85 "mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 97 "mcc_generated_files/mcc.h"
-void WDT_Initialize(void);
-# 50 "mcc_generated_files/interrupt_manager.c" 2
-
-
-void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
+void RELAY_PROCESS(uint8_t x)
 {
-
-    if(INTCONbits.PEIE == 1)
+    switch(x)
     {
-        if(PIE1bits.RCIE == 1 && PIR1bits.RCIF == 1)
+        case 0:
         {
-            EUSART_RxDefaultInterruptHandler();
+            do { LATBbits.LATB6 = 1; } while(0);do { LATCbits.LATC5 = 1; } while(0);do { LATAbits.LATA5 = 1; } while(0);do { LATAbits.LATA4 = 1; } while(0);
+            break;
         }
-        else
+        case 1:
         {
-
+            do { LATBbits.LATB6 = 1; } while(0);do { LATCbits.LATC5 = 1; } while(0);do { LATAbits.LATA5 = 1; } while(0);do { LATAbits.LATA4 = 0; } while(0);
+            break;
         }
-    }
-    else
-    {
-
+        case 2:
+        {
+            do { LATBbits.LATB6 = 1; } while(0);do { LATCbits.LATC5 = 1; } while(0);do { LATAbits.LATA5 = 0; } while(0);do { LATAbits.LATA4 = 1; } while(0);
+            break;
+        }
+        case 3:
+        {
+            do { LATBbits.LATB6 = 1; } while(0);do { LATCbits.LATC5 = 1; } while(0);do { LATAbits.LATA5 = 0; } while(0);do { LATAbits.LATA4 = 0; } while(0);
+            break;
+        }
+        case 4:
+        {
+            do { LATBbits.LATB6 = 1; } while(0);do { LATCbits.LATC5 = 0; } while(0);do { LATAbits.LATA5 = 1; } while(0);do { LATAbits.LATA4 = 1; } while(0);
+            break;
+        }
+        case 5:
+        {
+            do { LATBbits.LATB6 = 1; } while(0);do { LATCbits.LATC5 = 0; } while(0);do { LATAbits.LATA5 = 1; } while(0);do { LATAbits.LATA4 = 0; } while(0);
+            break;
+        }
+        case 6:
+        {
+            do { LATBbits.LATB6 = 1; } while(0);do { LATCbits.LATC5 = 0; } while(0);do { LATAbits.LATA5 = 0; } while(0);do { LATAbits.LATA4 = 1; } while(0);
+            break;
+        }
+        case 7:
+        {
+            do { LATBbits.LATB6 = 1; } while(0);do { LATCbits.LATC5 = 0; } while(0);do { LATAbits.LATA5 = 0; } while(0);do { LATAbits.LATA4 = 0; } while(0);
+            break;
+        }
+        case 8:
+        {
+            do { LATBbits.LATB6 = 0; } while(0);do { LATCbits.LATC5 = 1; } while(0);do { LATAbits.LATA5 = 1; } while(0);do { LATAbits.LATA4 = 1; } while(0);
+            break;
+        }
+        case 9:
+        {
+            do { LATBbits.LATB6 = 0; } while(0);do { LATCbits.LATC5 = 1; } while(0);do { LATAbits.LATA5 = 1; } while(0);do { LATAbits.LATA4 = 0; } while(0);
+            break;
+        }
+        case 10:
+        {
+            do { LATBbits.LATB6 = 0; } while(0);do { LATCbits.LATC5 = 1; } while(0);do { LATAbits.LATA5 = 0; } while(0);do { LATAbits.LATA4 = 1; } while(0);
+            break;
+        }
+        case 11:
+        {
+            do { LATBbits.LATB6 = 0; } while(0);do { LATCbits.LATC5 = 1; } while(0);do { LATAbits.LATA5 = 0; } while(0);do { LATAbits.LATA4 = 0; } while(0);
+            break;
+        }
+        case 12:
+        {
+            do { LATBbits.LATB6 = 0; } while(0);do { LATCbits.LATC5 = 0; } while(0);do { LATAbits.LATA5 = 1; } while(0);do { LATAbits.LATA4 = 1; } while(0);
+            break;
+        }
+        case 13:
+        {
+            do { LATBbits.LATB6 = 0; } while(0);do { LATCbits.LATC5 = 0; } while(0);do { LATAbits.LATA5 = 1; } while(0);do { LATAbits.LATA4 = 0; } while(0);
+            break;
+        }
+        case 14:
+        {
+            do { LATBbits.LATB6 = 0; } while(0);do { LATCbits.LATC5 = 0; } while(0);do { LATAbits.LATA5 = 0; } while(0);do { LATAbits.LATA4 = 1; } while(0);
+            break;
+        }
+        case 15:
+        {
+            do { LATBbits.LATB6 = 0; } while(0);do { LATCbits.LATC5 = 0; } while(0);do { LATAbits.LATA5 = 0; } while(0);do { LATAbits.LATA4 = 0; } while(0);
+            break;
+        }
     }
 }

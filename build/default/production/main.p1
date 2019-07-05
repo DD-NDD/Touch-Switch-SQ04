@@ -1,11 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F3306 `(v ~T0 @X0 0 tf ]
-"15 ./define.h
-[; ;./define.h: 15:     {
+"8 ./define.h
+[; ;./define.h: 8:     {
 [s S459 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S459 . DEBONCE BT_1 BT_2 BT_3 BT_1_ON_OFF BT_2_ON_OFF BT_3_ON_OFF BT_PRESSED ]
-"12
-[; ;./define.h: 12: {
+[n S459 . CS0 CS1 CS2 CS3 CS4 CS5 CS6 CS7 ]
+"5
+[; ;./define.h: 5: {
 [u S458 `ui 1 `S459 1 ]
 [n S458 . full_status . ]
 [p mainexit ]
@@ -27,23 +27,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "374
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"17 main.c
-[; ;main.c: 17:     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
+"18 main.c
+[; ;main.c: 18:     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
 [c E2914 0 1 2 3 .. ]
 [n E2914 mtouch_button_names Button0 Button1 Button2 Button3  ]
 [v F2928 `(v ~T0 @X0 0 tf1`E2914 ]
 "102 ./mcc_generated_files/mtouch/mtouch_button.h
 [; ;./mcc_generated_files/mtouch/mtouch_button.h: 102:     void MTOUCH_Button_SetPressedCallback (void (*callback)(enum mtouch_button_names button));
 [v _MTOUCH_Button_SetPressedCallback `(v ~T0 @X0 0 ef1`*F2928 ]
-"10 main.c
-[; ;main.c: 10: void myButtonPressedCallback(enum mtouch_button_names button);
+"11 main.c
+[; ;main.c: 11: void myButtonPressedCallback(enum mtouch_button_names button);
 [v _myButtonPressedCallback `(v ~T0 @X0 0 ef1`E2914 ]
 [v F2934 `(v ~T0 @X0 0 tf1`E2914 ]
 "103 ./mcc_generated_files/mtouch/mtouch_button.h
 [; ;./mcc_generated_files/mtouch/mtouch_button.h: 103:     void MTOUCH_Button_SetNotPressedCallback(void (*callback)(enum mtouch_button_names button));
 [v _MTOUCH_Button_SetNotPressedCallback `(v ~T0 @X0 0 ef1`*F2934 ]
-"11 main.c
-[; ;main.c: 11: void myButtonReleasedCallback(enum mtouch_button_names button);
+"12 main.c
+[; ;main.c: 12: void myButtonReleasedCallback(enum mtouch_button_names button);
 [v _myButtonReleasedCallback `(v ~T0 @X0 0 ef1`E2914 ]
 "1791 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 1791:     struct {
@@ -59,17 +59,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "54 ./mcc_generated_files/mtouch/mtouch.h
 [; ;./mcc_generated_files/mtouch/mtouch.h: 54:     _Bool MTOUCH_Service_Mainloop (void);
 [v _MTOUCH_Service_Mainloop `(a ~T0 @X0 0 ef ]
-"1875 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 1875:     struct {
-[s S106 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S106 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"1874
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 1874: typedef union {
-[u S105 `S106 1 ]
-[n S105 . . ]
-"1886
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 1886: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
-[v _LATCbits `VS105 ~T0 @X0 0 e@270 ]
+"121 ./mcc_generated_files/mtouch/mtouch_button.h
+[; ;./mcc_generated_files/mtouch/mtouch_button.h: 121:     mtouch_buttonmask_t MTOUCH_Button_Buttonmask_Get(void);
+[v _MTOUCH_Button_Buttonmask_Get `(uc ~T0 @X0 0 ef ]
+"4 ./led.h
+[; ;./led.h: 4: void LED_PROCESS(uint8_t x);
+[v _LED_PROCESS `(v ~T0 @X0 0 ef1`uc ]
+"3 ./relay.h
+[; ;./relay.h: 3: void RELAY_PROCESS(uint8_t x);
+[v _RELAY_PROCESS `(v ~T0 @X0 0 ef1`uc ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -640,171 +638,106 @@ Version 4.0 HI-TECH Software Intermediate Code
 "96 ./mcc_generated_files/eusart.h
 [; ;./mcc_generated_files/eusart.h: 96: void (*EUSART_RxDefaultInterruptHandler)(void);
 [v _EUSART_RxDefaultInterruptHandler `*F3306 ~T0 @X0 1 e ]
-"7 ./define.h
-[; ;./define.h: 7: _Bool busy_flag;
-[v _busy_flag `a ~T0 @X0 1 e ]
-"10
-[; ;./define.h: 10: _Bool dir_mes;
-[v _dir_mes `a ~T0 @X0 1 e ]
-"25
-[; ;./define.h: 25: }bt_status;
-[v _bt_status `S458 ~T0 @X0 1 e ]
+"18 ./define.h
+[; ;./define.h: 18: }last_touch_status;
+[v _last_touch_status `S458 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"12 main.c
-[; ;main.c: 12: void main(void)
+"13 main.c
+[; ;main.c: 13: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"13
-[; ;main.c: 13: {
+"14
+[; ;main.c: 14: {
 {
 [e :U _main ]
 [f ]
-"14
-[; ;main.c: 14:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
 "15
-[; ;main.c: 15:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 15:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "16
-[; ;main.c: 16:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 16:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "17
-[; ;main.c: 17:     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
-[e ( _MTOUCH_Button_SetPressedCallback (1 &U _myButtonPressedCallback ]
+[; ;main.c: 17:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "18
-[; ;main.c: 18:     MTOUCH_Button_SetNotPressedCallback(myButtonReleasedCallback);
+[; ;main.c: 18:     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
+[e ( _MTOUCH_Button_SetPressedCallback (1 &U _myButtonPressedCallback ]
+"19
+[; ;main.c: 19:     MTOUCH_Button_SetNotPressedCallback(myButtonReleasedCallback);
 [e ( _MTOUCH_Button_SetNotPressedCallback (1 &U _myButtonReleasedCallback ]
-"20
-[; ;main.c: 20:     do { LATAbits.LATA2 = 0; } while(0);
+"21
+[; ;main.c: 21:     do { LATAbits.LATA2 = 0; } while(0);
 [e :U 463 ]
 {
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 }
 [e :U 462 ]
-"21
-[; ;main.c: 21:     while (1)
-[e :U 465 ]
 "22
-[; ;main.c: 22:     {
-{
+[; ;main.c: 22:     while (1)
+[e :U 465 ]
 "23
-[; ;main.c: 23:         if(MTOUCH_Service_Mainloop())
-[e $ ! != -> ( _MTOUCH_Service_Mainloop ..  `i -> 0 `i 467  ]
-"24
-[; ;main.c: 24:         {
+[; ;main.c: 23:     {
 {
+"24
+[; ;main.c: 24:         if(MTOUCH_Service_Mainloop())
+[e $ ! != -> ( _MTOUCH_Service_Mainloop ..  `i -> 0 `i 467  ]
 "25
-[; ;main.c: 25:         }
+[; ;main.c: 25:         {
+{
+"26
+[; ;main.c: 26:         }
 }
 [e :U 467 ]
-"26
-[; ;main.c: 26:     }
+"27
+[; ;main.c: 27:     }
 }
 [e :U 464 ]
 [e $U 465  ]
 [e :U 466 ]
-"27
-[; ;main.c: 27: }
+"28
+[; ;main.c: 28: }
 [e :UE 460 ]
 }
-"29
-[; ;main.c: 29: void myButtonPressedCallback(enum mtouch_button_names button)
-[v _myButtonPressedCallback `(v ~T0 @X0 1 ef1`E2914 ]
 "30
-[; ;main.c: 30: {
+[; ;main.c: 30: void myButtonPressedCallback(enum mtouch_button_names button)
+[v _myButtonPressedCallback `(v ~T0 @X0 1 ef1`E2914 ]
+"31
+[; ;main.c: 31: {
 {
 [e :U _myButtonPressedCallback ]
-"29
-[; ;main.c: 29: void myButtonPressedCallback(enum mtouch_button_names button)
-[v _button `E2914 ~T0 @X0 1 r1 ]
 "30
-[; ;main.c: 30: {
-[f ]
+[; ;main.c: 30: void myButtonPressedCallback(enum mtouch_button_names button)
+[v _button `E2914 ~T0 @X0 1 r1 ]
 "31
-[; ;main.c: 31:     if(button == 0)
-[e $ ! == -> _button `ui -> -> 0 `i `ui 469  ]
+[; ;main.c: 31: {
+[f ]
 "32
-[; ;main.c: 32:     {
-{
-"33
-[; ;main.c: 33:         do { LATCbits.LATC3 = ~LATCbits.LATC3; } while(0);
-[e :U 472 ]
-{
-[e = . . _LATCbits 0 3 -> ~ -> . . _LATCbits 0 3 `i `uc ]
-}
-[e :U 471 ]
+[; ;main.c: 32:     last_touch_status.full_status = last_touch_status.full_status ^ MTOUCH_Button_Buttonmask_Get();
+[e = . _last_touch_status 0 ^ . _last_touch_status 0 -> ( _MTOUCH_Button_Buttonmask_Get ..  `ui ]
 "34
-[; ;main.c: 34:     }
-}
-[e :U 469 ]
+[; ;main.c: 34:     LED_PROCESS(last_touch_status.full_status);
+[e ( _LED_PROCESS (1 -> . _last_touch_status 0 `uc ]
 "35
-[; ;main.c: 35:     if(button == 1)
-[e $ ! == -> _button `ui -> -> 1 `i `ui 473  ]
+[; ;main.c: 35:     RELAY_PROCESS(last_touch_status.full_status);
+[e ( _RELAY_PROCESS (1 -> . _last_touch_status 0 `uc ]
 "36
-[; ;main.c: 36:     {
-{
-"37
-[; ;main.c: 37:         do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
-[e :U 476 ]
-{
-[e = . . _LATAbits 0 1 -> ~ -> . . _LATAbits 0 1 `i `uc ]
-}
-[e :U 475 ]
-"38
-[; ;main.c: 38:     }
-}
-[e :U 473 ]
-"39
-[; ;main.c: 39:     if(button == 2)
-[e $ ! == -> _button `ui -> -> 2 `i `ui 477  ]
-"40
-[; ;main.c: 40:     {
-{
-"41
-[; ;main.c: 41:         do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0);
-[e :U 480 ]
-{
-[e = . . _LATCbits 0 7 -> ~ -> . . _LATCbits 0 7 `i `uc ]
-}
-[e :U 479 ]
-"42
-[; ;main.c: 42:     }
-}
-[e :U 477 ]
-"43
-[; ;main.c: 43:     if(button == 3)
-[e $ ! == -> _button `ui -> -> 3 `i `ui 481  ]
-"44
-[; ;main.c: 44:     {
-{
-"45
-[; ;main.c: 45:         do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
-[e :U 484 ]
-{
-[e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
-}
-[e :U 483 ]
-"46
-[; ;main.c: 46:     }
-}
-[e :U 481 ]
-"47
-[; ;main.c: 47: }
+[; ;main.c: 36: }
 [e :UE 468 ]
 }
-"48
-[; ;main.c: 48: void myButtonReleasedCallback(enum mtouch_button_names button)
+"37
+[; ;main.c: 37: void myButtonReleasedCallback(enum mtouch_button_names button)
 [v _myButtonReleasedCallback `(v ~T0 @X0 1 ef1`E2914 ]
-"49
-[; ;main.c: 49: {
+"38
+[; ;main.c: 38: {
 {
 [e :U _myButtonReleasedCallback ]
-"48
-[; ;main.c: 48: void myButtonReleasedCallback(enum mtouch_button_names button)
+"37
+[; ;main.c: 37: void myButtonReleasedCallback(enum mtouch_button_names button)
 [v _button `E2914 ~T0 @X0 1 r1 ]
-"49
-[; ;main.c: 49: {
+"38
+[; ;main.c: 38: {
 [f ]
-"50
-[; ;main.c: 50: }
-[e :UE 485 ]
+"39
+[; ;main.c: 39: }
+[e :UE 469 ]
 }

@@ -11,4 +11,5 @@ mcc_generated_files/mtouch/mtouch_sensor.h  \
 mcc_generated_files/mtouch/mtouch_button.h  \
 mcc_generated_files/eusart.h  \
 led.h  \
+relay.h  \
 define.h 

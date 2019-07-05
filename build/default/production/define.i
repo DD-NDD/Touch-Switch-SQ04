@@ -118,27 +118,20 @@ typedef uint32_t uint_fast32_t;
 # 2 "./define.h" 2
 
 
-extern volatile _Bool config_status;
-
-
-_Bool busy_flag;
-extern volatile _Bool check_request;
-extern volatile _Bool rest;
-_Bool dir_mes;
 union
 {
     unsigned int full_status;
     struct
     {
-        unsigned DEBONCE :1;
-        unsigned BT_1 :1;
-        unsigned BT_2 :1;
-        unsigned BT_3 :1;
-        unsigned BT_1_ON_OFF :1;
-        unsigned BT_2_ON_OFF :1;
-        unsigned BT_3_ON_OFF :1;
-        unsigned BT_PRESSED :1;
+        unsigned CS0 :1;
+        unsigned CS1 :1;
+        unsigned CS2 :1;
+        unsigned CS3 :1;
+        unsigned CS4 :1;
+        unsigned CS5 :1;
+        unsigned CS6 :1;
+        unsigned CS7 :1;
     };
-}bt_status;
+}last_touch_status;
 # 1 "define.c" 2
 

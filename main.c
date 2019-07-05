@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "led.h"
+#include "relay.h"
 #include "define.h"
 /*
                          Main application
@@ -28,22 +29,10 @@ void main(void)
 /* Call Back -----------------------------------------------------------------*/
 void myButtonPressedCallback(enum mtouch_button_names button)
 {
-    if(button == 0)
-    {
-        LED_0_Toggle();
-    }
-    if(button == 1)
-    {
-        LED_1_Toggle();
-    }
-    if(button == 2)
-    {
-        LED_2_Toggle();
-    }
-    if(button == 3)
-    {
-        LED_3_Toggle();
-    }
+    last_touch_status.full_status = last_touch_status.full_status ^ MTOUCH_Button_Buttonmask_Get();
+    // update status to last_touch_status memory
+    LED_PROCESS(last_touch_status.full_status);
+    RELAY_PROCESS(last_touch_status.full_status);
 }
 void myButtonReleasedCallback(enum mtouch_button_names button)
 {

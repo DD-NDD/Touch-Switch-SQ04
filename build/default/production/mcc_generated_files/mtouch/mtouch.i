@@ -4847,9 +4847,9 @@ typedef uint32_t uint_fast32_t;
 # 50 "mcc_generated_files/mtouch/../mcc.h" 2
 
 # 1 "mcc_generated_files/mtouch/../pin_manager.h" 1
-# 233 "mcc_generated_files/mtouch/../pin_manager.h"
+# 298 "mcc_generated_files/mtouch/../pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 245 "mcc_generated_files/mtouch/../pin_manager.h"
+# 310 "mcc_generated_files/mtouch/../pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "mcc_generated_files/mtouch/../mcc.h" 2
 

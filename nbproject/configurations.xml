@@ -22,6 +22,7 @@
       </logicalFolder>
       <itemPath>led.h</itemPath>
       <itemPath>define.h</itemPath>
+      <itemPath>relay.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -49,6 +50,7 @@
       <itemPath>main.c</itemPath>
       <itemPath>led.c</itemPath>
       <itemPath>define.c</itemPath>
+      <itemPath>relay.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

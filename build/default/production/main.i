@@ -4607,9 +4607,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 233 "./mcc_generated_files/pin_manager.h"
+# 298 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 245 "./mcc_generated_files/pin_manager.h"
+# 310 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -5077,33 +5077,32 @@ void WDT_Initialize(void);
 void LED_PROCESS(uint8_t x);
 # 5 "main.c" 2
 
+# 1 "./relay.h" 1
+
+
+void RELAY_PROCESS(uint8_t x);
+# 6 "main.c" 2
+
 # 1 "./define.h" 1
 
 
 
-extern volatile _Bool config_status;
-
-
-_Bool busy_flag;
-extern volatile _Bool check_request;
-extern volatile _Bool rest;
-_Bool dir_mes;
 union
 {
     unsigned int full_status;
     struct
     {
-        unsigned DEBONCE :1;
-        unsigned BT_1 :1;
-        unsigned BT_2 :1;
-        unsigned BT_3 :1;
-        unsigned BT_1_ON_OFF :1;
-        unsigned BT_2_ON_OFF :1;
-        unsigned BT_3_ON_OFF :1;
-        unsigned BT_PRESSED :1;
+        unsigned CS0 :1;
+        unsigned CS1 :1;
+        unsigned CS2 :1;
+        unsigned CS3 :1;
+        unsigned CS4 :1;
+        unsigned CS5 :1;
+        unsigned CS6 :1;
+        unsigned CS7 :1;
     };
-}bt_status;
-# 6 "main.c" 2
+}last_touch_status;
+# 7 "main.c" 2
 
 
 
@@ -5129,22 +5128,10 @@ void main(void)
 
 void myButtonPressedCallback(enum mtouch_button_names button)
 {
-    if(button == 0)
-    {
-        do { LATCbits.LATC3 = ~LATCbits.LATC3; } while(0);
-    }
-    if(button == 1)
-    {
-        do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
-    }
-    if(button == 2)
-    {
-        do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0);
-    }
-    if(button == 3)
-    {
-        do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
-    }
+    last_touch_status.full_status = last_touch_status.full_status ^ MTOUCH_Button_Buttonmask_Get();
+
+    LED_PROCESS(last_touch_status.full_status);
+    RELAY_PROCESS(last_touch_status.full_status);
 }
 void myButtonReleasedCallback(enum mtouch_button_names button)
 {

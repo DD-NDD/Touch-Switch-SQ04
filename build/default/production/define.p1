@@ -1,18 +1,12 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"15 ./define.h
-[; ;./define.h: 15:     {
+"8 ./define.h
+[; ;./define.h: 8:     {
 [s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2 . DEBONCE BT_1 BT_2 BT_3 BT_1_ON_OFF BT_2_ON_OFF BT_3_ON_OFF BT_PRESSED ]
-"12
-[; ;./define.h: 12: {
+[n S2 . CS0 CS1 CS2 CS3 CS4 CS5 CS6 CS7 ]
+"5
+[; ;./define.h: 5: {
 [u S1 `ui 1 `S2 1 ]
 [n S1 . full_status . ]
-"7 ./define.h
-[; ;./define.h: 7: _Bool busy_flag;
-[v _busy_flag `a ~T0 @X0 1 e ]
-"10
-[; ;./define.h: 10: _Bool dir_mes;
-[v _dir_mes `a ~T0 @X0 1 e ]
-"25
-[; ;./define.h: 25: }bt_status;
-[v _bt_status `S1 ~T0 @X0 1 e ]
+"18 ./define.h
+[; ;./define.h: 18: }last_touch_status;
+[v _last_touch_status `S1 ~T0 @X0 1 e ]
