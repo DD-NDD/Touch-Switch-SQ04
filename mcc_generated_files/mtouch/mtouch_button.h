@@ -48,9 +48,10 @@
  
     enum mtouch_button_names
     {
-        Button3 = 0,
-        Button2 = 1,
-        Button1 = 2
+        Button0 = 0,
+        Button1 = 1,
+        Button2 = 2,
+        Button3 = 3
     };
     
 /*

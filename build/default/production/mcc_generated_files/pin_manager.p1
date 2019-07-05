@@ -635,17 +635,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 62:     LATC = 0xBF;
 [e = _LATC -> -> 191 `i `uc ]
 "67
-[; ;mcc_generated_files/pin_manager.c: 67:     TRISA = 0x08;
-[e = _TRISA -> -> 8 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 67:     TRISA = 0x3F;
+[e = _TRISA -> -> 63 `i `uc ]
 "68
-[; ;mcc_generated_files/pin_manager.c: 68:     TRISB = 0x20;
-[e = _TRISB -> -> 32 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 68:     TRISB = 0x60;
+[e = _TRISB -> -> 96 `i `uc ]
 "69
-[; ;mcc_generated_files/pin_manager.c: 69:     TRISC = 0x40;
-[e = _TRISC -> -> 64 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 69:     TRISC = 0xE8;
+[e = _TRISC -> -> 232 `i `uc ]
 "74
-[; ;mcc_generated_files/pin_manager.c: 74:     ANSELC = 0xEC;
-[e = _ANSELC -> -> 236 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 74:     ANSELC = 0xE8;
+[e = _ANSELC -> -> 232 `i `uc ]
 "75
 [; ;mcc_generated_files/pin_manager.c: 75:     ANSELB = 0x40;
 [e = _ANSELB -> -> 64 `i `uc ]

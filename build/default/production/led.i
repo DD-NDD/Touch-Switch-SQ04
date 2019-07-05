@@ -4696,55 +4696,17 @@ typedef uint32_t uint_fast32_t;
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
 # 3 "./led.h" 2
 
-
-void LED_PROCESS(uint8_t led_name,_Bool blue,_Bool red);
-void LED_EN();
-void LED_DIS();
+void LED_PROCESS(uint8_t x);
 # 7 "led.c" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 302 "./mcc_generated_files/pin_manager.h"
+# 154 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 314 "./mcc_generated_files/pin_manager.h"
+# 166 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 8 "led.c" 2
 
 
-void LED_EN()
+void LED_PROCESS(uint8_t x)
 {
-    do { LATAbits.LATA2 = 0; } while(0);
-}
-void LED_PROCESS(uint8_t led_name,_Bool blue,_Bool red)
-{
-    switch(led_name)
-    {
-        case 1:
-        {
-            if(blue) do { LATCbits.LATC3 = 0; } while(0);
-            else do { LATCbits.LATC3 = 1; } while(0);
-            if(red) do { LATCbits.LATC2 = 0; } while(0);
-            else do { LATCbits.LATC2 = 1; } while(0);
-            break;
-        }
-        case 2:
-        {
-            if(blue) do { LATCbits.LATC7 = 0; } while(0);
-            else do { LATCbits.LATC7 = 1; } while(0);
-            if(red) do { LATCbits.LATC5 = 0; } while(0);
-            else do { LATCbits.LATC5 = 1; } while(0);
-            break;
-        }
-        case 3:
-        {
-            if(blue) do { LATAbits.LATA1 = 0; } while(0);
-            else do { LATAbits.LATA1 = 1; } while(0);
-            if(red) do { LATAbits.LATA0 = 0; } while(0);
-            else do { LATAbits.LATA0 = 1; } while(0);
-            break;
-        }
-        default:
-        {
-            break;
-        }
-    }
 }

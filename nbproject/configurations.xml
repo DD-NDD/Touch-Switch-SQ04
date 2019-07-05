@@ -15,12 +15,10 @@
         </logicalFolder>
         <itemPath>mcc_generated_files/interrupt_manager.h</itemPath>
         <itemPath>mcc_generated_files/pin_manager.h</itemPath>
-        <itemPath>mcc_generated_files/tmr2.h</itemPath>
         <itemPath>mcc_generated_files/device_config.h</itemPath>
         <itemPath>mcc_generated_files/mcc.h</itemPath>
         <itemPath>mcc_generated_files/eusart.h</itemPath>
-        <itemPath>mcc_generated_files/tmr0.h</itemPath>
-        <itemPath>mcc_generated_files/tmr1.h</itemPath>
+        <itemPath>mcc_generated_files/tmr2.h</itemPath>
       </logicalFolder>
       <itemPath>led.h</itemPath>
       <itemPath>define.h</itemPath>
@@ -36,19 +34,17 @@
                      displayName="MCC Generated Files"
                      projectFiles="true">
         <logicalFolder name="mtouch" displayName="mtouch" projectFiles="true">
+          <itemPath>mcc_generated_files/mtouch/mtouch_api_example.c</itemPath>
           <itemPath>mcc_generated_files/mtouch/mtouch.c</itemPath>
           <itemPath>mcc_generated_files/mtouch/mtouch_sensor.c</itemPath>
           <itemPath>mcc_generated_files/mtouch/mtouch_button.c</itemPath>
-          <itemPath>mcc_generated_files/mtouch/mtouch_api_example.c</itemPath>
         </logicalFolder>
         <itemPath>mcc_generated_files/eusart.c</itemPath>
-        <itemPath>mcc_generated_files/tmr2.c</itemPath>
         <itemPath>mcc_generated_files/device_config.c</itemPath>
         <itemPath>mcc_generated_files/interrupt_manager.c</itemPath>
         <itemPath>mcc_generated_files/mcc.c</itemPath>
         <itemPath>mcc_generated_files/pin_manager.c</itemPath>
-        <itemPath>mcc_generated_files/tmr0.c</itemPath>
-        <itemPath>mcc_generated_files/tmr1.c</itemPath>
+        <itemPath>mcc_generated_files/tmr2.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>led.c</itemPath>

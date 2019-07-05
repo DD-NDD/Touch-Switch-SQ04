@@ -4607,9 +4607,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 302 "./mcc_generated_files/pin_manager.h"
+# 154 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 314 "./mcc_generated_files/pin_manager.h"
+# 166 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -4704,35 +4704,6 @@ typedef uint32_t uint_fast32_t;
 # 1 "./mcc_generated_files/interrupt_manager.h" 1
 # 54 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/tmr1.h" 1
-# 100 "./mcc_generated_files/tmr1.h"
-void TMR1_Initialize(void);
-# 129 "./mcc_generated_files/tmr1.h"
-void TMR1_StartTimer(void);
-# 161 "./mcc_generated_files/tmr1.h"
-void TMR1_StopTimer(void);
-# 196 "./mcc_generated_files/tmr1.h"
-uint16_t TMR1_ReadTimer(void);
-# 235 "./mcc_generated_files/tmr1.h"
-void TMR1_WriteTimer(uint16_t timerVal);
-# 271 "./mcc_generated_files/tmr1.h"
-void TMR1_Reload(void);
-# 310 "./mcc_generated_files/tmr1.h"
-void TMR1_StartSinglePulseAcquisition(void);
-# 349 "./mcc_generated_files/tmr1.h"
-uint8_t TMR1_CheckGateValueStatus(void);
-# 367 "./mcc_generated_files/tmr1.h"
-void TMR1_ISR(void);
-# 384 "./mcc_generated_files/tmr1.h"
-void TMR1_CallBack(void);
-# 402 "./mcc_generated_files/tmr1.h"
- void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 420 "./mcc_generated_files/tmr1.h"
-extern void (*TMR1_InterruptHandler)(void);
-# 438 "./mcc_generated_files/tmr1.h"
-void TMR1_DefaultInterruptHandler(void);
-# 55 "./mcc_generated_files/mcc.h" 2
-
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 103 "./mcc_generated_files/tmr2.h"
 void TMR2_Initialize(void);
@@ -4748,28 +4719,7 @@ void TMR2_WriteTimer(uint8_t timerVal);
 void TMR2_LoadPeriodRegister(uint8_t periodVal);
 # 325 "./mcc_generated_files/tmr2.h"
 _Bool TMR2_HasOverflowOccured(void);
-# 56 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/tmr0.h" 1
-# 104 "./mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 135 "./mcc_generated_files/tmr0.h"
-uint8_t TMR0_ReadTimer(void);
-# 174 "./mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint8_t timerVal);
-# 210 "./mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 225 "./mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 243 "./mcc_generated_files/tmr0.h"
-void TMR0_CallBack(void);
-# 261 "./mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 279 "./mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 297 "./mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 57 "./mcc_generated_files/mcc.h" 2
+# 55 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/mtouch/mtouch.h" 1
 # 41 "./mcc_generated_files/mtouch/mtouch.h"
@@ -4779,9 +4729,10 @@ void TMR0_DefaultInterruptHandler(void);
 # 45 "./mcc_generated_files/mtouch/mtouch_sensor.h"
     enum mtouch_sensor_names
     {
-        Sensor_AN13 = 0,
-        Sensor_AN23 = 1,
-        Sensor_AN26 = 2
+        Sensor_AN26 = 0,
+        Sensor_AN12 = 1,
+        Sensor_AN23 = 2,
+        Sensor_AN13 = 3
     };
 
     enum mtouch_sensor_error
@@ -4805,7 +4756,7 @@ void TMR0_DefaultInterruptHandler(void);
 
 
     typedef uint8_t mtouch_sensor_mask_t;
-# 82 "./mcc_generated_files/mtouch/mtouch_sensor.h"
+# 83 "./mcc_generated_files/mtouch/mtouch_sensor.h"
     enum mtouch_sensor_error MTOUCH_Sensor_Initialize (enum mtouch_sensor_names sensor);
     void MTOUCH_Sensor_Scan_Initialize (void);
     void MTOUCH_Sensor_InitializeAll (void);
@@ -4849,9 +4800,10 @@ void TMR0_DefaultInterruptHandler(void);
 
     enum mtouch_button_names
     {
-        Button3 = 0,
-        Button2 = 1,
-        Button1 = 2
+        Button0 = 0,
+        Button1 = 1,
+        Button2 = 2,
+        Button3 = 3
     };
 
 
@@ -4888,7 +4840,7 @@ void TMR0_DefaultInterruptHandler(void);
 
 
     typedef uint8_t mtouch_button_scaling_t;
-# 101 "./mcc_generated_files/mtouch/mtouch_button.h"
+# 102 "./mcc_generated_files/mtouch/mtouch_button.h"
     void MTOUCH_Button_SetPressedCallback (void (*callback)(enum mtouch_button_names button));
     void MTOUCH_Button_SetNotPressedCallback(void (*callback)(enum mtouch_button_names button));
 
@@ -4917,7 +4869,7 @@ void TMR0_DefaultInterruptHandler(void);
     _Bool MTOUCH_Service_Mainloop (void);
     void MTOUCH_Tick (void);
     _Bool MTOUCH_Service_isInProgress (void);
-# 58 "./mcc_generated_files/mcc.h" 2
+# 56 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/eusart.h" 1
 # 57 "./mcc_generated_files/eusart.h"
@@ -5106,12 +5058,12 @@ void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 # 471 "./mcc_generated_files/eusart.h"
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 59 "./mcc_generated_files/mcc.h" 2
-# 74 "./mcc_generated_files/mcc.h"
+# 57 "./mcc_generated_files/mcc.h" 2
+# 72 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 87 "./mcc_generated_files/mcc.h"
+# 85 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 99 "./mcc_generated_files/mcc.h"
+# 97 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 1 "main.c" 2
 
@@ -5122,10 +5074,7 @@ void WDT_Initialize(void);
 
 
 
-
-void LED_PROCESS(uint8_t led_name,_Bool blue,_Bool red);
-void LED_EN();
-void LED_DIS();
+void LED_PROCESS(uint8_t x);
 # 5 "main.c" 2
 
 # 1 "./define.h" 1
@@ -5160,424 +5109,26 @@ union
 
 
 uint16_t count_conf = 0;
-
 void myButtonPressedCallback(enum mtouch_button_names button);
 void myButtonReleasedCallback(enum mtouch_button_names button);
-
-void PROCESS_RELAY(_Bool relay_1,_Bool relay_2,_Bool relay_3)
-{
-    if(relay_1)
-    {
-        do { LATAbits.LATA5 = 0; } while(0);
-    }
-    else
-    {
-        do { LATAbits.LATA5 = 1; } while(0);
-    }
-
-    if(relay_2)
-    {
-        do { LATAbits.LATA4 = 0; } while(0);
-    }
-    else
-    {
-        do { LATAbits.LATA4 = 1; } while(0);
-    }
-
-    if(relay_3)
-    {
-        do { LATBbits.LATB6 = 0; } while(0);
-    }
-    else
-    {
-        do { LATBbits.LATB6 = 1; } while(0);
-    }
-}
-
-uint8_t update_state();
-void DATA_PROCESS(char x);
-void check_message(uint8_t x)
-{
-    switch (x)
-    {
-        case 'T':
-        {
-            check_request = 0;
-            break;
-        }
-        case 'F':
-        {
-            check_request = 0;
-            break;
-        }
-        default:
-        {
-            printf("%c",x);
-            check_request = 1;
-            break;
-        }
-    }
-}
-_Bool check_data(uint8_t x)
-{
-    switch(x)
-    {
-        case '0': return 1;
-        case '1': return 1;
-        case '2': return 1;
-        case '3': return 1;
-        case '4': return 1;
-        case '5': return 1;
-        case '6': return 1;
-        case '7': return 1;
-        case 'T': return 1;
-        case 'F': return 1;
-        case 'U': return 1;
-        default : return 0;
-    }
-}
 void main(void)
 {
     SYSTEM_Initialize();
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
-    INTCONbits.TMR0IE = 0;
-    INTCONbits.TMR0IF = 0;
-    rest = 0;
-    busy_flag = 0;
-    bt_status.full_status = 0;
-    LED_EN();
-    LED_PROCESS(1,0,1);
-    LED_PROCESS(2,0,1);
-    LED_PROCESS(3,0,1);
-    do { LATAbits.LATA5 = 1; } while(0);
-    do { LATAbits.LATA4 = 1; } while(0);
-    do { LATBbits.LATB6 = 1; } while(0);
     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
     MTOUCH_Button_SetNotPressedCallback(myButtonReleasedCallback);
-    volatile uint8_t rxData;
-    volatile uint8_t prcData;
-    check_request = 0;
-    config_status = 0;
-    _Bool blink;
-    uint8_t blink_count = 0;
     while (1)
     {
-
-        if(rest == 1)
-        {
-            if(bt_status.BT_1_ON_OFF == 1)
-            {
-                LED_PROCESS(1,1,0);
-            }
-            else
-            {
-                LED_PROCESS(1,0,1);
-            }
-            if(bt_status.BT_2_ON_OFF == 1)
-            {
-                LED_PROCESS(2,1,0);
-            }
-            else
-            {
-                LED_PROCESS(2,0,1);
-            }
-            if(bt_status.BT_3_ON_OFF == 1)
-            {
-                LED_PROCESS(3,1,0);
-            }
-            else
-            {
-                LED_PROCESS(3,0,1);
-            }
-            rest = 0;
-            MTOUCH_Initialize();
-        }
-        if(EUSART_is_rx_ready())
-        {
-            rxData = EUSART_Read();
-            if(check_data(rxData))
-            {
-                if(check_request == 0)
-                {
-                    prcData = rxData;
-                    check_message(rxData);
-                }
-                else
-                {
-                    if(config_status == 1)
-                    {
-                        if(rxData == 'T')
-                        {
-                            LED_PROCESS(1,1,0);
-                            LED_PROCESS(2,1,0);
-                            LED_PROCESS(3,1,0);
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            config_status = 0;
-                            rest = 1;
-                        }
-                        if(rxData == 'F')
-                        {
-                            LED_PROCESS(1,0,1);
-                            LED_PROCESS(2,0,1);
-                            LED_PROCESS(3,0,1);
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            config_status = 0;
-                            rest = 1;
-                        }
-
-                    }
-                    else
-                    {
-                        if(rxData == 'T')
-                        {
-                            DATA_PROCESS(prcData);
-                        }
-                        if(rxData == 'F')
-                        {
-                            check_request = 0;
-                        }
-                    }
-                }
-            }
-        }
         if(MTOUCH_Service_Mainloop())
         {
-            if(config_status == 0)
-            {
-                if(MTOUCH_Button_isPressed(1) == 1 &&
-                        MTOUCH_Button_isPressed(0) == 0 &&
-                        MTOUCH_Button_isPressed(2) == 0)
-                {
-
-                    count_conf++;
-                    if(count_conf == 1500)
-                    {
-                        count_conf = 0;
-                        printf("PICSMART");
-                        config_status = 1;
-                        check_request = 1;
-                        LED_PROCESS(2,0,1);
-                        LED_PROCESS(1,0,1);
-                        LED_PROCESS(3,0,1);
-                        blink = 0;
-                    }
-                }
-                else
-                {
-                    count_conf = 0;
-                }
-            }
-            else
-            {
-                blink_count++;
-                if(blink == 0)
-                {
-                    LED_PROCESS(1,0,1);
-                    LED_PROCESS(2,0,1);
-                    LED_PROCESS(3,0,1);
-                    if(blink_count == 200)
-                    {
-                        blink_count = 0;
-                        blink = 1;
-                    }
-                }
-                else
-                {
-                    LED_PROCESS(1,1,0);
-                    LED_PROCESS(2,1,0);
-                    LED_PROCESS(3,1,0);
-                    if(blink_count == 200)
-                    {
-                        blink_count = 0;
-                        blink = 0;
-                    }
-                }
-            }
         }
     }
 }
 
 void myButtonPressedCallback(enum mtouch_button_names button)
 {
-    if(config_status == 0)
-    {
-        count_conf = 0;
-        if(button == 0)
-        {
-            bt_status.BT_3_ON_OFF = (~bt_status.BT_3_ON_OFF);
-            if(bt_status.BT_3_ON_OFF == 1)
-            {
-                LED_PROCESS(3,1,0);
-                bt_status.BT_3 = 1;
-            }
-            else
-            {
-                LED_PROCESS(3,0,1);
-                bt_status.BT_3 = 0;
-            }
-        }
-        if(button == 1)
-        {
-            bt_status.BT_2_ON_OFF = (~bt_status.BT_2_ON_OFF);
-            if(bt_status.BT_2_ON_OFF == 1)
-            {
-                LED_PROCESS(2,1,0);
-                bt_status.BT_2 = 1;
-            }
-            else
-            {
-                LED_PROCESS(2,0,1);
-                bt_status.BT_2 = 0;
-            }
-        }
-        if(button == 2)
-        {
-            bt_status.BT_1_ON_OFF = (~bt_status.BT_1_ON_OFF);
-            if(bt_status.BT_1_ON_OFF == 1)
-            {
-                LED_PROCESS(1,1,0);
-                bt_status.BT_1 = 1;
-            }
-            else
-            {
-                LED_PROCESS(1,0,1);
-                bt_status.BT_1 = 0;
-            }
-        }
-        PROCESS_RELAY(bt_status.BT_1,bt_status.BT_2,bt_status.BT_3);
-    }
-}
-uint8_t update_state(void)
-{
-
-    bt_status.BT_1 = bt_status.BT_1_ON_OFF;
-    bt_status.BT_2 = bt_status.BT_2_ON_OFF;
-    bt_status.BT_3 = bt_status.BT_3_ON_OFF;
-
-    uint8_t state;
-    if(bt_status.BT_1==0&&bt_status.BT_2==0&&bt_status.BT_3==0) state = 0;
-    if(bt_status.BT_1==0&&bt_status.BT_2==0&&bt_status.BT_3==1) state = 1;
-    if(bt_status.BT_1==0&&bt_status.BT_2==1&&bt_status.BT_3==0) state = 2;
-    if(bt_status.BT_1==0&&bt_status.BT_2==1&&bt_status.BT_3==1) state = 3;
-    if(bt_status.BT_1==1&&bt_status.BT_2==0&&bt_status.BT_3==0) state = 4;
-    if(bt_status.BT_1==1&&bt_status.BT_2==0&&bt_status.BT_3==1) state = 5;
-    if(bt_status.BT_1==1&&bt_status.BT_2==1&&bt_status.BT_3==0) state = 6;
-    if(bt_status.BT_1==1&&bt_status.BT_2==1&&bt_status.BT_3==1) state = 7 ;
-    return state;
 }
 void myButtonReleasedCallback(enum mtouch_button_names button)
 {
-
-    if(config_status == 0)
-    {
-        if(MTOUCH_Button_isPressed(0)==0&&MTOUCH_Button_isPressed(1)==0&&MTOUCH_Button_isPressed(2)==0)
-        {
-            printf("PIC%d",update_state());
-        }
-    }
-}
-
-
-void DATA_PROCESS(char x)
-{
-    switch(x)
-    {
-        case '0':
-        {
-            LED_PROCESS(1,0,1); bt_status.BT_1_ON_OFF = 0;
-            LED_PROCESS(2,0,1); bt_status.BT_2_ON_OFF = 0;
-            LED_PROCESS(3,0,1); bt_status.BT_3_ON_OFF = 0;
-            PROCESS_RELAY(bt_status.BT_1_ON_OFF,bt_status.BT_2_ON_OFF,bt_status.BT_3_ON_OFF);
-            check_request = 0;
-            break;
-        }
-        case '1':
-        {
-            LED_PROCESS(1,0,1); bt_status.BT_1_ON_OFF = 0;
-            LED_PROCESS(2,0,1); bt_status.BT_2_ON_OFF = 0;
-            LED_PROCESS(3,1,0); bt_status.BT_3_ON_OFF = 1;
-            PROCESS_RELAY(bt_status.BT_1_ON_OFF,bt_status.BT_2_ON_OFF,bt_status.BT_3_ON_OFF);
-            check_request = 0;
-            break;
-        }
-        case '2':
-        {
-            LED_PROCESS(1,0,1); bt_status.BT_1_ON_OFF = 0;
-            LED_PROCESS(2,1,0); bt_status.BT_2_ON_OFF = 1;
-            LED_PROCESS(3,0,1); bt_status.BT_3_ON_OFF = 0;
-            PROCESS_RELAY(bt_status.BT_1_ON_OFF,bt_status.BT_2_ON_OFF,bt_status.BT_3_ON_OFF);
-            check_request = 0;
-            break;
-        }
-        case '3':
-        {
-            LED_PROCESS(1,0,1); bt_status.BT_1_ON_OFF = 0;
-            LED_PROCESS(2,1,0); bt_status.BT_2_ON_OFF = 1;
-            LED_PROCESS(3,1,0); bt_status.BT_3_ON_OFF = 1;
-            PROCESS_RELAY(bt_status.BT_1_ON_OFF,bt_status.BT_2_ON_OFF,bt_status.BT_3_ON_OFF);
-            check_request = 0;
-            break;
-        }
-        case '4':
-        {
-            LED_PROCESS(1,1,0); bt_status.BT_1_ON_OFF = 1;
-            LED_PROCESS(2,0,1); bt_status.BT_2_ON_OFF = 0;
-            LED_PROCESS(3,0,1); bt_status.BT_3_ON_OFF = 0;
-            PROCESS_RELAY(bt_status.BT_1_ON_OFF,bt_status.BT_2_ON_OFF,bt_status.BT_3_ON_OFF);
-            check_request = 0;
-            break;
-        }
-        case '5':
-        {
-            LED_PROCESS(1,1,0); bt_status.BT_1_ON_OFF = 1;
-            LED_PROCESS(2,0,1); bt_status.BT_2_ON_OFF = 0;
-            LED_PROCESS(3,1,0); bt_status.BT_3_ON_OFF = 1;
-            PROCESS_RELAY(bt_status.BT_1_ON_OFF,bt_status.BT_2_ON_OFF,bt_status.BT_3_ON_OFF);
-            check_request = 0;
-            break;
-        }
-        case '6':
-        {
-            LED_PROCESS(1,1,0); bt_status.BT_1_ON_OFF = 1;
-            LED_PROCESS(2,1,0); bt_status.BT_2_ON_OFF = 1;
-            LED_PROCESS(3,0,1); bt_status.BT_3_ON_OFF = 0;
-            PROCESS_RELAY(bt_status.BT_1_ON_OFF,bt_status.BT_2_ON_OFF,bt_status.BT_3_ON_OFF);
-            check_request = 0;
-            break;
-        }
-        case '7':
-        {
-            LED_PROCESS(1,1,0); bt_status.BT_1_ON_OFF = 1;
-            LED_PROCESS(2,1,0); bt_status.BT_2_ON_OFF = 1;
-            LED_PROCESS(3,1,0); bt_status.BT_3_ON_OFF = 1;
-            PROCESS_RELAY(bt_status.BT_1_ON_OFF,bt_status.BT_2_ON_OFF,bt_status.BT_3_ON_OFF);
-            check_request = 0;
-            break;
-        }
-        case 'U':
-        {
-            printf("PIC%d",update_state());
-            break;
-        }
-        default:
-        {
-            check_request = 0;
-            break;
-        }
-    }
 }

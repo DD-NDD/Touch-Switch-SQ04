@@ -4603,9 +4603,9 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
 # 54 "mcc_generated_files/pin_manager.h" 2
-# 302 "mcc_generated_files/pin_manager.h"
+# 154 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 314 "mcc_generated_files/pin_manager.h"
+# 166 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 49 "mcc_generated_files/pin_manager.c" 2
 
@@ -4626,14 +4626,14 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    TRISA = 0x08;
-    TRISB = 0x20;
-    TRISC = 0x40;
+    TRISA = 0x3F;
+    TRISB = 0x60;
+    TRISC = 0xE8;
 
 
 
 
-    ANSELC = 0xEC;
+    ANSELC = 0xE8;
     ANSELB = 0x40;
     ANSELA = 0x37;
 

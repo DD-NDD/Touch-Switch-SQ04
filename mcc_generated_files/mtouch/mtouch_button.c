@@ -81,13 +81,21 @@ enum mtouch_button_state
 
     const mtouch_button_t mtouch_button_init[MTOUCH_BUTTONS] =
     {
-        /* Button3 */
-        {   Button3, 
-            MTOUCH_BUTTON_SENSOR_Button3,
+        /* Button0 */
+        {   Button0, 
+            MTOUCH_BUTTON_SENSOR_Button0,
             MTOUCH_BUTTON_STATE_initializing,
             0,0,0,0,0, /* non-const variables */
-            (mtouch_button_deviation_t)MTOUCH_BUTTON_THRESHOLD_Button3, /* threshold */
-            (mtouch_button_scaling_t)MTOUCH_BUTTON_SCALING_Button3 /* scaling */
+            (mtouch_button_deviation_t)MTOUCH_BUTTON_THRESHOLD_Button0, /* threshold */
+            (mtouch_button_scaling_t)MTOUCH_BUTTON_SCALING_Button0 /* scaling */
+        },
+        /* Button1 */
+        {   Button1, 
+            MTOUCH_BUTTON_SENSOR_Button1,
+            MTOUCH_BUTTON_STATE_initializing,
+            0,0,0,0,0, /* non-const variables */
+            (mtouch_button_deviation_t)MTOUCH_BUTTON_THRESHOLD_Button1, /* threshold */
+            (mtouch_button_scaling_t)MTOUCH_BUTTON_SCALING_Button1 /* scaling */
         },
         /* Button2 */
         {   Button2, 
@@ -97,13 +105,13 @@ enum mtouch_button_state
             (mtouch_button_deviation_t)MTOUCH_BUTTON_THRESHOLD_Button2, /* threshold */
             (mtouch_button_scaling_t)MTOUCH_BUTTON_SCALING_Button2 /* scaling */
         },
-        /* Button1 */
-        {   Button1, 
-            MTOUCH_BUTTON_SENSOR_Button1,
+        /* Button3 */
+        {   Button3, 
+            MTOUCH_BUTTON_SENSOR_Button3,
             MTOUCH_BUTTON_STATE_initializing,
             0,0,0,0,0, /* non-const variables */
-            (mtouch_button_deviation_t)MTOUCH_BUTTON_THRESHOLD_Button1, /* threshold */
-            (mtouch_button_scaling_t)MTOUCH_BUTTON_SCALING_Button1 /* scaling */
+            (mtouch_button_deviation_t)MTOUCH_BUTTON_THRESHOLD_Button3, /* threshold */
+            (mtouch_button_scaling_t)MTOUCH_BUTTON_SCALING_Button3 /* scaling */
         }
     };
     

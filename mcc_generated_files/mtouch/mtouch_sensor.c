@@ -164,12 +164,20 @@ static mtouch_sensor_sampleperiod_t     sample_period = MTOUCH_SENSOR_SAMPLEPERI
  * =======================================================================
  */
 static mtouch_sensor_t mtouch_sensor[MTOUCH_SENSORS] = {
-    {   Sensor_AN13,
-        MTOUCH_SENSOR_ADCON0_Sensor_AN13,
-        MTOUCH_SENSOR_PRECHARGE_Sensor_AN13,
-        MTOUCH_SENSOR_ACQUISITION_Sensor_AN13,
-        MTOUCH_SENSOR_OVERSAMPLING_Sensor_AN13,
-        MTOUCH_SENSOR_ADDITIONALCAP_Sensor_AN13,
+    {   Sensor_AN26,
+        MTOUCH_SENSOR_ADCON0_Sensor_AN26,
+        MTOUCH_SENSOR_PRECHARGE_Sensor_AN26,
+        MTOUCH_SENSOR_ACQUISITION_Sensor_AN26,
+        MTOUCH_SENSOR_OVERSAMPLING_Sensor_AN26,
+        MTOUCH_SENSOR_ADDITIONALCAP_Sensor_AN26,
+        0,0,0,0,0,0
+    },
+    {   Sensor_AN12,
+        MTOUCH_SENSOR_ADCON0_Sensor_AN12,
+        MTOUCH_SENSOR_PRECHARGE_Sensor_AN12,
+        MTOUCH_SENSOR_ACQUISITION_Sensor_AN12,
+        MTOUCH_SENSOR_OVERSAMPLING_Sensor_AN12,
+        MTOUCH_SENSOR_ADDITIONALCAP_Sensor_AN12,
         0,0,0,0,0,0
     },
     {   Sensor_AN23,
@@ -180,12 +188,12 @@ static mtouch_sensor_t mtouch_sensor[MTOUCH_SENSORS] = {
         MTOUCH_SENSOR_ADDITIONALCAP_Sensor_AN23,
         0,0,0,0,0,0
     },
-    {   Sensor_AN26,
-        MTOUCH_SENSOR_ADCON0_Sensor_AN26,
-        MTOUCH_SENSOR_PRECHARGE_Sensor_AN26,
-        MTOUCH_SENSOR_ACQUISITION_Sensor_AN26,
-        MTOUCH_SENSOR_OVERSAMPLING_Sensor_AN26,
-        MTOUCH_SENSOR_ADDITIONALCAP_Sensor_AN26,
+    {   Sensor_AN13,
+        MTOUCH_SENSOR_ADCON0_Sensor_AN13,
+        MTOUCH_SENSOR_PRECHARGE_Sensor_AN13,
+        MTOUCH_SENSOR_ACQUISITION_Sensor_AN13,
+        MTOUCH_SENSOR_OVERSAMPLING_Sensor_AN13,
+        MTOUCH_SENSOR_ADDITIONALCAP_Sensor_AN13,
         0,0,0,0,0,0
     },
 };
@@ -196,8 +204,8 @@ static mtouch_sensor_t mtouch_sensor[MTOUCH_SENSORS] = {
  * =======================================================================
  */
 static  mtouch_scan_group_t const  sensor_scan_group[MTOUCH_SCAN_GROUPS] = {
+    { &(mtouch_sensor[Sensor_AN12]),&(mtouch_sensor[Sensor_AN26])},
     { &(mtouch_sensor[Sensor_AN13]),&(mtouch_sensor[Sensor_AN23])},
-    { NULL ,&(mtouch_sensor[Sensor_AN26])},
 };
 
 /*

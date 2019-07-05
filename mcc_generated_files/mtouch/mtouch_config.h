@@ -46,9 +46,9 @@
  * Application / Configuration Settings
  * =======================================================================
  */
-    #define MTOUCH_SENSORS          3u
+    #define MTOUCH_SENSORS          4u
     #define MTOUCH_SCAN_GROUPS      2u
-    #define MTOUCH_BUTTONS          3u
+    #define MTOUCH_BUTTONS          4u
     #define MTOUCH_COMM_ENABLE      1u
 
     /* 
@@ -58,21 +58,26 @@
      */
 
     
-    #define MTOUCH_SENSOR_ADCON0_Sensor_AN13             ( 0xd<<2 | 0x1 )
-    #define MTOUCH_SENSOR_PRECHARGE_Sensor_AN13          48u
-    #define MTOUCH_SENSOR_ACQUISITION_Sensor_AN13        16u
-    #define MTOUCH_SENSOR_OVERSAMPLING_Sensor_AN13       32u
-    #define MTOUCH_SENSOR_ADDITIONALCAP_Sensor_AN13      0u
-    #define MTOUCH_SENSOR_ADCON0_Sensor_AN23             ( 0x17<<2 | 0x1 )
-    #define MTOUCH_SENSOR_PRECHARGE_Sensor_AN23          48u
-    #define MTOUCH_SENSOR_ACQUISITION_Sensor_AN23        16u
-    #define MTOUCH_SENSOR_OVERSAMPLING_Sensor_AN23       32u
-    #define MTOUCH_SENSOR_ADDITIONALCAP_Sensor_AN23      0u
     #define MTOUCH_SENSOR_ADCON0_Sensor_AN26             ( 0x1a<<2 | 0x1 )
     #define MTOUCH_SENSOR_PRECHARGE_Sensor_AN26          48u
     #define MTOUCH_SENSOR_ACQUISITION_Sensor_AN26        16u
     #define MTOUCH_SENSOR_OVERSAMPLING_Sensor_AN26       32u
     #define MTOUCH_SENSOR_ADDITIONALCAP_Sensor_AN26      0u
+    #define MTOUCH_SENSOR_ADCON0_Sensor_AN12             ( 0xc<<2 | 0x1 )
+    #define MTOUCH_SENSOR_PRECHARGE_Sensor_AN12          48u
+    #define MTOUCH_SENSOR_ACQUISITION_Sensor_AN12        16u
+    #define MTOUCH_SENSOR_OVERSAMPLING_Sensor_AN12       32u
+    #define MTOUCH_SENSOR_ADDITIONALCAP_Sensor_AN12      0u
+    #define MTOUCH_SENSOR_ADCON0_Sensor_AN23             ( 0x17<<2 | 0x1 )
+    #define MTOUCH_SENSOR_PRECHARGE_Sensor_AN23          48u
+    #define MTOUCH_SENSOR_ACQUISITION_Sensor_AN23        16u
+    #define MTOUCH_SENSOR_OVERSAMPLING_Sensor_AN23       32u
+    #define MTOUCH_SENSOR_ADDITIONALCAP_Sensor_AN23      0u
+    #define MTOUCH_SENSOR_ADCON0_Sensor_AN13             ( 0xd<<2 | 0x1 )
+    #define MTOUCH_SENSOR_PRECHARGE_Sensor_AN13          48u
+    #define MTOUCH_SENSOR_ACQUISITION_Sensor_AN13        16u
+    #define MTOUCH_SENSOR_OVERSAMPLING_Sensor_AN13       32u
+    #define MTOUCH_SENSOR_ADDITIONALCAP_Sensor_AN13      0u
     #define MTOUCH_SENSOR_ACTIVE_THRESHOLD               100u  
     
 
@@ -90,17 +95,20 @@
     #define MTOUCH_BUTTON_NEGATIVEDEVIATION         ((mtouch_button_statecounter_t)64u)
     #define MTOUCH_BUTTON_PRESSTIMEOUT              ((mtouch_button_statecounter_t)2000u)
 
-    #define MTOUCH_BUTTON_SENSOR_Button3             Sensor_AN13
+    #define MTOUCH_BUTTON_SENSOR_Button0             Sensor_AN12
+    #define MTOUCH_BUTTON_SENSOR_Button1             Sensor_AN13
     #define MTOUCH_BUTTON_SENSOR_Button2             Sensor_AN23
-    #define MTOUCH_BUTTON_SENSOR_Button1             Sensor_AN26
+    #define MTOUCH_BUTTON_SENSOR_Button3             Sensor_AN26
 
-    #define MTOUCH_BUTTON_THRESHOLD_Button3          100u
-    #define MTOUCH_BUTTON_THRESHOLD_Button2          100u
+    #define MTOUCH_BUTTON_THRESHOLD_Button0          100u
     #define MTOUCH_BUTTON_THRESHOLD_Button1          100u
+    #define MTOUCH_BUTTON_THRESHOLD_Button2          100u
+    #define MTOUCH_BUTTON_THRESHOLD_Button3          100u
     
-    #define MTOUCH_BUTTON_SCALING_Button3            1u
-    #define MTOUCH_BUTTON_SCALING_Button2            1u
+    #define MTOUCH_BUTTON_SCALING_Button0            1u
     #define MTOUCH_BUTTON_SCALING_Button1            1u
+    #define MTOUCH_BUTTON_SCALING_Button2            1u
+    #define MTOUCH_BUTTON_SCALING_Button3            1u
 
     #define MTOUCH_BUTTON_COMMON_HYSTERESIS         HYST_50_PERCENT
     

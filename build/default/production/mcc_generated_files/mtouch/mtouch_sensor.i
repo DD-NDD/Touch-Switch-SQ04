@@ -4599,9 +4599,9 @@ extern __bank0 __bit __timeout;
 # 50 "mcc_generated_files/mtouch/../mcc.h" 2
 
 # 1 "mcc_generated_files/mtouch/../pin_manager.h" 1
-# 302 "mcc_generated_files/mtouch/../pin_manager.h"
+# 154 "mcc_generated_files/mtouch/../pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 314 "mcc_generated_files/mtouch/../pin_manager.h"
+# 166 "mcc_generated_files/mtouch/../pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "mcc_generated_files/mtouch/../mcc.h" 2
 
@@ -4696,35 +4696,6 @@ typedef uint32_t uint_fast32_t;
 # 1 "mcc_generated_files/mtouch/../interrupt_manager.h" 1
 # 54 "mcc_generated_files/mtouch/../mcc.h" 2
 
-# 1 "mcc_generated_files/mtouch/../tmr1.h" 1
-# 100 "mcc_generated_files/mtouch/../tmr1.h"
-void TMR1_Initialize(void);
-# 129 "mcc_generated_files/mtouch/../tmr1.h"
-void TMR1_StartTimer(void);
-# 161 "mcc_generated_files/mtouch/../tmr1.h"
-void TMR1_StopTimer(void);
-# 196 "mcc_generated_files/mtouch/../tmr1.h"
-uint16_t TMR1_ReadTimer(void);
-# 235 "mcc_generated_files/mtouch/../tmr1.h"
-void TMR1_WriteTimer(uint16_t timerVal);
-# 271 "mcc_generated_files/mtouch/../tmr1.h"
-void TMR1_Reload(void);
-# 310 "mcc_generated_files/mtouch/../tmr1.h"
-void TMR1_StartSinglePulseAcquisition(void);
-# 349 "mcc_generated_files/mtouch/../tmr1.h"
-uint8_t TMR1_CheckGateValueStatus(void);
-# 367 "mcc_generated_files/mtouch/../tmr1.h"
-void TMR1_ISR(void);
-# 384 "mcc_generated_files/mtouch/../tmr1.h"
-void TMR1_CallBack(void);
-# 402 "mcc_generated_files/mtouch/../tmr1.h"
- void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 420 "mcc_generated_files/mtouch/../tmr1.h"
-extern void (*TMR1_InterruptHandler)(void);
-# 438 "mcc_generated_files/mtouch/../tmr1.h"
-void TMR1_DefaultInterruptHandler(void);
-# 55 "mcc_generated_files/mtouch/../mcc.h" 2
-
 # 1 "mcc_generated_files/mtouch/../tmr2.h" 1
 # 103 "mcc_generated_files/mtouch/../tmr2.h"
 void TMR2_Initialize(void);
@@ -4740,28 +4711,7 @@ void TMR2_WriteTimer(uint8_t timerVal);
 void TMR2_LoadPeriodRegister(uint8_t periodVal);
 # 325 "mcc_generated_files/mtouch/../tmr2.h"
 _Bool TMR2_HasOverflowOccured(void);
-# 56 "mcc_generated_files/mtouch/../mcc.h" 2
-
-# 1 "mcc_generated_files/mtouch/../tmr0.h" 1
-# 104 "mcc_generated_files/mtouch/../tmr0.h"
-void TMR0_Initialize(void);
-# 135 "mcc_generated_files/mtouch/../tmr0.h"
-uint8_t TMR0_ReadTimer(void);
-# 174 "mcc_generated_files/mtouch/../tmr0.h"
-void TMR0_WriteTimer(uint8_t timerVal);
-# 210 "mcc_generated_files/mtouch/../tmr0.h"
-void TMR0_Reload(void);
-# 225 "mcc_generated_files/mtouch/../tmr0.h"
-void TMR0_ISR(void);
-# 243 "mcc_generated_files/mtouch/../tmr0.h"
-void TMR0_CallBack(void);
-# 261 "mcc_generated_files/mtouch/../tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 279 "mcc_generated_files/mtouch/../tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 297 "mcc_generated_files/mtouch/../tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 57 "mcc_generated_files/mtouch/../mcc.h" 2
+# 55 "mcc_generated_files/mtouch/../mcc.h" 2
 
 # 1 "mcc_generated_files/mtouch/../mtouch/mtouch.h" 1
 # 41 "mcc_generated_files/mtouch/../mtouch/mtouch.h"
@@ -4771,9 +4721,10 @@ void TMR0_DefaultInterruptHandler(void);
 # 45 "mcc_generated_files/mtouch/mtouch_sensor.h"
     enum mtouch_sensor_names
     {
-        Sensor_AN13 = 0,
-        Sensor_AN23 = 1,
-        Sensor_AN26 = 2
+        Sensor_AN26 = 0,
+        Sensor_AN12 = 1,
+        Sensor_AN23 = 2,
+        Sensor_AN13 = 3
     };
 
     enum mtouch_sensor_error
@@ -4797,7 +4748,7 @@ void TMR0_DefaultInterruptHandler(void);
 
 
     typedef uint8_t mtouch_sensor_mask_t;
-# 82 "mcc_generated_files/mtouch/mtouch_sensor.h"
+# 83 "mcc_generated_files/mtouch/mtouch_sensor.h"
     enum mtouch_sensor_error MTOUCH_Sensor_Initialize (enum mtouch_sensor_names sensor);
     void MTOUCH_Sensor_Scan_Initialize (void);
     void MTOUCH_Sensor_InitializeAll (void);
@@ -4841,9 +4792,10 @@ void TMR0_DefaultInterruptHandler(void);
 
     enum mtouch_button_names
     {
-        Button3 = 0,
-        Button2 = 1,
-        Button1 = 2
+        Button0 = 0,
+        Button1 = 1,
+        Button2 = 2,
+        Button3 = 3
     };
 
 
@@ -4880,7 +4832,7 @@ void TMR0_DefaultInterruptHandler(void);
 
 
     typedef uint8_t mtouch_button_scaling_t;
-# 101 "mcc_generated_files/mtouch/mtouch_button.h"
+# 102 "mcc_generated_files/mtouch/mtouch_button.h"
     void MTOUCH_Button_SetPressedCallback (void (*callback)(enum mtouch_button_names button));
     void MTOUCH_Button_SetNotPressedCallback(void (*callback)(enum mtouch_button_names button));
 
@@ -4909,7 +4861,7 @@ void TMR0_DefaultInterruptHandler(void);
     _Bool MTOUCH_Service_Mainloop (void);
     void MTOUCH_Tick (void);
     _Bool MTOUCH_Service_isInProgress (void);
-# 58 "mcc_generated_files/mtouch/../mcc.h" 2
+# 56 "mcc_generated_files/mtouch/../mcc.h" 2
 
 # 1 "mcc_generated_files/mtouch/../eusart.h" 1
 # 57 "mcc_generated_files/mtouch/../eusart.h"
@@ -5098,12 +5050,12 @@ void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 # 471 "mcc_generated_files/mtouch/../eusart.h"
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 59 "mcc_generated_files/mtouch/../mcc.h" 2
-# 74 "mcc_generated_files/mtouch/../mcc.h"
+# 57 "mcc_generated_files/mtouch/../mcc.h" 2
+# 72 "mcc_generated_files/mtouch/../mcc.h"
 void SYSTEM_Initialize(void);
-# 87 "mcc_generated_files/mtouch/../mcc.h"
+# 85 "mcc_generated_files/mtouch/../mcc.h"
 void OSCILLATOR_Initialize(void);
-# 99 "mcc_generated_files/mtouch/../mcc.h"
+# 97 "mcc_generated_files/mtouch/../mcc.h"
 void WDT_Initialize(void);
 # 37 "mcc_generated_files/mtouch/mtouch_sensor.c" 2
 
@@ -5235,9 +5187,17 @@ static mtouch_sensor_sampleperiod_t sample_period = ((mtouch_sensor_sampleperiod
 
 
 
-static mtouch_sensor_t mtouch_sensor[3u] = {
-    { Sensor_AN13,
-        ( 0xd<<2 | 0x1 ),
+static mtouch_sensor_t mtouch_sensor[4u] = {
+    { Sensor_AN26,
+        ( 0x1a<<2 | 0x1 ),
+        48u,
+        16u,
+        32u,
+        0u,
+        0,0,0,0,0,0
+    },
+    { Sensor_AN12,
+        ( 0xc<<2 | 0x1 ),
         48u,
         16u,
         32u,
@@ -5252,8 +5212,8 @@ static mtouch_sensor_t mtouch_sensor[3u] = {
         0u,
         0,0,0,0,0,0
     },
-    { Sensor_AN26,
-        ( 0x1a<<2 | 0x1 ),
+    { Sensor_AN13,
+        ( 0xd<<2 | 0x1 ),
         48u,
         16u,
         32u,
@@ -5268,8 +5228,8 @@ static mtouch_sensor_t mtouch_sensor[3u] = {
 
 
 static mtouch_scan_group_t const sensor_scan_group[2u] = {
+    { &(mtouch_sensor[Sensor_AN12]),&(mtouch_sensor[Sensor_AN26])},
     { &(mtouch_sensor[Sensor_AN13]),&(mtouch_sensor[Sensor_AN23])},
-    { ((void*)0) ,&(mtouch_sensor[Sensor_AN26])},
 };
 
 
@@ -5296,7 +5256,7 @@ void MTOUCH_Sensor_InitializeAll(void)
 {
     enum mtouch_sensor_names sensor;
 
-    for (sensor = 0; sensor < 3u; sensor++)
+    for (sensor = 0; sensor < 4u; sensor++)
     {
         MTOUCH_Sensor_Initialize(sensor);
     }
@@ -5319,7 +5279,7 @@ void MTOUCH_Sensor_Scan_Initialize(void)
     AD2CON3 = (uint8_t)0b01000000;
 
 }
-# 258 "mcc_generated_files/mtouch/mtouch_sensor.c"
+# 266 "mcc_generated_files/mtouch/mtouch_sensor.c"
 _Bool MTOUCH_Sensor_SampleAll(void)
 {
     uint8_t group;
@@ -5351,7 +5311,7 @@ _Bool MTOUCH_Sensor_isAnySensorActive(void)
 {
     enum mtouch_sensor_names sensor;
 
-    for (sensor = 0; sensor < 3u; sensor++)
+    for (sensor = 0; sensor < 4u; sensor++)
     {
         if(mtouch_sensor[sensor].active)
             return 1;
@@ -5741,7 +5701,7 @@ static enum mtouch_sensor_error Sensor_Acq_ExecutePacket(mtouch_sensor_t* sensor
 
     return MTOUCH_SENSOR_ERROR_none;
 }
-# 688 "mcc_generated_files/mtouch/mtouch_sensor.c"
+# 696 "mcc_generated_files/mtouch/mtouch_sensor.c"
 static void Sensor_autoCalibration(mtouch_sensor_t* sensor)
 {
     uint8_t adcIndex = Sensor_getScanGroupIndex(sensor);
@@ -5779,7 +5739,7 @@ static void Sensor_autoCalibration(mtouch_sensor_t* sensor)
         }
     }
 }
-# 733 "mcc_generated_files/mtouch/mtouch_sensor.c"
+# 741 "mcc_generated_files/mtouch/mtouch_sensor.c"
 static enum mtouch_sensor_error Sensor_Scanfrequency_Evaluation(mtouch_sensor_t* sensor_adc1,mtouch_sensor_t* sensor_adc2)
 {
     uint8_t i;
@@ -5841,7 +5801,7 @@ static enum mtouch_sensor_error Sensor_Scanfrequency_Evaluation(mtouch_sensor_t*
 
 mtouch_sensor_sample_t MTOUCH_Sensor_RawSample_Get(enum mtouch_sensor_names name)
 {
-    if (name < 3u)
+    if (name < 4u)
     {
         return mtouch_sensor[name].rawSample;
     }
@@ -5884,19 +5844,19 @@ void MTOUCH_Sensor_SetSampledCallback(void (*callback)(enum mtouch_sensor_names 
 
 void MTOUCH_Sensor_Disable(enum mtouch_sensor_names sensor)
 {
-    if(sensor < 3u)
+    if(sensor < 4u)
         mtouch_sensor[sensor].enabled = 0;
 }
 
 void MTOUCH_Sensor_Enable(enum mtouch_sensor_names sensor)
 {
-    if(sensor < 3u)
+    if(sensor < 4u)
         mtouch_sensor[sensor].enabled = 1;
 }
 
 _Bool MTOUCH_Sensor_isEnabled(enum mtouch_sensor_names sensor)
 {
-    if(sensor < 3u)
+    if(sensor < 4u)
         return (_Bool)mtouch_sensor[sensor].enabled;
     else
         return 0;
@@ -5909,7 +5869,7 @@ static _Bool Sensor_isEnabled(mtouch_sensor_t* sensor)
     else
         return 0;
 }
-# 872 "mcc_generated_files/mtouch/mtouch_sensor.c"
+# 880 "mcc_generated_files/mtouch/mtouch_sensor.c"
 static __attribute__((inline)) void Sensor_setActive(mtouch_sensor_t* sensor)
 {
     sensor->active = 1;
@@ -5930,14 +5890,14 @@ static __attribute__((inline)) _Bool Sensor_isActive(mtouch_sensor_t* sensor)
 
 _Bool MTOUCH_Sensor_isActive(enum mtouch_sensor_names sensor)
 {
-    if(sensor<=3u)
+    if(sensor<=4u)
         return (_Bool)mtouch_sensor[sensor].active;
     return 0;
 }
-# 904 "mcc_generated_files/mtouch/mtouch_sensor.c"
+# 912 "mcc_generated_files/mtouch/mtouch_sensor.c"
 void MTOUCH_Sensor_Calibrate(enum mtouch_sensor_names sensor)
 {
-    if(sensor < 3u)
+    if(sensor < 4u)
     {
         mtouch_sensor[sensor].calibrated = 0;
     }
@@ -5945,7 +5905,7 @@ void MTOUCH_Sensor_Calibrate(enum mtouch_sensor_names sensor)
 
 _Bool MTOUCH_Sensor_isCalibrated(enum mtouch_sensor_names sensor)
 {
-    if(sensor < 3u)
+    if(sensor < 4u)
         return (_Bool)mtouch_sensor[sensor].calibrated;
     else
         return 0;
@@ -5973,11 +5933,11 @@ static __attribute__((inline)) _Bool Sensor_isCalibratingAcqTime(mtouch_sensor_t
     return (_Bool)sensor->acqTime_cal;
 
 }
-# 950 "mcc_generated_files/mtouch/mtouch_sensor.c"
+# 958 "mcc_generated_files/mtouch/mtouch_sensor.c"
 void MTOUCH_Sensor_Sampled_ResetAll(void)
 {
     mtouch_sensor_t* sensor;
-    for(sensor = &mtouch_sensor[0];sensor<= &mtouch_sensor[3u -1];sensor++)
+    for(sensor = &mtouch_sensor[0];sensor<= &mtouch_sensor[4u -1];sensor++)
     {
         Sensor_Sampled_Reset(sensor);
     }
@@ -5997,10 +5957,10 @@ static __attribute__((inline)) void Sensor_setSampled(mtouch_sensor_t* sensor)
 {
     sensor->sampled = 1;
 }
-# 981 "mcc_generated_files/mtouch/mtouch_sensor.c"
+# 989 "mcc_generated_files/mtouch/mtouch_sensor.c"
 uint8_t MTOUCH_Sensor_AdditionalCap_Get(enum mtouch_sensor_names name)
 {
-     if(name < 3u)
+     if(name < 4u)
         return (uint8_t)(mtouch_sensor[name].addcap<<1);
      else
         return 0;
@@ -6008,7 +5968,7 @@ uint8_t MTOUCH_Sensor_AdditionalCap_Get(enum mtouch_sensor_names name)
 
 uint8_t MTOUCH_Sensor_AcquisitionTime_Get(enum mtouch_sensor_names name)
 {
-     if(name < 3u)
+     if(name < 4u)
         return mtouch_sensor[name].acquisition_time;
      else
         return 0;
@@ -6016,7 +5976,7 @@ uint8_t MTOUCH_Sensor_AcquisitionTime_Get(enum mtouch_sensor_names name)
 
 uint8_t MTOUCH_Sensor_PreChargeTime_Get(enum mtouch_sensor_names name)
 {
-     if(name < 3u)
+     if(name < 4u)
         return mtouch_sensor[name].precharge_time;
      else
         return 0;
@@ -6024,7 +5984,7 @@ uint8_t MTOUCH_Sensor_PreChargeTime_Get(enum mtouch_sensor_names name)
 
 uint8_t MTOUCH_Sensor_Oversampling_Get(enum mtouch_sensor_names name)
 {
-    if(name < 3u)
+    if(name < 4u)
        return (uint8_t)(mtouch_sensor[name].oversampling);
     else
        return 0;
@@ -6032,7 +5992,7 @@ uint8_t MTOUCH_Sensor_Oversampling_Get(enum mtouch_sensor_names name)
 
 void MTOUCH_Sensor_Oversampling_Set(enum mtouch_sensor_names name, uint8_t value )
 {
-    if(name < 3u)
+    if(name < 4u)
     {
        mtouch_sensor[name].oversampling = (mtouch_sensor_packetcounter_t)(value);
     }

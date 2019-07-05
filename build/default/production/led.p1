@@ -1,26 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"1791 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 1791:     struct {
-[s S102 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S102 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
-"1790
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 1790: typedef union {
-[u S101 `S102 1 ]
-[n S101 . . ]
-"1800
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 1800: extern volatile LATAbits_t LATAbits __attribute__((address(0x10C)));
-[v _LATAbits `VS101 ~T0 @X0 0 e@268 ]
-"1875
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 1875:     struct {
-[s S106 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S106 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"1874
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 1874: typedef union {
-[u S105 `S106 1 ]
-[n S105 . . ]
-"1886
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 1886: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
-[v _LATCbits `VS105 ~T0 @X0 0 e@270 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -589,212 +567,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 8047: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 "10 led.c
-[; ;led.c: 10: void LED_EN()
-[v _LED_EN `(v ~T0 @X0 1 ef ]
+[; ;led.c: 10: void LED_PROCESS(uint8_t x)
+[v _LED_PROCESS `(v ~T0 @X0 1 ef1`uc ]
 "11
 [; ;led.c: 11: {
 {
-[e :U _LED_EN ]
+[e :U _LED_PROCESS ]
+"10
+[; ;led.c: 10: void LED_PROCESS(uint8_t x)
+[v _x `uc ~T0 @X0 1 r1 ]
+"11
+[; ;led.c: 11: {
 [f ]
 "12
-[; ;led.c: 12:     do { LATAbits.LATA2 = 0; } while(0);
-[e :U 457 ]
-{
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-}
-[e :U 456 ]
-"13
-[; ;led.c: 13: }
+[; ;led.c: 12: }
 [e :UE 454 ]
-}
-"14
-[; ;led.c: 14: void LED_PROCESS(uint8_t led_name,_Bool blue,_Bool red)
-[v _LED_PROCESS `(v ~T0 @X0 1 ef3`uc`a`a ]
-"15
-[; ;led.c: 15: {
-{
-[e :U _LED_PROCESS ]
-"14
-[; ;led.c: 14: void LED_PROCESS(uint8_t led_name,_Bool blue,_Bool red)
-[v _led_name `uc ~T0 @X0 1 r1 ]
-[v _blue `a ~T0 @X0 1 r2 ]
-[v _red `a ~T0 @X0 1 r3 ]
-"15
-[; ;led.c: 15: {
-[f ]
-"16
-[; ;led.c: 16:     switch(led_name)
-[e $U 460  ]
-"17
-[; ;led.c: 17:     {
-{
-"18
-[; ;led.c: 18:         case 1:
-[e :U 461 ]
-"19
-[; ;led.c: 19:         {
-{
-"20
-[; ;led.c: 20:             if(blue) do { LATCbits.LATC3 = 0; } while(0);
-[e $ ! != -> _blue `i -> 0 `i 462  ]
-[e :U 465 ]
-{
-[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 464 ]
-[e $U 466  ]
-"21
-[; ;led.c: 21:             else do { LATCbits.LATC3 = 1; } while(0);
-[e :U 462 ]
-[e :U 469 ]
-{
-[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 468 ]
-[e :U 466 ]
-"22
-[; ;led.c: 22:             if(red) do { LATCbits.LATC2 = 0; } while(0);
-[e $ ! != -> _red `i -> 0 `i 470  ]
-[e :U 473 ]
-{
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-}
-[e :U 472 ]
-[e $U 474  ]
-"23
-[; ;led.c: 23:             else do { LATCbits.LATC2 = 1; } while(0);
-[e :U 470 ]
-[e :U 477 ]
-{
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-}
-[e :U 476 ]
-[e :U 474 ]
-"24
-[; ;led.c: 24:             break;
-[e $U 459  ]
-"25
-[; ;led.c: 25:         }
-}
-"26
-[; ;led.c: 26:         case 2:
-[e :U 478 ]
-"27
-[; ;led.c: 27:         {
-{
-"28
-[; ;led.c: 28:             if(blue) do { LATCbits.LATC7 = 0; } while(0);
-[e $ ! != -> _blue `i -> 0 `i 479  ]
-[e :U 482 ]
-{
-[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
-}
-[e :U 481 ]
-[e $U 483  ]
-"29
-[; ;led.c: 29:             else do { LATCbits.LATC7 = 1; } while(0);
-[e :U 479 ]
-[e :U 486 ]
-{
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-}
-[e :U 485 ]
-[e :U 483 ]
-"30
-[; ;led.c: 30:             if(red) do { LATCbits.LATC5 = 0; } while(0);
-[e $ ! != -> _red `i -> 0 `i 487  ]
-[e :U 490 ]
-{
-[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
-}
-[e :U 489 ]
-[e $U 491  ]
-"31
-[; ;led.c: 31:             else do { LATCbits.LATC5 = 1; } while(0);
-[e :U 487 ]
-[e :U 494 ]
-{
-[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
-}
-[e :U 493 ]
-[e :U 491 ]
-"32
-[; ;led.c: 32:             break;
-[e $U 459  ]
-"33
-[; ;led.c: 33:         }
-}
-"34
-[; ;led.c: 34:         case 3:
-[e :U 495 ]
-"35
-[; ;led.c: 35:         {
-{
-"36
-[; ;led.c: 36:             if(blue) do { LATAbits.LATA1 = 0; } while(0);
-[e $ ! != -> _blue `i -> 0 `i 496  ]
-[e :U 499 ]
-{
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 498 ]
-[e $U 500  ]
-"37
-[; ;led.c: 37:             else do { LATAbits.LATA1 = 1; } while(0);
-[e :U 496 ]
-[e :U 503 ]
-{
-[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 502 ]
-[e :U 500 ]
-"38
-[; ;led.c: 38:             if(red) do { LATAbits.LATA0 = 0; } while(0);
-[e $ ! != -> _red `i -> 0 `i 504  ]
-[e :U 507 ]
-{
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 506 ]
-[e $U 508  ]
-"39
-[; ;led.c: 39:             else do { LATAbits.LATA0 = 1; } while(0);
-[e :U 504 ]
-[e :U 511 ]
-{
-[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
-}
-[e :U 510 ]
-[e :U 508 ]
-"40
-[; ;led.c: 40:             break;
-[e $U 459  ]
-"41
-[; ;led.c: 41:         }
-}
-"42
-[; ;led.c: 42:         default:
-[e :U 512 ]
-"43
-[; ;led.c: 43:         {
-{
-"44
-[; ;led.c: 44:             break;
-[e $U 459  ]
-"45
-[; ;led.c: 45:         }
-}
-"46
-[; ;led.c: 46:     }
-}
-[e $U 459  ]
-[e :U 460 ]
-[e [\ -> _led_name `i , $ -> 1 `i 461
- , $ -> 2 `i 478
- , $ -> 3 `i 495
- 512 ]
-[e :U 459 ]
-"47
-[; ;led.c: 47: }
-[e :UE 458 ]
 }
