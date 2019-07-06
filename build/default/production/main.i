@@ -5230,11 +5230,12 @@ void main(void)
 
                         LED_PROCESS(0);
                         timeout_count++;
-                        if(timeout_count == 32000)
+                        if(timeout_count >= 32000)
                         {
                             timeout_count = 0;
                             LED_PROCESS(last_touch_status.full_status);
                             check_request = 0;
+                            config_status = 0;
                         }
 
                     }
