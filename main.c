@@ -22,9 +22,16 @@ void main(void)
     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
     MTOUCH_Button_SetNotPressedCallback(myButtonReleasedCallback);    
     LED_EN_SetLow();
+    LED_PROCESS(0);
     last_touch_status.full_status = 0x00;
     while (1)
     {
+        if(update_state_flag == true)
+        {
+            update_state_flag = false;
+            update_state();
+            
+        }
         if(EUSART_is_rx_ready())
         {
             rxData = EUSART_Read();
@@ -50,6 +57,8 @@ void main(void)
                             __delay_ms(500);
                             config_status = false;
                             check_request = false;
+                            timeout_count = 0;
+                            MTOUCH_Initialize();
                             LED_PROCESS(last_touch_status.full_status);
                         }
                         if(rxData == 'F')
@@ -63,6 +72,8 @@ void main(void)
                             __delay_ms(500);
                             config_status = false;
                             check_request = false;
+                            timeout_count = 0;
+                            MTOUCH_Initialize();
                             LED_PROCESS(last_touch_status.full_status);
                         }                        
                     }
@@ -96,10 +107,19 @@ void main(void)
                 if(MTOUCH_Button_isPressed(0) == 1 && MTOUCH_Button_isPressed(1) == 0 && MTOUCH_Button_isPressed(2) == 0&& MTOUCH_Button_isPressed(3) == 1)
                 {                    
                     count_conf++;
-                    if(count_conf == 1500)
+                    if(count_conf == 1800)
                     {         
                         count_conf = 0;
-                        printf("PICSMART");
+                        printf("PICSMART");                      
+                        __delay_ms(500);
+                        __delay_ms(500);
+                        __delay_ms(500);
+                        __delay_ms(500);
+                        __delay_ms(500);
+                        __delay_ms(500);
+                        __delay_ms(500);
+                        __delay_ms(500);
+                        printf("RUN\r\n");
                         config_status = true;
                         check_request = true;
                         timeout_count = 0;
@@ -117,7 +137,7 @@ void main(void)
                 if(check_request == true)
                 {
                     timeout_count++;
-                    if(timeout_count > 30000)
+                    if(timeout_count >= 30000)
                     {
                         
                         LED_PROCESS(0);
@@ -127,29 +147,33 @@ void main(void)
                             timeout_count = 0;
                             LED_PROCESS(last_touch_status.full_status);
                             check_request = false;
-                        }
-                        
+                            config_status = false;
+                            MTOUCH_Initialize();
+                        }                       
                     }
-                }
-                blink_count++;
-                if(blink == false)
-                {
-                    LED_PROCESS(0);
-                    if(blink_count == 200)
+                    else
                     {
-                        blink_count = 0;
-                        blink = true;
-                    }                                      
-                }
-                else
-                {
-                    LED_PROCESS(15);
-                    if(blink_count == 200)
-                    {
-                        blink_count = 0;
-                        blink = false;
-                    } 
-                }                       
+                        blink_count++;
+                        if(blink == false)
+                        {
+                            LED_PROCESS(0);
+                            if(blink_count == 200)
+                            {
+                                blink_count = 0;
+                                blink = true;
+                            }                                      
+                        }
+                        else
+                        {
+                            LED_PROCESS(15);
+                            if(blink_count == 200)
+                            {
+                                blink_count = 0;
+                                blink = false;
+                            } 
+                        }       
+                    }
+                }                                
             }            
         }
     }
@@ -177,7 +201,7 @@ void myButtonReleasedCallback(enum mtouch_button_names button)
         
         if(MTOUCH_Button_isPressed(0)==0&&MTOUCH_Button_isPressed(1)==0&&MTOUCH_Button_isPressed(2)==0)
         {
-            update_state();      
+            update_state_flag = true;  
         }
     }
 } 
@@ -202,9 +226,11 @@ void update_state(void)
         case 14: printf("PICE"); break;
         case 15: printf("PICG"); break;
     }
+    return;
 }
 void DATA_PROCESS(char x)
 {
+    timeout_count = 0;
     switch(x)
     {
         case '0':
@@ -334,10 +360,10 @@ void DATA_PROCESS(char x)
             check_request = false;
             last_touch_status.full_status = 15;
             break;
-        }
+        }      
         case 'U':
         {
-            update_state();
+            update_state_flag = true;
             break;
         }
         default:
@@ -391,7 +417,7 @@ bool  check_data(uint8_t x)
         case 'G': return true;
         case 'T': return true;
         case 'F': return true;
-        case 'U': return true;
+        case 'U': return true;       
         default : return false;
     }
 }
