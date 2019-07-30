@@ -3,29 +3,15 @@
 [d edition pro ]
 [d chip 16LF1559 ]
 [d frameptr 6 ]
-"22 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
-[e E2914 mtouch_button_names `uc
-Button0 0
-Button1 1
-Button2 2
-Button3 3
-]
-"67 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_api_example.c
-[e E94 mtouch_button_names `uc
-Button0 0
-Button1 1
-Button2 2
-Button3 3
-]
 "143 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
-[e E2854 mtouch_sensor_names `uc
+[e E2871 mtouch_sensor_names `uc
 Sensor_AN26 0
 Sensor_AN12 1
 Sensor_AN23 2
 Sensor_AN13 3
 ]
 "216
-[e E2859 mtouch_sensor_error `c
+[e E2876 mtouch_sensor_error `c
 MTOUCH_SENSOR_ERROR_none 0
 MTOUCH_SENSOR_ERROR_invalid_index -1
 MTOUCH_SENSOR_ERROR_interrupt_notEnabled -2
@@ -34,7 +20,7 @@ MTOUCH_SENSOR_ERROR_tooManyRetries -4
 MTOUCH_SENSOR_ERROR_scanOverrun -5
 MTOUCH_SENSOR_ERROR_interruptedScan -6
 ]
-"82 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
+"83 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [e E3070 mtouch_button_names `uc
 Button0 0
 Button1 1
@@ -47,18 +33,24 @@ Sensor_AN12 1
 Sensor_AN23 2
 Sensor_AN13 3
 ]
-[e E3132 mtouch_button_state `uc
+[e E3108 mtouch_button_state `uc
 MTOUCH_BUTTON_STATE_initializing 0
 MTOUCH_BUTTON_STATE_notPressed 1
 MTOUCH_BUTTON_STATE_pressed 2
 ]
-"291
-[e E3136 mtouch_button_hysteresis_thresholds `uc
+[e E3112 mtouch_button_hysteresis_thresholds `uc
 HYST_50_PERCENT 1
 HYST_25_PERCENT 2
 HYST_12_5_PERCENT 3
 HYST_6_25_PERCENT 4
 HYST_MAX 5
+]
+"22 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
+[e E2931 mtouch_button_names `uc
+Button0 0
+Button1 1
+Button2 2
+Button3 3
 ]
 "1 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
@@ -90,173 +82,179 @@ HYST_MAX 5
 [v _LED_PROCESS LED_PROCESS `(v  1 e 1 0 ]
 "17 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"158
+"177
 [v _myButtonPressedCallback myButtonPressedCallback `(v  1 e 1 0 ]
-"172
+"191
 [v _myButtonReleasedCallback myButtonReleasedCallback `(v  1 e 1 0 ]
-"184
+"203
 [v _update_state update_state `(v  1 e 1 0 ]
-"206
+"226
 [v _DATA_PROCESS DATA_PROCESS `(v  1 e 1 0 ]
-"350
+"371
 [v _check_message check_message `(v  1 e 1 0 ]
-"372
+"393
 [v _check_data check_data `(a  1 e 1 0 ]
 "81 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
-"124
+"120
 [v _EUSART_is_rx_ready EUSART_is_rx_ready `(uc  1 e 1 0 ]
-"138
+"126
 [v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
-"160
+"148
 [v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
-"174
+"158
 [v _putch putch `(v  1 e 1 0 ]
-"180
+"164
 [v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
-"204
+"188
 [v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
-"214
+"198
 [v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
-"216
+"200
 [v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
-"224
+"208
 [v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
-"228
+"212
 [v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
-"232
+"216
 [v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
-"236
+"220
 [v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
-"241
+"225
 [v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
 "52 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 "50 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"61
+"62
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"69
+"70
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
-"80 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch.c
+"71 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch.c
+[v _MTOUCH_ScanScheduler MTOUCH_ScanScheduler `(v  1 s 1 MTOUCH_ScanScheduler ]
+"96
 [v _MTOUCH_Initialize MTOUCH_Initialize `(v  1 e 1 0 ]
-"95
+"112
 [v _MTOUCH_Service_Mainloop MTOUCH_Service_Mainloop `(a  1 e 1 0 ]
-"124
+"139
 [v _MTOUCH_Tick MTOUCH_Tick `(v  1 e 1 0 ]
-"134
+"149
 [v _MTOUCH_needReburst MTOUCH_needReburst `(a  1 s 1 MTOUCH_needReburst ]
-"167 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
+"176 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _MTOUCH_Button_Initialize MTOUCH_Button_Initialize `(v  1 e 1 0 ]
-"179
+"188
 [v _MTOUCH_Button_InitializeAll MTOUCH_Button_InitializeAll `(v  1 e 1 0 ]
-"197
+"210
 [v _MTOUCH_Button_ServiceAll MTOUCH_Button_ServiceAll `(v  1 e 1 0 ]
-"208
-[v _Button_Service Button_Service `(v  1 s 1 Button_Service ]
 "225
+[v _Button_Service Button_Service `(v  1 s 1 Button_Service ]
+"242
 [v _Button_State_Initializing Button_State_Initializing `(v  1 s 1 Button_State_Initializing ]
-"245
+"262
 [v _Button_State_NotPressed Button_State_NotPressed `(v  1 s 1 Button_State_NotPressed ]
-"281
+"298
 [v _Button_State_Pressed Button_State_Pressed `(v  1 s 1 Button_State_Pressed ]
-"305
+"322
 [v _MTOUCH_Button_Tick MTOUCH_Button_Tick `(v  1 e 1 0 ]
-"313
+"330
 [v _Button_Tick_helper Button_Tick_helper `(v  1 s 1 Button_Tick_helper ]
-"382
+"351
 [v _MTOUCH_Button_isPressed MTOUCH_Button_isPressed `(a  1 e 1 0 ]
-"407
+"361
 [v _Button_Deviation_Update Button_Deviation_Update `(v  1 s 1 Button_Deviation_Update ]
-"456
+"390
 [v _Button_Reading_Update Button_Reading_Update `(v  1 s 1 Button_Reading_Update ]
-"470
+"404
 [v _Button_Reading_Update_Helper Button_Reading_Update_Helper `(v  1 s 1 Button_Reading_Update_Helper ]
-"483
+"417
 [v _Button_Baseline_Initialize Button_Baseline_Initialize `(v  1 s 1 Button_Baseline_Initialize ]
-"489
+"423
 [v _Button_Baseline_Update Button_Baseline_Update `(v  1 s 1 Button_Baseline_Update ]
-"513
-[v _Button_Baseline_Get_helper Button_Baseline_Get_helper `(us  1 s 2 Button_Baseline_Get_helper ]
-"535
+"444
 [v _Button_DefaultCallback Button_DefaultCallback `(v  1 s 1 Button_DefaultCallback ]
-"536
+"445
 [v _MTOUCH_Button_SetPressedCallback MTOUCH_Button_SetPressedCallback `(v  1 e 1 0 ]
-"540
+"449
 [v _MTOUCH_Button_SetNotPressedCallback MTOUCH_Button_SetNotPressedCallback `(v  1 e 1 0 ]
 "216 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
-[v _MTOUCH_Sensor_Initialize MTOUCH_Sensor_Initialize `(E2859  1 e 1 0 ]
+[v _MTOUCH_Sensor_Initialize MTOUCH_Sensor_Initialize `(E2876  1 e 1 0 ]
 "231
 [v _MTOUCH_Sensor_InitializeAll MTOUCH_Sensor_InitializeAll `(v  1 e 1 0 ]
-"247
+"251
 [v _MTOUCH_Sensor_Scan_Initialize MTOUCH_Sensor_Scan_Initialize `(v  1 e 1 0 ]
-"266
+"270
 [v _MTOUCH_Sensor_SampleAll MTOUCH_Sensor_SampleAll `(a  1 e 1 0 ]
-"311
-[v _Sensor_Service Sensor_Service `(E2859  1 s 1 Sensor_Service ]
-"362
+"294
+[v _Sensor_Service Sensor_Service `(E2876  1 s 1 Sensor_Service ]
+"342
 [v _Sensor_getScanGroupIndex Sensor_getScanGroupIndex `(uc  1 s 1 Sensor_getScanGroupIndex ]
-"380
-[v _Sensor_Acquisition Sensor_Acquisition `(E2859  1 s 1 Sensor_Acquisition ]
-"423
+"360
+[v _Sensor_Acquisition Sensor_Acquisition `(E2876  1 s 1 Sensor_Acquisition ]
+"403
 [v _Sensor_postAcquisitionProcess Sensor_postAcquisitionProcess `(v  1 s 1 Sensor_postAcquisitionProcess ]
-"445
+"421
 [v _Sensor_loadADCSettings Sensor_loadADCSettings `(v  1 s 1 Sensor_loadADCSettings ]
-"479
-[v _Sensor_Acq_ExecutePacket Sensor_Acq_ExecutePacket `(E2859  1 s 1 Sensor_Acq_ExecutePacket ]
-"696
+"455
+[v _Sensor_Acq_ExecutePacket Sensor_Acq_ExecutePacket `(E2876  1 s 1 Sensor_Acq_ExecutePacket ]
+"672
 [v _Sensor_autoCalibration Sensor_autoCalibration `(v  1 s 1 Sensor_autoCalibration ]
-"741
-[v _Sensor_Scanfrequency_Evaluation Sensor_Scanfrequency_Evaluation `(E2859  1 s 1 Sensor_Scanfrequency_Evaluation ]
-"800
+"717
+[v _Sensor_Scanfrequency_Evaluation Sensor_Scanfrequency_Evaluation `(E2876  1 s 1 Sensor_Scanfrequency_Evaluation ]
+"776
 [v _MTOUCH_Sensor_RawSample_Get MTOUCH_Sensor_RawSample_Get `(us  1 e 2 0 ]
-"810
+"782
 [v _Sensor_RawSample_Update Sensor_RawSample_Update `(v  1 s 1 Sensor_RawSample_Update ]
-"831
+"803
 [v _Sensor_DefaultCallback Sensor_DefaultCallback `(v  1 s 1 Sensor_DefaultCallback ]
-"849
+"812
 [v _MTOUCH_Sensor_Enable MTOUCH_Sensor_Enable `(v  1 e 1 0 ]
-"863
+"818
 [v _Sensor_isEnabled Sensor_isEnabled `(a  1 s 1 Sensor_isEnabled ]
-"880
+"835
 [v _Sensor_setActive Sensor_setActive `T(v  1 s 1 Sensor_setActive ]
-"885
+"840
 [v _Sensor_setInactive Sensor_setInactive `T(v  1 s 1 Sensor_setInactive ]
-"890
+"845
 [v _Sensor_isActive Sensor_isActive `T(a  1 s 1 Sensor_isActive ]
-"912
+"861
 [v _MTOUCH_Sensor_Calibrate MTOUCH_Sensor_Calibrate `(v  1 e 1 0 ]
-"920
+"868
 [v _MTOUCH_Sensor_isCalibrated MTOUCH_Sensor_isCalibrated `(a  1 e 1 0 ]
-"928
+"875
 [v _Sensor_isCalibrated Sensor_isCalibrated `T(a  1 s 1 Sensor_isCalibrated ]
-"933
+"880
 [v _Sensor_setCalibrated Sensor_setCalibrated `T(v  1 s 1 Sensor_setCalibrated ]
-"939
+"886
 [v _Sensor_setCalibratAcqTime Sensor_setCalibratAcqTime `T(v  1 s 1 Sensor_setCalibratAcqTime ]
-"945
+"892
 [v _Sensor_isCalibratingAcqTime Sensor_isCalibratingAcqTime `T(a  1 s 1 Sensor_isCalibratingAcqTime ]
-"958
+"905
 [v _MTOUCH_Sensor_Sampled_ResetAll MTOUCH_Sensor_Sampled_ResetAll `(v  1 e 1 0 ]
-"967
+"914
 [v _MTOUCH_Sensor_wasSampled MTOUCH_Sensor_wasSampled `(a  1 e 1 0 ]
-"972
+"919
 [v _Sensor_Sampled_Reset Sensor_Sampled_Reset `T(v  1 s 1 Sensor_Sampled_Reset ]
-"977
+"924
 [v _Sensor_setSampled Sensor_setSampled `T(v  1 s 1 Sensor_setSampled ]
-"1013
-[v _MTOUCH_Sensor_Oversampling_Get MTOUCH_Sensor_Oversampling_Get `(uc  1 e 1 0 ]
-"1021
-[v _MTOUCH_Sensor_Oversampling_Set MTOUCH_Sensor_Oversampling_Set `(v  1 e 1 0 ]
 "55 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"64 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"95
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+"122
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+"136
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+"140
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
 "62 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 "79
 [v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 1 0 ]
 "85
 [v _TMR2_StopTimer TMR2_StopTimer `(v  1 e 1 0 ]
-"106
+"91
 [v _TMR2_LoadPeriodRegister TMR2_LoadPeriodRegister `(v  1 e 1 0 ]
 "5 E:\Work\Touch_Switch-SQ04\SQ_04.X\relay.c
 [v _RELAY_PROCESS RELAY_PROCESS `(v  1 e 1 0 ]
@@ -276,7 +274,9 @@ HYST_MAX 5
 [v _blink_count blink_count `uc  1 e 1 0 ]
 "11
 [v _timeout_count timeout_count `us  1 e 2 0 ]
-[s S437 . 1 `uc 1 CS0 1 0 :1:0 
+"13
+[v _update_state_flag update_state_flag `a  1 e 1 0 ]
+[s S1625 . 1 `uc 1 CS0 1 0 :1:0 
 `uc 1 CS1 1 0 :1:1 
 `uc 1 CS2 1 0 :1:2 
 `uc 1 CS3 1 0 :1:3 
@@ -285,10 +285,12 @@ HYST_MAX 5
 `uc 1 CS6 1 0 :1:6 
 `uc 1 CS7 1 0 :1:7 
 ]
-"27
-[u S446 . 2 `ui 1 full_status 2 0 `S437 1 . 1 0 ]
-[v _last_touch_status last_touch_status `S446  1 e 2 0 ]
-[s S275 . 1 `uc 1 IOCIF 1 0 :1:0 
+"28
+[u S1634 . 2 `ui 1 full_status 2 0 `S1625 1 . 1 0 ]
+[v _last_touch_status last_touch_status `S1634  1 e 2 0 ]
+"96 E:\Work\Touch_Switch-SQ04\SQ_04.X/mcc_generated_files/eusart.h
+[v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+[s S418 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -298,14 +300,14 @@ HYST_MAX 5
 `uc 1 GIE 1 0 :1:7 
 ]
 "374 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
-[s S284 . 1 `uc 1 . 1 0 :2:0 
+[s S427 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S289 . 1 `S275 1 . 1 0 `S284 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES289  1 e 1 @11 ]
-[s S107 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S432 . 1 `S418 1 . 1 0 `S427 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES432  1 e 1 @11 ]
+[s S280 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -315,31 +317,55 @@ HYST_MAX 5
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "601
-[s S116 . 1 `uc 1 . 1 0 :6:0 
+[s S289 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 AD1IF 1 0 :1:6 
 ]
-[u S119 . 1 `S107 1 . 1 0 `S116 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES119  1 e 1 @17 ]
-[s S999 . 1 `uc 1 . 1 0 :3:0 
+[u S292 . 1 `S280 1 . 1 0 `S289 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES292  1 e 1 @17 ]
+[s S308 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 BCL1IF 1 0 :1:3 
 `uc 1 . 1 0 :2:4 
 `uc 1 AD2IF 1 0 :1:6 
 ]
 "659
-[u S1004 . 1 `S999 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES1004  1 e 1 @18 ]
+[u S313 . 1 `S308 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES313  1 e 1 @18 ]
+"701
+[v _TMR1L TMR1L `VEuc  1 e 1 @22 ]
+"721
+[v _TMR1H TMR1H `VEuc  1 e 1 @23 ]
+"741
+[v _T1CON T1CON `VEuc  1 e 1 @24 ]
+[s S1571 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 TMR1CS 1 0 :2:6 
+]
+"763
+[s S1578 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+`uc 1 TMR1CS0 1 0 :1:6 
+`uc 1 TMR1CS1 1 0 :1:7 
+]
+[u S1584 . 1 `S1571 1 . 1 0 `S1578 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES1584  1 e 1 @24 ]
+"808
+[v _T1GCON T1GCON `VEuc  1 e 1 @25 ]
 "885
 [v _TMR2 TMR2 `VEuc  1 e 1 @26 ]
 "905
 [v _PR2 PR2 `VEuc  1 e 1 @27 ]
 "925
 [v _T2CON T2CON `VEuc  1 e 1 @28 ]
-[s S714 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S136 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 T2OUTPS 1 0 :4:3 
 ]
 "946
-[s S718 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S140 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -347,15 +373,15 @@ HYST_MAX 5
 `uc 1 T2OUTPS2 1 0 :1:5 
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
-[u S726 . 1 `S714 1 . 1 0 `S718 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES726  1 e 1 @28 ]
+[u S148 . 1 `S136 1 . 1 0 `S140 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES148  1 e 1 @28 ]
 "996
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1046
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
 "1085
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
-[s S34 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S1150 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SSP1IE 1 0 :1:3 
@@ -365,12 +391,12 @@ HYST_MAX 5
 `uc 1 TMR1GIE 1 0 :1:7 
 ]
 "1168
-[s S43 . 1 `uc 1 . 1 0 :6:0 
+[s S1159 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 AD1IE 1 0 :1:6 
 ]
-[u S46 . 1 `S34 1 . 1 0 `S43 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES46  1 e 1 @145 ]
-[s S395 . 1 `uc 1 PS 1 0 :3:0 
+[u S1162 . 1 `S1150 1 . 1 0 `S1159 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES1162  1 e 1 @145 ]
+[s S1448 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 TMR0SE 1 0 :1:4 
 `uc 1 TMR0CS 1 0 :1:5 
@@ -378,22 +404,22 @@ HYST_MAX 5
 `uc 1 nWPUEN 1 0 :1:7 
 ]
 "1264
-[s S402 . 1 `uc 1 PS0 1 0 :1:0 
+[s S1455 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S409 . 1 `S395 1 . 1 0 `S402 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES409  1 e 1 @149 ]
+[u S1462 . 1 `S1448 1 . 1 0 `S1455 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES1462  1 e 1 @149 ]
 "1381
 [v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
 "1440
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
 "1785
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S495 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1675 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -401,22 +427,22 @@ HYST_MAX 5
 `uc 1 LATA5 1 0 :1:5 
 ]
 "1800
-[u S502 . 1 `S495 1 . 1 0 ]
-[v _LATAbits LATAbits `VES502  1 e 1 @268 ]
+[u S1682 . 1 `S1675 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1682  1 e 1 @268 ]
 "1830
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S1860 . 1 `uc 1 . 1 0 :4:0 
+[s S1880 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LATB4 1 0 :1:4 
 `uc 1 LATB5 1 0 :1:5 
 `uc 1 LATB6 1 0 :1:6 
 `uc 1 LATB7 1 0 :1:7 
 ]
 "1844
-[u S1866 . 1 `S1860 1 . 1 0 ]
-[v _LATBbits LATBbits `VES1866  1 e 1 @269 ]
+[u S1886 . 1 `S1880 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1886  1 e 1 @269 ]
 "1869
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S635 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1815 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -426,21 +452,21 @@ HYST_MAX 5
 `uc 1 LATC7 1 0 :1:7 
 ]
 "1886
-[u S644 . 1 `S635 1 . 1 0 ]
-[v _LATCbits LATCbits `VES644  1 e 1 @270 ]
+[u S1824 . 1 `S1815 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1824  1 e 1 @270 ]
 "1931
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "2035
 [v _APFCON APFCON `VEuc  1 e 1 @285 ]
-[s S966 . 1 `uc 1 GRDASEL 1 0 :1:0 
+[s S256 . 1 `uc 1 GRDASEL 1 0 :1:0 
 `uc 1 GRDBSEL 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 SDSEL 1 0 :1:4 
 `uc 1 SSSEL 1 0 :1:5 
 ]
 "2049
-[u S972 . 1 `S966 1 . 1 0 ]
-[v _APFCONbits APFCONbits `VES972  1 e 1 @285 ]
+[u S262 . 1 `S256 1 . 1 0 ]
+[v _APFCONbits APFCONbits `VES262  1 e 1 @285 ]
 "2074
 [v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
 "2127
@@ -457,7 +483,7 @@ HYST_MAX 5
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
 "2501
 [v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
-[s S157 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S1240 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -467,22 +493,10 @@ HYST_MAX 5
 `uc 1 SPEN 1 0 :1:7 
 ]
 "2518
-[u S166 . 1 `S157 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES166  1 e 1 @413 ]
+[u S1249 . 1 `S1240 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES1249  1 e 1 @413 ]
 "2563
 [v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
-[s S135 . 1 `uc 1 TX9D 1 0 :1:0 
-`uc 1 TRMT 1 0 :1:1 
-`uc 1 BRGH 1 0 :1:2 
-`uc 1 SENDB 1 0 :1:3 
-`uc 1 SYNC 1 0 :1:4 
-`uc 1 TXEN 1 0 :1:5 
-`uc 1 TX9 1 0 :1:6 
-`uc 1 CSRC 1 0 :1:7 
-]
-"2580
-[u S144 . 1 `S135 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES144  1 e 1 @414 ]
 "2625
 [v _BAUDCON BAUDCON `VEuc  1 e 1 @415 ]
 "2677
@@ -491,12 +505,12 @@ HYST_MAX 5
 [v _WPUB WPUB `VEuc  1 e 1 @525 ]
 "4145
 [v _AD1CON0 AD1CON0 `VEuc  1 e 1 @1809 ]
-[s S1024 . 1 `uc 1 ADON 1 0 :1:0 
+[s S336 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
 "4179
-[s S1028 . 1 `uc 1 . 1 0 :1:0 
+[s S340 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -504,11 +518,11 @@ HYST_MAX 5
 `uc 1 CHS3 1 0 :1:5 
 `uc 1 CHS4 1 0 :1:6 
 ]
-[s S1036 . 1 `uc 1 . 1 0 :1:0 
+[s S348 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_nDONE1 1 0 :1:1 
 ]
-[u S1039 . 1 `S1024 1 . 1 0 `S1028 1 . 1 0 `S1036 1 . 1 0 ]
-[v _AD1CON0bits AD1CON0bits `VES1039  1 e 1 @1809 ]
+[u S351 . 1 `S336 1 . 1 0 `S340 1 . 1 0 `S348 1 . 1 0 ]
+[v _AD1CON0bits AD1CON0bits `VES351  1 e 1 @1809 ]
 "4379
 [v _ADCOMCON ADCOMCON `VEuc  1 e 1 @1810 ]
 "4533
@@ -532,11 +546,11 @@ HYST_MAX 5
 "6183
 [v _AD2CON0 AD2CON0 `VEuc  1 e 1 @1937 ]
 "6213
-[s S1071 . 1 `uc 1 . 1 0 :1:0 
+[s S383 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_nDONE2 1 0 :1:1 
 ]
-[u S1074 . 1 `S1024 1 . 1 0 `S1028 1 . 1 0 `S1071 1 . 1 0 ]
-[v _AD2CON0bits AD2CON0bits `VES1074  1 e 1 @1937 ]
+[u S386 . 1 `S336 1 . 1 0 `S340 1 . 1 0 `S383 1 . 1 0 ]
+[v _AD2CON0bits AD2CON0bits `VES386  1 e 1 @1937 ]
 "6341
 [v _AD2CON2 AD2CON2 `VEuc  1 e 1 @1939 ]
 "6423
@@ -567,166 +581,304 @@ HYST_MAX 5
 [v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
 "65
 [v _eusartRxBuffer eusartRxBuffer `VE[8]uc  1 e 8 0 ]
-[s S23 . 1 `uc 1 perr 1 0 :1:0 
+[s S1139 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
 "66
-[u S28 . 1 `S23 1 . 1 0 `uc 1 status 1 0 ]
-[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[8]S28  1 e 8 0 ]
+[u S1144 . 1 `S1139 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[8]S1144  1 e 8 0 ]
 "67
 [v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
 "68
-[v _eusartRxLastError eusartRxLastError `VES28  1 e 1 0 ]
+[v _eusartRxLastError eusartRxLastError `VES1144  1 e 1 0 ]
 "73
 [v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
 "74
 [v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "75
 [v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
-"96 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.h
-[v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
-"52 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch.c
+"54 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch.c
 [v _mtouch_time_toScan mtouch_time_toScan `a  1 s 1 mtouch_time_toScan ]
-[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-"82 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
-[v _mtouch_button_init mtouch_button_init `DC[4]S1538  1 e 64 0 ]
-"118
-[v _mtouch_button mtouch_button `[4]S1538  1 s 64 mtouch_button ]
-"145
-[v _callback_pressed callback_pressed `*.37(v  1 s 2 callback_pressed ]
-"146
-[v _callback_notPressed callback_notPressed `*.37(v  1 s 2 callback_notPressed ]
+"55
+[v _mTouchScanReload mTouchScanReload `us  1 s 2 mTouchScanReload ]
+[s S848 . 17 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3108 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 `E3112 1 hysteresis 1 16 ]
+"83 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
+[v _mtouch_button_init mtouch_button_init `DC[4]S848  1 e 68 0 ]
+"127
+[v _mtouch_button mtouch_button `[4]S848  1 s 68 mtouch_button ]
 "154
+[v _callback_pressed callback_pressed `*.37(v  1 s 2 callback_pressed ]
+"155
+[v _callback_notPressed callback_notPressed `*.37(v  1 s 2 callback_notPressed ]
+"163
 [v _Button_StateMachine Button_StateMachine `[3]*.37(v  1 e 6 0 ]
-"143 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
-[v _callback_sampled callback_sampled `*.37(v  1 s 2 callback_sampled ]
-"150
+"150 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _packet_sample packet_sample `[2]us  1 s 4 packet_sample ]
 "151
 [v _packet_noise packet_noise `us  1 s 2 packet_noise ]
-"152
-[v _lowpowerActivated lowpowerActivated `a  1 s 1 lowpowerActivated ]
-[s S813 . 1 `uc 1 done 1 0 :1:0 
+[s S91 . 1 `uc 1 done 1 0 :1:0 
 `uc 1 check 1 0 :1:1 
 `uc 1 error 1 0 :1:2 
 `uc 1 interrupted 1 0 :1:3 
 ]
 "153
-[v _sensor_globalFlags sensor_globalFlags `VES813  1 s 1 sensor_globalFlags ]
+[v _sensor_globalFlags sensor_globalFlags `VES91  1 s 1 sensor_globalFlags ]
 "159
 [v _sample_period sample_period `uc  1 s 1 sample_period ]
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
 "166
-[v _mtouch_sensor mtouch_sensor `[4]S818  1 s 36 mtouch_sensor ]
+[v _mtouch_sensor mtouch_sensor `[4]S96  1 s 36 mtouch_sensor ]
 "206
-[s S831 . 2 `*.5S818 1 sensor_adc1 1 0 `*.5S818 1 sensor_adc2 1 1 ]
-[v _sensor_scan_group sensor_scan_group `DC[2]S831  1 s 4 sensor_scan_group ]
+[s S109 . 2 `*.5S96 1 sensor_adc1 1 0 `*.5S96 1 sensor_adc2 1 1 ]
+[v _sensor_scan_group sensor_scan_group `DC[2]S109  1 s 4 sensor_scan_group ]
+"57 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
+"58
+[v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
 "17 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"156
+"175
 } 0
-"350
+"203
+[v _update_state update_state `(v  1 e 1 0 ]
+{
+"225
+} 0
+"371
 [v _check_message check_message `(v  1 e 1 0 ]
 {
 [v check_message@x x `uc  1 a 1 wreg ]
 [v check_message@x x `uc  1 a 1 wreg ]
-[v check_message@x x `uc  1 a 1 49 ]
-"371
+[v check_message@x x `uc  1 a 1 52 ]
+"392
 } 0
-"372
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"8
+[v printf@ap ap `[1]*.4v  1 a 1 49 ]
+"5
+[v printf@fmt fmt `*.25DCuc  1 p 2 42 ]
+"13
+} 0
+"1368 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+[s S1944 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.1S1944  1 a 1 wreg ]
+"1371
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 40 ]
+"1368
+[v vfprintf@fp fp `*.1S1944  1 a 1 wreg ]
+[v vfprintf@fmt fmt `*.25DCuc  1 p 2 34 ]
+[v vfprintf@ap ap `*.4*.4v  1 p 1 36 ]
+"1373
+"1368
+[v vfprintf@fp fp `*.1S1944  1 a 1 39 ]
+"1382
+} 0
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+{
+[s S1944 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.1S1944  1 a 1 wreg ]
+"672
+[v vfpfcnvrt@c c `uc  1 a 1 32 ]
+"670
+[v vfpfcnvrt@fp fp `*.1S1944  1 a 1 wreg ]
+[v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 25 ]
+[v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 26 ]
+"680
+"670
+[v vfpfcnvrt@fp fp `*.1S1944  1 a 1 33 ]
+"1365
+} 0
+"259
+[v _ctoa ctoa `(i  1 s 2 ctoa ]
+{
+[s S1944 _IO_FILE 0 ]
+[v ctoa@fp fp `*.1S1944  1 a 1 wreg ]
+"261
+[v ctoa@w w `i  1 a 2 22 ]
+"259
+[v ctoa@fp fp `*.1S1944  1 a 1 wreg ]
+[v ctoa@c c `uc  1 p 1 19 ]
+"264
+"259
+[v ctoa@fp fp `*.1S1944  1 a 1 24 ]
+"270
+} 0
+"72
+[v _pad pad `(i  1 s 2 pad ]
+{
+[s S1944 _IO_FILE 0 ]
+[v pad@fp fp `*.1S1944  1 a 1 wreg ]
+"74
+[v pad@w w `i  1 a 2 16 ]
+[v pad@i i `i  1 a 2 14 ]
+"72
+[v pad@fp fp `*.1S1944  1 a 1 wreg ]
+[v pad@buf buf `*.4uc  1 p 1 10 ]
+[v pad@p p `i  1 p 2 11 ]
+"77
+"72
+[v pad@fp fp `*.1S1944  1 a 1 18 ]
+"95
+} 0
+"12 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+[v strlen@s s `*.4DCuc  1 a 1 wreg ]
+"14
+[v strlen@a a `*.4DCuc  1 a 1 5 ]
+"12
+[v strlen@s s `*.4DCuc  1 a 1 wreg ]
+"14
+[v strlen@s s `*.4DCuc  1 a 1 6 ]
+"26
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+[v fputs@s s `*.4DCuc  1 a 1 wreg ]
+"11
+[v fputs@i i `i  1 a 2 7 ]
+"10
+[v fputs@c c `uc  1 a 1 6 ]
+"8
+[v fputs@s s `*.4DCuc  1 a 1 wreg ]
+[s S2288 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputs@fp fp `*.1S2288  1 p 1 5 ]
+"13
+[v fputs@s s `*.4DCuc  1 a 1 9 ]
+"19
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 4 ]
+[s S2288 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.1S2288  1 p 1 6 ]
+"21
+} 0
+"158 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@txData txData `uc  1 a 1 wreg ]
+[v putch@txData txData `uc  1 a 1 wreg ]
+"160
+[v putch@txData txData `uc  1 a 1 3 ]
+"161
+} 0
+"148
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 2 ]
+"155
+} 0
+"393 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _check_data check_data `(a  1 e 1 0 ]
 {
 [v check_data@x x `uc  1 a 1 wreg ]
 [v check_data@x x `uc  1 a 1 wreg ]
-[v check_data@x x `uc  1 a 1 3 ]
-"397
+[v check_data@x x `uc  1 a 1 4 ]
+"418
 } 0
 "50 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"59
+"60
 } 0
-"69
+"70
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
 {
-"73
+"74
 } 0
 "62 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 {
 "77
 } 0
+"64 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"91
+} 0
 "55 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "97
 } 0
-"61 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mcc.c
+"62 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"67
+"68
 } 0
-"80 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch.c
+"96 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch.c
 [v _MTOUCH_Initialize MTOUCH_Initialize `(v  1 e 1 0 ]
 {
-"87
+"104
+} 0
+"136 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr1.c
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
+"138
 } 0
 "231 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _MTOUCH_Sensor_InitializeAll MTOUCH_Sensor_InitializeAll `(v  1 e 1 0 ]
 {
-"233
-[v MTOUCH_Sensor_InitializeAll@sensor sensor `E2854  1 a 1 10 ]
-"239
+"243
 } 0
 "216
-[v _MTOUCH_Sensor_Initialize MTOUCH_Sensor_Initialize `(E2859  1 e 1 0 ]
+[v _MTOUCH_Sensor_Initialize MTOUCH_Sensor_Initialize `(E2876  1 e 1 0 ]
 {
-[v MTOUCH_Sensor_Initialize@sensor sensor `E2854  1 a 1 wreg ]
-[v MTOUCH_Sensor_Initialize@sensor sensor `E2854  1 a 1 wreg ]
+[v MTOUCH_Sensor_Initialize@sensor sensor `E2871  1 a 1 wreg ]
+[v MTOUCH_Sensor_Initialize@sensor sensor `E2871  1 a 1 wreg ]
 "219
-[v MTOUCH_Sensor_Initialize@sensor sensor `E2854  1 a 1 8 ]
+[v MTOUCH_Sensor_Initialize@sensor sensor `E2871  1 a 1 9 ]
 "224
 } 0
-"849
+"812
 [v _MTOUCH_Sensor_Enable MTOUCH_Sensor_Enable `(v  1 e 1 0 ]
 {
-[v MTOUCH_Sensor_Enable@sensor sensor `E2854  1 a 1 wreg ]
-[v MTOUCH_Sensor_Enable@sensor sensor `E2854  1 a 1 wreg ]
-"851
-[v MTOUCH_Sensor_Enable@sensor sensor `E2854  1 a 1 6 ]
-"853
+[v MTOUCH_Sensor_Enable@sensor sensor `E2871  1 a 1 wreg ]
+[v MTOUCH_Sensor_Enable@sensor sensor `E2871  1 a 1 wreg ]
+"814
+[v MTOUCH_Sensor_Enable@sensor sensor `E2871  1 a 1 7 ]
+"815
 } 0
-"179 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
+"188 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _MTOUCH_Button_InitializeAll MTOUCH_Button_InitializeAll `(v  1 e 1 0 ]
 {
-"181
-[v MTOUCH_Button_InitializeAll@button button `E3070  1 a 1 0 ]
-"189
+"202
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\memcpy.c
 [v _memcpy memcpy `(*.5v  1 e 1 0 ]
 {
 [v memcpy@d1 d1 `*.5v  1 a 1 wreg ]
 "8
-[v memcpy@s s `*.25DCuc  1 a 2 7 ]
+[v memcpy@s s `*.25DCuc  1 a 2 1 ]
 "7
-[v memcpy@d d `*.5uc  1 a 1 10 ]
+[v memcpy@d d `*.5uc  1 a 1 4 ]
 "9
-[v memcpy@tmp tmp `uc  1 a 1 6 ]
+[v memcpy@tmp tmp `uc  1 a 1 0 ]
 "4
 [v memcpy@d1 d1 `*.5v  1 a 1 wreg ]
-[v memcpy@s1 s1 `*.25DCv  1 p 2 1 ]
-[v memcpy@n n `ui  1 p 2 3 ]
+[v memcpy@s1 s1 `*.25DCv  1 p 2 2 ]
+[v memcpy@n n `ui  1 p 2 4 ]
 "11
-[v memcpy@d1 d1 `*.5v  1 a 1 9 ]
+[v memcpy@d1 d1 `*.5v  1 a 1 3 ]
 "18
 } 0
 "81 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
@@ -734,299 +886,299 @@ HYST_MAX 5
 {
 "117
 } 0
-"241
+"225
 [v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
 {
-[v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 1 ]
-"243
+[v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 2 ]
+"227
 } 0
-"232
+"216
 [v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 1 ]
-"234
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 2 ]
+"218
 } 0
-"228
+"212
 [v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 1 ]
-"230
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 2 ]
+"214
 } 0
-"236
+"220
 [v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 1 ]
-"238
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 2 ]
+"222
 } 0
-"95 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch.c
+"112 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch.c
 [v _MTOUCH_Service_Mainloop MTOUCH_Service_Mainloop `(a  1 e 1 0 ]
 {
-"117
+"132
 } 0
-"134
+"149
 [v _MTOUCH_needReburst MTOUCH_needReburst `(a  1 s 1 MTOUCH_needReburst ]
 {
-"139
+"154
 } 0
-"124
+"139
 [v _MTOUCH_Tick MTOUCH_Tick `(v  1 e 1 0 ]
 {
-"127
+"142
 } 0
-"305 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
+"322 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _MTOUCH_Button_Tick MTOUCH_Button_Tick `(v  1 e 1 0 ]
 {
-"307
-[v MTOUCH_Button_Tick@i i `uc  1 a 1 5 ]
-"312
+"324
+[v MTOUCH_Button_Tick@i i `uc  1 a 1 6 ]
+"329
 } 0
-"313
+"330
 [v _Button_Tick_helper Button_Tick_helper `(v  1 s 1 Button_Tick_helper ]
 {
-[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_Tick_helper@button button `*.5S1538  1 a 1 wreg ]
-[v Button_Tick_helper@button button `*.5S1538  1 a 1 wreg ]
-"316
-"313
-[v Button_Tick_helper@button button `*.5S1538  1 a 1 3 ]
-"324
+[s S848 . 17 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3108 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 `E3112 1 hysteresis 1 16 ]
+[v Button_Tick_helper@button button `*.5S848  1 a 1 wreg ]
+[v Button_Tick_helper@button button `*.5S848  1 a 1 wreg ]
+"333
+"330
+[v Button_Tick_helper@button button `*.5S848  1 a 1 4 ]
+"341
 } 0
-"958 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"905 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _MTOUCH_Sensor_Sampled_ResetAll MTOUCH_Sensor_Sampled_ResetAll `(v  1 e 1 0 ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-"960
-[v MTOUCH_Sensor_Sampled_ResetAll@sensor sensor `*.5S818  1 a 1 3 ]
-"965
+"907
+[v MTOUCH_Sensor_Sampled_ResetAll@sensor sensor `*.5S96  1 a 1 4 ]
+"912
 } 0
-"972
+"919
 [v _Sensor_Sampled_Reset Sensor_Sampled_Reset `T(v  1 s 1 Sensor_Sampled_Reset ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_Sampled_Reset@sensor sensor `*.5S818  1 a 1 wreg ]
-[v Sensor_Sampled_Reset@sensor sensor `*.5S818  1 a 1 wreg ]
-"974
-"972
-[v Sensor_Sampled_Reset@sensor sensor `*.5S818  1 a 1 1 ]
-"975
+[v Sensor_Sampled_Reset@sensor sensor `*.5S96  1 a 1 wreg ]
+[v Sensor_Sampled_Reset@sensor sensor `*.5S96  1 a 1 wreg ]
+"921
+"919
+[v Sensor_Sampled_Reset@sensor sensor `*.5S96  1 a 1 2 ]
+"922
 } 0
-"266
+"270
 [v _MTOUCH_Sensor_SampleAll MTOUCH_Sensor_SampleAll `(a  1 e 1 0 ]
 {
-"268
-[v MTOUCH_Sensor_SampleAll@group group `uc  1 a 1 39 ]
-"275
+"272
+[v MTOUCH_Sensor_SampleAll@group group `uc  1 a 1 44 ]
+"279
 } 0
-"311
-[v _Sensor_Service Sensor_Service `(E2859  1 s 1 Sensor_Service ]
+"294
+[v _Sensor_Service Sensor_Service `(E2876  1 s 1 Sensor_Service ]
 {
 [v Sensor_Service@scanGroup scanGroup `uc  1 a 1 wreg ]
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-"314
-[v Sensor_Service@sensor_adc2 sensor_adc2 `*.5S818  1 a 1 37 ]
-"313
-[v Sensor_Service@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 36 ]
-"319
-[v Sensor_Service@error error `E2859  1 a 1 35 ]
-"311
+"297
+[v Sensor_Service@sensor_adc2 sensor_adc2 `*.5S96  1 a 1 42 ]
+"296
+[v Sensor_Service@sensor_adc1 sensor_adc1 `*.5S96  1 a 1 41 ]
+"302
+[v Sensor_Service@error error `E2876  1 a 1 40 ]
+"294
 [v Sensor_Service@scanGroup scanGroup `uc  1 a 1 wreg ]
-"316
-[v Sensor_Service@scanGroup scanGroup `uc  1 a 1 34 ]
-"360
+"299
+[v Sensor_Service@scanGroup scanGroup `uc  1 a 1 39 ]
+"340
 } 0
-"977
+"924
 [v _Sensor_setSampled Sensor_setSampled `T(v  1 s 1 Sensor_setSampled ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_setSampled@sensor sensor `*.5S818  1 a 1 wreg ]
-[v Sensor_setSampled@sensor sensor `*.5S818  1 a 1 wreg ]
-"979
-"977
-[v Sensor_setSampled@sensor sensor `*.5S818  1 a 1 1 ]
-"980
+[v Sensor_setSampled@sensor sensor `*.5S96  1 a 1 wreg ]
+[v Sensor_setSampled@sensor sensor `*.5S96  1 a 1 wreg ]
+"926
+"924
+[v Sensor_setSampled@sensor sensor `*.5S96  1 a 1 2 ]
+"927
 } 0
-"810
+"782
 [v _Sensor_RawSample_Update Sensor_RawSample_Update `(v  1 s 1 Sensor_RawSample_Update ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_RawSample_Update@sensor sensor `*.5S818  1 a 1 wreg ]
-"812
-[v Sensor_RawSample_Update@adcIndex adcIndex `uc  1 a 1 6 ]
-"810
-[v Sensor_RawSample_Update@sensor sensor `*.5S818  1 a 1 wreg ]
-"812
-"810
-[v Sensor_RawSample_Update@sensor sensor `*.5S818  1 a 1 7 ]
-"824
+[v Sensor_RawSample_Update@sensor sensor `*.5S96  1 a 1 wreg ]
+"784
+[v Sensor_RawSample_Update@adcIndex adcIndex `uc  1 a 1 7 ]
+"782
+[v Sensor_RawSample_Update@sensor sensor `*.5S96  1 a 1 wreg ]
+"784
+"782
+[v Sensor_RawSample_Update@sensor sensor `*.5S96  1 a 1 8 ]
+"796
 } 0
-"831
+"803
 [v _Sensor_DefaultCallback Sensor_DefaultCallback `(v  1 s 1 Sensor_DefaultCallback ]
 {
-[v Sensor_DefaultCallback@sensor sensor `E2854  1 p 1 1 ]
+[v Sensor_DefaultCallback@sensor sensor `E2871  1 p 1 2 ]
 } 0
-"380
-[v _Sensor_Acquisition Sensor_Acquisition `(E2859  1 s 1 Sensor_Acquisition ]
+"360
+[v _Sensor_Acquisition Sensor_Acquisition `(E2876  1 s 1 Sensor_Acquisition ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 wreg ]
-"382
-[v Sensor_Acquisition@retry retry `uc  1 a 1 29 ]
-"380
-[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 wreg ]
-[v Sensor_Acquisition@sensor_adc2 sensor_adc2 `*.5S818  1 p 1 27 ]
-"382
-"380
-[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 30 ]
-"421
+[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.5S96  1 a 1 wreg ]
+"362
+[v Sensor_Acquisition@retry retry `uc  1 a 1 34 ]
+"360
+[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.5S96  1 a 1 wreg ]
+[v Sensor_Acquisition@sensor_adc2 sensor_adc2 `*.5S96  1 p 1 32 ]
+"362
+"360
+[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.5S96  1 a 1 35 ]
+"401
 } 0
-"423
+"403
 [v _Sensor_postAcquisitionProcess Sensor_postAcquisitionProcess `(v  1 s 1 Sensor_postAcquisitionProcess ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_postAcquisitionProcess@sensor sensor `*.5S818  1 a 1 wreg ]
-"425
-[v Sensor_postAcquisitionProcess@deviation deviation `us  1 a 2 6 ]
-"426
-[v Sensor_postAcquisitionProcess@adcIndex adcIndex `uc  1 a 1 8 ]
-"423
-[v Sensor_postAcquisitionProcess@sensor sensor `*.5S818  1 a 1 wreg ]
-"426
-"423
-[v Sensor_postAcquisitionProcess@sensor sensor `*.5S818  1 a 1 9 ]
-"437
+[v Sensor_postAcquisitionProcess@sensor sensor `*.5S96  1 a 1 wreg ]
+"405
+[v Sensor_postAcquisitionProcess@deviation deviation `us  1 a 2 1 ]
+"406
+[v Sensor_postAcquisitionProcess@adcIndex adcIndex `uc  1 a 1 0 ]
+"403
+[v Sensor_postAcquisitionProcess@sensor sensor `*.5S96  1 a 1 wreg ]
+"406
+"403
+[v Sensor_postAcquisitionProcess@sensor sensor `*.5S96  1 a 1 3 ]
+"417
 } 0
-"885
+"840
 [v _Sensor_setInactive Sensor_setInactive `T(v  1 s 1 Sensor_setInactive ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_setInactive@sensor sensor `*.5S818  1 a 1 wreg ]
-[v Sensor_setInactive@sensor sensor `*.5S818  1 a 1 wreg ]
-"887
-"885
-[v Sensor_setInactive@sensor sensor `*.5S818  1 a 1 1 ]
-"888
+[v Sensor_setInactive@sensor sensor `*.5S96  1 a 1 wreg ]
+[v Sensor_setInactive@sensor sensor `*.5S96  1 a 1 wreg ]
+"842
+"840
+[v Sensor_setInactive@sensor sensor `*.5S96  1 a 1 2 ]
+"843
 } 0
-"880
+"835
 [v _Sensor_setActive Sensor_setActive `T(v  1 s 1 Sensor_setActive ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_setActive@sensor sensor `*.5S818  1 a 1 wreg ]
-[v Sensor_setActive@sensor sensor `*.5S818  1 a 1 wreg ]
-"882
-"880
-[v Sensor_setActive@sensor sensor `*.5S818  1 a 1 1 ]
-"883
+[v Sensor_setActive@sensor sensor `*.5S96  1 a 1 wreg ]
+[v Sensor_setActive@sensor sensor `*.5S96  1 a 1 wreg ]
+"837
+"835
+[v Sensor_setActive@sensor sensor `*.5S96  1 a 1 2 ]
+"838
 } 0
-"741
-[v _Sensor_Scanfrequency_Evaluation Sensor_Scanfrequency_Evaluation `(E2859  1 s 1 Sensor_Scanfrequency_Evaluation ]
+"717
+[v _Sensor_Scanfrequency_Evaluation Sensor_Scanfrequency_Evaluation `(E2876  1 s 1 Sensor_Scanfrequency_Evaluation ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 wreg ]
-"747
-[v Sensor_Scanfrequency_Evaluation@best_packet_sample best_packet_sample `[2]us  1 a 4 22 ]
-"745
-[v Sensor_Scanfrequency_Evaluation@packet_noise_Max packet_noise_Max `us  1 a 2 18 ]
-"743
-[v Sensor_Scanfrequency_Evaluation@i i `uc  1 a 1 26 ]
-"748
-[v Sensor_Scanfrequency_Evaluation@retry retry `uc  1 a 1 21 ]
-"746
-[v Sensor_Scanfrequency_Evaluation@best_sample_period best_sample_period `uc  1 a 1 20 ]
-"741
-[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 wreg ]
-[v Sensor_Scanfrequency_Evaluation@sensor_adc2 sensor_adc2 `*.5S818  1 p 1 14 ]
-"744
+[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.5S96  1 a 1 wreg ]
+"723
+[v Sensor_Scanfrequency_Evaluation@best_packet_sample best_packet_sample `[2]us  1 a 4 27 ]
+"721
+[v Sensor_Scanfrequency_Evaluation@packet_noise_Max packet_noise_Max `us  1 a 2 23 ]
+"719
+[v Sensor_Scanfrequency_Evaluation@i i `uc  1 a 1 31 ]
+"724
+[v Sensor_Scanfrequency_Evaluation@retry retry `uc  1 a 1 26 ]
+"722
+[v Sensor_Scanfrequency_Evaluation@best_sample_period best_sample_period `uc  1 a 1 25 ]
+"717
+[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.5S96  1 a 1 wreg ]
+[v Sensor_Scanfrequency_Evaluation@sensor_adc2 sensor_adc2 `*.5S96  1 p 1 19 ]
+"720
 [v Sensor_Scanfrequency_Evaluation@frequency_hop frequency_hop `DC[5]uc  1 s 5 frequency_hop ]
-"750
-"741
-[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 17 ]
-"793
+"726
+"717
+[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.5S96  1 a 1 22 ]
+"769
 } 0
-"479
-[v _Sensor_Acq_ExecutePacket Sensor_Acq_ExecutePacket `(E2859  1 s 1 Sensor_Acq_ExecutePacket ]
+"455
+[v _Sensor_Acq_ExecutePacket Sensor_Acq_ExecutePacket `(E2876  1 s 1 Sensor_Acq_ExecutePacket ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 wreg ]
-"485
-[v Sensor_Acq_ExecutePacket@last_b last_b `us  1 a 2 10 ]
-"484
-[v Sensor_Acq_ExecutePacket@last_a last_a `us  1 a 2 8 ]
-"482
-[v Sensor_Acq_ExecutePacket@packet_counter packet_counter `uc  1 a 1 12 ]
-"486
-[v Sensor_Acq_ExecutePacket@activeSensor activeSensor `uc  1 a 1 7 ]
-"481
-[v Sensor_Acq_ExecutePacket@ADxIF_flag ADxIF_flag `uc  1 a 1 6 ]
-"495
-[v Sensor_Acq_ExecutePacket@sensor2ForceEnabled sensor2ForceEnabled `uc  1 a 1 5 ]
-[v Sensor_Acq_ExecutePacket@sensor1ForceEnabled sensor1ForceEnabled `uc  1 a 1 4 ]
-"489
-[v Sensor_Acq_ExecutePacket@AD2CON2_temp AD2CON2_temp `uc  1 a 1 3 ]
-[v Sensor_Acq_ExecutePacket@AD1CON2_temp AD1CON2_temp `uc  1 a 1 2 ]
-"488
-[v Sensor_Acq_ExecutePacket@ADCOMCON_temp ADCOMCON_temp `uc  1 a 1 1 ]
-"479
-[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 wreg ]
-[v Sensor_Acq_ExecutePacket@sensor_adc2 sensor_adc2 `*.5S818  1 p 1 11 ]
-"484
-"479
-[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.5S818  1 a 1 13 ]
-"686
+[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.5S96  1 a 1 wreg ]
+"461
+[v Sensor_Acq_ExecutePacket@last_b last_b `us  1 a 2 15 ]
+"460
+[v Sensor_Acq_ExecutePacket@last_a last_a `us  1 a 2 13 ]
+"458
+[v Sensor_Acq_ExecutePacket@packet_counter packet_counter `uc  1 a 1 17 ]
+"462
+[v Sensor_Acq_ExecutePacket@activeSensor activeSensor `uc  1 a 1 12 ]
+"457
+[v Sensor_Acq_ExecutePacket@ADxIF_flag ADxIF_flag `uc  1 a 1 11 ]
+"471
+[v Sensor_Acq_ExecutePacket@sensor2ForceEnabled sensor2ForceEnabled `uc  1 a 1 10 ]
+[v Sensor_Acq_ExecutePacket@sensor1ForceEnabled sensor1ForceEnabled `uc  1 a 1 9 ]
+"465
+[v Sensor_Acq_ExecutePacket@AD2CON2_temp AD2CON2_temp `uc  1 a 1 8 ]
+[v Sensor_Acq_ExecutePacket@AD1CON2_temp AD1CON2_temp `uc  1 a 1 7 ]
+"464
+[v Sensor_Acq_ExecutePacket@ADCOMCON_temp ADCOMCON_temp `uc  1 a 1 6 ]
+"455
+[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.5S96  1 a 1 wreg ]
+[v Sensor_Acq_ExecutePacket@sensor_adc2 sensor_adc2 `*.5S96  1 p 1 4 ]
+"460
+"455
+[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.5S96  1 a 1 18 ]
+"662
 } 0
 "85 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr2.c
 [v _TMR2_StopTimer TMR2_StopTimer `(v  1 e 1 0 ]
@@ -1038,535 +1190,403 @@ HYST_MAX 5
 {
 "83
 } 0
-"106
+"91
 [v _TMR2_LoadPeriodRegister TMR2_LoadPeriodRegister `(v  1 e 1 0 ]
 {
 [v TMR2_LoadPeriodRegister@periodVal periodVal `uc  1 a 1 wreg ]
 [v TMR2_LoadPeriodRegister@periodVal periodVal `uc  1 a 1 wreg ]
-"108
-[v TMR2_LoadPeriodRegister@periodVal periodVal `uc  1 a 1 1 ]
-"109
+"93
+[v TMR2_LoadPeriodRegister@periodVal periodVal `uc  1 a 1 2 ]
+"94
 } 0
-"445 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"421 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _Sensor_loadADCSettings Sensor_loadADCSettings `(v  1 s 1 Sensor_loadADCSettings ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_loadADCSettings@sensor sensor `*.5S818  1 a 1 wreg ]
-"450
-[v Sensor_loadADCSettings@addressOffset addressOffset `uc  1 a 1 8 ]
-"445
-[v Sensor_loadADCSettings@sensor sensor `*.5S818  1 a 1 wreg ]
-[v Sensor_loadADCSettings@adc_index adc_index `uc  1 p 1 2 ]
-"447
-"445
-[v Sensor_loadADCSettings@sensor sensor `*.5S818  1 a 1 9 ]
-"472
+[v Sensor_loadADCSettings@sensor sensor `*.5S96  1 a 1 wreg ]
+"426
+[v Sensor_loadADCSettings@addressOffset addressOffset `uc  1 a 1 2 ]
+"421
+[v Sensor_loadADCSettings@sensor sensor `*.5S96  1 a 1 wreg ]
+[v Sensor_loadADCSettings@adc_index adc_index `uc  1 p 1 3 ]
+"423
+"421
+[v Sensor_loadADCSettings@sensor sensor `*.5S96  1 a 1 3 ]
+"448
 } 0
-"928
+"875
 [v _Sensor_isCalibrated Sensor_isCalibrated `T(a  1 s 1 Sensor_isCalibrated ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_isCalibrated@sensor sensor `*.5S818  1 a 1 wreg ]
-[v Sensor_isCalibrated@sensor sensor `*.5S818  1 a 1 wreg ]
-"930
-"928
-[v Sensor_isCalibrated@sensor sensor `*.5S818  1 a 1 1 ]
-"931
+[v Sensor_isCalibrated@sensor sensor `*.5S96  1 a 1 wreg ]
+[v Sensor_isCalibrated@sensor sensor `*.5S96  1 a 1 wreg ]
+"877
+"875
+[v Sensor_isCalibrated@sensor sensor `*.5S96  1 a 1 2 ]
+"878
 } 0
-"863
+"818
 [v _Sensor_isEnabled Sensor_isEnabled `(a  1 s 1 Sensor_isEnabled ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_isEnabled@sensor sensor `*.5S818  1 a 1 wreg ]
-[v Sensor_isEnabled@sensor sensor `*.5S818  1 a 1 wreg ]
-"865
-"863
-[v Sensor_isEnabled@sensor sensor `*.5S818  1 a 1 2 ]
-"869
+[v Sensor_isEnabled@sensor sensor `*.5S96  1 a 1 wreg ]
+[v Sensor_isEnabled@sensor sensor `*.5S96  1 a 1 wreg ]
+"820
+"818
+[v Sensor_isEnabled@sensor sensor `*.5S96  1 a 1 3 ]
+"824
 } 0
-"890
+"845
 [v _Sensor_isActive Sensor_isActive `T(a  1 s 1 Sensor_isActive ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_isActive@sensor sensor `*.5S818  1 a 1 wreg ]
-[v Sensor_isActive@sensor sensor `*.5S818  1 a 1 wreg ]
-"892
-"890
-[v Sensor_isActive@sensor sensor `*.5S818  1 a 1 1 ]
-"896
+[v Sensor_isActive@sensor sensor `*.5S96  1 a 1 wreg ]
+[v Sensor_isActive@sensor sensor `*.5S96  1 a 1 wreg ]
+"847
+"845
+[v Sensor_isActive@sensor sensor `*.5S96  1 a 1 2 ]
+"851
 } 0
-"696
+"672
 [v _Sensor_autoCalibration Sensor_autoCalibration `(v  1 s 1 Sensor_autoCalibration ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_autoCalibration@sensor sensor `*.5S818  1 a 1 wreg ]
-"698
-[v Sensor_autoCalibration@adcIndex adcIndex `uc  1 a 1 9 ]
-"696
-[v Sensor_autoCalibration@sensor sensor `*.5S818  1 a 1 wreg ]
-"698
-"696
-[v Sensor_autoCalibration@sensor sensor `*.5S818  1 a 1 10 ]
-"732
+[v Sensor_autoCalibration@sensor sensor `*.5S96  1 a 1 wreg ]
+"674
+[v Sensor_autoCalibration@adcIndex adcIndex `uc  1 a 1 0 ]
+"672
+[v Sensor_autoCalibration@sensor sensor `*.5S96  1 a 1 wreg ]
+"674
+"672
+[v Sensor_autoCalibration@sensor sensor `*.5S96  1 a 1 1 ]
+"708
 } 0
 "1 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
 {
-[v abs@a a `i  1 p 2 1 ]
+[v abs@a a `i  1 p 2 2 ]
 "4
 } 0
-"933 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"880 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _Sensor_setCalibrated Sensor_setCalibrated `T(v  1 s 1 Sensor_setCalibrated ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_setCalibrated@sensor sensor `*.5S818  1 a 1 wreg ]
-[v Sensor_setCalibrated@sensor sensor `*.5S818  1 a 1 wreg ]
-"935
-"933
-[v Sensor_setCalibrated@sensor sensor `*.5S818  1 a 1 1 ]
-"937
+[v Sensor_setCalibrated@sensor sensor `*.5S96  1 a 1 wreg ]
+[v Sensor_setCalibrated@sensor sensor `*.5S96  1 a 1 wreg ]
+"882
+"880
+[v Sensor_setCalibrated@sensor sensor `*.5S96  1 a 1 2 ]
+"884
 } 0
-"939
+"886
 [v _Sensor_setCalibratAcqTime Sensor_setCalibratAcqTime `T(v  1 s 1 Sensor_setCalibratAcqTime ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_setCalibratAcqTime@sensor sensor `*.5S818  1 a 1 wreg ]
-[v Sensor_setCalibratAcqTime@sensor sensor `*.5S818  1 a 1 wreg ]
-"941
-"939
-[v Sensor_setCalibratAcqTime@sensor sensor `*.5S818  1 a 1 1 ]
-"943
+[v Sensor_setCalibratAcqTime@sensor sensor `*.5S96  1 a 1 wreg ]
+[v Sensor_setCalibratAcqTime@sensor sensor `*.5S96  1 a 1 wreg ]
+"888
+"886
+[v Sensor_setCalibratAcqTime@sensor sensor `*.5S96  1 a 1 2 ]
+"890
 } 0
-"945
+"892
 [v _Sensor_isCalibratingAcqTime Sensor_isCalibratingAcqTime `T(a  1 s 1 Sensor_isCalibratingAcqTime ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_isCalibratingAcqTime@sensor sensor `*.5S818  1 a 1 wreg ]
-[v Sensor_isCalibratingAcqTime@sensor sensor `*.5S818  1 a 1 wreg ]
-"947
-"945
-[v Sensor_isCalibratingAcqTime@sensor sensor `*.5S818  1 a 1 1 ]
-"949
+[v Sensor_isCalibratingAcqTime@sensor sensor `*.5S96  1 a 1 wreg ]
+[v Sensor_isCalibratingAcqTime@sensor sensor `*.5S96  1 a 1 wreg ]
+"894
+"892
+[v Sensor_isCalibratingAcqTime@sensor sensor `*.5S96  1 a 1 2 ]
+"896
 } 0
-"362
+"342
 [v _Sensor_getScanGroupIndex Sensor_getScanGroupIndex `(uc  1 s 1 Sensor_getScanGroupIndex ]
 {
-[s S818 . 9 `DCE2854 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+[s S96 . 9 `DCE2871 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
 `uc 1 active 1 8 :1:1 
 `uc 1 calibrated 1 8 :1:2 
 `uc 1 enabled 1 8 :1:3 
 `uc 1 acqTime_cal 1 8 :1:4 
 ]
-[v Sensor_getScanGroupIndex@sensor sensor `*.5S818  1 a 1 wreg ]
-"364
-[v Sensor_getScanGroupIndex@sensorGroup sensorGroup `uc  1 a 1 4 ]
-"362
-[v Sensor_getScanGroupIndex@sensor sensor `*.5S818  1 a 1 wreg ]
-"365
-"362
-[v Sensor_getScanGroupIndex@sensor sensor `*.5S818  1 a 1 3 ]
-"373
+[v Sensor_getScanGroupIndex@sensor sensor `*.5S96  1 a 1 wreg ]
+"344
+[v Sensor_getScanGroupIndex@sensorGroup sensorGroup `uc  1 a 1 5 ]
+"342
+[v Sensor_getScanGroupIndex@sensor sensor `*.5S96  1 a 1 wreg ]
+"345
+"342
+[v Sensor_getScanGroupIndex@sensor sensor `*.5S96  1 a 1 4 ]
+"353
 } 0
-"247
+"251
 [v _MTOUCH_Sensor_Scan_Initialize MTOUCH_Sensor_Scan_Initialize `(v  1 e 1 0 ]
 {
-"257
+"261
 } 0
-"197 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
+"210 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _MTOUCH_Button_ServiceAll MTOUCH_Button_ServiceAll `(v  1 e 1 0 ]
 {
-"199
-[v MTOUCH_Button_ServiceAll@button button `E3070  1 a 1 58 ]
-"206
+"223
 } 0
-"208
+"225
 [v _Button_Service Button_Service `(v  1 s 1 Button_Service ]
 {
 [v Button_Service@name name `E3070  1 a 1 wreg ]
-[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-"210
-[v Button_Service@button button `*.5S1538  1 a 1 56 ]
-"208
+[s S848 . 17 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3108 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 `E3112 1 hysteresis 1 16 ]
+"227
+[v Button_Service@button button `*.5S848  1 a 1 12 ]
+"225
 [v Button_Service@name name `E3070  1 a 1 wreg ]
-"210
-[v Button_Service@name name `E3070  1 a 1 55 ]
-"223
+"227
+[v Button_Service@name name `E3070  1 a 1 11 ]
+"240
 } 0
-"967 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"914 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _MTOUCH_Sensor_wasSampled MTOUCH_Sensor_wasSampled `(a  1 e 1 0 ]
 {
-[v MTOUCH_Sensor_wasSampled@sensor sensor `E2854  1 a 1 wreg ]
-[v MTOUCH_Sensor_wasSampled@sensor sensor `E2854  1 a 1 wreg ]
-"969
-[v MTOUCH_Sensor_wasSampled@sensor sensor `E2854  1 a 1 6 ]
-"970
+[v MTOUCH_Sensor_wasSampled@sensor sensor `E2871  1 a 1 wreg ]
+[v MTOUCH_Sensor_wasSampled@sensor sensor `E2871  1 a 1 wreg ]
+"916
+[v MTOUCH_Sensor_wasSampled@sensor sensor `E2871  1 a 1 7 ]
+"917
 } 0
-"920
+"868
 [v _MTOUCH_Sensor_isCalibrated MTOUCH_Sensor_isCalibrated `(a  1 e 1 0 ]
 {
-[v MTOUCH_Sensor_isCalibrated@sensor sensor `E2854  1 a 1 wreg ]
-[v MTOUCH_Sensor_isCalibrated@sensor sensor `E2854  1 a 1 wreg ]
-"922
-[v MTOUCH_Sensor_isCalibrated@sensor sensor `E2854  1 a 1 6 ]
-"926
+[v MTOUCH_Sensor_isCalibrated@sensor sensor `E2871  1 a 1 wreg ]
+[v MTOUCH_Sensor_isCalibrated@sensor sensor `E2871  1 a 1 wreg ]
+"871
+[v MTOUCH_Sensor_isCalibrated@sensor sensor `E2871  1 a 1 7 ]
+"873
 } 0
-"245 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
+"262 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _Button_State_NotPressed Button_State_NotPressed `(v  1 s 1 Button_State_NotPressed ]
 {
-[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_State_NotPressed@button button `*.5S1538  1 p 1 48 ]
-"279
+[s S848 . 17 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3108 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 `E3112 1 hysteresis 1 16 ]
+[v Button_State_NotPressed@button button `*.5S848  1 p 1 5 ]
+"296
 } 0
-"225
+"242
 [v _Button_State_Initializing Button_State_Initializing `(v  1 s 1 Button_State_Initializing ]
 {
-[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_State_Initializing@button button `*.5S1538  1 p 1 48 ]
-"244
+[s S848 . 17 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3108 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 `E3112 1 hysteresis 1 16 ]
+[v Button_State_Initializing@button button `*.5S848  1 p 1 5 ]
+"261
 } 0
-"281
+"298
 [v _Button_State_Pressed Button_State_Pressed `(v  1 s 1 Button_State_Pressed ]
 {
-[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_State_Pressed@button button `*.5S1538  1 p 1 48 ]
-"298
+[s S848 . 17 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3108 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 `E3112 1 hysteresis 1 16 ]
+[v Button_State_Pressed@button button `*.5S848  1 p 1 5 ]
+"315
 } 0
-"158 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
+"177 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _myButtonPressedCallback myButtonPressedCallback `(v  1 e 1 0 ]
 {
-[v myButtonPressedCallback@button button `E2914  1 p 1 47 ]
-"171
+[v myButtonPressedCallback@button button `E2931  1 p 1 5 ]
+"190
 } 0
-"535 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
+"444 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _Button_DefaultCallback Button_DefaultCallback `(v  1 s 1 Button_DefaultCallback ]
 {
-[v Button_DefaultCallback@button button `E3070  1 p 1 47 ]
 } 0
-"172 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
+"191 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _myButtonReleasedCallback myButtonReleasedCallback `(v  1 e 1 0 ]
 {
-"183
+[v myButtonReleasedCallback@button button `E2931  1 p 1 5 ]
+"202
 } 0
-"382 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
+"351 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _MTOUCH_Button_isPressed MTOUCH_Button_isPressed `(a  1 e 1 0 ]
 {
 [v MTOUCH_Button_isPressed@name name `E3070  1 a 1 wreg ]
 [v MTOUCH_Button_isPressed@name name `E3070  1 a 1 wreg ]
-"384
+"353
 [v MTOUCH_Button_isPressed@name name `E3070  1 a 1 2 ]
-"388
+"354
 } 0
-"167
+"176
 [v _MTOUCH_Button_Initialize MTOUCH_Button_Initialize `(v  1 e 1 0 ]
 {
 [v MTOUCH_Button_Initialize@name name `E3070  1 a 1 wreg ]
-[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-"169
-[v MTOUCH_Button_Initialize@button button `*.5S1538  1 a 1 10 ]
-"167
+[s S848 . 17 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3108 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 `E3112 1 hysteresis 1 16 ]
+"178
+[v MTOUCH_Button_Initialize@button button `*.5S848  1 a 1 1 ]
+"176
 [v MTOUCH_Button_Initialize@name name `E3070  1 a 1 wreg ]
-"169
-[v MTOUCH_Button_Initialize@name name `E3070  1 a 1 9 ]
-"177
+"178
+[v MTOUCH_Button_Initialize@name name `E3070  1 a 1 0 ]
+"186
 } 0
-"912 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"861 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _MTOUCH_Sensor_Calibrate MTOUCH_Sensor_Calibrate `(v  1 e 1 0 ]
 {
-[v MTOUCH_Sensor_Calibrate@sensor sensor `E2854  1 a 1 wreg ]
-[v MTOUCH_Sensor_Calibrate@sensor sensor `E2854  1 a 1 wreg ]
-"914
-[v MTOUCH_Sensor_Calibrate@sensor sensor `E2854  1 a 1 6 ]
-"918
+[v MTOUCH_Sensor_Calibrate@sensor sensor `E2871  1 a 1 wreg ]
+[v MTOUCH_Sensor_Calibrate@sensor sensor `E2871  1 a 1 wreg ]
+"864
+[v MTOUCH_Sensor_Calibrate@sensor sensor `E2871  1 a 1 7 ]
+"866
 } 0
-"489 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
+"423 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _Button_Baseline_Update Button_Baseline_Update `(v  1 s 1 Button_Baseline_Update ]
 {
-[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_Baseline_Update@button button `*.5S1538  1 a 1 wreg ]
-[v Button_Baseline_Update@button button `*.5S1538  1 a 1 wreg ]
-"491
-"489
-[v Button_Baseline_Update@button button `*.5S1538  1 a 1 7 ]
-"503
+[s S848 . 17 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3108 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 `E3112 1 hysteresis 1 16 ]
+[v Button_Baseline_Update@button button `*.5S848  1 a 1 wreg ]
+[v Button_Baseline_Update@button button `*.5S848  1 a 1 wreg ]
+"425
+"423
+[v Button_Baseline_Update@button button `*.5S848  1 a 1 8 ]
+"437
 } 0
-"483
+"417
 [v _Button_Baseline_Initialize Button_Baseline_Initialize `(v  1 s 1 Button_Baseline_Initialize ]
 {
-[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_Baseline_Initialize@button button `*.5S1538  1 a 1 wreg ]
-[v Button_Baseline_Initialize@button button `*.5S1538  1 a 1 wreg ]
-"485
-"483
-[v Button_Baseline_Initialize@button button `*.5S1538  1 a 1 9 ]
-"487
+[s S848 . 17 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3108 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 `E3112 1 hysteresis 1 16 ]
+[v Button_Baseline_Initialize@button button `*.5S848  1 a 1 wreg ]
+[v Button_Baseline_Initialize@button button `*.5S848  1 a 1 wreg ]
+"419
+"417
+[v Button_Baseline_Initialize@button button `*.5S848  1 a 1 4 ]
+"421
 } 0
-"456
+"390
 [v _Button_Reading_Update Button_Reading_Update `(v  1 s 1 Button_Reading_Update ]
 {
-[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_Reading_Update@button button `*.5S1538  1 a 1 wreg ]
-[v Button_Reading_Update@button button `*.5S1538  1 a 1 wreg ]
-"458
-"456
-[v Button_Reading_Update@button button `*.5S1538  1 a 1 0 ]
-"468
+[s S848 . 17 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3108 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 `E3112 1 hysteresis 1 16 ]
+[v Button_Reading_Update@button button `*.5S848  1 a 1 wreg ]
+[v Button_Reading_Update@button button `*.5S848  1 a 1 wreg ]
+"392
+"390
+[v Button_Reading_Update@button button `*.5S848  1 a 1 3 ]
+"402
 } 0
-"470
+"404
 [v _Button_Reading_Update_Helper Button_Reading_Update_Helper `(v  1 s 1 Button_Reading_Update_Helper ]
 {
-[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_Reading_Update_Helper@button button `*.5S1538  1 a 1 wreg ]
-[v Button_Reading_Update_Helper@button button `*.5S1538  1 a 1 wreg ]
-"472
-"470
-[v Button_Reading_Update_Helper@button button `*.5S1538  1 a 1 11 ]
-"481
+[s S848 . 17 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3108 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 `E3112 1 hysteresis 1 16 ]
+[v Button_Reading_Update_Helper@button button `*.5S848  1 a 1 wreg ]
+[v Button_Reading_Update_Helper@button button `*.5S848  1 a 1 wreg ]
+"406
+"404
+[v Button_Reading_Update_Helper@button button `*.5S848  1 a 1 2 ]
+"415
 } 0
-"800 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
+"776 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_sensor.c
 [v _MTOUCH_Sensor_RawSample_Get MTOUCH_Sensor_RawSample_Get `(us  1 e 2 0 ]
 {
-[v MTOUCH_Sensor_RawSample_Get@name name `E2854  1 a 1 wreg ]
-[v MTOUCH_Sensor_RawSample_Get@name name `E2854  1 a 1 wreg ]
-"802
-[v MTOUCH_Sensor_RawSample_Get@name name `E2854  1 a 1 8 ]
-"808
+[v MTOUCH_Sensor_RawSample_Get@name name `E2871  1 a 1 wreg ]
+[v MTOUCH_Sensor_RawSample_Get@name name `E2871  1 a 1 wreg ]
+"779
+[v MTOUCH_Sensor_RawSample_Get@name name `E2871  1 a 1 9 ]
+"780
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
 {
 [v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
 "6
-[v ___bmul@product product `uc  1 a 1 3 ]
+[v ___bmul@product product `uc  1 a 1 4 ]
 "4
 [v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
-[v ___bmul@multiplicand multiplicand `uc  1 p 1 1 ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 2 ]
 "6
-[v ___bmul@multiplier multiplier `uc  1 a 1 4 ]
+[v ___bmul@multiplier multiplier `uc  1 a 1 5 ]
 "51
 } 0
-"407 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
+"361 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch_button.c
 [v _Button_Deviation_Update Button_Deviation_Update `(v  1 s 1 Button_Deviation_Update ]
 {
-[s S1538 . 16 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3132 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
-[v Button_Deviation_Update@button button `*.5S1538  1 a 1 wreg ]
-"409
-[v Button_Deviation_Update@deviation deviation `l  1 a 4 1 ]
-"407
-[v Button_Deviation_Update@button button `*.5S1538  1 a 1 wreg ]
-"411
-"407
-[v Button_Deviation_Update@button button `*.5S1538  1 a 1 0 ]
-"427
+[s S848 . 17 `DCE3070 1 name 1 0 `DCE3010 1 sensor 1 1 `E3108 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 `E3112 1 hysteresis 1 16 ]
+[v Button_Deviation_Update@button button `*.5S848  1 a 1 wreg ]
+"363
+[v Button_Deviation_Update@deviation deviation `l  1 a 4 3 ]
+"361
+[v Button_Deviation_Update@button button `*.5S848  1 a 1 wreg ]
+"365
+"361
+[v Button_Deviation_Update@button button `*.5S848  1 a 1 2 ]
+"381
 } 0
-"536
+"445
 [v _MTOUCH_Button_SetPressedCallback MTOUCH_Button_SetPressedCallback `(v  1 e 1 0 ]
 {
-[v MTOUCH_Button_SetPressedCallback@callback callback `*.37(v  1 p 2 1 ]
-"539
+[v MTOUCH_Button_SetPressedCallback@callback callback `*.37(v  1 p 2 2 ]
+"448
 } 0
-"540
+"449
 [v _MTOUCH_Button_SetNotPressedCallback MTOUCH_Button_SetNotPressedCallback `(v  1 e 1 0 ]
 {
-[v MTOUCH_Button_SetNotPressedCallback@callback callback `*.37(v  1 p 2 1 ]
-"543
+[v MTOUCH_Button_SetNotPressedCallback@callback callback `*.37(v  1 p 2 2 ]
+"452
 } 0
-"124 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
+"120 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
 [v _EUSART_is_rx_ready EUSART_is_rx_ready `(uc  1 e 1 0 ]
 {
-"127
+"123
 } 0
-"138
+"126
 [v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
 {
-"140
-[v EUSART_Read@readValue readValue `uc  1 a 1 2 ]
-"158
+"128
+[v EUSART_Read@readValue readValue `uc  1 a 1 3 ]
+"146
 } 0
-"206 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
+"226 E:\Work\Touch_Switch-SQ04\SQ_04.X\main.c
 [v _DATA_PROCESS DATA_PROCESS `(v  1 e 1 0 ]
 {
 [v DATA_PROCESS@x x `uc  1 a 1 wreg ]
 [v DATA_PROCESS@x x `uc  1 a 1 wreg ]
-[v DATA_PROCESS@x x `uc  1 a 1 49 ]
-"349
-} 0
-"184
-[v _update_state update_state `(v  1 e 1 0 ]
-{
-"205
-} 0
-"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
-[v _printf printf `(i  1 e 2 0 ]
-{
-"8
-[v printf@ap ap `[1]*.4v  1 a 1 46 ]
-"5
-[v printf@fmt fmt `*.25DCuc  1 p 2 39 ]
-"13
-} 0
-"1368 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
-{
-[s S1936 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.1S1936  1 a 1 wreg ]
-"1371
-[v vfprintf@cfmt cfmt `*.25uc  1 a 2 37 ]
-"1368
-[v vfprintf@fp fp `*.1S1936  1 a 1 wreg ]
-[v vfprintf@fmt fmt `*.25DCuc  1 p 2 31 ]
-[v vfprintf@ap ap `*.4*.4v  1 p 1 33 ]
-"1373
-"1368
-[v vfprintf@fp fp `*.1S1936  1 a 1 36 ]
-"1382
-} 0
-"670
-[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
-{
-[s S1936 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.1S1936  1 a 1 wreg ]
-"672
-[v vfpfcnvrt@c c `uc  1 a 1 29 ]
-"670
-[v vfpfcnvrt@fp fp `*.1S1936  1 a 1 wreg ]
-[v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 22 ]
-[v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 23 ]
-"680
-"670
-[v vfpfcnvrt@fp fp `*.1S1936  1 a 1 30 ]
-"1365
-} 0
-"259
-[v _ctoa ctoa `(i  1 s 2 ctoa ]
-{
-[s S1936 _IO_FILE 0 ]
-[v ctoa@fp fp `*.1S1936  1 a 1 wreg ]
-"261
-[v ctoa@w w `i  1 a 2 19 ]
-"259
-[v ctoa@fp fp `*.1S1936  1 a 1 wreg ]
-[v ctoa@c c `uc  1 p 1 16 ]
-"264
-"259
-[v ctoa@fp fp `*.1S1936  1 a 1 21 ]
-"270
-} 0
-"72
-[v _pad pad `(i  1 s 2 pad ]
-{
-[s S1936 _IO_FILE 0 ]
-[v pad@fp fp `*.1S1936  1 a 1 wreg ]
-"74
-[v pad@w w `i  1 a 2 13 ]
-[v pad@i i `i  1 a 2 11 ]
-"72
-[v pad@fp fp `*.1S1936  1 a 1 wreg ]
-[v pad@buf buf `*.5uc  1 p 1 7 ]
-[v pad@p p `i  1 p 2 8 ]
-"77
-"72
-[v pad@fp fp `*.1S1936  1 a 1 15 ]
-"95
-} 0
-"12 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
-[v _strlen strlen `(ui  1 e 2 0 ]
-{
-[v strlen@s s `*.5DCuc  1 a 1 wreg ]
-"14
-[v strlen@a a `*.5DCuc  1 a 1 4 ]
-"12
-[v strlen@s s `*.5DCuc  1 a 1 wreg ]
-"14
-[v strlen@s s `*.5DCuc  1 a 1 5 ]
-"26
-} 0
-"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputs.c
-[v _fputs fputs `(i  1 e 2 0 ]
-{
-[v fputs@s s `*.5DCuc  1 a 1 wreg ]
-"11
-[v fputs@i i `i  1 a 2 4 ]
-"10
-[v fputs@c c `uc  1 a 1 3 ]
-"8
-[v fputs@s s `*.5DCuc  1 a 1 wreg ]
-[s S2280 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputs@fp fp `*.1S2280  1 p 1 11 ]
-"13
-[v fputs@s s `*.5DCuc  1 a 1 6 ]
-"19
-} 0
-"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-{
-[v fputc@c c `i  1 p 2 3 ]
-[s S2280 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.1S2280  1 p 1 5 ]
-"21
-} 0
-"174 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
-[v _putch putch `(v  1 e 1 0 ]
-{
-[v putch@txData txData `uc  1 a 1 wreg ]
-[v putch@txData txData `uc  1 a 1 wreg ]
-"176
-[v putch@txData txData `uc  1 a 1 2 ]
-"177
-} 0
-"160
-[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
-{
-[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART_Write@txData txData `uc  1 a 1 1 ]
-"167
+"228
+[v DATA_PROCESS@x x `uc  1 a 1 7 ]
+"370
 } 0
 "5 E:\Work\Touch_Switch-SQ04\SQ_04.X\relay.c
 [v _RELAY_PROCESS RELAY_PROCESS `(v  1 e 1 0 ]
 {
 [v RELAY_PROCESS@x x `uc  1 a 1 wreg ]
 [v RELAY_PROCESS@x x `uc  1 a 1 wreg ]
-[v RELAY_PROCESS@x x `uc  1 a 1 3 ]
+[v RELAY_PROCESS@x x `uc  1 a 1 4 ]
 "90
 } 0
 "10 E:\Work\Touch_Switch-SQ04\SQ_04.X\led.c
@@ -1574,35 +1594,56 @@ HYST_MAX 5
 {
 [v LED_PROCESS@x x `uc  1 a 1 wreg ]
 [v LED_PROCESS@x x `uc  1 a 1 wreg ]
-[v LED_PROCESS@x x `uc  1 a 1 3 ]
+[v LED_PROCESS@x x `uc  1 a 1 4 ]
 "95
 } 0
 "52 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
-"70
+"74
 } 0
-"180 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
+"122 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr1.c
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+{
+"133
+} 0
+"71 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/mtouch/mtouch.c
+[v _MTOUCH_ScanScheduler MTOUCH_ScanScheduler `(v  1 s 1 MTOUCH_ScanScheduler ]
+{
+"80
+} 0
+"140 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/tmr1.c
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"143
+} 0
+"95
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR1_WriteTimer@timerVal timerVal `us  1 p 2 0 ]
+"115
+} 0
+"164 E:\Work\Touch_Switch-SQ04\SQ_04.X\mcc_generated_files/eusart.c
 [v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
 {
-"202
+"186
 } 0
-"216
+"200
 [v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
 {
-"222
+"206
 } 0
-"214
+"198
 [v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
 {
 } 0
-"224
+"208
 [v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
 {
-"226
+"210
 } 0
-"204
+"188
 [v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
 {
-"212
+"196
 } 0

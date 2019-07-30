@@ -1,30 +1,32 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"82 mcc_generated_files/mtouch/mtouch_button.c
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 82:     const mtouch_button_t mtouch_button_init[4u] =
+"83 mcc_generated_files/mtouch/mtouch_button.c
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 83:     const mtouch_button_t mtouch_button_init[4u] =
 [c E3070 0 1 2 3 .. ]
 [n E3070 mtouch_button_names Button0 Button1 Button2 Button3  ]
 [c E3010 0 1 2 3 .. ]
 [n E3010 mtouch_sensor_names Sensor_AN26 Sensor_AN12 Sensor_AN23 Sensor_AN13  ]
-[c E3132 0 1 2 .. ]
-[n E3132 mtouch_button_state MTOUCH_BUTTON_STATE_initializing MTOUCH_BUTTON_STATE_notPressed MTOUCH_BUTTON_STATE_pressed  ]
+[c E3108 0 1 2 .. ]
+[n E3108 mtouch_button_state MTOUCH_BUTTON_STATE_initializing MTOUCH_BUTTON_STATE_notPressed MTOUCH_BUTTON_STATE_pressed  ]
+[c E3112 1 2 3 4 5 .. ]
+[n E3112 mtouch_button_hysteresis_thresholds HYST_50_PERCENT HYST_25_PERCENT HYST_12_5_PERCENT HYST_6_25_PERCENT HYST_MAX  ]
 "69
 [; ;mcc_generated_files/mtouch/mtouch_button.c: 69:     {
-[s S455 `CE3070 1 `CE3010 1 `E3132 1 `us 1 `ul 1 `c 1 `us 1 `us 1 `uc 1 `uc 1 ]
-[n S455 . name sensor state reading baseline deviation counter baseline_count threshold scaling ]
-[v F3181 `(v ~T0 @X0 0 tf1`E3070 ]
-"133
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 133: static void Button_DefaultCallback (enum mtouch_button_names button);
+[s S455 `CE3070 1 `CE3010 1 `E3108 1 `us 1 `ul 1 `c 1 `us 1 `us 1 `uc 1 `uc 1 `E3112 1 ]
+[n S455 . name sensor state reading baseline deviation counter baseline_count threshold scaling hysteresis ]
+[v F3158 `(v ~T0 @X0 0 tf1`E3070 ]
+"142
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 142: static void Button_DefaultCallback (enum mtouch_button_names button);
 [v _Button_DefaultCallback `(v ~T0 @X0 0 sf1`E3070 ]
-[v F3186 `(v ~T0 @X0 0 tf1`E3070 ]
-[v F3194 `(v ~T0 @X0 0 tf1`*S455 ]
-"135
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 135: static void Button_State_Initializing (mtouch_button_t* button);
+[v F3163 `(v ~T0 @X0 0 tf1`E3070 ]
+[v F3171 `(v ~T0 @X0 0 tf1`*S455 ]
+"144
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 144: static void Button_State_Initializing (mtouch_button_t* button);
 [v _Button_State_Initializing `(v ~T0 @X0 0 sf1`*S455 ]
-"136
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 136: static void Button_State_NotPressed (mtouch_button_t* button);
+"145
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 145: static void Button_State_NotPressed (mtouch_button_t* button);
 [v _Button_State_NotPressed `(v ~T0 @X0 0 sf1`*S455 ]
-"137
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 137: static void Button_State_Pressed (mtouch_button_t* button);
+"146
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 146: static void Button_State_Pressed (mtouch_button_t* button);
 [v _Button_State_Pressed `(v ~T0 @X0 0 sf1`*S455 ]
 "101 mcc_generated_files/mtouch/mtouch_sensor.h
 [; ;mcc_generated_files/mtouch/mtouch_sensor.h: 101:     void MTOUCH_Sensor_Calibrate (enum mtouch_sensor_names sensor);
@@ -32,8 +34,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h: 27: void *memcpy (void *restrict, const void *restrict, size_t);
 [v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
-"125 mcc_generated_files/mtouch/mtouch_button.c
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 125: static void Button_Service (enum mtouch_button_names name);
+"134 mcc_generated_files/mtouch/mtouch_button.c
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 134: static void Button_Service (enum mtouch_button_names name);
 [v _Button_Service `(v ~T0 @X0 0 sf1`E3070 ]
 "95 mcc_generated_files/mtouch/mtouch_sensor.h
 [; ;mcc_generated_files/mtouch/mtouch_sensor.h: 95:     _Bool MTOUCH_Sensor_wasSampled (enum mtouch_sensor_names sensor);
@@ -41,48 +43,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 "96
 [; ;mcc_generated_files/mtouch/mtouch_sensor.h: 96:     _Bool MTOUCH_Sensor_isCalibrated (enum mtouch_sensor_names sensor);
 [v _MTOUCH_Sensor_isCalibrated `(a ~T0 @X0 0 ef1`E3010 ]
-"127 mcc_generated_files/mtouch/mtouch_button.c
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 127: static void Button_Reading_Update (mtouch_button_t* button);
+"136 mcc_generated_files/mtouch/mtouch_button.c
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 136: static void Button_Reading_Update (mtouch_button_t* button);
 [v _Button_Reading_Update `(v ~T0 @X0 0 sf1`*S455 ]
-"126
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 126: static void Button_Deviation_Update (mtouch_button_t* button);
+"135
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 135: static void Button_Deviation_Update (mtouch_button_t* button);
 [v _Button_Deviation_Update `(v ~T0 @X0 0 sf1`*S455 ]
-[v F3212 `(v ~T0 @X0 0 tf1`*S455 ]
-"129
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 129: static void Button_Baseline_Initialize (mtouch_button_t* button);
+[v F3189 `(v ~T0 @X0 0 tf1`*S455 ]
+"138
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 138: static void Button_Baseline_Initialize (mtouch_button_t* button);
 [v _Button_Baseline_Initialize `(v ~T0 @X0 0 sf1`*S455 ]
-"130
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 130: static void Button_Baseline_Update (mtouch_button_t* button);
+"139
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 139: static void Button_Baseline_Update (mtouch_button_t* button);
 [v _Button_Baseline_Update `(v ~T0 @X0 0 sf1`*S455 ]
-"291
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 291:     else if ((button->deviation) < (mtouch_button_deviation_t)((button->threshold)- ((button->threshold) >> HYST_50_PERCENT)))
-[c E3136 1 2 3 4 5 .. ]
-[n E3136 mtouch_button_hysteresis_thresholds HYST_50_PERCENT HYST_25_PERCENT HYST_12_5_PERCENT HYST_6_25_PERCENT HYST_MAX  ]
-"132
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 132: static void Button_Tick_helper (mtouch_button_t* button);
+"141
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 141: static void Button_Tick_helper (mtouch_button_t* button);
 [v _Button_Tick_helper `(v ~T0 @X0 0 sf1`*S455 ]
-"106 mcc_generated_files/mtouch/mtouch_sensor.h
-[; ;mcc_generated_files/mtouch/mtouch_sensor.h: 106:     uint8_t MTOUCH_Sensor_Oversampling_Get (enum mtouch_sensor_names name);
-[v _MTOUCH_Sensor_Oversampling_Get `(uc ~T0 @X0 0 ef1`E3010 ]
-"107
-[; ;mcc_generated_files/mtouch/mtouch_sensor.h: 107:     void MTOUCH_Sensor_Oversampling_Set (enum mtouch_sensor_names name, uint8_t value);
-[v _MTOUCH_Sensor_Oversampling_Set `(v ~T0 @X0 0 ef2`E3010`uc ]
 "8464 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 8464: extern volatile __bit GIE __attribute__((address(0x5F)));
 [v _GIE `Vb ~T0 @X0 0 e@95 ]
-"128 mcc_generated_files/mtouch/mtouch_button.c
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 128: static void Button_Reading_Update_Helper(mtouch_button_t* button);
+"137 mcc_generated_files/mtouch/mtouch_button.c
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 137: static void Button_Reading_Update_Helper(mtouch_button_t* button);
 [v _Button_Reading_Update_Helper `(v ~T0 @X0 0 sf1`*S455 ]
 "102 mcc_generated_files/mtouch/mtouch_sensor.h
 [; ;mcc_generated_files/mtouch/mtouch_sensor.h: 102:     mtouch_sensor_sample_t MTOUCH_Sensor_RawSample_Get (enum mtouch_sensor_names sensor);
 [v _MTOUCH_Sensor_RawSample_Get `(us ~T0 @X0 0 ef1`E3010 ]
-"131 mcc_generated_files/mtouch/mtouch_button.c
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 131: static mtouch_button_reading_t Button_Baseline_Get_helper (enum mtouch_button_names button);
-[v _Button_Baseline_Get_helper `(us ~T0 @X0 0 sf1`E3070 ]
-[v F3276 `(v ~T0 @X0 0 tf1`E3070 ]
-[v F3279 `(v ~T0 @X0 0 tf1`E3070 ]
-[v F3284 `(v ~T0 @X0 0 tf1`E3070 ]
-[v F3287 `(v ~T0 @X0 0 tf1`E3070 ]
+[v F3223 `(v ~T0 @X0 0 tf1`E3070 ]
+[v F3226 `(v ~T0 @X0 0 tf1`E3070 ]
+[v F3231 `(v ~T0 @X0 0 tf1`E3070 ]
+[v F3234 `(v ~T0 @X0 0 tf1`E3070 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -650,15 +639,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8047
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 8047: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"82 mcc_generated_files/mtouch/mtouch_button.c
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 82:     const mtouch_button_t mtouch_button_init[4u] =
+"83 mcc_generated_files/mtouch/mtouch_button.c
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 83:     const mtouch_button_t mtouch_button_init[4u] =
 [v _mtouch_button_init `CS455 ~T0 @X0 -> 4 `i e ]
 [i _mtouch_button_init
 :U ..
 :U ..
 . `E3070 0
 . `E3010 1
-. `E3132 0
+. `E3108 0
 -> -> 0 `i `us
 -> -> -> 0 `i `l `ul
 -> -> 0 `i `c
@@ -666,11 +655,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `us
 -> -> -> 100 `ui `c `uc
 -> -> 1 `ui `uc
+. `E3112 0
 ..
 :U ..
 . `E3070 1
 . `E3010 0
-. `E3132 0
+. `E3108 0
 -> -> 0 `i `us
 -> -> -> 0 `i `l `ul
 -> -> 0 `i `c
@@ -678,11 +668,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `us
 -> -> -> 100 `ui `c `uc
 -> -> 1 `ui `uc
+. `E3112 0
 ..
 :U ..
 . `E3070 2
 . `E3010 3
-. `E3132 0
+. `E3108 0
 -> -> 0 `i `us
 -> -> -> 0 `i `l `ul
 -> -> 0 `i `c
@@ -690,11 +681,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `us
 -> -> -> 100 `ui `c `uc
 -> -> 1 `ui `uc
+. `E3112 0
 ..
 :U ..
 . `E3070 3
 . `E3010 2
-. `E3132 0
+. `E3108 0
 -> -> 0 `i `us
 -> -> -> 0 `i `l `ul
 -> -> 0 `i `c
@@ -702,27 +694,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `us
 -> -> -> 100 `ui `c `uc
 -> -> 1 `ui `uc
+. `E3112 0
 ..
 ..
 ]
-"118
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 118: static mtouch_button_t mtouch_button[4u];
+"127
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 127: static mtouch_button_t mtouch_button[4u];
 [v _mtouch_button `S455 ~T0 @X0 -> 4 `i s ]
-"145
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 145: static void (*callback_pressed) (enum mtouch_button_names) = Button_DefaultCallback;
-[v _callback_pressed `*F3181 ~T0 @X0 1 s ]
+"154
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 154: static void (*callback_pressed) (enum mtouch_button_names) = Button_DefaultCallback;
+[v _callback_pressed `*F3158 ~T0 @X0 1 s ]
 [i _callback_pressed
 &U _Button_DefaultCallback
 ]
-"146
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 146: static void (*callback_notPressed)(enum mtouch_button_names) = Button_DefaultCallback;
-[v _callback_notPressed `*F3186 ~T0 @X0 1 s ]
+"155
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 155: static void (*callback_notPressed)(enum mtouch_button_names) = Button_DefaultCallback;
+[v _callback_notPressed `*F3163 ~T0 @X0 1 s ]
 [i _callback_notPressed
 &U _Button_DefaultCallback
 ]
-"154
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 154: button_statemachine_state_t Button_StateMachine[] =
-[v _Button_StateMachine `*F3194 ~T0 @X0 -> 3 `i e ]
+"163
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 163: button_statemachine_state_t Button_StateMachine[] =
+[v _Button_StateMachine `*F3171 ~T0 @X0 -> 3 `i e ]
 [i _Button_StateMachine
 :U ..
 &U _Button_State_Initializing
@@ -730,1207 +723,742 @@ Version 4.0 HI-TECH Software Intermediate Code
 &U _Button_State_Pressed
 ..
 ]
-"167
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 167: void MTOUCH_Button_Initialize(enum mtouch_button_names name)
+"176
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 176: void MTOUCH_Button_Initialize(enum mtouch_button_names name)
 [v _MTOUCH_Button_Initialize `(v ~T0 @X0 1 ef1`E3070 ]
-"168
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 168: {
+"177
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 177: {
 {
 [e :U _MTOUCH_Button_Initialize ]
-"167
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 167: void MTOUCH_Button_Initialize(enum mtouch_button_names name)
+"176
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 176: void MTOUCH_Button_Initialize(enum mtouch_button_names name)
 [v _name `E3070 ~T0 @X0 1 r1 ]
-"168
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 168: {
+"177
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 177: {
 [f ]
-"169
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 169:     mtouch_button_t* button = &mtouch_button[name];
+"178
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 178:     mtouch_button_t* button = &mtouch_button[name];
 [v _button `*S455 ~T0 @X0 1 a ]
 [e = _button &U *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux ]
-"171
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 171:     button->state = MTOUCH_BUTTON_STATE_initializing;
-[e = . *U _button 2 . `E3132 0 ]
-"172
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 172:     button->baseline = (mtouch_button_baseline_t)0;
+"180
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 180:     button->state = MTOUCH_BUTTON_STATE_initializing;
+[e = . *U _button 2 . `E3108 0 ]
+"181
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 181:     button->baseline = (mtouch_button_baseline_t)0;
 [e = . *U _button 4 -> -> 0 `i `ul ]
-"173
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 173:     button->counter = (mtouch_button_statecounter_t)0;
+"182
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 182:     button->counter = (mtouch_button_statecounter_t)0;
 [e = . *U _button 6 -> -> 0 `i `us ]
-"174
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 174:     button->baseline_count = (mtouch_button_baselinecounter_t)0;
+"183
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 183:     button->baseline_count = (mtouch_button_baselinecounter_t)0;
 [e = . *U _button 7 -> -> 0 `i `us ]
-"176
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 176:     MTOUCH_Sensor_Calibrate(button->sensor);
+"185
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 185:     MTOUCH_Sensor_Calibrate(button->sensor);
 [e ( _MTOUCH_Sensor_Calibrate (1 . *U _button 1 ]
-"177
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 177: }
+"186
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 186: }
 [e :UE 456 ]
 }
-"179
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 179: void MTOUCH_Button_InitializeAll(void)
+"188
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 188: void MTOUCH_Button_InitializeAll(void)
 [v _MTOUCH_Button_InitializeAll `(v ~T0 @X0 1 ef ]
-"180
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 180: {
+"189
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 189: {
 {
 [e :U _MTOUCH_Button_InitializeAll ]
 [f ]
-"181
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 181:     enum mtouch_button_names button;
+"190
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 190:     enum mtouch_button_names button;
 [v _button `E3070 ~T0 @X0 1 a ]
-"183
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 183:     memcpy(mtouch_button,mtouch_button_init,sizeof(mtouch_button_init));
+"192
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 192:     memcpy(mtouch_button,mtouch_button_init,sizeof(mtouch_button_init));
 [e ( _memcpy (3 , , -> &U _mtouch_button `*v -> &U _mtouch_button_init `*Cv -> # _mtouch_button_init `ui ]
-"185
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 185:     for (button = 0; button < 4u; button++)
-{
-[e = _button -> -> 0 `i `E3070 ]
-[e $ < -> _button `ui -> 4 `ui 458  ]
-[e $U 459  ]
-[e :U 458 ]
-"186
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 186:     {
-{
-"187
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 187:         MTOUCH_Button_Initialize(button);
-[e ( _MTOUCH_Button_Initialize (1 _button ]
-"188
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 188:     }
-}
-[e ++ _button -> -> 1 `i `E3070 ]
-[e $ < -> _button `ui -> 4 `ui 458  ]
-[e :U 459 ]
-}
-"189
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 189: }
+"198
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 198:     MTOUCH_Button_Initialize(0);
+[e ( _MTOUCH_Button_Initialize (1 -> -> 0 `i `E3070 ]
+"199
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 199:     MTOUCH_Button_Initialize(1);
+[e ( _MTOUCH_Button_Initialize (1 -> -> 1 `i `E3070 ]
+"200
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 200:     MTOUCH_Button_Initialize(2);
+[e ( _MTOUCH_Button_Initialize (1 -> -> 2 `i `E3070 ]
+"201
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 201:     MTOUCH_Button_Initialize(3);
+[e ( _MTOUCH_Button_Initialize (1 -> -> 3 `i `E3070 ]
+"202
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 202: }
 [e :UE 457 ]
 }
-"197
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 197:  void MTOUCH_Button_ServiceAll(void)
+"210
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 210:  void MTOUCH_Button_ServiceAll(void)
 [v _MTOUCH_Button_ServiceAll `(v ~T0 @X0 1 ef ]
-"198
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 198: {
+"211
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 211: {
 {
 [e :U _MTOUCH_Button_ServiceAll ]
 [f ]
-"199
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 199:     enum mtouch_button_names button;
-[v _button `E3070 ~T0 @X0 1 a ]
-"202
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 202:     for (button = 0; button < 4u; button++)
-{
-[e = _button -> -> 0 `i `E3070 ]
-[e $ < -> _button `ui -> 4 `ui 462  ]
-[e $U 463  ]
-[e :U 462 ]
-"203
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 203:     {
-{
-"204
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 204:         Button_Service(button);
-[e ( _Button_Service (1 _button ]
-"205
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 205:     }
-}
-[e ++ _button -> -> 1 `i `E3070 ]
-[e $ < -> _button `ui -> 4 `ui 462  ]
-[e :U 463 ]
-}
-"206
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 206: }
-[e :UE 461 ]
-}
-"208
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 208: static void Button_Service(enum mtouch_button_names name)
-[v _Button_Service `(v ~T0 @X0 1 sf1`E3070 ]
-"209
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 209: {
-{
-[e :U _Button_Service ]
-"208
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 208: static void Button_Service(enum mtouch_button_names name)
-[v _name `E3070 ~T0 @X0 1 r1 ]
-"209
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 209: {
-[f ]
-"210
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 210:     mtouch_button_t* button = &mtouch_button[name];
-[v _button `*S455 ~T0 @X0 1 a ]
-[e = _button &U *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux ]
 "212
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 212:     if (MTOUCH_Sensor_wasSampled(button->sensor) && MTOUCH_Sensor_isCalibrated(button->sensor))
-[e $ ! && != -> ( _MTOUCH_Sensor_wasSampled (1 . *U _button 1 `i -> 0 `i != -> ( _MTOUCH_Sensor_isCalibrated (1 . *U _button 1 `i -> 0 `i 466  ]
-"213
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 213:     {
-{
-"214
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 214:         Button_Reading_Update(button);
-[e ( _Button_Reading_Update (1 _button ]
-"215
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 215:         Button_Deviation_Update(button);
-[e ( _Button_Deviation_Update (1 _button ]
-"217
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 217:         if (button->state >= (uint8_t)(sizeof(Button_StateMachine)/sizeof(button_statemachine_state_t)))
-[e $ ! >= -> . *U _button 2 `ui -> -> / -> # _Button_StateMachine `ui -> # `*F3212 `ui `uc `ui 467  ]
-"218
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 218:         {
-{
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 212:     enum mtouch_button_names button;
+[v _button `E3070 ~T0 @X0 1 a ]
 "219
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 219:             MTOUCH_Button_Initialize(button->name);
-[e ( _MTOUCH_Button_Initialize (1 . *U _button 0 ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 219:     Button_Service(0);
+[e ( _Button_Service (1 -> -> 0 `i `E3070 ]
 "220
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 220:         }
-}
-[e :U 467 ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 220:     Button_Service(1);
+[e ( _Button_Service (1 -> -> 1 `i `E3070 ]
 "221
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 221:         Button_StateMachine[(uint8_t)button->state](button);
-[e ( *U *U + &U _Button_StateMachine * -> -> . *U _button 2 `uc `ux -> -> # *U &U _Button_StateMachine `ui `ux (1 _button ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 221:     Button_Service(2);
+[e ( _Button_Service (1 -> -> 2 `i `E3070 ]
 "222
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 222:     }
-}
-[e :U 466 ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 222:     Button_Service(3);
+[e ( _Button_Service (1 -> -> 3 `i `E3070 ]
 "223
 [; ;mcc_generated_files/mtouch/mtouch_button.c: 223: }
-[e :UE 465 ]
+[e :UE 458 ]
 }
 "225
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 225: static void Button_State_Initializing(mtouch_button_t* button)
-[v _Button_State_Initializing `(v ~T0 @X0 1 sf1`*S455 ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 225: static void Button_Service(enum mtouch_button_names name)
+[v _Button_Service `(v ~T0 @X0 1 sf1`E3070 ]
 "226
 [; ;mcc_generated_files/mtouch/mtouch_button.c: 226: {
+{
+[e :U _Button_Service ]
+"225
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 225: static void Button_Service(enum mtouch_button_names name)
+[v _name `E3070 ~T0 @X0 1 r1 ]
+"226
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 226: {
+[f ]
+"227
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 227:     mtouch_button_t* button = &mtouch_button[name];
+[v _button `*S455 ~T0 @X0 1 a ]
+[e = _button &U *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux ]
+"229
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 229:     if (MTOUCH_Sensor_wasSampled(button->sensor) && MTOUCH_Sensor_isCalibrated(button->sensor))
+[e $ ! && != -> ( _MTOUCH_Sensor_wasSampled (1 . *U _button 1 `i -> 0 `i != -> ( _MTOUCH_Sensor_isCalibrated (1 . *U _button 1 `i -> 0 `i 460  ]
+"230
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 230:     {
+{
+"231
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 231:         Button_Reading_Update(button);
+[e ( _Button_Reading_Update (1 _button ]
+"232
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 232:         Button_Deviation_Update(button);
+[e ( _Button_Deviation_Update (1 _button ]
+"234
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 234:         if (button->state >= (uint8_t)(sizeof(Button_StateMachine)/sizeof(button_statemachine_state_t)))
+[e $ ! >= -> . *U _button 2 `ui -> -> / -> # _Button_StateMachine `ui -> # `*F3189 `ui `uc `ui 461  ]
+"235
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 235:         {
+{
+"236
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 236:             MTOUCH_Button_Initialize(button->name);
+[e ( _MTOUCH_Button_Initialize (1 . *U _button 0 ]
+"237
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 237:         }
+}
+[e :U 461 ]
+"238
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 238:         Button_StateMachine[(uint8_t)button->state](button);
+[e ( *U *U + &U _Button_StateMachine * -> -> . *U _button 2 `uc `ux -> -> # *U &U _Button_StateMachine `ui `ux (1 _button ]
+"239
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 239:     }
+}
+[e :U 460 ]
+"240
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 240: }
+[e :UE 459 ]
+}
+"242
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 242: static void Button_State_Initializing(mtouch_button_t* button)
+[v _Button_State_Initializing `(v ~T0 @X0 1 sf1`*S455 ]
+"243
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 243: {
 {
 [e :U _Button_State_Initializing ]
-"225
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 225: static void Button_State_Initializing(mtouch_button_t* button)
-[v _button `*S455 ~T0 @X0 1 r1 ]
-"226
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 226: {
-[f ]
-"228
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 228:     if ((button->counter) <= (mtouch_button_statecounter_t)((mtouch_button_baselinecounter_t)16u)/2)
-[e $ ! <= -> . *U _button 6 `ui / -> -> -> 16 `ui `us `ui -> -> 2 `i `ui 469  ]
-"229
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 229:     {
-{
-"230
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 230:         Button_Baseline_Initialize(button);
-[e ( _Button_Baseline_Initialize (1 _button ]
-"231
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 231:     } else {
-}
-[e $U 470  ]
-[e :U 469 ]
-{
-"232
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 232:         Button_Baseline_Update(button);
-[e ( _Button_Baseline_Update (1 _button ]
-"233
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 233:     }
-}
-[e :U 470 ]
-"236
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 236:     (button->counter)++;
-[e ++ . *U _button 6 -> -> 1 `i `us ]
-"237
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 237:     if ((button->counter) >= (mtouch_button_statecounter_t)((mtouch_button_baselinecounter_t)16u))
-[e $ ! >= -> . *U _button 6 `ui -> -> -> 16 `ui `us `ui 471  ]
-"238
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 238:     {
-{
-"239
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 239:         button->reading = (mtouch_button_reading_t)((button->baseline)>>((uint8_t)4u));
-[e = . *U _button 3 -> >> . *U _button 4 -> -> -> 4 `ui `uc `i `us ]
-"240
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 240:         button->state = MTOUCH_BUTTON_STATE_notPressed;
-[e = . *U _button 2 . `E3132 1 ]
-"241
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 241:         button->counter = (mtouch_button_statecounter_t)0;
-[e = . *U _button 6 -> -> 0 `i `us ]
 "242
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 242:     }
-}
-[e :U 471 ]
-"244
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 244: }
-[e :UE 468 ]
-}
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 242: static void Button_State_Initializing(mtouch_button_t* button)
+[v _button `*S455 ~T0 @X0 1 r1 ]
+"243
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 243: {
+[f ]
 "245
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 245: static void Button_State_NotPressed(mtouch_button_t* button)
-[v _Button_State_NotPressed `(v ~T0 @X0 1 sf1`*S455 ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 245:     if ((button->counter) <= (mtouch_button_statecounter_t)((mtouch_button_baselinecounter_t)16u)/2)
+[e $ ! <= -> . *U _button 6 `ui / -> -> -> 16 `ui `us `ui -> -> 2 `i `ui 463  ]
 "246
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 246: {
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 246:     {
+{
+"247
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 247:         Button_Baseline_Initialize(button);
+[e ( _Button_Baseline_Initialize (1 _button ]
+"248
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 248:     } else {
+}
+[e $U 464  ]
+[e :U 463 ]
+{
+"249
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 249:         Button_Baseline_Update(button);
+[e ( _Button_Baseline_Update (1 _button ]
+"250
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 250:     }
+}
+[e :U 464 ]
+"253
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 253:     (button->counter)++;
+[e ++ . *U _button 6 -> -> 1 `i `us ]
+"254
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 254:     if ((button->counter) >= (mtouch_button_statecounter_t)((mtouch_button_baselinecounter_t)16u))
+[e $ ! >= -> . *U _button 6 `ui -> -> -> 16 `ui `us `ui 465  ]
+"255
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 255:     {
+{
+"256
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 256:         button->reading = (mtouch_button_reading_t)((button->baseline)>>((uint8_t)4u));
+[e = . *U _button 3 -> >> . *U _button 4 -> -> -> 4 `ui `uc `i `us ]
+"257
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 257:         button->state = MTOUCH_BUTTON_STATE_notPressed;
+[e = . *U _button 2 . `E3108 1 ]
+"258
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 258:         button->counter = (mtouch_button_statecounter_t)0;
+[e = . *U _button 6 -> -> 0 `i `us ]
+"259
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 259:     }
+}
+[e :U 465 ]
+"261
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 261: }
+[e :UE 462 ]
+}
+"262
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 262: static void Button_State_NotPressed(mtouch_button_t* button)
+[v _Button_State_NotPressed `(v ~T0 @X0 1 sf1`*S455 ]
+"263
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 263: {
 {
 [e :U _Button_State_NotPressed ]
-"245
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 245: static void Button_State_NotPressed(mtouch_button_t* button)
-[v _button `*S455 ~T0 @X0 1 r1 ]
-"246
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 246: {
-[f ]
-"248
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 248:     if ((button->deviation) < (mtouch_button_deviation_t)(-button->threshold))
-[e $ ! < -> . *U _button 5 `i -> -> -U -> . *U _button 8 `i `c `i 473  ]
-"249
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 249:     {
-{
-"250
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 250:         (button->counter)++;
-[e ++ . *U _button 6 -> -> 1 `i `us ]
-"251
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 251:         if ((button->counter) > (mtouch_button_statecounter_t)((mtouch_button_statecounter_t)64u))
-[e $ ! > -> . *U _button 6 `ui -> -> -> 64 `ui `us `ui 474  ]
-"252
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 252:         {
-{
-"253
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 253:             button->counter = (mtouch_button_statecounter_t)0;
-[e = . *U _button 6 -> -> 0 `i `us ]
-"254
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 254:             MTOUCH_Button_Initialize(button->name);
-[e ( _MTOUCH_Button_Initialize (1 . *U _button 0 ]
-"255
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 255:         }
-}
-[e :U 474 ]
-"256
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 256:     }
-}
-[e $U 475  ]
-"258
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 258:     else if ((button->deviation) > (button->threshold))
-[e :U 473 ]
-[e $ ! > -> . *U _button 5 `i -> . *U _button 8 `i 476  ]
-"259
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 259:     {
-{
-"261
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 261:         button->state = MTOUCH_BUTTON_STATE_pressed;
-[e = . *U _button 2 . `E3132 2 ]
 "262
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 262:         button->counter = (mtouch_button_statecounter_t)0;
-[e = . *U _button 6 -> -> 0 `i `us ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 262: static void Button_State_NotPressed(mtouch_button_t* button)
+[v _button `*S455 ~T0 @X0 1 r1 ]
 "263
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 263:         callback_pressed(button->name);
-[e ( *U _callback_pressed (1 . *U _button 0 ]
-"264
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 264:     }
-}
-[e $U 477  ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 263: {
+[f ]
 "265
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 265:     else
-[e :U 476 ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 265:     if ((button->deviation) < (mtouch_button_deviation_t)(-button->threshold))
+[e $ ! < -> . *U _button 5 `i -> -> -U -> . *U _button 8 `i `c `i 467  ]
 "266
 [; ;mcc_generated_files/mtouch/mtouch_button.c: 266:     {
 {
+"267
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 267:         (button->counter)++;
+[e ++ . *U _button 6 -> -> 1 `i `us ]
 "268
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 268:         button->counter = (mtouch_button_statecounter_t)0;
-[e = . *U _button 6 -> -> 0 `i `us ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 268:         if ((button->counter) > (mtouch_button_statecounter_t)((mtouch_button_statecounter_t)64u))
+[e $ ! > -> . *U _button 6 `ui -> -> -> 64 `ui `us `ui 468  ]
 "269
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 269:     }
-}
-[e :U 477 ]
-[e :U 475 ]
-"273
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 273:     (button->baseline_count)++;
-[e ++ . *U _button 7 -> -> 1 `i `us ]
-"274
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 274:     if ((button->baseline_count) == ((mtouch_button_baselinecounter_t)64u))
-[e $ ! == -> . *U _button 7 `ui -> -> -> 64 `ui `us `ui 478  ]
-"275
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 275:     {
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 269:         {
 {
-"276
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 276:         button->baseline_count = (mtouch_button_baselinecounter_t)0;
-[e = . *U _button 7 -> -> 0 `i `us ]
-"277
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 277:         Button_Baseline_Update(button);
-[e ( _Button_Baseline_Update (1 _button ]
-"278
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 278:     }
-}
-[e :U 478 ]
-"279
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 279: }
-[e :UE 472 ]
-}
-"281
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 281: static void Button_State_Pressed(mtouch_button_t* button)
-[v _Button_State_Pressed `(v ~T0 @X0 1 sf1`*S455 ]
-"282
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 282: {
-{
-[e :U _Button_State_Pressed ]
-"281
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 281: static void Button_State_Pressed(mtouch_button_t* button)
-[v _button `*S455 ~T0 @X0 1 r1 ]
-"282
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 282: {
-[f ]
-"284
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 284:     if ((button->counter) >= ((mtouch_button_statecounter_t)2000u))
-[e $ ! >= -> . *U _button 6 `ui -> -> -> 2000 `ui `us `ui 480  ]
-"285
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 285:     {
-{
-"286
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 286:         MTOUCH_Button_Initialize(button->name);
+"270
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 270:             button->counter = (mtouch_button_statecounter_t)0;
+[e = . *U _button 6 -> -> 0 `i `us ]
+"271
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 271:             MTOUCH_Button_Initialize(button->name);
 [e ( _MTOUCH_Button_Initialize (1 . *U _button 0 ]
-"287
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 287:         callback_notPressed(button->name);
-[e ( *U _callback_notPressed (1 . *U _button 0 ]
-"288
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 288:     }
+"272
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 272:         }
 }
-[e $U 481  ]
+[e :U 468 ]
+"273
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 273:     }
+}
+[e $U 469  ]
+"275
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 275:     else if ((button->deviation) > (button->threshold))
+[e :U 467 ]
+[e $ ! > -> . *U _button 5 `i -> . *U _button 8 `i 470  ]
+"276
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 276:     {
+{
+"278
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 278:         button->state = MTOUCH_BUTTON_STATE_pressed;
+[e = . *U _button 2 . `E3108 2 ]
+"279
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 279:         button->counter = (mtouch_button_statecounter_t)0;
+[e = . *U _button 6 -> -> 0 `i `us ]
+"280
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 280:         callback_pressed(button->name);
+[e ( *U _callback_pressed (1 . *U _button 0 ]
+"281
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 281:     }
+}
+[e $U 471  ]
+"282
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 282:     else
+[e :U 470 ]
+"283
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 283:     {
+{
+"285
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 285:         button->counter = (mtouch_button_statecounter_t)0;
+[e = . *U _button 6 -> -> 0 `i `us ]
+"286
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 286:     }
+}
+[e :U 471 ]
+[e :U 469 ]
+"290
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 290:     (button->baseline_count)++;
+[e ++ . *U _button 7 -> -> 1 `i `us ]
 "291
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 291:     else if ((button->deviation) < (mtouch_button_deviation_t)((button->threshold)- ((button->threshold) >> HYST_50_PERCENT)))
-[e :U 480 ]
-[e $ ! < -> . *U _button 5 `i -> -> - -> . *U _button 8 `i >> -> . *U _button 8 `i -> . `E3136 0 `i `c `i 482  ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 291:     if ((button->baseline_count) == ((mtouch_button_baselinecounter_t)64u))
+[e $ ! == -> . *U _button 7 `ui -> -> -> 64 `ui `us `ui 472  ]
 "292
 [; ;mcc_generated_files/mtouch/mtouch_button.c: 292:     {
 {
 "293
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 293:         button->state = MTOUCH_BUTTON_STATE_notPressed;
-[e = . *U _button 2 . `E3132 1 ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 293:         button->baseline_count = (mtouch_button_baselinecounter_t)0;
+[e = . *U _button 7 -> -> 0 `i `us ]
 "294
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 294:         button->counter = (mtouch_button_statecounter_t)0;
-[e = . *U _button 6 -> -> 0 `i `us ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 294:         Button_Baseline_Update(button);
+[e ( _Button_Baseline_Update (1 _button ]
 "295
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 295:         button->baseline_count = (mtouch_button_baselinecounter_t)((0xffff))-((mtouch_button_baselinecounter_t)1024u);
-[e = . *U _button 7 -> - -> -> -> 65535 `ui `us `ui -> -> -> 1024 `ui `us `ui `us ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 295:     }
+}
+[e :U 472 ]
 "296
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 296:         callback_notPressed(button->name);
-[e ( *U _callback_notPressed (1 . *U _button 0 ]
-"297
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 297:     }
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 296: }
+[e :UE 466 ]
 }
-[e :U 482 ]
-[e :U 481 ]
 "298
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 298: }
-[e :UE 479 ]
-}
-"305
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 305: void MTOUCH_Button_Tick(void)
-[v _MTOUCH_Button_Tick `(v ~T0 @X0 1 ef ]
-"306
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 306: {
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 298: static void Button_State_Pressed(mtouch_button_t* button)
+[v _Button_State_Pressed `(v ~T0 @X0 1 sf1`*S455 ]
+"299
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 299: {
 {
-[e :U _MTOUCH_Button_Tick ]
+[e :U _Button_State_Pressed ]
+"298
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 298: static void Button_State_Pressed(mtouch_button_t* button)
+[v _button `*S455 ~T0 @X0 1 r1 ]
+"299
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 299: {
 [f ]
-"307
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 307:     uint8_t i;
-[v _i `uc ~T0 @X0 1 a ]
-"308
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 308:     for (i = 0; i < 4u; i++)
+"301
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 301:     if ((button->counter) >= ((mtouch_button_statecounter_t)2000u))
+[e $ ! >= -> . *U _button 6 `ui -> -> -> 2000 `ui `us `ui 474  ]
+"302
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 302:     {
 {
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `ui -> 4 `ui 484  ]
-[e $U 485  ]
-[e :U 484 ]
+"303
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 303:         MTOUCH_Button_Initialize(button->name);
+[e ( _MTOUCH_Button_Initialize (1 . *U _button 0 ]
+"304
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 304:         callback_notPressed(button->name);
+[e ( *U _callback_notPressed (1 . *U _button 0 ]
+"305
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 305:     }
+}
+[e $U 475  ]
+"308
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 308:     else if ((button->deviation) < (mtouch_button_deviation_t)((button->threshold)-((button->threshold) >> button->hysteresis)))
+[e :U 474 ]
+[e $ ! < -> . *U _button 5 `i -> -> - -> . *U _button 8 `i >> -> . *U _button 8 `i -> . *U _button 10 `ui `c `i 476  ]
 "309
 [; ;mcc_generated_files/mtouch/mtouch_button.c: 309:     {
 {
 "310
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 310:         Button_Tick_helper(&mtouch_button[i]);
-[e ( _Button_Tick_helper (1 &U *U + &U _mtouch_button * -> _i `ux -> -> # *U &U _mtouch_button `ui `ux ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 310:         button->state = MTOUCH_BUTTON_STATE_notPressed;
+[e = . *U _button 2 . `E3108 1 ]
 "311
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 311:     }
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 311:         button->counter = (mtouch_button_statecounter_t)0;
+[e = . *U _button 6 -> -> 0 `i `us ]
+"312
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 312:         button->baseline_count = (mtouch_button_baselinecounter_t)((0xffff))-((mtouch_button_baselinecounter_t)1024u);
+[e = . *U _button 7 -> - -> -> -> 65535 `ui `us `ui -> -> -> 1024 `ui `us `ui `us ]
+"313
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 313:         callback_notPressed(button->name);
+[e ( *U _callback_notPressed (1 . *U _button 0 ]
+"314
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 314:     }
+}
+[e :U 476 ]
+[e :U 475 ]
+"315
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 315: }
+[e :UE 473 ]
+}
+"322
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 322: void MTOUCH_Button_Tick(void)
+[v _MTOUCH_Button_Tick `(v ~T0 @X0 1 ef ]
+"323
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 323: {
+{
+[e :U _MTOUCH_Button_Tick ]
+[f ]
+"324
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 324:     uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
+"325
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 325:     for (i = 0; i < 4u; i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `ui -> 4 `ui 478  ]
+[e $U 479  ]
+[e :U 478 ]
+"326
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 326:     {
+{
+"327
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 327:         Button_Tick_helper(&mtouch_button[i]);
+[e ( _Button_Tick_helper (1 &U *U + &U _mtouch_button * -> _i `ux -> -> # *U &U _mtouch_button `ui `ux ]
+"328
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 328:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `ui -> 4 `ui 484  ]
-[e :U 485 ]
+[e $ < -> _i `ui -> 4 `ui 478  ]
+[e :U 479 ]
 }
-"312
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 312: }
-[e :UE 483 ]
+"329
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 329: }
+[e :UE 477 ]
 }
-"313
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 313: static void Button_Tick_helper(mtouch_button_t* button)
+"330
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 330: static void Button_Tick_helper(mtouch_button_t* button)
 [v _Button_Tick_helper `(v ~T0 @X0 1 sf1`*S455 ]
-"314
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 314: {
+"331
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 331: {
 {
 [e :U _Button_Tick_helper ]
-"313
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 313: static void Button_Tick_helper(mtouch_button_t* button)
+"330
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 330: static void Button_Tick_helper(mtouch_button_t* button)
 [v _button `*S455 ~T0 @X0 1 r1 ]
-"314
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 314: {
+"331
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 331: {
 [f ]
-"316
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 316:     if ((button->state) == MTOUCH_BUTTON_STATE_pressed)
-[e $ ! == -> . *U _button 2 `ui -> . `E3132 2 `ui 488  ]
-"317
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 317:     {
-{
-"318
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 318:         (button->counter)++;
-[e ++ . *U _button 6 -> -> 1 `i `us ]
-"319
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 319:         if (button->counter == (mtouch_button_statecounter_t)0)
-[e $ ! == -> . *U _button 6 `ui -> -> -> 0 `i `us `ui 489  ]
-"320
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 320:         {
-{
-"321
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 321:             button->counter = (mtouch_button_statecounter_t)0xFFFF;
-[e = . *U _button 6 -> -> 65535 `ui `us ]
-"322
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 322:         }
-}
-[e :U 489 ]
-"323
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 323:     }
-}
-[e :U 488 ]
-"324
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 324: }
-[e :UE 487 ]
-}
-"332
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 332: mtouch_button_threshold_t MTOUCH_Button_Threshold_Get(enum mtouch_button_names name)
-[v _MTOUCH_Button_Threshold_Get `(uc ~T0 @X0 1 ef1`E3070 ]
 "333
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 333: {
-{
-[e :U _MTOUCH_Button_Threshold_Get ]
-"332
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 332: mtouch_button_threshold_t MTOUCH_Button_Threshold_Get(enum mtouch_button_names name)
-[v _name `E3070 ~T0 @X0 1 r1 ]
-"333
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 333: {
-[f ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 333:     if ((button->state) == MTOUCH_BUTTON_STATE_pressed)
+[e $ ! == -> . *U _button 2 `ui -> . `E3108 2 `ui 482  ]
 "334
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 334:     if(name < 4u)
-[e $ ! < -> _name `ui -> 4 `ui 491  ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 334:     {
+{
 "335
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 335:         return mtouch_button[name].threshold;
-[e ) . *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux 8 ]
-[e $UE 490  ]
-[e $U 492  ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 335:         (button->counter)++;
+[e ++ . *U _button 6 -> -> 1 `i `us ]
 "336
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 336:     else
-[e :U 491 ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 336:         if (button->counter == (mtouch_button_statecounter_t)0)
+[e $ ! == -> . *U _button 6 `ui -> -> -> 0 `i `us `ui 483  ]
 "337
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 337:         return (mtouch_button_threshold_t)0;
-[e ) -> -> 0 `i `uc ]
-[e $UE 490  ]
-[e :U 492 ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 337:         {
+{
 "338
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 338: }
-[e :UE 490 ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 338:             button->counter = (mtouch_button_statecounter_t)0xFFFF;
+[e = . *U _button 6 -> -> 65535 `ui `us ]
+"339
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 339:         }
 }
+[e :U 483 ]
 "340
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 340: void MTOUCH_Button_Threshold_Set(enum mtouch_button_names name,mtouch_button_threshold_t threshold)
-[v _MTOUCH_Button_Threshold_Set `(v ~T0 @X0 1 ef2`E3070`uc ]
-"341
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 341: {
-{
-[e :U _MTOUCH_Button_Threshold_Set ]
-"340
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 340: void MTOUCH_Button_Threshold_Set(enum mtouch_button_names name,mtouch_button_threshold_t threshold)
-[v _name `E3070 ~T0 @X0 1 r1 ]
-[v _threshold `uc ~T0 @X0 1 r2 ]
-"341
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 341: {
-[f ]
-"342
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 342:     if(name < 4u)
-[e $ ! < -> _name `ui -> 4 `ui 494  ]
-"343
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 343:     {
-{
-"344
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 344:         if(threshold >= ((mtouch_button_threshold_t)(1)) && threshold <= ((mtouch_button_threshold_t)(127)))
-[e $ ! && >= -> _threshold `i -> -> -> 1 `i `uc `i <= -> _threshold `i -> -> -> 127 `i `uc `i 495  ]
-"345
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 345:            mtouch_button[name].threshold = threshold;
-[e = . *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux 8 _threshold ]
-[e :U 495 ]
-"346
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 346:     }
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 340:     }
 }
-[e :U 494 ]
-"347
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 347: }
-[e :UE 493 ]
+[e :U 482 ]
+"341
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 341: }
+[e :UE 481 ]
 }
-"349
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 349: mtouch_button_scaling_t MTOUCH_Button_Scaling_Get(enum mtouch_button_names name)
-[v _MTOUCH_Button_Scaling_Get `(uc ~T0 @X0 1 ef1`E3070 ]
-"350
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 350: {
-{
-[e :U _MTOUCH_Button_Scaling_Get ]
-"349
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 349: mtouch_button_scaling_t MTOUCH_Button_Scaling_Get(enum mtouch_button_names name)
-[v _name `E3070 ~T0 @X0 1 r1 ]
-"350
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 350: {
-[f ]
 "351
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 351:     if(name < 4u)
-[e $ ! < -> _name `ui -> 4 `ui 497  ]
-"352
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 352:         return mtouch_button[name].scaling;
-[e ) . *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux 9 ]
-[e $UE 496  ]
-[e $U 498  ]
-"353
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 353:     else
-[e :U 497 ]
-"354
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 354:         return (mtouch_button_scaling_t)0;
-[e ) -> -> 0 `i `uc ]
-[e $UE 496  ]
-[e :U 498 ]
-"355
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 355: }
-[e :UE 496 ]
-}
-"357
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 357: void MTOUCH_Button_Scaling_Set(enum mtouch_button_names name,mtouch_button_scaling_t scaling)
-[v _MTOUCH_Button_Scaling_Set `(v ~T0 @X0 1 ef2`E3070`uc ]
-"358
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 358: {
-{
-[e :U _MTOUCH_Button_Scaling_Set ]
-"357
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 357: void MTOUCH_Button_Scaling_Set(enum mtouch_button_names name,mtouch_button_scaling_t scaling)
-[v _name `E3070 ~T0 @X0 1 r1 ]
-[v _scaling `uc ~T0 @X0 1 r2 ]
-"358
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 358: {
-[f ]
-"359
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 359:     if(name < 4u)
-[e $ ! < -> _name `ui -> 4 `ui 500  ]
-"360
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 360:     {
-{
-"361
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 361:         if(scaling <= ((mtouch_button_scaling_t)(8)))
-[e $ ! <= -> _scaling `i -> -> -> 8 `i `uc `i 501  ]
-"362
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 362:             mtouch_button[name].scaling = scaling;
-[e = . *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux 9 _scaling ]
-[e :U 501 ]
-"363
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 363:     }
-}
-[e :U 500 ]
-"364
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 364: }
-[e :UE 499 ]
-}
-"366
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 366: uint8_t MTOUCH_Button_Oversampling_Get(enum mtouch_button_names name)
-[v _MTOUCH_Button_Oversampling_Get `(uc ~T0 @X0 1 ef1`E3070 ]
-"367
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 367: {
-{
-[e :U _MTOUCH_Button_Oversampling_Get ]
-"366
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 366: uint8_t MTOUCH_Button_Oversampling_Get(enum mtouch_button_names name)
-[v _name `E3070 ~T0 @X0 1 r1 ]
-"367
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 367: {
-[f ]
-"368
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 368:     if(name < 4u)
-[e $ ! < -> _name `ui -> 4 `ui 503  ]
-"369
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 369:         return (uint8_t)MTOUCH_Sensor_Oversampling_Get(mtouch_button[name].sensor);
-[e ) ( _MTOUCH_Sensor_Oversampling_Get (1 . *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux 1 ]
-[e $UE 502  ]
-[e $U 504  ]
-"370
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 370:     else
-[e :U 503 ]
-"371
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 371:         return (uint8_t)0;
-[e ) -> -> 0 `i `uc ]
-[e $UE 502  ]
-[e :U 504 ]
-"372
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 372: }
-[e :UE 502 ]
-}
-"374
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 374: void MTOUCH_Button_Oversampling_Set(enum mtouch_button_names name,uint8_t oversampling)
-[v _MTOUCH_Button_Oversampling_Set `(v ~T0 @X0 1 ef2`E3070`uc ]
-"375
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 375: {
-{
-[e :U _MTOUCH_Button_Oversampling_Set ]
-"374
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 374: void MTOUCH_Button_Oversampling_Set(enum mtouch_button_names name,uint8_t oversampling)
-[v _name `E3070 ~T0 @X0 1 r1 ]
-[v _oversampling `uc ~T0 @X0 1 r2 ]
-"375
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 375: {
-[f ]
-"376
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 376:     if(name < 4u)
-[e $ ! < -> _name `ui -> 4 `ui 506  ]
-"377
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 377:     {
-{
-"378
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 378:         MTOUCH_Sensor_Oversampling_Set(mtouch_button[name].sensor, oversampling);
-[e ( _MTOUCH_Sensor_Oversampling_Set (2 , . *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux 1 _oversampling ]
-"379
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 379:     }
-}
-[e :U 506 ]
-"380
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 380: }
-[e :UE 505 ]
-}
-"382
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 382: _Bool MTOUCH_Button_isPressed(enum mtouch_button_names name)
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 351: _Bool MTOUCH_Button_isPressed(enum mtouch_button_names name)
 [v _MTOUCH_Button_isPressed `(a ~T0 @X0 1 ef1`E3070 ]
-"383
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 383: {
+"352
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 352: {
 {
 [e :U _MTOUCH_Button_isPressed ]
-"382
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 382: _Bool MTOUCH_Button_isPressed(enum mtouch_button_names name)
+"351
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 351: _Bool MTOUCH_Button_isPressed(enum mtouch_button_names name)
 [v _name `E3070 ~T0 @X0 1 r1 ]
-"383
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 383: {
+"352
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 352: {
 [f ]
-"384
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 384:     if(name < 4u)
-[e $ ! < -> _name `ui -> 4 `ui 508  ]
-"385
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 385:         return (_Bool)((mtouch_button[name].state == MTOUCH_BUTTON_STATE_pressed) ? 1 : 0);
-[e ) -> ? == -> . *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux 2 `ui -> . `E3132 2 `ui : -> 1 `i -> 0 `i `a ]
-[e $UE 507  ]
-[e $U 509  ]
-"386
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 386:     else
-[e :U 508 ]
-"387
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 387:         return 0;
-[e ) -> -> 0 `i `a ]
-[e $UE 507  ]
-[e :U 509 ]
-"388
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 388: }
-[e :UE 507 ]
+"353
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 353:         return (_Bool)((mtouch_button[name].state == MTOUCH_BUTTON_STATE_pressed) ? 1 : 0);
+[e ) -> ? == -> . *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux 2 `ui -> . `E3108 2 `ui : -> 1 `i -> 0 `i `a ]
+[e $UE 484  ]
+"354
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 354: }
+[e :UE 484 ]
+}
+"361
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 361: static void Button_Deviation_Update(mtouch_button_t* button)
+[v _Button_Deviation_Update `(v ~T0 @X0 1 sf1`*S455 ]
+"362
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 362: {
+{
+[e :U _Button_Deviation_Update ]
+"361
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 361: static void Button_Deviation_Update(mtouch_button_t* button)
+[v _button `*S455 ~T0 @X0 1 r1 ]
+"362
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 362: {
+[f ]
+"363
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 363:     int32_t deviation;
+[v _deviation `l ~T0 @X0 1 a ]
+"365
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 365:     deviation = (int32_t)((int32_t)(button->reading) - (int32_t)((button->baseline)>>((uint8_t)4u)));
+[e = _deviation - -> . *U _button 3 `l -> >> . *U _button 4 -> -> -> 4 `ui `uc `i `l ]
+"368
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 368:     deviation = deviation >> (button->scaling);
+[e = _deviation >> _deviation -> . *U _button 9 `i ]
+"371
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 371:     if (deviation > ((0x7f)))
+[e $ ! > _deviation -> -> 127 `i `l 486  ]
+"372
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 372:     {
+{
+"373
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 373:         deviation = ((0x7f));
+[e = _deviation -> -> 127 `i `l ]
+"374
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 374:     }
+}
+[e :U 486 ]
+"375
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 375:     if (deviation < ((-1-0x7f)))
+[e $ ! < _deviation -> - -U -> 1 `i -> 127 `i `l 487  ]
+"376
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 376:     {
+{
+"377
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 377:         deviation = ((-1-0x7f));
+[e = _deviation -> - -U -> 1 `i -> 127 `i `l ]
+"378
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 378:     }
+}
+[e :U 487 ]
+"380
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 380:     button->deviation = (mtouch_button_deviation_t)deviation;
+[e = . *U _button 5 -> _deviation `c ]
+"381
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 381: }
+[e :UE 485 ]
 }
 "390
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 390: _Bool MTOUCH_Button_isInitialized(enum mtouch_button_names name)
-[v _MTOUCH_Button_isInitialized `(a ~T0 @X0 1 ef1`E3070 ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 390: static void Button_Reading_Update(mtouch_button_t* button)
+[v _Button_Reading_Update `(v ~T0 @X0 1 sf1`*S455 ]
 "391
 [; ;mcc_generated_files/mtouch/mtouch_button.c: 391: {
 {
-[e :U _MTOUCH_Button_isInitialized ]
+[e :U _Button_Reading_Update ]
 "390
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 390: _Bool MTOUCH_Button_isInitialized(enum mtouch_button_names name)
-[v _name `E3070 ~T0 @X0 1 r1 ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 390: static void Button_Reading_Update(mtouch_button_t* button)
+[v _button `*S455 ~T0 @X0 1 r1 ]
 "391
 [; ;mcc_generated_files/mtouch/mtouch_button.c: 391: {
 [f ]
 "392
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 392:     if(name < 4u)
-[e $ ! < -> _name `ui -> 4 `ui 511  ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 392:     if (GIE == (uint8_t) 1)
+[e $ ! == -> _GIE `i -> -> -> 1 `i `uc `i 489  ]
 "393
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 393:         return (_Bool)((mtouch_button[name].state == MTOUCH_BUTTON_STATE_initializing) ? 0 : 1);
-[e ) -> ? == -> . *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux 2 `ui -> . `E3132 0 `ui : -> 0 `i -> 1 `i `a ]
-[e $UE 510  ]
-[e $U 512  ]
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 393:     {
+{
 "394
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 394:     else
-[e :U 511 ]
-"395
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 395:         return 0;
-[e ) -> -> 0 `i `a ]
-[e $UE 510  ]
-[e :U 512 ]
-"396
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 396: }
-[e :UE 510 ]
-}
-"399
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 399: mtouch_button_deviation_t MTOUCH_Button_Deviation_Get(enum mtouch_button_names name)
-[v _MTOUCH_Button_Deviation_Get `(c ~T0 @X0 1 ef1`E3070 ]
-"400
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 400: {
-{
-[e :U _MTOUCH_Button_Deviation_Get ]
-"399
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 399: mtouch_button_deviation_t MTOUCH_Button_Deviation_Get(enum mtouch_button_names name)
-[v _name `E3070 ~T0 @X0 1 r1 ]
-"400
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 400: {
-[f ]
-"401
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 401:     if(name < 4u)
-[e $ ! < -> _name `ui -> 4 `ui 514  ]
-"402
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 402:         return mtouch_button[name].deviation;
-[e ) . *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux 5 ]
-[e $UE 513  ]
-[e $U 515  ]
-"403
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 403:     else
-[e :U 514 ]
-"404
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 404:         return (mtouch_button_deviation_t)0;
-[e ) -> -> 0 `i `c ]
-[e $UE 513  ]
-[e :U 515 ]
-"405
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 405: }
-[e :UE 513 ]
-}
-"407
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 407: static void Button_Deviation_Update(mtouch_button_t* button)
-[v _Button_Deviation_Update `(v ~T0 @X0 1 sf1`*S455 ]
-"408
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 408: {
-{
-[e :U _Button_Deviation_Update ]
-"407
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 407: static void Button_Deviation_Update(mtouch_button_t* button)
-[v _button `*S455 ~T0 @X0 1 r1 ]
-"408
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 408: {
-[f ]
-"409
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 409:     int32_t deviation;
-[v _deviation `l ~T0 @X0 1 a ]
-"411
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 411:     deviation = (int32_t)((int32_t)(button->reading) - (int32_t)((button->baseline)>>((uint8_t)4u)));
-[e = _deviation - -> . *U _button 3 `l -> >> . *U _button 4 -> -> -> 4 `ui `uc `i `l ]
-"414
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 414:     deviation = deviation >> (button->scaling);
-[e = _deviation >> _deviation -> . *U _button 9 `i ]
-"417
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 417:     if (deviation > ((0x7f)))
-[e $ ! > _deviation -> -> 127 `i `l 517  ]
-"418
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 418:     {
-{
-"419
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 419:         deviation = ((0x7f));
-[e = _deviation -> -> 127 `i `l ]
-"420
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 420:     }
-}
-[e :U 517 ]
-"421
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 421:     if (deviation < ((-1-0x7f)))
-[e $ ! < _deviation -> - -U -> 1 `i -> 127 `i `l 518  ]
-"422
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 422:     {
-{
-"423
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 423:         deviation = ((-1-0x7f));
-[e = _deviation -> - -U -> 1 `i -> 127 `i `l ]
-"424
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 424:     }
-}
-[e :U 518 ]
-"426
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 426:     button->deviation = (mtouch_button_deviation_t)deviation;
-[e = . *U _button 5 -> _deviation `c ]
-"427
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 427: }
-[e :UE 516 ]
-}
-"429
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 429: mtouch_buttonmask_t MTOUCH_Button_Buttonmask_Get(void)
-[v _MTOUCH_Button_Buttonmask_Get `(uc ~T0 @X0 1 ef ]
-"430
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 430: {
-{
-[e :U _MTOUCH_Button_Buttonmask_Get ]
-[f ]
-"431
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 431:     mtouch_buttonmask_t output = 0;
-[v _output `uc ~T0 @X0 1 a ]
-[e = _output -> -> 0 `i `uc ]
-"433
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 433:     for (uint8_t i = 0; i < 4u; i++)
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `ui -> 4 `ui 520  ]
-[e $U 521  ]
-[e :U 520 ]
-"434
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 434:     {
-{
-"435
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 435:         if (MTOUCH_Button_isPressed(i) == 1)
-[e $ ! == -> ( _MTOUCH_Button_isPressed (1 -> _i `E3070 `i -> 1 `i 523  ]
-"436
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 436:         {
-{
-"437
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 437:             output |= (mtouch_buttonmask_t)0x01 << i;
-[e =| _output -> << -> -> -> 1 `i `uc `i -> _i `i `uc ]
-"438
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 438:         }
-}
-[e :U 523 ]
-"439
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 439:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `ui -> 4 `ui 520  ]
-[e :U 521 ]
-}
-"440
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 440:     return output;
-[e ) _output ]
-[e $UE 519  ]
-"441
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 441: }
-[e :UE 519 ]
-}
-"448
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 448: mtouch_button_reading_t MTOUCH_Button_Reading_Get(enum mtouch_button_names name)
-[v _MTOUCH_Button_Reading_Get `(us ~T0 @X0 1 ef1`E3070 ]
-"449
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 449: {
-{
-[e :U _MTOUCH_Button_Reading_Get ]
-"448
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 448: mtouch_button_reading_t MTOUCH_Button_Reading_Get(enum mtouch_button_names name)
-[v _name `E3070 ~T0 @X0 1 r1 ]
-"449
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 449: {
-[f ]
-"450
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 450:     if(name < 4u)
-[e $ ! < -> _name `ui -> 4 `ui 525  ]
-"451
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 451:         return mtouch_button[name].reading;
-[e ) . *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux 3 ]
-[e $UE 524  ]
-[e $U 526  ]
-"452
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 452:     else
-[e :U 525 ]
-"453
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 453:         return (mtouch_button_reading_t)0;
-[e ) -> -> 0 `i `us ]
-[e $UE 524  ]
-[e :U 526 ]
-"454
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 454: }
-[e :UE 524 ]
-}
-"456
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 456: static void Button_Reading_Update(mtouch_button_t* button)
-[v _Button_Reading_Update `(v ~T0 @X0 1 sf1`*S455 ]
-"457
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 457: {
-{
-[e :U _Button_Reading_Update ]
-"456
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 456: static void Button_Reading_Update(mtouch_button_t* button)
-[v _button `*S455 ~T0 @X0 1 r1 ]
-"457
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 457: {
-[f ]
-"458
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 458:     if (GIE == (uint8_t) 1)
-[e $ ! == -> _GIE `i -> -> -> 1 `i `uc `i 528  ]
-"459
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 459:     {
-{
-"460
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 460:         GIE = (uint8_t) 0;
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 394:         GIE = (uint8_t) 0;
 [e = _GIE -> -> -> 0 `i `uc `b ]
-"461
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 461:         Button_Reading_Update_Helper(button);
+"395
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 395:         Button_Reading_Update_Helper(button);
 [e ( _Button_Reading_Update_Helper (1 _button ]
-"462
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 462:         GIE = (uint8_t) 1;
+"396
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 396:         GIE = (uint8_t) 1;
 [e = _GIE -> -> -> 1 `i `uc `b ]
-"463
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 463:     }
+"397
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 397:     }
 }
-[e $U 529  ]
-"464
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 464:     else
-[e :U 528 ]
-"465
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 465:     {
+[e $U 490  ]
+"398
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 398:     else
+[e :U 489 ]
+"399
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 399:     {
 {
-"466
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 466:         Button_Reading_Update_Helper(button);
+"400
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 400:         Button_Reading_Update_Helper(button);
 [e ( _Button_Reading_Update_Helper (1 _button ]
-"467
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 467:     }
+"401
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 401:     }
 }
-[e :U 529 ]
-"468
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 468: }
-[e :UE 527 ]
+[e :U 490 ]
+"402
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 402: }
+[e :UE 488 ]
 }
-"470
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 470: static void Button_Reading_Update_Helper(mtouch_button_t* button)
+"404
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 404: static void Button_Reading_Update_Helper(mtouch_button_t* button)
 [v _Button_Reading_Update_Helper `(v ~T0 @X0 1 sf1`*S455 ]
-"471
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 471: {
+"405
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 405: {
 {
 [e :U _Button_Reading_Update_Helper ]
-"470
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 470: static void Button_Reading_Update_Helper(mtouch_button_t* button)
+"404
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 404: static void Button_Reading_Update_Helper(mtouch_button_t* button)
 [v _button `*S455 ~T0 @X0 1 r1 ]
-"471
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 471: {
+"405
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 405: {
 [f ]
-"472
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 472:     if (button->state != MTOUCH_BUTTON_STATE_initializing)
-[e $ ! != -> . *U _button 2 `ui -> . `E3132 0 `ui 531  ]
-"473
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 473:     {
+"406
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 406:     if (button->state != MTOUCH_BUTTON_STATE_initializing)
+[e $ ! != -> . *U _button 2 `ui -> . `E3108 0 `ui 492  ]
+"407
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 407:     {
 {
-"474
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 474:         button->reading -= button->reading>>((uint8_t)2u);
+"408
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 408:         button->reading -= button->reading>>((uint8_t)2u);
 [e =- . *U _button 3 -> >> -> . *U _button 3 `ui -> -> -> 2 `ui `uc `i `us ]
-"475
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 475:         button->reading += MTOUCH_Sensor_RawSample_Get(button->sensor) >> ((uint8_t)2u);
+"409
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 409:         button->reading += MTOUCH_Sensor_RawSample_Get(button->sensor) >> ((uint8_t)2u);
 [e =+ . *U _button 3 -> >> -> ( _MTOUCH_Sensor_RawSample_Get (1 . *U _button 1 `ui -> -> -> 2 `ui `uc `i `us ]
-"476
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 476:     }
+"410
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 410:     }
 }
-[e $U 532  ]
-"477
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 477:     else
-[e :U 531 ]
-"478
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 478:     {
+[e $U 493  ]
+"411
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 411:     else
+[e :U 492 ]
+"412
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 412:     {
 {
-"479
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 479:         button->reading = MTOUCH_Sensor_RawSample_Get(button->sensor);
+"413
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 413:         button->reading = MTOUCH_Sensor_RawSample_Get(button->sensor);
 [e = . *U _button 3 ( _MTOUCH_Sensor_RawSample_Get (1 . *U _button 1 ]
-"480
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 480:     }
+"414
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 414:     }
 }
-[e :U 532 ]
-"481
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 481: }
-[e :UE 530 ]
+[e :U 493 ]
+"415
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 415: }
+[e :UE 491 ]
 }
-"483
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 483: static void Button_Baseline_Initialize(mtouch_button_t* button)
+"417
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 417: static void Button_Baseline_Initialize(mtouch_button_t* button)
 [v _Button_Baseline_Initialize `(v ~T0 @X0 1 sf1`*S455 ]
-"484
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 484: {
+"418
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 418: {
 {
 [e :U _Button_Baseline_Initialize ]
-"483
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 483: static void Button_Baseline_Initialize(mtouch_button_t* button)
+"417
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 417: static void Button_Baseline_Initialize(mtouch_button_t* button)
 [v _button `*S455 ~T0 @X0 1 r1 ]
-"484
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 484: {
+"418
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 418: {
 [f ]
-"485
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 485:     button->baseline = MTOUCH_Sensor_RawSample_Get(button->sensor);
+"419
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 419:     button->baseline = MTOUCH_Sensor_RawSample_Get(button->sensor);
 [e = . *U _button 4 -> ( _MTOUCH_Sensor_RawSample_Get (1 . *U _button 1 `ul ]
-"486
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 486:     button->baseline <<= ((uint8_t)4u);
+"420
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 420:     button->baseline <<= ((uint8_t)4u);
 [e =<< . *U _button 4 -> -> -> 4 `ui `uc `ul ]
-"487
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 487: }
-[e :UE 533 ]
+"421
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 421: }
+[e :UE 494 ]
 }
-"489
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 489: static void Button_Baseline_Update(mtouch_button_t* button)
+"423
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 423: static void Button_Baseline_Update(mtouch_button_t* button)
 [v _Button_Baseline_Update `(v ~T0 @X0 1 sf1`*S455 ]
-"490
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 490: {
+"424
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 424: {
 {
 [e :U _Button_Baseline_Update ]
-"489
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 489: static void Button_Baseline_Update(mtouch_button_t* button)
+"423
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 423: static void Button_Baseline_Update(mtouch_button_t* button)
 [v _button `*S455 ~T0 @X0 1 r1 ]
-"490
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 490: {
+"424
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 424: {
 [f ]
-"491
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 491:     if (GIE == (uint8_t)1)
-[e $ ! == -> _GIE `i -> -> -> 1 `i `uc `i 535  ]
-"492
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 492:     {
+"425
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 425:     if (GIE == (uint8_t)1)
+[e $ ! == -> _GIE `i -> -> -> 1 `i `uc `i 496  ]
+"426
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 426:     {
 {
-"493
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 493:         GIE = (uint8_t)0;
+"427
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 427:         GIE = (uint8_t)0;
 [e = _GIE -> -> -> 0 `i `uc `b ]
-"494
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 494:         button->baseline -= (button->baseline) >> ((uint8_t)4u);
+"428
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 428:         button->baseline -= (button->baseline) >> ((uint8_t)4u);
 [e =- . *U _button 4 >> . *U _button 4 -> -> -> 4 `ui `uc `i ]
-"495
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 495:         button->baseline += button->reading;
+"429
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 429:         button->baseline += button->reading;
 [e =+ . *U _button 4 -> . *U _button 3 `ul ]
-"496
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 496:         GIE = (uint8_t)1;
+"430
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 430:         GIE = (uint8_t)1;
 [e = _GIE -> -> -> 1 `i `uc `b ]
-"497
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 497:     }
+"431
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 431:     }
 }
-[e $U 536  ]
-"498
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 498:     else
-[e :U 535 ]
-"499
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 499:     {
+[e $U 497  ]
+"432
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 432:     else
+[e :U 496 ]
+"433
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 433:     {
 {
-"500
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 500:         button->baseline -= (button->baseline) >> ((uint8_t)4u);
+"434
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 434:         button->baseline -= (button->baseline) >> ((uint8_t)4u);
 [e =- . *U _button 4 >> . *U _button 4 -> -> -> 4 `ui `uc `i ]
-"501
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 501:         button->baseline += button->reading;
+"435
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 435:         button->baseline += button->reading;
 [e =+ . *U _button 4 -> . *U _button 3 `ul ]
-"502
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 502:     }
+"436
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 436:     }
 }
-[e :U 536 ]
-"503
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 503: }
-[e :UE 534 ]
+[e :U 497 ]
+"437
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 437: }
+[e :UE 495 ]
 }
-"505
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 505: mtouch_button_reading_t MTOUCH_Button_Baseline_Get(enum mtouch_button_names name)
-[v _MTOUCH_Button_Baseline_Get `(us ~T0 @X0 1 ef1`E3070 ]
-"506
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 506: {
-{
-[e :U _MTOUCH_Button_Baseline_Get ]
-"505
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 505: mtouch_button_reading_t MTOUCH_Button_Baseline_Get(enum mtouch_button_names name)
-[v _name `E3070 ~T0 @X0 1 r1 ]
-"506
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 506: {
-[f ]
-"507
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 507:     if(name < 4u)
-[e $ ! < -> _name `ui -> 4 `ui 538  ]
-"508
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 508:         return Button_Baseline_Get_helper(name);
-[e ) ( _Button_Baseline_Get_helper (1 _name ]
-[e $UE 537  ]
-[e $U 539  ]
-"509
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 509:     else
-[e :U 538 ]
-"510
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 510:         return (mtouch_button_reading_t)0;
-[e ) -> -> 0 `i `us ]
-[e $UE 537  ]
-[e :U 539 ]
-"511
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 511: }
-[e :UE 537 ]
-}
-"513
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 513: static mtouch_button_reading_t Button_Baseline_Get_helper(enum mtouch_button_names name)
-[v _Button_Baseline_Get_helper `(us ~T0 @X0 1 sf1`E3070 ]
-"514
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 514: {
-{
-[e :U _Button_Baseline_Get_helper ]
-"513
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 513: static mtouch_button_reading_t Button_Baseline_Get_helper(enum mtouch_button_names name)
-[v _name `E3070 ~T0 @X0 1 r1 ]
-"514
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 514: {
-[f ]
-"515
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 515:     return (mtouch_button_reading_t)((mtouch_button[name].baseline) >> ((uint8_t)4u));
-[e ) -> >> . *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux 4 -> -> -> 4 `ui `uc `i `us ]
-[e $UE 540  ]
-"516
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 516: }
-[e :UE 540 ]
-}
-"518
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 518: uint8_t MTOUCH_Button_State_Get(enum mtouch_button_names name)
-[v _MTOUCH_Button_State_Get `(uc ~T0 @X0 1 ef1`E3070 ]
-"519
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 519: {
-{
-[e :U _MTOUCH_Button_State_Get ]
-"518
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 518: uint8_t MTOUCH_Button_State_Get(enum mtouch_button_names name)
-[v _name `E3070 ~T0 @X0 1 r1 ]
-"519
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 519: {
-[f ]
-"520
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 520:     if(name < 4u)
-[e $ ! < -> _name `ui -> 4 `ui 542  ]
-"521
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 521:         return (uint8_t)mtouch_button[name].state;
-[e ) -> . *U + &U _mtouch_button * -> _name `ux -> -> # *U &U _mtouch_button `ui `ux 2 `uc ]
-[e $UE 541  ]
-[e $U 543  ]
-"522
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 522:     else
-[e :U 542 ]
-"523
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 523:         return 0;
-[e ) -> -> 0 `i `uc ]
-[e $UE 541  ]
-[e :U 543 ]
-"524
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 524: }
-[e :UE 541 ]
-}
-"535
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 535: static void Button_DefaultCallback(enum mtouch_button_names button) { }
+"444
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 444: static void Button_DefaultCallback(enum mtouch_button_names button) { }
 [v _Button_DefaultCallback `(v ~T0 @X0 1 sf1`E3070 ]
 {
 [e :U _Button_DefaultCallback ]
 [v _button `E3070 ~T0 @X0 1 r1 ]
 [f ]
-[e :UE 544 ]
+[e :UE 498 ]
 }
-"536
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 536: void MTOUCH_Button_SetPressedCallback(void (*callback)(enum mtouch_button_names))
-[v _MTOUCH_Button_SetPressedCallback `(v ~T0 @X0 1 ef1`*F3276 ]
-"537
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 537: {
+"445
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 445: void MTOUCH_Button_SetPressedCallback(void (*callback)(enum mtouch_button_names))
+[v _MTOUCH_Button_SetPressedCallback `(v ~T0 @X0 1 ef1`*F3223 ]
+"446
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 446: {
 {
 [e :U _MTOUCH_Button_SetPressedCallback ]
-"536
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 536: void MTOUCH_Button_SetPressedCallback(void (*callback)(enum mtouch_button_names))
-[v _callback `*F3279 ~T0 @X0 1 r1 ]
-"537
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 537: {
+"445
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 445: void MTOUCH_Button_SetPressedCallback(void (*callback)(enum mtouch_button_names))
+[v _callback `*F3226 ~T0 @X0 1 r1 ]
+"446
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 446: {
 [f ]
-"538
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 538:     callback_pressed = callback;
+"447
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 447:     callback_pressed = callback;
 [e = _callback_pressed _callback ]
-"539
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 539: }
-[e :UE 545 ]
+"448
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 448: }
+[e :UE 499 ]
 }
-"540
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 540: void MTOUCH_Button_SetNotPressedCallback(void (*callback)(enum mtouch_button_names))
-[v _MTOUCH_Button_SetNotPressedCallback `(v ~T0 @X0 1 ef1`*F3284 ]
-"541
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 541: {
+"449
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 449: void MTOUCH_Button_SetNotPressedCallback(void (*callback)(enum mtouch_button_names))
+[v _MTOUCH_Button_SetNotPressedCallback `(v ~T0 @X0 1 ef1`*F3231 ]
+"450
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 450: {
 {
 [e :U _MTOUCH_Button_SetNotPressedCallback ]
-"540
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 540: void MTOUCH_Button_SetNotPressedCallback(void (*callback)(enum mtouch_button_names))
-[v _callback `*F3287 ~T0 @X0 1 r1 ]
-"541
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 541: {
+"449
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 449: void MTOUCH_Button_SetNotPressedCallback(void (*callback)(enum mtouch_button_names))
+[v _callback `*F3234 ~T0 @X0 1 r1 ]
+"450
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 450: {
 [f ]
-"542
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 542:     callback_notPressed = callback;
+"451
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 451:     callback_notPressed = callback;
 [e = _callback_notPressed _callback ]
-"543
-[; ;mcc_generated_files/mtouch/mtouch_button.c: 543: }
-[e :UE 546 ]
+"452
+[; ;mcc_generated_files/mtouch/mtouch_button.c: 452: }
+[e :UE 500 ]
 }

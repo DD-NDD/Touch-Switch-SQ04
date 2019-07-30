@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "mcc_generated_files/tmr1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,9 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+# 1 "mcc_generated_files/tmr1.c" 2
+# 51 "mcc_generated_files/tmr1.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4601,17 +4600,12 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
+# 51 "mcc_generated_files/tmr1.c" 2
 
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 298 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 310 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
+# 1 "mcc_generated_files/tmr1.h" 1
+# 54 "mcc_generated_files/tmr1.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
+# 54 "mcc_generated_files/tmr1.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
@@ -4696,848 +4690,121 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "./mcc_generated_files/mcc.h" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/interrupt_manager.h" 1
-# 54 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/tmr1.h" 1
-# 100 "./mcc_generated_files/tmr1.h"
+# 55 "mcc_generated_files/tmr1.h" 2
+# 100 "mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
-# 129 "./mcc_generated_files/tmr1.h"
+# 129 "mcc_generated_files/tmr1.h"
 void TMR1_StartTimer(void);
-# 161 "./mcc_generated_files/tmr1.h"
+# 161 "mcc_generated_files/tmr1.h"
 void TMR1_StopTimer(void);
-# 196 "./mcc_generated_files/tmr1.h"
+# 196 "mcc_generated_files/tmr1.h"
 uint16_t TMR1_ReadTimer(void);
-# 235 "./mcc_generated_files/tmr1.h"
+# 235 "mcc_generated_files/tmr1.h"
 void TMR1_WriteTimer(uint16_t timerVal);
-# 271 "./mcc_generated_files/tmr1.h"
+# 271 "mcc_generated_files/tmr1.h"
 void TMR1_Reload(void);
-# 310 "./mcc_generated_files/tmr1.h"
+# 310 "mcc_generated_files/tmr1.h"
 void TMR1_StartSinglePulseAcquisition(void);
-# 349 "./mcc_generated_files/tmr1.h"
+# 349 "mcc_generated_files/tmr1.h"
 uint8_t TMR1_CheckGateValueStatus(void);
-# 367 "./mcc_generated_files/tmr1.h"
+# 367 "mcc_generated_files/tmr1.h"
 void TMR1_ISR(void);
-# 385 "./mcc_generated_files/tmr1.h"
+# 385 "mcc_generated_files/tmr1.h"
  void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 403 "./mcc_generated_files/tmr1.h"
+# 403 "mcc_generated_files/tmr1.h"
 extern void (*TMR1_InterruptHandler)(void);
-# 421 "./mcc_generated_files/tmr1.h"
+# 421 "mcc_generated_files/tmr1.h"
 void TMR1_DefaultInterruptHandler(void);
-# 55 "./mcc_generated_files/mcc.h" 2
+# 52 "mcc_generated_files/tmr1.c" 2
 
-# 1 "./mcc_generated_files/tmr2.h" 1
-# 103 "./mcc_generated_files/tmr2.h"
-void TMR2_Initialize(void);
-# 132 "./mcc_generated_files/tmr2.h"
-void TMR2_StartTimer(void);
-# 164 "./mcc_generated_files/tmr2.h"
-void TMR2_StopTimer(void);
-# 199 "./mcc_generated_files/tmr2.h"
-uint8_t TMR2_ReadTimer(void);
-# 238 "./mcc_generated_files/tmr2.h"
-void TMR2_WriteTimer(uint8_t timerVal);
-# 290 "./mcc_generated_files/tmr2.h"
-void TMR2_LoadPeriodRegister(uint8_t periodVal);
-# 325 "./mcc_generated_files/tmr2.h"
-_Bool TMR2_HasOverflowOccured(void);
-# 56 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/mtouch/mtouch.h" 1
-# 41 "./mcc_generated_files/mtouch/mtouch.h"
-# 1 "./mcc_generated_files/mtouch/mtouch_config.h" 1
-# 41 "./mcc_generated_files/mtouch/mtouch_config.h"
-# 1 "./mcc_generated_files/mtouch/mtouch_sensor.h" 1
-# 45 "./mcc_generated_files/mtouch/mtouch_sensor.h"
-    enum mtouch_sensor_names
-    {
-        Sensor_AN26 = 0,
-        Sensor_AN12 = 1,
-        Sensor_AN23 = 2,
-        Sensor_AN13 = 3
-    };
 
-    enum mtouch_sensor_error
-    {
-        MTOUCH_SENSOR_ERROR_none = 0,
-        MTOUCH_SENSOR_ERROR_invalid_index = -1,
-        MTOUCH_SENSOR_ERROR_interrupt_notEnabled = -2,
-        MTOUCH_SENSOR_ERROR_invalid_calibrate= -3,
-        MTOUCH_SENSOR_ERROR_tooManyRetries = -4,
-        MTOUCH_SENSOR_ERROR_scanOverrun = -5,
-        MTOUCH_SENSOR_ERROR_interruptedScan = -6
-    };
 
 
+volatile uint16_t timer1ReloadVal;
+void (*TMR1_InterruptHandler)(void);
 
 
 
 
-    typedef uint16_t mtouch_sensor_sample_t;
 
-
-
-    typedef uint8_t mtouch_sensor_mask_t;
-# 83 "./mcc_generated_files/mtouch/mtouch_sensor.h"
-    enum mtouch_sensor_error MTOUCH_Sensor_Initialize (enum mtouch_sensor_names sensor);
-    void MTOUCH_Sensor_Scan_Initialize (void);
-    void MTOUCH_Sensor_InitializeAll (void);
-    void MTOUCH_Sensor_SetSampledCallback(void (*callback)(enum mtouch_sensor_names sensor));
-    _Bool MTOUCH_Sensor_SampleAll (void);
-    _Bool MTOUCH_Sensor_isSamplingComplete(void);
-    void MTOUCH_Sensor_postAcquisitionProcess(void);
-    void MTOUCH_Sensor_startLowpower (void);
-    void MTOUCH_Sensor_exitLowpower (void);
-
-    _Bool MTOUCH_Sensor_isAnySensorActive (void);
-    _Bool MTOUCH_Sensor_isActive (enum mtouch_sensor_names sensor);
-    _Bool MTOUCH_Sensor_wasSampled (enum mtouch_sensor_names sensor);
-    _Bool MTOUCH_Sensor_isCalibrated (enum mtouch_sensor_names sensor);
-    _Bool MTOUCH_Sensor_isEnabled (enum mtouch_sensor_names sensor);
-    void MTOUCH_Sensor_Sampled_ResetAll (void);
-    void MTOUCH_Sensor_Disable (enum mtouch_sensor_names sensor);
-    void MTOUCH_Sensor_Enable (enum mtouch_sensor_names sensor);
-    void MTOUCH_Sensor_Calibrate (enum mtouch_sensor_names sensor);
-    mtouch_sensor_sample_t MTOUCH_Sensor_RawSample_Get (enum mtouch_sensor_names sensor);
-    uint8_t MTOUCH_Sensor_AdditionalCap_Get (enum mtouch_sensor_names sensor);
-    uint8_t MTOUCH_Sensor_AcquisitionTime_Get(enum mtouch_sensor_names sensor);
-    uint8_t MTOUCH_Sensor_PreChargeTime_Get (enum mtouch_sensor_names sensor);
-    uint8_t MTOUCH_Sensor_Oversampling_Get (enum mtouch_sensor_names name);
-    void MTOUCH_Sensor_Oversampling_Set (enum mtouch_sensor_names name, uint8_t value);
-
-    void MTOUCH_Sensor_NotifyInterruptOccurred(void);
-# 41 "./mcc_generated_files/mtouch/mtouch_config.h" 2
-
-# 1 "./mcc_generated_files/mtouch/mtouch_button.h" 1
-# 41 "./mcc_generated_files/mtouch/mtouch_button.h"
-# 1 "./mcc_generated_files/mtouch/mtouch.h" 1
-# 41 "./mcc_generated_files/mtouch/mtouch_button.h" 2
-
-
-
-
-
-
-
-
-    enum mtouch_button_names
-    {
-        Button0 = 0,
-        Button1 = 1,
-        Button2 = 2,
-        Button3 = 3
-    };
-
-
-
-
-
-
-    typedef uint8_t mtouch_buttonmask_t;
-
-    typedef uint16_t mtouch_button_statecounter_t;
-
-
-
-    typedef uint16_t mtouch_button_baselinecounter_t;
-
-
-
-    typedef uint16_t mtouch_button_reading_t;
-
-
-
-
-    typedef uint32_t mtouch_button_baseline_t;
-
-
-
-
-    typedef int8_t mtouch_button_deviation_t;
-
-
-
-    typedef uint8_t mtouch_button_threshold_t;
-
-
-
-    typedef uint8_t mtouch_button_scaling_t;
-# 102 "./mcc_generated_files/mtouch/mtouch_button.h"
-    void MTOUCH_Button_SetPressedCallback (void (*callback)(enum mtouch_button_names button));
-    void MTOUCH_Button_SetNotPressedCallback(void (*callback)(enum mtouch_button_names button));
-
-    void MTOUCH_Button_Initialize (enum mtouch_button_names button);
-    void MTOUCH_Button_InitializeAll (void);
-    void MTOUCH_Button_ServiceAll (void);
-    void MTOUCH_Button_Tick (void);
-# 119 "./mcc_generated_files/mtouch/mtouch_button.h"
-    _Bool MTOUCH_Button_isPressed (enum mtouch_button_names button);
-    _Bool MTOUCH_Button_isInitialized (enum mtouch_button_names button);
-# 42 "./mcc_generated_files/mtouch/mtouch_config.h" 2
-# 41 "./mcc_generated_files/mtouch/mtouch.h" 2
-# 53 "./mcc_generated_files/mtouch/mtouch.h"
-    void MTOUCH_Initialize (void);
-    _Bool MTOUCH_Service_Mainloop (void);
-    void MTOUCH_Tick (void);
-    _Bool MTOUCH_Service_isInProgress (void);
-# 57 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/eusart.h" 1
-# 57 "./mcc_generated_files/eusart.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 145 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 254 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 407 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 57 "./mcc_generated_files/eusart.h" 2
-# 76 "./mcc_generated_files/eusart.h"
-typedef union {
-    struct {
-        unsigned perr : 1;
-        unsigned ferr : 1;
-        unsigned oerr : 1;
-        unsigned reserved : 5;
-    };
-    uint8_t status;
-}eusart_status_t;
-
-
-
-
-extern volatile uint8_t eusartTxBufferRemaining;
-extern volatile uint8_t eusartRxCount;
-
-
-
-
-
-void (*EUSART_RxDefaultInterruptHandler)(void);
-# 118 "./mcc_generated_files/eusart.h"
-void EUSART_Initialize(void);
-# 166 "./mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_ready(void);
-# 218 "./mcc_generated_files/eusart.h"
-uint8_t EUSART_is_rx_ready(void);
-# 265 "./mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_done(void);
-# 313 "./mcc_generated_files/eusart.h"
-eusart_status_t EUSART_get_last_status(void);
-# 333 "./mcc_generated_files/eusart.h"
-uint8_t EUSART_Read(void);
-# 353 "./mcc_generated_files/eusart.h"
-void EUSART_Write(uint8_t txData);
-# 375 "./mcc_generated_files/eusart.h"
-void EUSART_Receive_ISR(void);
-# 396 "./mcc_generated_files/eusart.h"
-void EUSART_RxDataHandler(void);
-# 414 "./mcc_generated_files/eusart.h"
-void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 432 "./mcc_generated_files/eusart.h"
-void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 450 "./mcc_generated_files/eusart.h"
-void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 471 "./mcc_generated_files/eusart.h"
-void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 58 "./mcc_generated_files/mcc.h" 2
-# 73 "./mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 86 "./mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 98 "./mcc_generated_files/mcc.h"
-void WDT_Initialize(void);
-# 1 "main.c" 2
-
-
-
-
-# 1 "./led.h" 1
-
-
-
-void LED_PROCESS(uint8_t x);
-# 5 "main.c" 2
-
-# 1 "./relay.h" 1
-
-
-void RELAY_PROCESS(uint8_t x);
-# 6 "main.c" 2
-
-# 1 "./define.h" 1
-
-
-
-uint8_t rxData;
-uint8_t prcData;
-_Bool config_status;
-_Bool check_request;
-uint16_t count_conf;
-_Bool blink;
-uint8_t blink_count;
-uint16_t timeout_count;
-
-_Bool update_state_flag = 0;
-union
+void TMR1_Initialize(void)
 {
-    unsigned int full_status;
-    struct
-    {
-        unsigned CS0 :1;
-        unsigned CS1 :1;
-        unsigned CS2 :1;
-        unsigned CS3 :1;
-        unsigned CS4 :1;
-        unsigned CS5 :1;
-        unsigned CS6 :1;
-        unsigned CS7 :1;
-    };
-}last_touch_status;
-# 7 "main.c" 2
 
 
 
+    T1GCON = 0x00;
 
-void DATA_PROCESS(char x);
-void check_message(uint8_t x);
-_Bool check_data(uint8_t x);
-void update_state(void);
-void myButtonPressedCallback(enum mtouch_button_names button);
-void myButtonReleasedCallback(enum mtouch_button_names button);
-void main(void)
+
+    TMR1H = 0xE0;
+
+
+    TMR1L = 0xC0;
+
+
+    timer1ReloadVal=(uint16_t)((TMR1H << 8) | TMR1L);
+
+
+    PIR1bits.TMR1IF = 0;
+
+
+    PIE1bits.TMR1IE = 1;
+
+
+    TMR1_SetInterruptHandler(TMR1_DefaultInterruptHandler);
+
+
+    T1CON = 0x05;
+}
+
+
+
+void TMR1_WriteTimer(uint16_t timerVal)
 {
-    SYSTEM_Initialize();
-    (INTCONbits.GIE = 1);
-    (INTCONbits.PEIE = 1);
-    MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
-    MTOUCH_Button_SetNotPressedCallback(myButtonReleasedCallback);
-    do { LATAbits.LATA2 = 0; } while(0);
-    LED_PROCESS(0);
-    last_touch_status.full_status = 0x00;
-    while (1)
+    if (T1CONbits.nT1SYNC == 1)
     {
-        if(update_state_flag == 1)
-        {
-            update_state_flag = 0;
-            update_state();
 
-        }
-        if(EUSART_is_rx_ready())
-        {
-            rxData = EUSART_Read();
-            if(check_data(rxData))
-            {
-                if(check_request == 0)
-                {
-                    prcData = rxData;
-                    check_message(rxData);
-                }
-                else
-                {
-                    if(config_status == 1)
-                    {
-                        if(rxData == 'T')
-                        {
-                            LED_PROCESS(15);
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            config_status = 0;
-                            check_request = 0;
-                            timeout_count = 0;
-                            LED_PROCESS(last_touch_status.full_status);
-                        }
-                        if(rxData == 'F')
-                        {
-                            LED_PROCESS(0);
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            _delay((unsigned long)((500)*(32000000/4000.0)));
-                            config_status = 0;
-                            check_request = 0;
-                            timeout_count = 0;
-                            LED_PROCESS(last_touch_status.full_status);
-                        }
-                    }
-                    else
-                    {
-                        if(rxData == 'T')
-                        {
-                            DATA_PROCESS(prcData);
-                            timeout_count = 0;
-                        }
-                        if(rxData == 'F')
-                        {
-                            check_request = 0;
-                            timeout_count = 0;
-                        }
-                    }
-                }
-            }
-        }
-        if(MTOUCH_Service_Mainloop())
-        {
-            if(config_status == 0)
-            {
-                if(check_request == 1)
-                {
-                    timeout_count++;
-                    if(timeout_count == 30)
-                    {
-                        timeout_count = 0;
-                        check_request = 0;
-                    }
-                }
-                if(MTOUCH_Button_isPressed(0) == 1 && MTOUCH_Button_isPressed(1) == 0 && MTOUCH_Button_isPressed(2) == 0&& MTOUCH_Button_isPressed(3) == 1)
-                {
-                    count_conf++;
-                    if(count_conf == 1800)
-                    {
-                        count_conf = 0;
-                        printf("PICSMART");
-                        _delay((unsigned long)((500)*(32000000/4000.0)));
-                        _delay((unsigned long)((500)*(32000000/4000.0)));
-                        _delay((unsigned long)((500)*(32000000/4000.0)));
-                        _delay((unsigned long)((500)*(32000000/4000.0)));
-                        printf("RUN\r\n");
-                        config_status = 1;
-                        check_request = 1;
-                        timeout_count = 0;
-                        LED_PROCESS(0);
-                        blink = 0;
-                    }
-                }
-                else
-                {
-                    count_conf = 0;
-                }
-            }
-            else
-            {
-                if(check_request == 1)
-                {
-                    timeout_count++;
-                    if(timeout_count >= 30000)
-                    {
+        T1CONbits.TMR1ON = 0;
 
-                        LED_PROCESS(0);
-                        timeout_count = 0;
-                        _delay((unsigned long)((500)*(32000000/4000.0)));
-                        _delay((unsigned long)((500)*(32000000/4000.0)));
-                        _delay((unsigned long)((500)*(32000000/4000.0)));
-                        _delay((unsigned long)((500)*(32000000/4000.0)));
-                        LED_PROCESS(last_touch_status.full_status);
-                        check_request = 0;
-                        config_status = 0;
-                    }
-                    else
-                    {
-                        blink_count++;
-                        if(blink == 0)
-                        {
-                            LED_PROCESS(0);
-                            if(blink_count >= 200)
-                            {
-                                blink_count = 0;
-                                blink = 1;
-                            }
-                        }
-                        else
-                        {
-                            LED_PROCESS(15);
-                            if(blink_count >= 200)
-                            {
-                                blink_count = 0;
-                                blink = 0;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+
+        TMR1H = (timerVal >> 8);
+        TMR1L = timerVal;
+
+
+        T1CONbits.TMR1ON =1;
+    }
+    else
+    {
+
+        TMR1H = (timerVal >> 8);
+        TMR1L = timerVal;
     }
 }
 
-void myButtonPressedCallback(enum mtouch_button_names button)
-{
-    count_conf = 0;
-    if(config_status == 0)
-    {
-        if(button == 0) last_touch_status.full_status ^= 0b00000001;
-        if(button == 1) last_touch_status.full_status ^= 0b00000010;
-        if(button == 2) last_touch_status.full_status ^= 0b00000100;
-        if(button == 3) last_touch_status.full_status ^= 0b00001000;
 
-        LED_PROCESS(last_touch_status.full_status);
-        RELAY_PROCESS(last_touch_status.full_status);
-    }
-}
-void myButtonReleasedCallback(enum mtouch_button_names button)
-{
-    count_conf = 0;
-    if(config_status == 0)
-    {
 
-        if(MTOUCH_Button_isPressed(0)==0&&MTOUCH_Button_isPressed(1)==0&&MTOUCH_Button_isPressed(2)==0)
-        {
-            update_state_flag = 1;
-        }
+
+
+
+void TMR1_ISR(void)
+{
+
+
+    PIR1bits.TMR1IF = 0;
+    TMR1_WriteTimer(timer1ReloadVal);
+
+    if(TMR1_InterruptHandler)
+    {
+        TMR1_InterruptHandler();
     }
 }
-void update_state(void)
-{
-    switch(last_touch_status.full_status)
-    {
-        case 0: printf("PIC0"); break;
-        case 1: printf("PIC1"); break;
-        case 2: printf("PIC2"); break;
-        case 3: printf("PIC3"); break;
-        case 4: printf("PIC4"); break;
-        case 5: printf("PIC5"); break;
-        case 6: printf("PIC6"); break;
-        case 7: printf("PIC7"); break;
-        case 8: printf("PIC8"); break;
-        case 9: printf("PIC9"); break;
-        case 10: printf("PICA"); break;
-        case 11: printf("PICB"); break;
-        case 12: printf("PICC"); break;
-        case 13: printf("PICD"); break;
-        case 14: printf("PICE"); break;
-        case 15: printf("PICG"); break;
-    }
-    return;
+
+
+void TMR1_SetInterruptHandler(void (* InterruptHandler)(void)){
+    TMR1_InterruptHandler = InterruptHandler;
 }
-void DATA_PROCESS(char x)
-{
-    timeout_count = 0;
-    switch(x)
-    {
-        case '0':
-        {
-            LED_PROCESS(0);
-            RELAY_PROCESS(0);
-            check_request = 0;
-            last_touch_status.full_status = 0;
-            break;
-        }
-        case '1':
-        {
-            LED_PROCESS(1);
-            RELAY_PROCESS(1);
-            check_request = 0;
-            last_touch_status.full_status = 1;
-            break;
-        }
-        case '2':
-        {
-            LED_PROCESS(2);
-            RELAY_PROCESS(2);
-            check_request = 0;
-            last_touch_status.full_status = 2;
-            break;
-        }
-        case '3':
-        {
-            LED_PROCESS(3);
-            RELAY_PROCESS(3);
-            check_request = 0;
-            last_touch_status.full_status = 3;
-            break;
-        }
-        case '4':
-        {
-            LED_PROCESS(4);
-            RELAY_PROCESS(4);
-            check_request = 0;
-            last_touch_status.full_status = 4;
-            break;
-        }
-        case '5':
-        {
-            LED_PROCESS(5);
-            RELAY_PROCESS(5);
-            check_request = 0;
-            last_touch_status.full_status = 5;
-            break;
-        }
-        case '6':
-        {
-            LED_PROCESS(6);
-            RELAY_PROCESS(6);
-            check_request = 0;
-            last_touch_status.full_status = 6;
-            break;
-        }
-        case '7':
-        {
-            LED_PROCESS(7);
-            RELAY_PROCESS(7);
-            check_request = 0;
-            last_touch_status.full_status = 7;
-            break;
-        }
-        case '8':
-        {
-            LED_PROCESS(8);
-            RELAY_PROCESS(8);
-            check_request = 0;
-            last_touch_status.full_status = 8;
-            break;
-        }
-        case '9':
-        {
-            LED_PROCESS(9);
-            RELAY_PROCESS(9);
-            check_request = 0;
-            last_touch_status.full_status = 9;
-            break;
-        }
-        case 'A':
-        {
-            LED_PROCESS(10);
-            RELAY_PROCESS(10);
-            check_request = 0;
-            last_touch_status.full_status = 10;
-            break;
-        }
-        case 'B':
-        {
-            LED_PROCESS(11);
-            RELAY_PROCESS(11);
-            check_request = 0;
-            last_touch_status.full_status = 11;
-            break;
-        }
-        case 'C':
-        {
-            LED_PROCESS(12);
-            RELAY_PROCESS(12);
-            check_request = 0;
-            last_touch_status.full_status = 12;
-            break;
-        }
-        case 'D':
-        {
-            LED_PROCESS(13);
-            RELAY_PROCESS(13);
-            check_request = 0;
-            last_touch_status.full_status = 13;
-            break;
-        }
-        case 'E':
-        {
-            LED_PROCESS(14);
-            RELAY_PROCESS(14);
-            check_request = 0;
-            last_touch_status.full_status = 14;
-            break;
-        }
-        case 'G':
-        {
-            LED_PROCESS(15);
-            RELAY_PROCESS(15);
-            check_request = 0;
-            last_touch_status.full_status = 15;
-            break;
-        }
-        case 'U':
-        {
-            update_state_flag = 1;
-            break;
-        }
-        default:
-        {
-            check_request = 0;
-            break;
-        }
-    }
-}
-void check_message(uint8_t x)
-{
-    switch (x)
-    {
-        case 'T':
-        {
-            check_request = 0;
-            break;
-        }
-        case 'F':
-        {
-            check_request = 0;
-            break;
-        }
-        default:
-        {
-            printf("%c",x);
-            check_request = 1;
-            break;
-        }
-    }
-}
-_Bool check_data(uint8_t x)
-{
-    switch(x)
-    {
-        case '0': return 1;
-        case '1': return 1;
-        case '2': return 1;
-        case '3': return 1;
-        case '4': return 1;
-        case '5': return 1;
-        case '6': return 1;
-        case '7': return 1;
-        case '8': return 1;
-        case '9': return 1;
-        case 'A': return 1;
-        case 'B': return 1;
-        case 'C': return 1;
-        case 'D': return 1;
-        case 'E': return 1;
-        case 'G': return 1;
-        case 'T': return 1;
-        case 'F': return 1;
-        case 'U': return 1;
-        default : return 0;
-    }
+
+void TMR1_DefaultInterruptHandler(void){
+
+
 }

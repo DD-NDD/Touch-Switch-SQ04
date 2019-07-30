@@ -608,7 +608,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 13:     {
 {
 "14
-[; ;led.c: 14:         case 0:
+[; ;led.c: 14:         case 15:
 [e :U 457 ]
 "15
 [; ;led.c: 15:         {
@@ -642,7 +642,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 18:         }
 }
 "19
-[; ;led.c: 19:         case 1:
+[; ;led.c: 19:         case 14:
 [e :U 470 ]
 "20
 [; ;led.c: 20:         {
@@ -676,7 +676,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 23:         }
 }
 "24
-[; ;led.c: 24:         case 2:
+[; ;led.c: 24:         case 13:
 [e :U 483 ]
 "25
 [; ;led.c: 25:         {
@@ -710,7 +710,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 28:         }
 }
 "29
-[; ;led.c: 29:         case 3:
+[; ;led.c: 29:         case 12:
 [e :U 496 ]
 "30
 [; ;led.c: 30:         {
@@ -744,7 +744,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 33:         }
 }
 "34
-[; ;led.c: 34:         case 4:
+[; ;led.c: 34:         case 11:
 [e :U 509 ]
 "35
 [; ;led.c: 35:         {
@@ -778,7 +778,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 38:         }
 }
 "39
-[; ;led.c: 39:         case 5:
+[; ;led.c: 39:         case 10:
 [e :U 522 ]
 "40
 [; ;led.c: 40:         {
@@ -812,7 +812,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 43:         }
 }
 "44
-[; ;led.c: 44:         case 6:
+[; ;led.c: 44:         case 9:
 [e :U 535 ]
 "45
 [; ;led.c: 45:         {
@@ -846,7 +846,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 48:         }
 }
 "49
-[; ;led.c: 49:         case 7:
+[; ;led.c: 49:         case 8:
 [e :U 548 ]
 "50
 [; ;led.c: 50:         {
@@ -880,7 +880,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 53:         }
 }
 "54
-[; ;led.c: 54:         case 8:
+[; ;led.c: 54:         case 7:
 [e :U 561 ]
 "55
 [; ;led.c: 55:         {
@@ -914,7 +914,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 58:         }
 }
 "59
-[; ;led.c: 59:         case 9:
+[; ;led.c: 59:         case 6:
 [e :U 574 ]
 "60
 [; ;led.c: 60:         {
@@ -948,7 +948,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 63:         }
 }
 "64
-[; ;led.c: 64:         case 10:
+[; ;led.c: 64:         case 5:
 [e :U 587 ]
 "65
 [; ;led.c: 65:         {
@@ -982,7 +982,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 68:         }
 }
 "69
-[; ;led.c: 69:         case 11:
+[; ;led.c: 69:         case 4:
 [e :U 600 ]
 "70
 [; ;led.c: 70:         {
@@ -1016,7 +1016,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 73:         }
 }
 "74
-[; ;led.c: 74:         case 12:
+[; ;led.c: 74:         case 3:
 [e :U 613 ]
 "75
 [; ;led.c: 75:         {
@@ -1050,7 +1050,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 78:         }
 }
 "79
-[; ;led.c: 79:         case 13:
+[; ;led.c: 79:         case 2:
 [e :U 626 ]
 "80
 [; ;led.c: 80:         {
@@ -1084,7 +1084,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 83:         }
 }
 "84
-[; ;led.c: 84:         case 14:
+[; ;led.c: 84:         case 1:
 [e :U 639 ]
 "85
 [; ;led.c: 85:         {
@@ -1118,7 +1118,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;led.c: 88:         }
 }
 "89
-[; ;led.c: 89:         case 15:
+[; ;led.c: 89:         case 0:
 [e :U 652 ]
 "90
 [; ;led.c: 90:         {
@@ -1156,22 +1156,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 455  ]
 [e :U 456 ]
-[e [\ -> _x `i , $ -> 0 `i 457
- , $ -> 1 `i 470
- , $ -> 2 `i 483
- , $ -> 3 `i 496
- , $ -> 4 `i 509
- , $ -> 5 `i 522
- , $ -> 6 `i 535
- , $ -> 7 `i 548
- , $ -> 8 `i 561
- , $ -> 9 `i 574
- , $ -> 10 `i 587
- , $ -> 11 `i 600
- , $ -> 12 `i 613
- , $ -> 13 `i 626
- , $ -> 14 `i 639
- , $ -> 15 `i 652
+[e [\ -> _x `i , $ -> 15 `i 457
+ , $ -> 14 `i 470
+ , $ -> 13 `i 483
+ , $ -> 12 `i 496
+ , $ -> 11 `i 509
+ , $ -> 10 `i 522
+ , $ -> 9 `i 535
+ , $ -> 8 `i 548
+ , $ -> 7 `i 561
+ , $ -> 6 `i 574
+ , $ -> 5 `i 587
+ , $ -> 4 `i 600
+ , $ -> 3 `i 613
+ , $ -> 2 `i 626
+ , $ -> 1 `i 639
+ , $ -> 0 `i 652
  455 ]
 [e :U 455 ]
 "95

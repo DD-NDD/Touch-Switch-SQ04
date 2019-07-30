@@ -4818,20 +4818,9 @@ typedef uint32_t uint_fast32_t;
     void MTOUCH_Button_InitializeAll (void);
     void MTOUCH_Button_ServiceAll (void);
     void MTOUCH_Button_Tick (void);
-    mtouch_button_deviation_t MTOUCH_Button_Deviation_Get (enum mtouch_button_names button);
-    mtouch_button_reading_t MTOUCH_Button_Reading_Get (enum mtouch_button_names button);
-    mtouch_button_reading_t MTOUCH_Button_Baseline_Get (enum mtouch_button_names button);
-    mtouch_button_scaling_t MTOUCH_Button_Scaling_Get (enum mtouch_button_names button);
-    void MTOUCH_Button_Scaling_Set (enum mtouch_button_names button,mtouch_button_scaling_t scaling);
-    mtouch_button_threshold_t MTOUCH_Button_Threshold_Get (enum mtouch_button_names button);
-    void MTOUCH_Button_Threshold_Set (enum mtouch_button_names button,mtouch_button_threshold_t threshold);
-    uint8_t MTOUCH_Button_Oversampling_Get(enum mtouch_button_names button);
-    void MTOUCH_Button_Oversampling_Set(enum mtouch_button_names button,uint8_t oversampling);
-
+# 119 "mcc_generated_files/mtouch/mtouch_button.h"
     _Bool MTOUCH_Button_isPressed (enum mtouch_button_names button);
     _Bool MTOUCH_Button_isInitialized (enum mtouch_button_names button);
-    mtouch_buttonmask_t MTOUCH_Button_Buttonmask_Get(void);
-    uint8_t MTOUCH_Button_State_Get (enum mtouch_button_names button);
 # 42 "mcc_generated_files/mtouch/mtouch_config.h" 2
 # 41 "mcc_generated_files/mtouch/mtouch.h" 2
 # 53 "mcc_generated_files/mtouch/mtouch.h"
@@ -4858,6 +4847,33 @@ void PIN_MANAGER_IOC(void);
 # 1 "mcc_generated_files/mtouch/../interrupt_manager.h" 1
 # 54 "mcc_generated_files/mtouch/../mcc.h" 2
 
+# 1 "mcc_generated_files/mtouch/../tmr1.h" 1
+# 100 "mcc_generated_files/mtouch/../tmr1.h"
+void TMR1_Initialize(void);
+# 129 "mcc_generated_files/mtouch/../tmr1.h"
+void TMR1_StartTimer(void);
+# 161 "mcc_generated_files/mtouch/../tmr1.h"
+void TMR1_StopTimer(void);
+# 196 "mcc_generated_files/mtouch/../tmr1.h"
+uint16_t TMR1_ReadTimer(void);
+# 235 "mcc_generated_files/mtouch/../tmr1.h"
+void TMR1_WriteTimer(uint16_t timerVal);
+# 271 "mcc_generated_files/mtouch/../tmr1.h"
+void TMR1_Reload(void);
+# 310 "mcc_generated_files/mtouch/../tmr1.h"
+void TMR1_StartSinglePulseAcquisition(void);
+# 349 "mcc_generated_files/mtouch/../tmr1.h"
+uint8_t TMR1_CheckGateValueStatus(void);
+# 367 "mcc_generated_files/mtouch/../tmr1.h"
+void TMR1_ISR(void);
+# 385 "mcc_generated_files/mtouch/../tmr1.h"
+ void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 403 "mcc_generated_files/mtouch/../tmr1.h"
+extern void (*TMR1_InterruptHandler)(void);
+# 421 "mcc_generated_files/mtouch/../tmr1.h"
+void TMR1_DefaultInterruptHandler(void);
+# 55 "mcc_generated_files/mtouch/../mcc.h" 2
+
 # 1 "mcc_generated_files/mtouch/../tmr2.h" 1
 # 103 "mcc_generated_files/mtouch/../tmr2.h"
 void TMR2_Initialize(void);
@@ -4873,7 +4889,7 @@ void TMR2_WriteTimer(uint8_t timerVal);
 void TMR2_LoadPeriodRegister(uint8_t periodVal);
 # 325 "mcc_generated_files/mtouch/../tmr2.h"
 _Bool TMR2_HasOverflowOccured(void);
-# 55 "mcc_generated_files/mtouch/../mcc.h" 2
+# 56 "mcc_generated_files/mtouch/../mcc.h" 2
 
 
 # 1 "mcc_generated_files/mtouch/../eusart.h" 1
@@ -5063,35 +5079,50 @@ void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 # 471 "mcc_generated_files/mtouch/../eusart.h"
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 57 "mcc_generated_files/mtouch/../mcc.h" 2
-# 72 "mcc_generated_files/mtouch/../mcc.h"
+# 58 "mcc_generated_files/mtouch/../mcc.h" 2
+# 73 "mcc_generated_files/mtouch/../mcc.h"
 void SYSTEM_Initialize(void);
-# 85 "mcc_generated_files/mtouch/../mcc.h"
+# 86 "mcc_generated_files/mtouch/../mcc.h"
 void OSCILLATOR_Initialize(void);
-# 97 "mcc_generated_files/mtouch/../mcc.h"
+# 98 "mcc_generated_files/mtouch/../mcc.h"
 void WDT_Initialize(void);
 # 41 "mcc_generated_files/mtouch/mtouch.c" 2
-# 52 "mcc_generated_files/mtouch/mtouch.c"
+# 54 "mcc_generated_files/mtouch/mtouch.c"
 static _Bool mtouch_time_toScan = 0;
+static uint16_t mTouchScanReload = (uint16_t)(65535-((20u*1000.0)/0.125));
 
 
 
 
 
 
+static void MTOUCH_ScanScheduler(void);
 static _Bool MTOUCH_needReburst(void);
-# 68 "mcc_generated_files/mtouch/mtouch.c"
-_Bool MTOUCH_Service_isInProgress()
+
+
+
+
+
+
+
+static void MTOUCH_ScanScheduler(void)
 {
-    return mtouch_time_toScan;
+
+
+    TMR1_WriteTimer(mTouchScanReload);
+
+
+    mtouch_time_toScan = 1;
+
 }
-# 80 "mcc_generated_files/mtouch/mtouch.c"
+# 96 "mcc_generated_files/mtouch/mtouch.c"
 void MTOUCH_Initialize(void)
 {
     MTOUCH_Sensor_InitializeAll();
     MTOUCH_Button_InitializeAll();
     MTOUCH_Sensor_Sampled_ResetAll();
     MTOUCH_Sensor_Scan_Initialize();
+    TMR1_SetInterruptHandler(MTOUCH_ScanScheduler);
 
 }
 
@@ -5104,8 +5135,6 @@ void MTOUCH_Initialize(void)
 _Bool MTOUCH_Service_Mainloop(void)
 {
 
-
-    mtouch_time_toScan = 1;
 
     if(mtouch_time_toScan)
     {

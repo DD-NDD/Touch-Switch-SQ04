@@ -10,6 +10,7 @@ bool blink;
 uint8_t blink_count;
 uint16_t timeout_count;
 /*Glass status*/
+bool update_state_flag = false;
 union
 {
     unsigned int full_status;

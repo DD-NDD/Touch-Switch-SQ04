@@ -116,24 +116,12 @@ void EUSART_Initialize(void)
     PIE1bits.RCIE = 1;
 }
 
-bool EUSART_is_tx_ready(void)
-{
-    return (bool)(PIR1bits.TXIF && TXSTAbits.TXEN);
-}
 
 uint8_t EUSART_is_rx_ready(void)
 {
     return eusartRxCount;
 }
 
-bool EUSART_is_tx_done(void)
-{
-    return TXSTAbits.TRMT;
-}
-
-eusart_status_t EUSART_get_last_status(void){
-    return eusartRxLastError;
-}
 
 uint8_t EUSART_Read(void)
 {
@@ -166,10 +154,6 @@ void EUSART_Write(uint8_t txData)
     TXREG = txData;    // Write the data byte to the USART.
 }
 
-char getch(void)
-{
-    return EUSART_Read();
-}
 
 void putch(char txData)
 {

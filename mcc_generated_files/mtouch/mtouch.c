@@ -43,6 +43,8 @@
 /* ======================================================================= *
  * Definitions
  * ======================================================================= */
+#define MTOUCH_SCAN_TIMER_TICK                  0.125 //unit us
+#define MTOUCH_SCAN_RELOAD                      (uint16_t)(65535-((MTOUCH_SCAN_INTERVAL*1000.0)/MTOUCH_SCAN_TIMER_TICK)) 
 
 
 /* ======================================================================= *
@@ -50,14 +52,32 @@
  * ======================================================================= */
 
 static bool mtouch_time_toScan = false;
+static uint16_t mTouchScanReload = MTOUCH_SCAN_RELOAD;
 
 /*
  * =======================================================================
  *  Local Functions
  * =======================================================================
  */
+static void MTOUCH_ScanScheduler(void);   
 static bool MTOUCH_needReburst(void);
 
+/*
+ * =======================================================================
+ * MTOUCH_ScanScheduler()
+ * =======================================================================
+ *  The interrupt handler callback for scanrate timer  
+ */
+static void MTOUCH_ScanScheduler(void)         
+{
+  
+    //schedule the next timer1 interrupt
+    TMR1_WriteTimer(mTouchScanReload);
+    
+    //schedule the scan
+    mtouch_time_toScan = true;  
+
+}
 /*
  * =======================================================================
  * MTOUCH_Service_isInProgress()
@@ -65,10 +85,6 @@ static bool MTOUCH_needReburst(void);
  *  indicate the mTouch service status
  */
 
-bool MTOUCH_Service_isInProgress()
-{
-    return mtouch_time_toScan;
-}
 
 
 /*
@@ -83,6 +99,7 @@ void MTOUCH_Initialize(void)
     MTOUCH_Button_InitializeAll();
     MTOUCH_Sensor_Sampled_ResetAll();
     MTOUCH_Sensor_Scan_Initialize();
+    TMR1_SetInterruptHandler(MTOUCH_ScanScheduler);
 
 }
 
@@ -95,8 +112,6 @@ void MTOUCH_Initialize(void)
 bool MTOUCH_Service_Mainloop(void)
 {
 
-    /* In free running mode, the mTouch service will be executed once MTOUCH_Service_Mainloop gets called.*/
-    mtouch_time_toScan = true;
     
     if(mtouch_time_toScan)               
     {

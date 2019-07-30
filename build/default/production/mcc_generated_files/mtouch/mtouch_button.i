@@ -4875,20 +4875,9 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
     void MTOUCH_Button_InitializeAll (void);
     void MTOUCH_Button_ServiceAll (void);
     void MTOUCH_Button_Tick (void);
-    mtouch_button_deviation_t MTOUCH_Button_Deviation_Get (enum mtouch_button_names button);
-    mtouch_button_reading_t MTOUCH_Button_Reading_Get (enum mtouch_button_names button);
-    mtouch_button_reading_t MTOUCH_Button_Baseline_Get (enum mtouch_button_names button);
-    mtouch_button_scaling_t MTOUCH_Button_Scaling_Get (enum mtouch_button_names button);
-    void MTOUCH_Button_Scaling_Set (enum mtouch_button_names button,mtouch_button_scaling_t scaling);
-    mtouch_button_threshold_t MTOUCH_Button_Threshold_Get (enum mtouch_button_names button);
-    void MTOUCH_Button_Threshold_Set (enum mtouch_button_names button,mtouch_button_threshold_t threshold);
-    uint8_t MTOUCH_Button_Oversampling_Get(enum mtouch_button_names button);
-    void MTOUCH_Button_Oversampling_Set(enum mtouch_button_names button,uint8_t oversampling);
-
+# 119 "mcc_generated_files/mtouch/mtouch_button.h"
     _Bool MTOUCH_Button_isPressed (enum mtouch_button_names button);
     _Bool MTOUCH_Button_isInitialized (enum mtouch_button_names button);
-    mtouch_buttonmask_t MTOUCH_Button_Buttonmask_Get(void);
-    uint8_t MTOUCH_Button_State_Get (enum mtouch_button_names button);
 # 42 "mcc_generated_files/mtouch/mtouch_config.h" 2
 # 41 "mcc_generated_files/mtouch/mtouch.h" 2
 # 53 "mcc_generated_files/mtouch/mtouch.h"
@@ -4936,6 +4925,7 @@ enum mtouch_button_state
         mtouch_button_baselinecounter_t baseline_count;
         mtouch_button_threshold_t threshold;
         mtouch_button_scaling_t scaling;
+        enum mtouch_button_hysteresis_thresholds hysteresis;
     } mtouch_button_t;
 
     const mtouch_button_t mtouch_button_init[4u] =
@@ -4946,32 +4936,40 @@ enum mtouch_button_state
             MTOUCH_BUTTON_STATE_initializing,
             0,0,0,0,0,
             (mtouch_button_deviation_t)100u,
-            (mtouch_button_scaling_t)1u
-        },
+            (mtouch_button_scaling_t)1u,
+            HYST_50_PERCENT
+
+                },
 
         { Button1,
             Sensor_AN26,
             MTOUCH_BUTTON_STATE_initializing,
             0,0,0,0,0,
             (mtouch_button_deviation_t)100u,
-            (mtouch_button_scaling_t)1u
-        },
+            (mtouch_button_scaling_t)1u,
+            HYST_50_PERCENT
+
+                },
 
         { Button2,
             Sensor_AN13,
             MTOUCH_BUTTON_STATE_initializing,
             0,0,0,0,0,
             (mtouch_button_deviation_t)100u,
-            (mtouch_button_scaling_t)1u
-        },
+            (mtouch_button_scaling_t)1u,
+            HYST_50_PERCENT
+
+                },
 
         { Button3,
             Sensor_AN23,
             MTOUCH_BUTTON_STATE_initializing,
             0,0,0,0,0,
             (mtouch_button_deviation_t)100u,
-            (mtouch_button_scaling_t)1u
-        }
+            (mtouch_button_scaling_t)1u,
+            HYST_50_PERCENT
+
+                }
     };
 
 static mtouch_button_t mtouch_button[4u];
@@ -5041,10 +5039,14 @@ void MTOUCH_Button_InitializeAll(void)
 
     memcpy(mtouch_button,mtouch_button_init,sizeof(mtouch_button_init));
 
-    for (button = 0; button < 4u; button++)
-    {
-        MTOUCH_Button_Initialize(button);
-    }
+
+
+
+
+    MTOUCH_Button_Initialize(0);
+    MTOUCH_Button_Initialize(1);
+    MTOUCH_Button_Initialize(2);
+    MTOUCH_Button_Initialize(3);
 }
 
 
@@ -5058,10 +5060,14 @@ void MTOUCH_Button_InitializeAll(void)
     enum mtouch_button_names button;
 
 
-    for (button = 0; button < 4u; button++)
-    {
-        Button_Service(button);
-    }
+
+
+
+
+    Button_Service(0);
+    Button_Service(1);
+    Button_Service(2);
+    Button_Service(3);
 }
 
 static void Button_Service(enum mtouch_button_names name)
@@ -5147,7 +5153,7 @@ static void Button_State_Pressed(mtouch_button_t* button)
     }
 
 
-    else if ((button->deviation) < (mtouch_button_deviation_t)((button->threshold)- ((button->threshold) >> HYST_50_PERCENT)))
+    else if ((button->deviation) < (mtouch_button_deviation_t)((button->threshold)-((button->threshold) >> button->hysteresis)))
     {
         button->state = MTOUCH_BUTTON_STATE_notPressed;
         button->counter = (mtouch_button_statecounter_t)0;
@@ -5181,87 +5187,16 @@ static void Button_Tick_helper(mtouch_button_t* button)
         }
     }
 }
-
-
-
-
-
-
-
-mtouch_button_threshold_t MTOUCH_Button_Threshold_Get(enum mtouch_button_names name)
-{
-    if(name < 4u)
-        return mtouch_button[name].threshold;
-    else
-        return (mtouch_button_threshold_t)0;
-}
-
-void MTOUCH_Button_Threshold_Set(enum mtouch_button_names name,mtouch_button_threshold_t threshold)
-{
-    if(name < 4u)
-    {
-        if(threshold >= ((mtouch_button_threshold_t)(1)) && threshold <= ((mtouch_button_threshold_t)(127)))
-           mtouch_button[name].threshold = threshold;
-    }
-}
-
-mtouch_button_scaling_t MTOUCH_Button_Scaling_Get(enum mtouch_button_names name)
-{
-    if(name < 4u)
-        return mtouch_button[name].scaling;
-    else
-        return (mtouch_button_scaling_t)0;
-}
-
-void MTOUCH_Button_Scaling_Set(enum mtouch_button_names name,mtouch_button_scaling_t scaling)
-{
-    if(name < 4u)
-    {
-        if(scaling <= ((mtouch_button_scaling_t)(8)))
-            mtouch_button[name].scaling = scaling;
-    }
-}
-
-uint8_t MTOUCH_Button_Oversampling_Get(enum mtouch_button_names name)
-{
-    if(name < 4u)
-        return (uint8_t)MTOUCH_Sensor_Oversampling_Get(mtouch_button[name].sensor);
-    else
-        return (uint8_t)0;
-}
-
-void MTOUCH_Button_Oversampling_Set(enum mtouch_button_names name,uint8_t oversampling)
-{
-    if(name < 4u)
-    {
-        MTOUCH_Sensor_Oversampling_Set(mtouch_button[name].sensor, oversampling);
-    }
-}
-
+# 351 "mcc_generated_files/mtouch/mtouch_button.c"
 _Bool MTOUCH_Button_isPressed(enum mtouch_button_names name)
 {
-    if(name < 4u)
         return (_Bool)((mtouch_button[name].state == MTOUCH_BUTTON_STATE_pressed) ? 1 : 0);
-    else
-        return 0;
-}
-
-_Bool MTOUCH_Button_isInitialized(enum mtouch_button_names name)
-{
-    if(name < 4u)
-        return (_Bool)((mtouch_button[name].state == MTOUCH_BUTTON_STATE_initializing) ? 0 : 1);
-    else
-        return 0;
 }
 
 
-mtouch_button_deviation_t MTOUCH_Button_Deviation_Get(enum mtouch_button_names name)
-{
-    if(name < 4u)
-        return mtouch_button[name].deviation;
-    else
-        return (mtouch_button_deviation_t)0;
-}
+
+
+
 
 static void Button_Deviation_Update(mtouch_button_t* button)
 {
@@ -5284,34 +5219,7 @@ static void Button_Deviation_Update(mtouch_button_t* button)
 
     button->deviation = (mtouch_button_deviation_t)deviation;
 }
-
-mtouch_buttonmask_t MTOUCH_Button_Buttonmask_Get(void)
-{
-    mtouch_buttonmask_t output = 0;
-
-    for (uint8_t i = 0; i < 4u; i++)
-    {
-        if (MTOUCH_Button_isPressed(i) == 1)
-        {
-            output |= (mtouch_buttonmask_t)0x01 << i;
-        }
-    }
-    return output;
-}
-
-
-
-
-
-
-mtouch_button_reading_t MTOUCH_Button_Reading_Get(enum mtouch_button_names name)
-{
-    if(name < 4u)
-        return mtouch_button[name].reading;
-    else
-        return (mtouch_button_reading_t)0;
-}
-
+# 390 "mcc_generated_files/mtouch/mtouch_button.c"
 static void Button_Reading_Update(mtouch_button_t* button)
 {
     if (GIE == (uint8_t) 1)
@@ -5361,27 +5269,11 @@ static void Button_Baseline_Update(mtouch_button_t* button)
     }
 }
 
-mtouch_button_reading_t MTOUCH_Button_Baseline_Get(enum mtouch_button_names name)
-{
-    if(name < 4u)
-        return Button_Baseline_Get_helper(name);
-    else
-        return (mtouch_button_reading_t)0;
-}
 
-static mtouch_button_reading_t Button_Baseline_Get_helper(enum mtouch_button_names name)
-{
-    return (mtouch_button_reading_t)((mtouch_button[name].baseline) >> ((uint8_t)4u));
-}
 
-uint8_t MTOUCH_Button_State_Get(enum mtouch_button_names name)
-{
-    if(name < 4u)
-        return (uint8_t)mtouch_button[name].state;
-    else
-        return 0;
-}
-# 535 "mcc_generated_files/mtouch/mtouch_button.c"
+
+
+
 static void Button_DefaultCallback(enum mtouch_button_names button) { }
 void MTOUCH_Button_SetPressedCallback(void (*callback)(enum mtouch_button_names))
 {

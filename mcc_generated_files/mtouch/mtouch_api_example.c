@@ -54,33 +54,3 @@
    http://microchipdeveloper.com/touch:lowcost-mtouch-kit
 
 */
-
-
-void touch_example(void)
-{
-    /*
-        The following code will be placed in the while(1) loop in the main.c file
-    */
-    if(MTOUCH_Service_Mainloop())
-    {
-        /* Button API*/
-        if (MTOUCH_Button_isPressed(0))
-        {
-            /* process if button is pressed */
-            /* LED_SetHigh();*/
-            
-        }
-        else
-        {
-            /* process if button is not pressed */
-            /* LED_SetLow();*/
-        }
-
-
-
-
-    }
-    
-    
-
-}

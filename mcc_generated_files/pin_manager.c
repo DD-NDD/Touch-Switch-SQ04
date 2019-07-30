@@ -96,9 +96,6 @@ void PIN_MANAGER_Initialize(void)
     
 }
   
-void PIN_MANAGER_IOC(void)
-{   
-}
 
 /**
  End of File

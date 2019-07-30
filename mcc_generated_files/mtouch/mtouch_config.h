@@ -57,6 +57,11 @@
      * =======================================================================
      */
 
+    /*
+     *  Defines the scan interval (milliseconds)
+     *  Range - 1 to 255
+     */
+    #define MTOUCH_SCAN_INTERVAL    20u      //unit ms
     
     #define MTOUCH_SENSOR_ADCON0_Sensor_AN26             ( 0x1a<<2 | 0x1 )
     #define MTOUCH_SENSOR_PRECHARGE_Sensor_AN26          48u
@@ -110,7 +115,10 @@
     #define MTOUCH_BUTTON_SCALING_Button2            1u
     #define MTOUCH_BUTTON_SCALING_Button3            1u
 
-    #define MTOUCH_BUTTON_COMMON_HYSTERESIS         HYST_50_PERCENT
+    #define MTOUCH_BUTTON_HYSTERESIS_Button0     HYST_50_PERCENT
+    #define MTOUCH_BUTTON_HYSTERESIS_Button1     HYST_50_PERCENT
+    #define MTOUCH_BUTTON_HYSTERESIS_Button2     HYST_50_PERCENT
+    #define MTOUCH_BUTTON_HYSTERESIS_Button3     HYST_50_PERCENT
     
 
 

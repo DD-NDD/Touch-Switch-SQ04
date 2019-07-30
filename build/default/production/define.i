@@ -127,6 +127,7 @@ _Bool blink;
 uint8_t blink_count;
 uint16_t timeout_count;
 
+_Bool update_state_flag = 0;
 union
 {
     unsigned int full_status;

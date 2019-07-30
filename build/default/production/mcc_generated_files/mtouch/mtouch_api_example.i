@@ -244,20 +244,9 @@ typedef uint32_t uint_fast32_t;
     void MTOUCH_Button_InitializeAll (void);
     void MTOUCH_Button_ServiceAll (void);
     void MTOUCH_Button_Tick (void);
-    mtouch_button_deviation_t MTOUCH_Button_Deviation_Get (enum mtouch_button_names button);
-    mtouch_button_reading_t MTOUCH_Button_Reading_Get (enum mtouch_button_names button);
-    mtouch_button_reading_t MTOUCH_Button_Baseline_Get (enum mtouch_button_names button);
-    mtouch_button_scaling_t MTOUCH_Button_Scaling_Get (enum mtouch_button_names button);
-    void MTOUCH_Button_Scaling_Set (enum mtouch_button_names button,mtouch_button_scaling_t scaling);
-    mtouch_button_threshold_t MTOUCH_Button_Threshold_Get (enum mtouch_button_names button);
-    void MTOUCH_Button_Threshold_Set (enum mtouch_button_names button,mtouch_button_threshold_t threshold);
-    uint8_t MTOUCH_Button_Oversampling_Get(enum mtouch_button_names button);
-    void MTOUCH_Button_Oversampling_Set(enum mtouch_button_names button,uint8_t oversampling);
-
+# 119 "mcc_generated_files/mtouch/mtouch_button.h"
     _Bool MTOUCH_Button_isPressed (enum mtouch_button_names button);
     _Bool MTOUCH_Button_isInitialized (enum mtouch_button_names button);
-    mtouch_buttonmask_t MTOUCH_Button_Buttonmask_Get(void);
-    uint8_t MTOUCH_Button_State_Get (enum mtouch_button_names button);
 # 42 "mcc_generated_files/mtouch/mtouch_config.h" 2
 # 41 "mcc_generated_files/mtouch/mtouch.h" 2
 # 53 "mcc_generated_files/mtouch/mtouch.h"
@@ -266,32 +255,4 @@ typedef uint32_t uint_fast32_t;
     void MTOUCH_Tick (void);
     _Bool MTOUCH_Service_isInProgress (void);
 # 39 "mcc_generated_files/mtouch/mtouch_api_example.c" 2
-# 59 "mcc_generated_files/mtouch/mtouch_api_example.c"
-void touch_example(void)
-{
 
-
-
-    if(MTOUCH_Service_Mainloop())
-    {
-
-        if (MTOUCH_Button_isPressed(0))
-        {
-
-
-
-        }
-        else
-        {
-
-
-        }
-
-
-
-
-    }
-
-
-
-}

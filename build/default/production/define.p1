@@ -1,10 +1,10 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"17 ./define.h
-[; ;./define.h: 17:     {
+"18 ./define.h
+[; ;./define.h: 18:     {
 [s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S2 . CS0 CS1 CS2 CS3 CS4 CS5 CS6 CS7 ]
-"14
-[; ;./define.h: 14: {
+"15
+[; ;./define.h: 15: {
 [u S1 `ui 1 `S2 1 ]
 [n S1 . full_status . ]
 "4 ./define.h
@@ -31,6 +31,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11
 [; ;./define.h: 11: uint16_t timeout_count;
 [v _timeout_count `us ~T0 @X0 1 e ]
-"27
-[; ;./define.h: 27: }last_touch_status;
+"13
+[; ;./define.h: 13: _Bool update_state_flag = 0;
+[v _update_state_flag `a ~T0 @X0 1 e ]
+[i _update_state_flag
+-> -> 0 `i `a
+]
+"28
+[; ;./define.h: 28: }last_touch_status;
 [v _last_touch_status `S1 ~T0 @X0 1 e ]

@@ -156,7 +156,7 @@ static volatile mtouch_sensor_globalflags_t      sensor_globalFlags;
  *  Sensor runtime data
  * =======================================================================
  */
-static mtouch_sensor_sampleperiod_t     sample_period = MTOUCH_SENSOR_SAMPLEPERIOD_MIN;    
+static uint8_t     sample_period = MTOUCH_SENSOR_SAMPLEPERIOD_MIN;    
 
 /*
  * =======================================================================
@@ -232,10 +232,14 @@ void MTOUCH_Sensor_InitializeAll(void)
 {
     enum mtouch_sensor_names sensor; 
     
-    for (sensor = 0; sensor < MTOUCH_SENSORS; sensor++)
-    {
-        MTOUCH_Sensor_Initialize(sensor);
-    }
+//    for (sensor = 0; sensor < MTOUCH_SENSORS; sensor++)
+//    {
+//        MTOUCH_Sensor_Initialize(sensor);
+//    }
+    MTOUCH_Sensor_Initialize(0);
+    MTOUCH_Sensor_Initialize(1);
+    MTOUCH_Sensor_Initialize(2);
+    MTOUCH_Sensor_Initialize(3);
 }
 
 /*
@@ -274,15 +278,7 @@ bool MTOUCH_Sensor_SampleAll(void)
     return true;
 }
 
-void MTOUCH_Sensor_startLowpower(void)
-{
-    lowpowerActivated = true;
-}
 
-void MTOUCH_Sensor_exitLowpower(void)
-{
-    lowpowerActivated = false;
-}
 
 /*
  * =======================================================================
@@ -290,19 +286,6 @@ void MTOUCH_Sensor_exitLowpower(void)
  * =======================================================================
  *  
  */
-bool MTOUCH_Sensor_isAnySensorActive(void)
-{
-    enum mtouch_sensor_names sensor;   
-    
-    for (sensor = 0; sensor < MTOUCH_SENSORS; sensor++)
-    {
-        if(mtouch_sensor[sensor].active)
-            return true;
-    }
-    
-    return false;
-}
-
 /*
  * =======================================================================
  * Sensor_Service()
@@ -329,19 +312,16 @@ static enum mtouch_sensor_error Sensor_Service(uint8_t scanGroup)
                    the current sensor reading will compare with the last sensor 
                    reading in normal power mode.
                 */ 
-                if(!lowpowerActivated)
-                {
+
                     Sensor_RawSample_Update(sensor_adc1);
-                }
                 Sensor_setSampled(sensor_adc1);
                 callback_sampled(sensor_adc1->sensor);
             }
             if(Sensor_isEnabled(sensor_adc2))
             {
-                if(!lowpowerActivated)
-                {
+
                     Sensor_RawSample_Update(sensor_adc2);
-                }
+
                 Sensor_setSampled(sensor_adc2);
                 callback_sampled(sensor_adc2->sensor);
             }
@@ -436,10 +416,6 @@ static void Sensor_postAcquisitionProcess(mtouch_sensor_t* sensor)
         Sensor_setInactive(sensor);
 }
 
-void MTOUCH_Sensor_NotifyInterruptOccurred(void)
-{   
-    sensor_globalFlags.interrupted = 1;
-}
 
 
 static void Sensor_loadADCSettings(mtouch_sensor_t* sensor, uint8_t adc_index)
@@ -741,7 +717,7 @@ static void Sensor_autoCalibration(mtouch_sensor_t* sensor)
 static enum mtouch_sensor_error Sensor_Scanfrequency_Evaluation(mtouch_sensor_t* sensor_adc1,mtouch_sensor_t* sensor_adc2)
 {
     uint8_t i;
-    const mtouch_sensor_sampleperiod_t  frequency_hop[5] = {0,13,28,30,23};
+    const uint8_t  frequency_hop[5] = {0,13,28,30,23};
     mtouch_sensor_packetnoise_t         packet_noise_Max;
     mtouch_sensor_sampleperiod_t        best_sample_period;
     mtouch_sensor_packetsample_t        best_packet_sample[2];   
@@ -755,7 +731,7 @@ static enum mtouch_sensor_error Sensor_Scanfrequency_Evaluation(mtouch_sensor_t*
     for(i=(uint8_t)0;i<(uint8_t)5;i++)
     {   
         sample_period += frequency_hop[i];
-        if(sample_period > MTOUCH_SENSOR_SAMPLEPERIOD_MAX)
+        if(sample_period >= 255)
         {
             sample_period-=MTOUCH_SENSOR_SAMPLEPERIOD_MAX;
             sample_period+=MTOUCH_SENSOR_SAMPLEPERIOD_MIN;
@@ -799,12 +775,8 @@ static enum mtouch_sensor_error Sensor_Scanfrequency_Evaluation(mtouch_sensor_t*
  */ 
 mtouch_sensor_sample_t MTOUCH_Sensor_RawSample_Get(enum mtouch_sensor_names name) /* Global */
 {
-    if (name < MTOUCH_SENSORS)
-    {
+
         return mtouch_sensor[name].rawSample;
-    }
-    else
-        return (mtouch_sensor_sample_t)0;
 }
 
 static void Sensor_RawSample_Update(mtouch_sensor_t* sensor) /* Local */
@@ -829,10 +801,6 @@ static void Sensor_RawSample_Update(mtouch_sensor_t* sensor) /* Local */
  * =======================================================================
  */ 
 static void Sensor_DefaultCallback(enum mtouch_sensor_names sensor) { }
-void MTOUCH_Sensor_SetSampledCallback(void (*callback)(enum mtouch_sensor_names sensor))
-{
-    callback_sampled = callback;
-}
 
 /*
  * =======================================================================
@@ -840,25 +808,12 @@ void MTOUCH_Sensor_SetSampledCallback(void (*callback)(enum mtouch_sensor_names 
  * =======================================================================
  * 
  */
-void MTOUCH_Sensor_Disable(enum mtouch_sensor_names sensor)
-{
-    if(sensor < MTOUCH_SENSORS)   
-        mtouch_sensor[sensor].enabled = 0;
-}
 
 void MTOUCH_Sensor_Enable(enum mtouch_sensor_names sensor)
-{
-    if(sensor < MTOUCH_SENSORS)   
+{ 
         mtouch_sensor[sensor].enabled = 1;
 }
 
-bool MTOUCH_Sensor_isEnabled(enum mtouch_sensor_names sensor)
-{
-    if(sensor < MTOUCH_SENSORS)   
-        return (bool)mtouch_sensor[sensor].enabled;
-    else
-        return false;
-}
 
 static bool Sensor_isEnabled(mtouch_sensor_t* sensor)
 {
@@ -895,12 +850,6 @@ static inline bool Sensor_isActive(mtouch_sensor_t* sensor)
     return (bool)sensor->active;
 }
 
-bool MTOUCH_Sensor_isActive(enum mtouch_sensor_names sensor)
-{
-    if(sensor<=MTOUCH_SENSORS)
-        return (bool)mtouch_sensor[sensor].active;
-    return false;
-}
 
 /*
  * =======================================================================
@@ -911,18 +860,16 @@ bool MTOUCH_Sensor_isActive(enum mtouch_sensor_names sensor)
 
 void MTOUCH_Sensor_Calibrate(enum mtouch_sensor_names sensor)
 {
-    if(sensor < MTOUCH_SENSORS)
-    {
+
         mtouch_sensor[sensor].calibrated = 0;
-    }
+
 }
 
 bool MTOUCH_Sensor_isCalibrated(enum mtouch_sensor_names sensor)
 {
-    if(sensor < MTOUCH_SENSORS)
+
         return (bool)mtouch_sensor[sensor].calibrated;
-    else
-        return false;
+
 }
 
 static inline bool Sensor_isCalibrated(mtouch_sensor_t* sensor)
@@ -986,42 +933,3 @@ static inline void Sensor_setSampled(mtouch_sensor_t* sensor)
  * =======================================================================
  * 
  */
-uint8_t MTOUCH_Sensor_AdditionalCap_Get(enum mtouch_sensor_names name) 
-{
-     if(name < MTOUCH_SENSORS)
-        return (uint8_t)(mtouch_sensor[name].addcap<<1);  /* because the this ADC has a resolution of 2pF */     
-     else
-        return 0;
-}
-
-uint8_t MTOUCH_Sensor_AcquisitionTime_Get(enum mtouch_sensor_names name) 
-{
-     if(name < MTOUCH_SENSORS)
-        return mtouch_sensor[name].acquisition_time;
-     else
-        return 0;
-}
-
-uint8_t MTOUCH_Sensor_PreChargeTime_Get(enum mtouch_sensor_names name) 
-{
-     if(name < MTOUCH_SENSORS)
-        return mtouch_sensor[name].precharge_time;
-     else
-        return 0;
-}
-
-uint8_t MTOUCH_Sensor_Oversampling_Get(enum mtouch_sensor_names name) 
-{
-    if(name < MTOUCH_SENSORS)
-       return (uint8_t)(mtouch_sensor[name].oversampling);
-    else
-       return 0;
-}
-
-void MTOUCH_Sensor_Oversampling_Set(enum mtouch_sensor_names name, uint8_t value ) 
-{
-    if(name < MTOUCH_SENSORS)
-    {
-       mtouch_sensor[name].oversampling =  (mtouch_sensor_packetcounter_t)(value);
-    }
-}

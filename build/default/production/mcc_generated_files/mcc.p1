@@ -1,17 +1,20 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F3306 `(v ~T0 @X0 0 tf ]
+[v F3299 `(v ~T0 @X0 0 tf ]
 "298 mcc_generated_files/pin_manager.h
 [; ;mcc_generated_files/pin_manager.h: 298: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"85 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 85: void OSCILLATOR_Initialize(void);
+"86 mcc_generated_files/mcc.h
+[; ;mcc_generated_files/mcc.h: 86: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"97
-[; ;mcc_generated_files/mcc.h: 97: void WDT_Initialize(void);
+"98
+[; ;mcc_generated_files/mcc.h: 98: void WDT_Initialize(void);
 [v _WDT_Initialize `(v ~T0 @X0 0 ef ]
 "103 mcc_generated_files/tmr2.h
 [; ;mcc_generated_files/tmr2.h: 103: void TMR2_Initialize(void);
 [v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
+"100 mcc_generated_files/tmr1.h
+[; ;mcc_generated_files/tmr1.h: 100: void TMR1_Initialize(void);
+[v _TMR1_Initialize `(v ~T0 @X0 0 ef ]
 "118 mcc_generated_files/eusart.h
 [; ;mcc_generated_files/eusart.h: 118: void EUSART_Initialize(void);
 [v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
@@ -596,7 +599,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSH equ 0FEFh ;# ">
 "96 mcc_generated_files/eusart.h
 [; ;mcc_generated_files/eusart.h: 96: void (*EUSART_RxDefaultInterruptHandler)(void);
-[v _EUSART_RxDefaultInterruptHandler `*F3306 ~T0 @X0 1 e ]
+[v _EUSART_RxDefaultInterruptHandler `*F3299 ~T0 @X0 1 e ]
 "50 mcc_generated_files/mcc.c
 [; ;mcc_generated_files/mcc.c: 50: void SYSTEM_Initialize(void)
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
@@ -618,45 +621,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 56:     TMR2_Initialize();
 [e ( _TMR2_Initialize ..  ]
 "57
-[; ;mcc_generated_files/mcc.c: 57:     EUSART_Initialize();
-[e ( _EUSART_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 57:     TMR1_Initialize();
+[e ( _TMR1_Initialize ..  ]
 "58
-[; ;mcc_generated_files/mcc.c: 58:     MTOUCH_Initialize();
-[e ( _MTOUCH_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 58:     EUSART_Initialize();
+[e ( _EUSART_Initialize ..  ]
 "59
-[; ;mcc_generated_files/mcc.c: 59: }
+[; ;mcc_generated_files/mcc.c: 59:     MTOUCH_Initialize();
+[e ( _MTOUCH_Initialize ..  ]
+"60
+[; ;mcc_generated_files/mcc.c: 60: }
 [e :UE 458 ]
 }
-"61
-[; ;mcc_generated_files/mcc.c: 61: void OSCILLATOR_Initialize(void)
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
 "62
-[; ;mcc_generated_files/mcc.c: 62: {
+[; ;mcc_generated_files/mcc.c: 62: void OSCILLATOR_Initialize(void)
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
+"63
+[; ;mcc_generated_files/mcc.c: 63: {
 {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-"64
-[; ;mcc_generated_files/mcc.c: 64:     OSCCON = 0xF0;
+"65
+[; ;mcc_generated_files/mcc.c: 65:     OSCCON = 0xF0;
 [e = _OSCCON -> -> 240 `i `uc ]
-"66
-[; ;mcc_generated_files/mcc.c: 66:     BORCON = 0x00;
-[e = _BORCON -> -> 0 `i `uc ]
 "67
-[; ;mcc_generated_files/mcc.c: 67: }
+[; ;mcc_generated_files/mcc.c: 67:     BORCON = 0x00;
+[e = _BORCON -> -> 0 `i `uc ]
+"68
+[; ;mcc_generated_files/mcc.c: 68: }
 [e :UE 459 ]
 }
-"69
-[; ;mcc_generated_files/mcc.c: 69: void WDT_Initialize(void)
-[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
 "70
-[; ;mcc_generated_files/mcc.c: 70: {
+[; ;mcc_generated_files/mcc.c: 70: void WDT_Initialize(void)
+[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
+"71
+[; ;mcc_generated_files/mcc.c: 71: {
 {
 [e :U _WDT_Initialize ]
 [f ]
-"72
-[; ;mcc_generated_files/mcc.c: 72:     WDTCON = 0x16;
-[e = _WDTCON -> -> 22 `i `uc ]
 "73
-[; ;mcc_generated_files/mcc.c: 73: }
+[; ;mcc_generated_files/mcc.c: 73:     WDTCON = 0x16;
+[e = _WDTCON -> -> 22 `i `uc ]
+"74
+[; ;mcc_generated_files/mcc.c: 74: }
 [e :UE 460 ]
 }

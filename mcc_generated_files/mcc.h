@@ -52,6 +52,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "interrupt_manager.h"
+#include "tmr1.h"
 #include "tmr2.h"
 #include "mtouch/mtouch.h"
 #include "eusart.h"
